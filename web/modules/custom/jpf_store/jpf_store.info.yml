@@ -1,0 +1,5 @@
+name: 'Data store module'
+type: module
+description: 'All features for storing data.'
+core_version_requirement: ^11
+package: Custom
