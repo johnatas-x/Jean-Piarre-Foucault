@@ -1,1 +1,1 @@
-# Jean-Piarre-Foucault
+# Jean-Piarre Foucault
