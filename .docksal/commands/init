@@ -26,4 +26,7 @@ if [ -x "$(command -v fin)" ]; then
   fin drush locale-check
   fin drush locale-update
   fin drush cache-rebuild
+
+  # Fill data.
+  fin drush fill-lotto-draws-data --all
 fi
