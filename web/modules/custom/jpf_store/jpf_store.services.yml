@@ -1,0 +1,3 @@
+services:
+  jpf_store.database:
+    class: Drupal\jpf_store\Services\Database

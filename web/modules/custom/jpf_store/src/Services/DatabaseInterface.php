@@ -14,4 +14,12 @@ interface DatabaseInterface {
    */
   final public const string LOTTO_DRAWS_TABLE = 'lotto_draws';
 
+  /**
+   * Import data from CSV file to database.
+   *
+   * @param string $filepath
+   *   The path of CSV file.
+   */
+  public function importCsvFile(string $filepath): void;
+
 }
