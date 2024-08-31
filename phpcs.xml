@@ -95,11 +95,6 @@
   </rule>
 
   <!-- Set max function length to 35 lines (best compromise in my opinion). -->
-  <rule ref="SlevomatCodingStandard.Files.FunctionLength">
-    <properties>
-      <property name="maxLinesLength" value="35"/>
-    </properties>
-  </rule>
   <rule ref="SlevomatCodingStandard.Functions.FunctionLength">
     <properties>
       <property name="maxLinesLength" value="35"/>

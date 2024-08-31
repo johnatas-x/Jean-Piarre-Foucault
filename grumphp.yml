@@ -64,7 +64,7 @@ grumphp:
         - '*.php'
       metadata:
         blocking: true
-        enabled: true
+        enabled: false
         label: null
         priority: 0
         task: null
@@ -78,7 +78,7 @@ grumphp:
       exclude_dir: [ ]
       metadata:
         blocking: true
-        enabled: true
+        enabled: false
         label: null
         priority: 0
         task: null
@@ -117,7 +117,7 @@ grumphp:
       allow_detached_head: true
       metadata:
         blocking: true
-        enabled: true
+        enabled: false
         label: null
         priority: 0
         task: null
@@ -142,7 +142,7 @@ grumphp:
       additional_modifiers: ''
       metadata:
         blocking: true
-        enabled: true
+        enabled: false
         label: null
         priority: 0
         task: null
@@ -161,7 +161,6 @@ grumphp:
       exclude:
         - web/core
         - web/modules/contrib
-        - web/profiles/contrib
         - web/sites
         - web/themes/contrib
       metadata:
@@ -348,7 +347,8 @@ grumphp:
         task: null
     shell:
       scripts:
-        - # Add here your scripts and your commands.
+        - [ "-c", ".docksal/commands/init"]
+        - [ "-c", ".docksal/commands/quality"]
       metadata:
         blocking: true
         enabled: true

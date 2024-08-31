@@ -9,6 +9,5 @@ parameters:
       - web/profiles/custom
       - web/themes/custom
     ignoreErrors:
-      identifier:
-        - missingType.iterableValue
-        - missingType.generics
+      - identifier: missingType.iterableValue
+      - identifier: missingType.generics
