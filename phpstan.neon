@@ -6,8 +6,3 @@ parameters:
     inferPrivatePropertyTypeFromConstructor: true
     paths:
       - web/modules/custom
-      - web/profiles/custom
-      - web/themes/custom
-    ignoreErrors:
-      - identifier: missingType.iterableValue
-      - identifier: missingType.generics
