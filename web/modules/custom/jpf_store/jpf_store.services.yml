@@ -1,3 +1,7 @@
 services:
+  jpf_store.csv_helper:
+    class: Drupal\jpf_store\Services\CsvHelper
+
   jpf_store.database:
     class: Drupal\jpf_store\Services\Database
+    arguments: ['@jpf_store.csv_helper']
