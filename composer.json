@@ -41,12 +41,12 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpstan/extension-installer": true,
+            "ergebnis/composer-normalize": true,
             "phpro/grumphp": true,
-            "ergebnis/composer-normalize": true
+            "phpstan/extension-installer": true
         },
         "sort-packages": true
     },
