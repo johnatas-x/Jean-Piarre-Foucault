@@ -31,6 +31,9 @@ class Database implements DatabaseInterface {
    */
   public function importCsvFile(string $filepath): void {
     $data = $this->csvHelper->csvToArray($filepath);
+    $needed_data = $this->csvHelper->arrayFilter($data);
+
+    // TODO insert data to DB.
   }
 
 }

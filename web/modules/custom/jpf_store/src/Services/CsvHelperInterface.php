@@ -27,4 +27,15 @@ interface CsvHelperInterface {
    */
   public function csvToArray(string $filename): array;
 
+  /**
+   * Filter array data to keep only needed data.
+   *
+   * @param array<int, array<int|string, string|null>> $csv_data
+   *   Full data from CSV.
+   *
+   * @return array<string, string>
+   *   Filtered data.
+   */
+  public function arrayFilter(array $csv_data): array;
+
 }

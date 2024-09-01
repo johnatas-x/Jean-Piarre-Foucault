@@ -51,4 +51,11 @@ class CsvHelper implements CsvHelperInterface {
     return $combined;
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function arrayFilter(array $csv_data): array {
+    // TODO: Implement arrayFilter() method.
+  }
+
 }
