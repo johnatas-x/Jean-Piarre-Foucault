@@ -24,22 +24,27 @@ class FillDataBatch {
     $operations = [];
     $increment = 1;
 
-    foreach ($versions as $version) {
-      $module_path = \Drupal::service('extension.list.module')->getPath('jpf_store');
-      $filename = Versions::from($version)->filename();
-      $file_path = $module_path . "/assets/doc/$version/$filename";
-      $operations[] = [
-        [self::class, 'process'],
-        [
-          $file_path,
-          $filename,
-          $version,
-          \Drupal::translation()
-            ->translate('Import data : version @chunk / @count',
-              ['@chunk' => $increment, '@count' => count($versions)]
-          ),
-        ],
-      ];
+    foreach ($versions as $version_name) {
+      $version = Versions::from($version_name);
+      $files_name = $version->filesName();
+
+      if (!is_array($files_name)) {
+        continue;
+      }
+
+      foreach ($files_name as $file_path) {
+        $operations[] = [
+          [self::class, 'process'],
+          [
+            $file_path,
+            $version_name,
+            \Drupal::translation()
+              ->translate('Import data : version @chunk / @count',
+                ['@chunk' => $increment, '@count' => count($versions)]
+            ),
+          ],
+        ];
+      }
 
       $increment++;
     }
@@ -52,8 +57,6 @@ class FillDataBatch {
    *
    * @param string $filepath
    *   The file path.
-   * @param string $filename
-   *   The file name.
    * @param string $version
    *   The file version.
    * @param string $details
@@ -61,13 +64,7 @@ class FillDataBatch {
    * @param array<string, array<string, int|string>> $context
    *   The batch context.
    */
-  public static function process(
-    string $filepath,
-    string $filename,
-    string $version,
-    string $details,
-    array &$context,
-  ): void {
+  public static function process(string $filepath, string $version, string $details, array &$context,): void {
     $context['message'] = "\n$details\n";
 
     if (!isset($context['results']['success'])) {
@@ -81,7 +78,7 @@ class FillDataBatch {
     try {
       \Drupal::service('jpf_store.database')->importCsvFile($filepath, $version);
       $context['results']['success']++;
-      $context['message'] = '[OK] ' . $filename;
+      $context['message'] = '[OK] ' . substr($filepath, strrpos($filepath, '/') + 1);
     }
     catch (\Throwable $exception) {
       $context['results']['error']++;
