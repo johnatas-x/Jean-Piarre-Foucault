@@ -20,6 +20,7 @@ enum Balls: string {
   case Five = 'Ball five';
   case Six = 'Ball six';
   case Complementary = 'Complementary ball';
+  case Lucky = 'Lucky ball';
 
   /**
    * Numeric ball value.
@@ -35,7 +36,31 @@ enum Balls: string {
       self::Four => 4,
       self::Five => 5,
       self::Six => 6,
-      self::Complementary => 0,
+      self::Complementary, self::Lucky => 0,
+    };
+  }
+
+  /**
+   * Column name in DB "lotto_draws" table.
+   *
+   * @return string
+   *   The column name.
+   */
+  public function columnName(): string {
+    return 'ball_' . $this->numeric();
+  }
+
+  /**
+   * Name in FDJ CSV file.
+   *
+   * @return string
+   *   The CSV name.
+   */
+  public function csvName(): string {
+    return match ($this) {
+      self::Complementary => 'boule_complementaire',
+      self::Lucky => 'numero_chance',
+      default => 'boule_' . $this->numeric(),
     };
   }
 

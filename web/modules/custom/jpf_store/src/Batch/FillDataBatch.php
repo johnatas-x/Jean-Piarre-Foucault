@@ -33,6 +33,7 @@ class FillDataBatch {
         [
           $file_path,
           $filename,
+          $version,
           \Drupal::translation()
             ->translate('Import data : version @chunk / @count',
               ['@chunk' => $increment, '@count' => count($versions)]
@@ -53,12 +54,20 @@ class FillDataBatch {
    *   The file path.
    * @param string $filename
    *   The file name.
+   * @param string $version
+   *   The file version.
    * @param string $details
    *   Details to follow command progress.
    * @param array<string, array<string, int|string>> $context
    *   The batch context.
    */
-  public static function process(string $filepath, string $filename, string $details, array &$context): void {
+  public static function process(
+    string $filepath,
+    string $filename,
+    string $version,
+    string $details,
+    array &$context,
+  ): void {
     $context['message'] = "\n$details\n";
 
     if (!isset($context['results']['success'])) {
@@ -70,7 +79,7 @@ class FillDataBatch {
     }
 
     try {
-      \Drupal::service('jpf_store.database')->importCsvFile($filepath);
+      \Drupal::service('jpf_store.database')->importCsvFile($filepath, $version);
       $context['results']['success']++;
       $context['message'] = '[OK] ' . $filename;
     }

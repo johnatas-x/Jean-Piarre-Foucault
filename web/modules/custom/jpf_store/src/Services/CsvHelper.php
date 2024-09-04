@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Services;
 
+use Drupal\Component\Datetime\DateTimePlus;
+use Drupal\jpf_store\Enum\Balls;
+use Drupal\jpf_store\Enum\Days;
+use Drupal\jpf_store\Enum\Versions;
+
 /**
  * Methods for CSV manipulations.
  */
@@ -54,8 +59,46 @@ class CsvHelper implements CsvHelperInterface {
   /**
    * {@inheritDoc}
    */
-  public function arrayFilter(array $csv_data): array {
-    // TODO: Implement arrayFilter() method.
+  public function arrayFilter(array $csv_data, string $version): array {
+    $data_to_insert = [];
+
+    foreach ($csv_data as $row) {
+      $csv_date = $row['date_de_tirage'];
+
+      if (!is_string($csv_date)) {
+        continue;
+      }
+
+      $draw_date = DateTimePlus::createFromFormat(
+        Versions::from($version)->dateFormat(),
+        $csv_date
+      );
+      $timestamp = $draw_date->getTimestamp();
+      $data_to_insert[$timestamp] = [
+        'year' => (int) $draw_date->format('Y'),
+        'month' => (int) $draw_date->format('m'),
+        'day' => (int) $draw_date->format('d'),
+        'which_draw' => !empty($row['1er_ou_2eme_tirage'])
+          ? (int) $row['1er_ou_2eme_tirage']
+          : 1,
+        'day_of_week' => Days::fromMethod(
+          Versions::from($version)->dayMethod(),
+          $row['jour_de_tirage']
+        )?->capitalizeFrenchLabel(),
+      ];
+
+      foreach (Balls::cases() as $ball) {
+        if (!empty($data_to_insert[$timestamp][$ball->columnName()])) {
+          continue;
+        }
+
+        $data_to_insert[$timestamp][$ball->columnName()] = !(empty($row[$ball->csvName()]))
+          ? (int) $row[$ball->csvName()]
+          : NULL;
+      }
+    }
+
+    return $data_to_insert;
   }
 
 }

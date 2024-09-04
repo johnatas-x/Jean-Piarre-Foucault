@@ -19,7 +19,9 @@ interface DatabaseInterface {
    *
    * @param string $filepath
    *   The path of CSV file.
+   * @param string $version
+   *   The CSV file version.
    */
-  public function importCsvFile(string $filepath): void;
+  public function importCsvFile(string $filepath, string $version): void;
 
 }

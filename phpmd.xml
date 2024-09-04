@@ -45,6 +45,7 @@
           \DateTime,
           \DateTimeZone,
           \Drupal,
+          \Drupal\Component\Datetime\DateTimePlus,
           \Drupal\Component\Plugin\Factory\DefaultFactory,
           \Drupal\Component\Serialization\Json,
           \Drupal\Component\Utility\Crypt,

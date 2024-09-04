@@ -32,10 +32,12 @@ interface CsvHelperInterface {
    *
    * @param array<int, array<int|string, string|null>> $csv_data
    *   Full data from CSV.
+   * @param string $version
+   *   CSV version.
    *
-   * @return array<string, string>
+   * @return array<int, array<string, int|string|null>>
    *   Filtered data.
    */
-  public function arrayFilter(array $csv_data): array;
+  public function arrayFilter(array $csv_data, string $version): array;
 
 }

@@ -66,4 +66,30 @@ enum Versions: string {
     return $this->begin() . '-' . $this->end() . self::FILE_EXTENSION;
   }
 
+  /**
+   * The date format in CSV file depends on version.
+   *
+   * @return string
+   *   The date format.
+   */
+  public function dateFormat(): string {
+    return match ($this) {
+      self::First => 'Ymd',
+      default => 'd/m/Y',
+    };
+  }
+
+  /**
+   * The day method to use depends on version.
+   *
+   * @return string
+   *   The day method.
+   */
+  public function dayMethod(): string {
+    return match ($this) {
+      self::First => 'uppercaseDayCode',
+      default => 'uppercaseFrenchLabel',
+    };
+  }
+
 }

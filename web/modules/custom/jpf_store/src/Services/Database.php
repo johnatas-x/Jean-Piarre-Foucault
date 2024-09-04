@@ -29,9 +29,10 @@ class Database implements DatabaseInterface {
   /**
    * {@inheritDoc}
    */
-  public function importCsvFile(string $filepath): void {
+  public function importCsvFile(string $filepath, string $version): void {
     $data = $this->csvHelper->csvToArray($filepath);
-    $needed_data = $this->csvHelper->arrayFilter($data);
+    $needed_data = $this->csvHelper->arrayFilter($data, $version);
+    sort($needed_data);
 
     // TODO insert data to DB.
   }
