@@ -8,7 +8,7 @@ title: 'Import dynamic data'
 id: import_dynamic_data
 weight: 0
 module: jpf_import
-callback: \Drupal\jpf_import\Cron\ImportDynamicData::import
+callback: '\Drupal\jpf_import\Cron\ImportDynamicData::import'
 scheduler:
   id: crontab
   configuration:
