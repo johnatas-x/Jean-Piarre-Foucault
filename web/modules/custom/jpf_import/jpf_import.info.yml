@@ -1,0 +1,5 @@
+name: 'Data import module'
+type: module
+description: 'All features for importing data.'
+core_version_requirement: ^11
+package: Custom
