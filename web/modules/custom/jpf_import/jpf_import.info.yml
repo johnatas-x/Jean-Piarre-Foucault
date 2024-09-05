@@ -1,4 +1,4 @@
-name: 'Data import module'
+name: 'JPF : Data import'
 type: module
 description: 'All features for importing data.'
 core_version_requirement: ^11
