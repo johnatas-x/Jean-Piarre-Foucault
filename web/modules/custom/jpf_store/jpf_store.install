@@ -3,14 +3,11 @@
 /**
  * @file
  * Contains DB structure for jpf_store module.
- *
- * @phpcs:disable SlevomatCodingStandard.Functions.FunctionLength.FunctionLength
  */
 
 declare(strict_types=1);
 
 use Drupal\Core\Database\Database;
-use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Services\DatabaseInterface;
 
 /**
@@ -24,76 +21,13 @@ function jpf_store_schema(): array {
 
   $schema[DatabaseInterface::LOTTO_DRAWS_TABLE] = [
     'description' => 'Table which store all lotto draws',
-    'fields' => get_lotto_draws_fields(),
+    'fields' => \Drupal::service('jpf_store.database')->lottoDrawsFields(),
     'primary key' => [
       'id',
     ],
   ];
 
   return $schema;
-}
-
-/**
- * Lotto draws schema fields.
- *
- * @return array<string, array<string, bool|int|string>>
- *   The fields.
- */
-function get_lotto_draws_fields(): array {
-  $fields = [
-    'id' => [
-      'description' => 'The primary identifier.',
-      'type' => 'serial',
-      'unsigned' => TRUE,
-      'not null' => TRUE,
-    ],
-    'year' => [
-      'description' => 'Year',
-      'type' => 'int',
-      'unsigned' => TRUE,
-      'not null' => TRUE,
-      'length' => 4,
-    ],
-    'month' => [
-      'description' => 'Month',
-      'type' => 'int',
-      'unsigned' => TRUE,
-      'not null' => TRUE,
-      'length' => 2,
-    ],
-    'day' => [
-      'description' => 'Day',
-      'type' => 'int',
-      'unsigned' => TRUE,
-      'not null' => TRUE,
-      'length' => 2,
-    ],
-    'which_draw' => [
-      'description' => 'First or second draw',
-      'type' => 'int',
-      'unsigned' => TRUE,
-      'not null' => TRUE,
-      'length' => 1,
-    ],
-    'day_of_week' => [
-      'description' => 'Day of week',
-      'type' => 'varchar',
-      'length' => 32,
-      'not null' => TRUE,
-    ],
-  ];
-
-  foreach (Balls::cases() as $ball) {
-    $fields["ball_{$ball->numeric()}"] = [
-      'description' => $ball->value,
-      'type' => 'int',
-      'unsigned' => TRUE,
-      'not null' => FALSE,
-      'length' => 2,
-    ];
-  }
-
-  return $fields;
 }
 
 /**

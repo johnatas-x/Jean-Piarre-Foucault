@@ -82,7 +82,7 @@ class FillDataBatch {
     }
     catch (\Throwable $exception) {
       $context['results']['error']++;
-      $context['message'] = $exception->getMessage();
+      $context['message'] = '[KO] ' . $exception->getMessage();
     }
   }
 

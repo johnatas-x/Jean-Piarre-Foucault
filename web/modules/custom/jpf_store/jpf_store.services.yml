@@ -4,4 +4,4 @@ services:
 
   jpf_store.database:
     class: Drupal\jpf_store\Services\Database
-    arguments: ['@jpf_store.csv_helper']
+    arguments: ['@jpf_store.csv_helper', '@database']

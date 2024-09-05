@@ -23,8 +23,6 @@ if [ -x "$(command -v fin)" ]; then
   # Install site.
   fin drush site-install 'minimal' --config-dir=../config/sync --account-name='admin' --account-pass='admin' --yes
   fin drush deploy
-  fin drush locale-check
-  fin drush locale-update
   fin drush cache-rebuild
 
   # Fill data.
