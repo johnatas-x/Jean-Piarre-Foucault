@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Enum;
 
+use Drupal\jpf_import\Api\Sto;
 use Drupal\jpf_store\Traits\EnumToArray;
 
 /**
@@ -116,6 +117,34 @@ enum Versions: string {
     return match ($this) {
       self::First => 'uppercaseDayCode',
       default => 'uppercaseFrenchLabel',
+    };
+  }
+
+  /**
+   * Version letter identifier using in API token.
+   *
+   * @return string
+   *   The letter.
+   */
+  public function letterIdentifier(): string {
+    $default_ascii_code = ord(Sto::DEFAULT_LETTER_IDENTIFIER);
+
+    return chr($default_ascii_code + $this->versionNumber());
+  }
+
+  /**
+   * Number of file version.
+   *
+   * @return int
+   *   The number of the version.
+   */
+  private function versionNumber(): int {
+    return match ($this) {
+      self::First => 1,
+      self::Second => 2,
+      self::Third => 3,
+      self::Fourth => 4,
+      self::Fifth => 5,
     };
   }
 
