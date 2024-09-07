@@ -68,6 +68,7 @@
           \Drupal\field\Entity\FieldConfig,
           \Drupal\field\Entity\FieldStorageConfig,
           \Drupal\file\Entity\File,
+          \Drupal\jpf_import\Api\Sto,
           \Drupal\jpf_store\Batch\FillDataBatch,
           \Drupal\jpf_store\Enum\Balls,
           \Drupal\jpf_store\Enum\Versions,

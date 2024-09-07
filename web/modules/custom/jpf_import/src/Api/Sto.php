@@ -61,7 +61,7 @@ abstract class Sto {
    * @return string
    *   The download URL.
    */
-  public function buildDownloadUrl(Versions $version): string {
+  public static function buildDownloadUrl(Versions $version): string {
     return implode(
       '/',
       [
@@ -70,7 +70,7 @@ abstract class Sto {
         self::SERVICE,
         self::VERSION,
         self::TYPE,
-        $this->buildToken($version),
+        self::buildToken($version),
       ]
     );
   }
@@ -84,7 +84,7 @@ abstract class Sto {
    * @return string
    *   The token.
    */
-  private function buildToken(Versions $version): string {
+  private static function buildToken(Versions $version): string {
     $token = implode('-', self::TOKEN_PARTS);
 
     return str_replace(self::TOKENIZED_TOKEN, $version->letterIdentifier(), $token);

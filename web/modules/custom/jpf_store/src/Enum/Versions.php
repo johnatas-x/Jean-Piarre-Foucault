@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Enum;
 
+use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\jpf_store\Traits\EnumToArray;
 
 /**
@@ -22,7 +23,7 @@ enum Versions: string {
   /**
    * Files extension.
    */
-  private const string FILE_EXTENSION = '.csv';
+  public const string FILE_EXTENSION = '.csv';
 
   /**
    * Archives extension.
@@ -38,6 +39,27 @@ enum Versions: string {
    * The initial default letter token identifier.
    */
   private const string DEFAULT_LETTER_IDENTIFIER = 'k';
+
+  /**
+   * Get the current version depending on current date.
+   *
+   * @return self|null
+   *   The version.
+   */
+  public static function currentVersion(): ?self {
+    $current_month = DateTimePlus::createFromFormat(
+      'U',
+      (string) time()
+    )->format('Ym');
+
+    foreach (self::cases() as $version) {
+      if ($version->begin() <= $current_month && ($version->end() === '' || $version->end() > $current_month)) {
+        return $version;
+      }
+    }
+
+    return NULL;
+  }
 
   /**
    * Filename of versions.
@@ -88,14 +110,33 @@ enum Versions: string {
   }
 
   /**
-   * Version file path.
+   * Version folder path.
    *
    * @return string
    *   The path of directory.
    */
+  public function versionPath(): string {
+    return DRUPAL_ROOT . '/' . self::MODULE_PATH . "/assets/doc/$this->value/";
+  }
+
+  /**
+   * Version file path.
+   *
+   * @return string
+   *   The path of CSV file.
+   */
   public function filePath(): string {
-    return DRUPAL_ROOT . '/' . self::MODULE_PATH .
-      "/assets/doc/$this->value/{$this->filename()}/" . self::FILE_EXTENSION;
+    return $this->versionPath() . $this->filename() . self::FILE_EXTENSION;
+  }
+
+  /**
+   * Version archive path.
+   *
+   * @return string
+   *   The path of archive file.
+   */
+  public function archivePath(): string {
+    return $this->versionPath() . $this->filename() . self::ARCHIVE_EXTENSION;
   }
 
   /**

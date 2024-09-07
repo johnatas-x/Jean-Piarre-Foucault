@@ -15,6 +15,7 @@
         "source": "https://github.com/johnatas-x/Jean-Piarre-Foucault"
     },
     "require": {
+        "ext-zip": "*",
         "composer/installers": "^2.3",
         "drupal/admin_toolbar": "^3.5",
         "drupal/core-composer-scaffold": "^11",
