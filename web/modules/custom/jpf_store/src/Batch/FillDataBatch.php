@@ -17,7 +17,10 @@ class FillDataBatch {
    * @param array<string> $versions
    *   Versions to import.
    *
-   * @return array<int<0, max>, array<int, array<int, \Drupal\Core\StringTranslation\TranslatableMarkup|string>>>
+   * @return array<int<0, max>, array{
+   *   array{class-string, 'process'},
+   *   array{\Drupal\jpf_store\Enum\Versions, \Drupal\Core\StringTranslation\TranslatableMarkup}
+   *   }>
    *   The batch operations.
    */
   public static function operations(array $versions): array {
@@ -32,7 +35,7 @@ class FillDataBatch {
           \Drupal::translation()
             ->translate('Import data : version @chunk / @count',
               ['@chunk' => $increment, '@count' => count($versions)]
-            ),
+          ),
         ],
       ];
 
