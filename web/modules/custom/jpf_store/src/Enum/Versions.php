@@ -89,7 +89,8 @@ enum Versions: string {
    *   The path of directory.
    */
   public function filePath(): string {
-    return DRUPAL_ROOT . '/' . self::MODULE_PATH . "/assets/doc/$this->value/{$this->filename()}";
+    return DRUPAL_ROOT . '/' . self::MODULE_PATH .
+      "/assets/doc/$this->value/{$this->filename()}/" . self::FILE_EXTENSION;
   }
 
   /**
