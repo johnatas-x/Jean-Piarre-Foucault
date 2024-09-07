@@ -12,11 +12,6 @@ use Drupal\jpf_store\Enum\Versions;
 abstract class Sto {
 
   /**
-   * The initial default letter token identifier.
-   */
-  public final const string DEFAULT_LETTER_IDENTIFIER = 'k';
-
-  /**
    * Custom token to make token dynamic.
    */
   private const string TOKENIZED_TOKEN = '{version_letter_identifier}';

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Enum;
 
-use Drupal\jpf_import\Api\Sto;
 use Drupal\jpf_store\Traits\EnumToArray;
 
 /**
@@ -34,6 +33,11 @@ enum Versions: string {
    * Define module path to avoid using \Drupal::service('extension.list.module')->getPath('jpf_store').
    */
   private const string MODULE_PATH = 'modules/custom/jpf_store';
+
+  /**
+   * The initial default letter token identifier.
+   */
+  private const string DEFAULT_LETTER_IDENTIFIER = 'k';
 
   /**
    * Filename of versions.
@@ -127,7 +131,7 @@ enum Versions: string {
    *   The letter.
    */
   public function letterIdentifier(): string {
-    $default_ascii_code = ord(Sto::DEFAULT_LETTER_IDENTIFIER);
+    $default_ascii_code = ord(self::DEFAULT_LETTER_IDENTIFIER);
 
     return chr($default_ascii_code + $this->versionNumber());
   }
