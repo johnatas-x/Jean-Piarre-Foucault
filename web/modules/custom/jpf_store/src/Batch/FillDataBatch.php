@@ -55,7 +55,7 @@ class FillDataBatch {
    * @param array<string, array<string, int|string>> $context
    *   The batch context.
    */
-  public static function process(Versions $version, string $details, array &$context): void {
+  private static function process(Versions $version, string $details, array &$context): void {
     $context['message'] = "\n$details\n";
 
     if (!isset($context['results']['success'])) {

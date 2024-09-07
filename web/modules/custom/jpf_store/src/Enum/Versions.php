@@ -22,12 +22,12 @@ enum Versions: string {
   /**
    * Files extension.
    */
-  final protected const string FILE_EXTENSION = '.csv';
+  private const string FILE_EXTENSION = '.csv';
 
   /**
    * Archives extension.
    */
-  final protected const string ARCHIVE_EXTENSION = '.zip';
+  private const string ARCHIVE_EXTENSION = '.zip';
 
   /**
    * Define module path to avoid using \Drupal::service('extension.list.module')->getPath('jpf_store').

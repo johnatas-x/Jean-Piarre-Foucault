@@ -50,7 +50,7 @@ enum Days: string {
    * @return string
    *   The French label.
    */
-  public function frenchLabel(): string {
+  private function frenchLabel(): string {
     return match ($this) {
       self::Monday => 'lundi',
       self::Tuesday => 'mardi',
@@ -68,7 +68,7 @@ enum Days: string {
    * @return string
    *   The day code.
    */
-  public function dayCode(): string {
+  private function dayCode(): string {
     return substr($this->frenchLabel(), 0, 2);
   }
 
