@@ -45,34 +45,6 @@ enum Days: string {
   }
 
   /**
-   * French day labels.
-   *
-   * @return string
-   *   The French label.
-   */
-  private function frenchLabel(): string {
-    return match ($this) {
-      self::Monday => 'lundi',
-      self::Tuesday => 'mardi',
-      self::Wednesday => 'mercredi',
-      self::Thursday => 'jeudi',
-      self::Friday => 'vendredi',
-      self::Saturday => 'samedi',
-      self::Sunday => 'dimanche',
-    };
-  }
-
-  /**
-   * French day code.
-   *
-   * @return string
-   *   The day code.
-   */
-  private function dayCode(): string {
-    return substr($this->frenchLabel(), 0, 2);
-  }
-
-  /**
    * French uppercase day code (used as CSV value).
    *
    * @return string
@@ -100,6 +72,34 @@ enum Days: string {
    */
   public function capitalizeFrenchLabel(): string {
     return ucfirst($this->frenchLabel());
+  }
+
+  /**
+   * French day labels.
+   *
+   * @return string
+   *   The French label.
+   */
+  private function frenchLabel(): string {
+    return match ($this) {
+      self::Monday => 'lundi',
+      self::Tuesday => 'mardi',
+      self::Wednesday => 'mercredi',
+      self::Thursday => 'jeudi',
+      self::Friday => 'vendredi',
+      self::Saturday => 'samedi',
+      self::Sunday => 'dimanche',
+    };
+  }
+
+  /**
+   * French day code.
+   *
+   * @return string
+   *   The day code.
+   */
+  private function dayCode(): string {
+    return substr($this->frenchLabel(), 0, 2);
   }
 
 }

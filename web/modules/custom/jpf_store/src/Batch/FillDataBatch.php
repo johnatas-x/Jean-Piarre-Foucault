@@ -46,38 +46,6 @@ class FillDataBatch {
   }
 
   /**
-   * Import data to database.
-   *
-   * @param \Drupal\jpf_store\Enum\Versions $version
-   *   The version.
-   * @param string $details
-   *   Details to follow command progress.
-   * @param array<string, array<string, int|string>> $context
-   *   The batch context.
-   */
-  private static function process(Versions $version, string $details, array &$context): void {
-    $context['message'] = "\n$details\n";
-
-    if (!isset($context['results']['success'])) {
-      $context['results']['success'] = 0;
-    }
-
-    if (!isset($context['results']['error'])) {
-      $context['results']['error'] = 0;
-    }
-
-    try {
-      \Drupal::service('jpf_store.database')->importCsvFile($version);
-      $context['results']['success']++;
-      $context['message'] = '[OK] ' . $version->filename();
-    }
-    catch (\Throwable $exception) {
-      $context['results']['error']++;
-      $context['message'] = '[KO] ' . $exception->getMessage();
-    }
-  }
-
-  /**
    * Custom function to run at the end of treatment.
    *
    * @param bool $success
@@ -119,6 +87,40 @@ class FillDataBatch {
         ]
       )
     );
+  }
+
+  /**
+   * Import data to database.
+   *
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The version.
+   * @param string $details
+   *   Details to follow command progress.
+   * @param array<string, array<string, int|string>> $context
+   *   The batch context.
+   *
+   * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
+   */
+  private static function process(Versions $version, string $details, array &$context): void {
+    $context['message'] = "\n$details\n";
+
+    if (!isset($context['results']['success'])) {
+      $context['results']['success'] = 0;
+    }
+
+    if (!isset($context['results']['error'])) {
+      $context['results']['error'] = 0;
+    }
+
+    try {
+      \Drupal::service('jpf_store.database')->importCsvFile($version);
+      $context['results']['success']++;
+      $context['message'] = '[OK] ' . $version->filename();
+    }
+    catch (\Throwable $exception) {
+      $context['results']['error']++;
+      $context['message'] = '[KO] ' . $exception->getMessage();
+    }
   }
 
 }

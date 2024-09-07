@@ -32,7 +32,7 @@ enum Versions: string {
   /**
    * Define module path to avoid using \Drupal::service('extension.list.module')->getPath('jpf_store').
    */
-  final protected const string MODULE_PATH = 'modules/custom/jpf_store';
+  private const string MODULE_PATH = 'modules/custom/jpf_store';
 
   /**
    * Filename of versions.
