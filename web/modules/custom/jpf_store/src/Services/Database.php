@@ -6,6 +6,7 @@ namespace Drupal\jpf_store\Services;
 
 use Drupal\Core\Database\Connection;
 use Drupal\jpf_store\Enum\Balls;
+use Drupal\jpf_store\Enum\Versions;
 
 /**
  * Database methods.
@@ -103,8 +104,8 @@ class Database implements DatabaseInterface {
   /**
    * {@inheritDoc}
    */
-  public function importCsvFile(string $filepath, string $version): void {
-    $data = $this->csvHelper->csvToArray($filepath);
+  public function importCsvFile(Versions $version): void {
+    $data = $this->csvHelper->csvToArray($version->filePath());
     $needed_data = $this->csvHelper->arrayFilter($data, $version);
     sort($needed_data);
 

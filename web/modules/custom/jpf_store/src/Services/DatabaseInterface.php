@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Services;
 
+use Drupal\jpf_store\Enum\Versions;
+
 /**
  * Provides an interface for all database methods.
  */
@@ -25,13 +27,11 @@ interface DatabaseInterface {
   /**
    * Import data from CSV file to database.
    *
-   * @param string $filepath
-   *   The path of CSV file.
-   * @param string $version
-   *   The CSV file version.
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The file version.
    *
    * @throws \Exception
    */
-  public function importCsvFile(string $filepath, string $version): void;
+  public function importCsvFile(Versions $version): void;
 
 }

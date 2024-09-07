@@ -24,27 +24,17 @@ class FillDataBatch {
     $operations = [];
     $increment = 1;
 
-    foreach ($versions as $version_name) {
-      $version = Versions::from($version_name);
-      $files_name = $version->filesName();
-
-      if (!is_array($files_name)) {
-        continue;
-      }
-
-      foreach ($files_name as $file_path) {
-        $operations[] = [
-          [self::class, 'process'],
-          [
-            $file_path,
-            $version_name,
-            \Drupal::translation()
-              ->translate('Import data : version @chunk / @count',
-                ['@chunk' => $increment, '@count' => count($versions)]
+    foreach ($versions as $version) {
+      $operations[] = [
+        [self::class, 'process'],
+        [
+          Versions::from($version),
+          \Drupal::translation()
+            ->translate('Import data : version @chunk / @count',
+              ['@chunk' => $increment, '@count' => count($versions)]
             ),
-          ],
-        ];
-      }
+        ],
+      ];
 
       $increment++;
     }
@@ -55,16 +45,14 @@ class FillDataBatch {
   /**
    * Import data to database.
    *
-   * @param string $filepath
-   *   The file path.
-   * @param string $version
-   *   The file version.
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The version.
    * @param string $details
    *   Details to follow command progress.
    * @param array<string, array<string, int|string>> $context
    *   The batch context.
    */
-  public static function process(string $filepath, string $version, string $details, array &$context,): void {
+  public static function process(Versions $version, string $details, array &$context): void {
     $context['message'] = "\n$details\n";
 
     if (!isset($context['results']['success'])) {
@@ -76,9 +64,9 @@ class FillDataBatch {
     }
 
     try {
-      \Drupal::service('jpf_store.database')->importCsvFile($filepath, $version);
+      \Drupal::service('jpf_store.database')->importCsvFile($version);
       $context['results']['success']++;
-      $context['message'] = '[OK] ' . substr($filepath, strrpos($filepath, '/') + 1);
+      $context['message'] = '[OK] ' . $version->filename();
     }
     catch (\Throwable $exception) {
       $context['results']['error']++;

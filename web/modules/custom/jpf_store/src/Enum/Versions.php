@@ -25,9 +25,30 @@ enum Versions: string {
   final protected const string FILE_EXTENSION = '.csv';
 
   /**
+   * Archives extension.
+   */
+  final protected const string ARCHIVE_EXTENSION = '.zip';
+
+  /**
    * Define module path to avoid using \Drupal::service('extension.list.module')->getPath('jpf_store').
    */
   final protected const string MODULE_PATH = 'modules/custom/jpf_store';
+
+  /**
+   * Filename of versions.
+   *
+   * @return string
+   *   The filename of the version.
+   */
+  public function filename(): string {
+    return match ($this) {
+      self::First => 'loto',
+      self::Second => 'nouveau_loto',
+      self::Third => 'loto2017',
+      self::Fourth => 'loto_201902',
+      self::Fifth => 'loto_201911',
+    };
+  }
 
   /**
    * Begin date.
@@ -62,23 +83,13 @@ enum Versions: string {
   }
 
   /**
-   * Version file directory.
+   * Version file path.
    *
    * @return string
    *   The path of directory.
    */
   public function filePath(): string {
-    return DRUPAL_ROOT . '/' . self::MODULE_PATH . "/assets/doc/$this->value";
-  }
-
-  /**
-   * Files name of versions.
-   *
-   * @return array<int, string>|false
-   *   The files name of the version.
-   */
-  public function filesName(): array|false {
-    return glob($this->filePath() . '/*' . self::FILE_EXTENSION);
+    return DRUPAL_ROOT . '/' . self::MODULE_PATH . "/assets/doc/$this->value/{$this->filename()}";
   }
 
   /**

@@ -17,10 +17,10 @@ class CsvHelper implements CsvHelperInterface {
   /**
    * {@inheritDoc}
    */
-  public function csvToArray(string $filename): array {
+  public function csvToArray(string $file_path): array {
     $data = [];
 
-    $handle = fopen($filename, 'rb');
+    $handle = fopen($file_path, 'rb');
 
     if ($handle === FALSE) {
       return $data;
@@ -59,7 +59,7 @@ class CsvHelper implements CsvHelperInterface {
   /**
    * {@inheritDoc}
    */
-  public function arrayFilter(array $csv_data, string $version): array {
+  public function arrayFilter(array $csv_data, Versions $version): array {
     $data_to_insert = [];
 
     foreach ($csv_data as $row) {
@@ -70,7 +70,7 @@ class CsvHelper implements CsvHelperInterface {
       }
 
       $draw_date = DateTimePlus::createFromFormat(
-        Versions::from($version)->dateFormat(),
+        $version->dateFormat(),
         $csv_date
       );
       $timestamp = $draw_date->getTimestamp();
@@ -82,7 +82,7 @@ class CsvHelper implements CsvHelperInterface {
           ? (int) $row['1er_ou_2eme_tirage']
           : 1,
         'day_of_week' => Days::fromMethod(
-          Versions::from($version)->dayMethod(),
+          $version->dayMethod(),
           $row['jour_de_tirage']
         )?->capitalizeFrenchLabel(),
       ];
