@@ -161,6 +161,7 @@ grumphp:
       exclude:
         - web/core
         - web/modules/contrib
+        - web/modules/custom/jpf_import/src/Cron/ImportDynamicData.php
         - web/sites
         - web/themes/contrib
       metadata:

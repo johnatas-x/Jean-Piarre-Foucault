@@ -106,7 +106,8 @@ class Database implements DatabaseInterface {
    */
   public function importCsvFile(Versions $version): void {
     $data = $this->csvHelper->csvToArray($version->filePath());
-    $needed_data = $this->csvHelper->arrayFilter($data, $version);
+    $last_record = $this->getLastRecord();
+    $needed_data = $this->csvHelper->arrayFilter($data, $version, $last_record);
     sort($needed_data);
 
     $database_columns = array_keys($this->lottoDrawsFields());
@@ -121,6 +122,19 @@ class Database implements DatabaseInterface {
     }
 
     $query->execute();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getLastRecord(): array|bool|null {
+    return $this->databaseConnection
+      ->select(self::LOTTO_DRAWS_TABLE, 'lotto')
+      ->fields('lotto')
+      ->orderBy('id', 'DESC')
+      ->range(0, 1)
+      ->execute()
+      ?->fetchAssoc();
   }
 
 }

@@ -36,10 +36,12 @@ interface CsvHelperInterface {
    *   Full data from CSV.
    * @param \Drupal\jpf_store\Enum\Versions $version
    *   CSV version.
+   * @param array<string, string|null>|bool|null $last_record
+   *   The last record.
    *
    * @return array<int, array<string, int|string|null>>
    *   Filtered data.
    */
-  public function arrayFilter(array $csv_data, Versions $version): array;
+  public function arrayFilter(array $csv_data, Versions $version, array|bool|null $last_record): array;
 
 }

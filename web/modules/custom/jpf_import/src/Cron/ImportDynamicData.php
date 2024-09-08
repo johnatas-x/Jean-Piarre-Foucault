@@ -63,6 +63,8 @@ final class ImportDynamicData {
     catch (GuzzleException $exception) {
       \Drupal::logger('jpf_import')->error($exception->getMessage());
     }
+
+    \Drupal::service('jpf_store.database')->importCsvFile($current_version);
   }
 
 }

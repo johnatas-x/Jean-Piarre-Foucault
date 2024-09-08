@@ -59,7 +59,7 @@ class CsvHelper implements CsvHelperInterface {
   /**
    * {@inheritDoc}
    */
-  public function arrayFilter(array $csv_data, Versions $version): array {
+  public function arrayFilter(array $csv_data, Versions $version, array|bool|null $last_record): array {
     $data_to_insert = [];
 
     foreach ($csv_data as $row) {
@@ -69,11 +69,9 @@ class CsvHelper implements CsvHelperInterface {
         continue;
       }
 
-      $draw_date = DateTimePlus::createFromFormat(
-        $version->dateFormat(),
-        $csv_date
-      );
+      $draw_date = DateTimePlus::createFromFormat($version->dateFormat(), $csv_date);
       $timestamp = $draw_date->getTimestamp();
+
       $data_to_insert[$timestamp] = [
         'year' => (int) $draw_date->format('Y'),
         'month' => (int) $draw_date->format('m'),
@@ -95,6 +93,12 @@ class CsvHelper implements CsvHelperInterface {
         $data_to_insert[$timestamp][$ball->columnName()] = !(empty($row[$ball->csvName()]))
           ? (int) $row[$ball->csvName()]
           : NULL;
+      }
+
+      if (is_array($last_record) && array_diff($data_to_insert[$timestamp], $last_record) === []) {
+        unset($data_to_insert[$timestamp]);
+
+        break;
       }
     }
 

@@ -34,4 +34,12 @@ interface DatabaseInterface {
    */
   public function importCsvFile(Versions $version): void;
 
+  /**
+   * Get the last record.
+   *
+   * @return array<string, string|null>|bool|null
+   *   Associative array of the last record.
+   */
+  public function getLastRecord(): array|bool|null;
+
 }
