@@ -1,0 +1,7 @@
+name: 'JPF : Data views'
+type: module
+description: 'All features for data views.'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - jpf_stats:jpf_stats
