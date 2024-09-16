@@ -1,0 +1,7 @@
+name: 'JPF : Algorithm'
+type: module
+description: 'All features for algorithm and deep learning.'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - jpf_stats:jpf_stats
