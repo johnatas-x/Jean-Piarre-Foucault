@@ -1,0 +1,7 @@
+name: 'JPF : Data stats'
+type: module
+description: 'All features for stats.'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - jpf_import:jpf_import
