@@ -3,3 +3,5 @@ type: module
 description: 'All features for storing data.'
 core_version_requirement: ^11
 package: Custom
+dependencies:
+  - jpf_utils:jpf_utils

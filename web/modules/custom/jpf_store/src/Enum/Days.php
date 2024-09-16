@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Enum;
 
-use Drupal\jpf_store\Traits\EnumToArray;
+use Drupal\jpf_utils\Traits\EnumToArray;
 
 /**
  * Days mapping.

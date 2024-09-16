@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\jpf_store\Traits;
+namespace Drupal\jpf_utils\Traits;
 
 /**
  * Trait for array methods on current Enum.

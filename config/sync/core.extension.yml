@@ -10,6 +10,7 @@ module:
   filter: 0
   jpf_import: 0
   jpf_store: 0
+  jpf_utils: 0
   mysql: 0
   node: 0
   page_cache: 0

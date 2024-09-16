@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Drupal\jpf_store\Enum;
 
 use Drupal\Component\Datetime\DateTimePlus;
-use Drupal\jpf_store\Traits\EnumToArray;
+use Drupal\jpf_utils\Traits\EnumToArray;
 
 /**
  * Existing versions of lotto files.
