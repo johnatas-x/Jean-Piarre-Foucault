@@ -23,7 +23,8 @@
         "drupal/core-recommended": "^11",
         "drupal/gin": "^3.0@RC",
         "drupal/ultimate_cron": "^2.0@alpha",
-        "drush/drush": "^13"
+        "drush/drush": "^13",
+        "symfony/dotenv": "^7.1"
     },
     "require-dev": {
         "johnatas-x/angry-bearded": "^2.0",

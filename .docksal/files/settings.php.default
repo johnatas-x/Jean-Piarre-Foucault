@@ -58,6 +58,16 @@
  * implementations with custom ones.
  */
 
+ /**
+  * Load environment variables.
+  */
+ use Symfony\Component\Dotenv\Dotenv;
+
+ $dotenv = new Dotenv();
+ if (file_exists('../.env')) {
+   $dotenv->usePutenv()->load('../.env');
+ }
+
 /**
  * Database settings:
  *
@@ -832,14 +842,14 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 $databases['default']['default'] = array (
-  'database' => 'default',
-  'username' => 'user',
-  'password' => 'user',
+  'database' => getenv('DB_NAME'),
+  'username' => getenv('DB_USER'),
+  'password' => getenv('DB_PASSWORD'),
   'prefix' => '',
-  'host' => 'db',
-  'port' => '3306',
+  'host' => getenv('DB_HOST'),
+  'port' => getenv('DB_PORT'),
   'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'driver' => 'mysql',
+  'driver' => getenv('DB_DRIVER'),
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
 

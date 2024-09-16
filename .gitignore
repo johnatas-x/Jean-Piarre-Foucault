@@ -109,3 +109,6 @@
 
 # Ignore twig cs cache
 .twig-cs-fixer.cache
+
+# Ignore dot env file
+.env
