@@ -1,5 +1,5 @@
 services:
-  fill.commands:
+  fill_data.commands:
     class: Drupal\jpf_store\Commands\FillCommands
     tags:
       - { name: drush.command }

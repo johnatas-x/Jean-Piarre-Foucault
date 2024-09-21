@@ -26,7 +26,10 @@ class FillStatsBatch extends BaseBatch {
    *   The batch operations.
    */
   public static function operations(Versions $version): array {
-    return self::subOperations($version, 'balls') + self::subOperations($version, 'lucky balls');
+    return array_merge(
+      self::subOperations($version, 'balls'),
+      self::subOperations($version, 'lucky balls')
+    );
   }
 
   /**
