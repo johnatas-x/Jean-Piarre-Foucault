@@ -73,6 +73,7 @@ class CsvHelper implements CsvHelperInterface {
       $timestamp = $draw_date->getTimestamp();
 
       $data_to_insert[$timestamp] = [
+        'version' => $version->value,
         'year' => (int) $draw_date->format('Y'),
         'month' => (int) $draw_date->format('m'),
         'day' => (int) $draw_date->format('d'),

@@ -22,6 +22,12 @@ class Schema implements SchemaInterface {
         'unsigned' => TRUE,
         'not null' => TRUE,
       ],
+      'version' => [
+        'description' => 'Version',
+        'type' => 'char',
+        'not null' => TRUE,
+        'length' => 2,
+      ],
       'year' => [
         'description' => 'Year',
         'type' => 'int',
