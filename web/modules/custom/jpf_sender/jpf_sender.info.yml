@@ -1,0 +1,7 @@
+name: 'JPF : Sender'
+type: module
+description: 'All features for communication (SMS, WhatsApp, Mail).'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - jpf_algo:jpf_algo
