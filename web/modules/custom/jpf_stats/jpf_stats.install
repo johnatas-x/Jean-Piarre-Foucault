@@ -18,13 +18,15 @@ use Drupal\jpf_store\Services\SchemaInterface;
 function jpf_stats_schema(): array {
   $schema = [];
 
-  $schema[SchemaInterface::LOTTO_STATS_TABLE] = [
-    'description' => 'Table which store all lotto stats',
-    'fields' => \Drupal::service('jpf_store.schema')->lottoStatsFields(),
-    'primary key' => [
-      'ball',
-    ],
-  ];
+  foreach (SchemaInterface::LOTTO_STATS_TABLES as $description => $table_name) {
+    $schema[$table_name] = [
+      'description' => "Table which store all lotto $description stats for last version",
+      'fields' => \Drupal::service('jpf_store.schema')->lottoStatsFields(),
+      'primary key' => [
+        'ball',
+      ],
+    ];
+  }
 
   return $schema;
 }
@@ -33,5 +35,7 @@ function jpf_stats_schema(): array {
  * Implements hook_uninstall().
  */
 function jpf_stats_uninstall(): void {
-  \Drupal::service('jpf_store.database')->deleteTable(SchemaInterface::LOTTO_STATS_TABLE);
+  foreach (SchemaInterface::LOTTO_STATS_TABLES as $table_name) {
+    Drupal::service('jpf_store.database')->deleteTable($table_name);
+  }
 }

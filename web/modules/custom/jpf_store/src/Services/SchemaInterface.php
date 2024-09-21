@@ -15,9 +15,22 @@ interface SchemaInterface {
   final public const string LOTTO_DRAWS_TABLE = 'lotto_draws';
 
   /**
-   * The name of the table which contains all lotto stats.
+   * The name of the table which contains all balls lotto stats.
    */
-  final public const string LOTTO_STATS_TABLE = 'lotto_stats';
+  final public const string LOTTO_STATS_BALLS_TABLE = 'lotto_balls_stats';
+
+  /**
+   * The name of the table which contains all lucky balls lotto stats.
+   */
+  final public const string LOTTO_STATS_LUCKY_TABLE = 'lotto_lucky_stats';
+
+  /**
+   * List of stats tables with description.
+   */
+  final public const array LOTTO_STATS_TABLES = [
+    'balls' => self::LOTTO_STATS_BALLS_TABLE,
+    'lucky balls' => self::LOTTO_STATS_LUCKY_TABLE,
+  ];
 
   /**
    * Lotto draws schema fields.

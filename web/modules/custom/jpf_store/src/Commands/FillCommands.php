@@ -30,6 +30,7 @@ class FillCommands extends DrushCommands {
    *   Don't use this option with the 'versions' option.
    *
    * @aliases fldd
+   *
    * @usage drush fill-lotto-draws-data --versions=v1,v2
    *   Fill v1 and v2 files to DB.
    * @usage drush fldd --all
