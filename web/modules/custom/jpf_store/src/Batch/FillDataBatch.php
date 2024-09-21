@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace Drupal\jpf_store\Batch;
 
 use Drupal\jpf_store\Enum\Versions;
+use Drupal\jpf_utils\Batch\BaseBatch;
 
 /**
  * Batch methods for FillCommands.
  */
-class FillDataBatch {
+class FillDataBatch extends BaseBatch {
 
   /**
    * Batch operations for fill data drush command.
@@ -56,15 +57,7 @@ class FillDataBatch {
    *   The batch context.
    */
   public static function process(Versions $version, string $details, array &$context): void {
-    $context['message'] = "\n$details\n";
-
-    if (!isset($context['results']['success'])) {
-      $context['results']['success'] = 0;
-    }
-
-    if (!isset($context['results']['error'])) {
-      $context['results']['error'] = 0;
-    }
+    parent::initProcess($details, $context);
 
     try {
       \Drupal::service('jpf_store.database')->importCsvFile($version);
@@ -78,47 +71,10 @@ class FillDataBatch {
   }
 
   /**
-   * Custom function to run at the end of treatment.
-   *
-   * @param bool $success
-   *   Success.
-   * @param array<string, int> $results
-   *   Results.
-   * @param array<int, array{0: callable, 1: array<int, mixed>}> $operations
-   *   Operations launched.
+   * {@inheritDoc}
    */
-  public static function finished(bool $success, array $results, array $operations): void {
-    if ($success === TRUE) {
-      \Drupal::messenger()->addStatus(
-        \Drupal::translation()->translate(
-          '@success versions imported, @error errors.',
-          [
-            '@success' => $results['success'] ?? 0,
-            '@error' => $results['error'] ?? 0,
-          ]
-        )
-      );
-
-      return;
-    }
-
-    $error_operation = reset($operations);
-
-    if (!is_array($error_operation)) {
-      \Drupal::messenger()->addError(\Drupal::translation()->translate('An unknown error occurred.'));
-
-      return;
-    }
-
-    \Drupal::messenger()->addError(
-      \Drupal::translation()->translate(
-        'An error occurred during process of @operation with args : @args',
-        [
-          '@operation' => $error_operation[0],
-          '@args' => print_r($error_operation[1], TRUE),
-        ]
-      )
-    );
+  public static function finished(bool $success, array $results, array $operations, string $success_message): void {
+    parent::finished($success, $results, $operations, 'versions imported');
   }
 
 }

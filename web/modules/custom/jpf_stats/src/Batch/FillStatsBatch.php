@@ -6,11 +6,12 @@ namespace Drupal\jpf_stats\Batch;
 
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
+use Drupal\jpf_utils\Batch\BaseBatch;
 
 /**
  * Batch methods for FillCommands.
  */
-class FillStatsBatch {
+class FillStatsBatch extends BaseBatch {
 
   /**
    * Batch operations for fill stats drush command.
@@ -64,6 +65,31 @@ class FillStatsBatch {
     }
 
     return $operations;
+  }
+
+  /**
+   * Generate stats in database.
+   *
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The version.
+   * @param string $type
+   *   Balls type.
+   * @param string $details
+   *   Details to follow command progress.
+   * @param array<mixed> $context
+   *   The batch context.
+   */
+  public static function process(Versions $version, string $type, string $details, array &$context): void {
+    parent::initProcess($details, $context);
+
+    // TODO the process.
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function finished(bool $success, array $results, array $operations, string $success_message): void {
+    parent::finished($success, $results, $operations, 'stats generated');
   }
 
 }
