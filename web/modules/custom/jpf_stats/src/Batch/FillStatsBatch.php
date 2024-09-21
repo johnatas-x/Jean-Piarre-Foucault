@@ -49,7 +49,14 @@ class FillStatsBatch extends BaseBatch {
   public static function process(Versions $version, string $type, int $ball, string $details, array &$context): void {
     parent::initProcess($details, $context);
 
-    \Drupal::service('jpf_stats.fill')->fillBallStats($version, $type, $ball);
+    try {
+      \Drupal::service('jpf_stats.fill')->fillBallStats($version, $type, $ball);
+      $context['results']['success']++;
+    }
+    catch (\Throwable $exception) {
+      $context['results']['error']++;
+      $context['message'] = '[KO] ' . $exception->getMessage();
+    }
   }
 
   /**
@@ -91,8 +98,9 @@ class FillStatsBatch extends BaseBatch {
           $type,
           $ball,
           \Drupal::translation()
-            ->translate('Import stats : ball @chunk / @count',
+            ->translate('Import stats : @type @chunk / @count',
               [
+                '@type' => $type,
                 '@chunk' => $ball,
                 '@count' => $ball_max - $ball_min + 1,
               ]

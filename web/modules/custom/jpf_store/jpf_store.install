@@ -41,7 +41,6 @@ function jpf_store_schema(): array {
  * @throws \Exception
  */
 function jpf_store_install(): void {
-  /** @var \Drupal\Core\Database\Connection $connection */
   $connection = \Drupal::service('database');
 
   // Init all versions.
