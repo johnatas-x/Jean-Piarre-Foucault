@@ -7,8 +7,7 @@
 
 declare(strict_types=1);
 
-use Drupal\Core\Database\Database;
-use Drupal\jpf_store\Services\DatabaseInterface;
+use Drupal\jpf_store\Services\SchemaInterface;
 
 /**
  * Implements hook_schema().
@@ -19,9 +18,9 @@ use Drupal\jpf_store\Services\DatabaseInterface;
 function jpf_store_schema(): array {
   $schema = [];
 
-  $schema[DatabaseInterface::LOTTO_DRAWS_TABLE] = [
+  $schema[SchemaInterface::LOTTO_DRAWS_TABLE] = [
     'description' => 'Table which store all lotto draws',
-    'fields' => \Drupal::service('jpf_store.database')->lottoDrawsFields(),
+    'fields' => \Drupal::service('jpf_store.schema')->lottoDrawsFields(),
     'primary key' => [
       'id',
     ],
@@ -34,11 +33,5 @@ function jpf_store_schema(): array {
  * Implements hook_uninstall().
  */
 function jpf_store_uninstall(): void {
-  $schema = Database::getConnection()->schema();
-
-  if (!$schema->tableExists(DatabaseInterface::LOTTO_DRAWS_TABLE)) {
-    return;
-  }
-
-  $schema->dropTable(DatabaseInterface::LOTTO_DRAWS_TABLE);
+  \Drupal::service('jpf_store.database')->deleteTable(SchemaInterface::LOTTO_DRAWS_TABLE);
 }

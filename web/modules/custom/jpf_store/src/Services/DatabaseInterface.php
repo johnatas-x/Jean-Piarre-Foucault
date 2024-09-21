@@ -12,19 +12,6 @@ use Drupal\jpf_store\Enum\Versions;
 interface DatabaseInterface {
 
   /**
-   * The name of the table which contains all lotto draws.
-   */
-  final public const string LOTTO_DRAWS_TABLE = 'lotto_draws';
-
-  /**
-   * Lotto draws schema fields.
-   *
-   * @return array<string, array<string, bool|int|string>>
-   *   The fields.
-   */
-  public function lottoDrawsFields(): array;
-
-  /**
    * Import data from CSV file to database.
    *
    * @param \Drupal\jpf_store\Enum\Versions $version
@@ -41,5 +28,13 @@ interface DatabaseInterface {
    *   Associative array of the last record.
    */
   public function getLastRecord(): array|bool|null;
+
+  /**
+   * Delete table in DB.
+   *
+   * @param string $table
+   *   The table name.
+   */
+  public function deleteTable(string $table): void;
 
 }

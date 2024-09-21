@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Contains DB structure for jpf_stats module.
+ */
+
+declare(strict_types=1);
+
+use Drupal\jpf_store\Services\SchemaInterface;
+
+/**
+ * Implements hook_schema().
+ *
+ * @return array<string, array<string, array<int|string, array<string, bool|int|string>|string>|string>>
+ *   The schema.
+ */
+function jpf_stats_schema(): array {
+  $schema = [];
+
+  $schema[SchemaInterface::LOTTO_STATS_TABLE] = [
+    'description' => 'Table which store all lotto stats',
+    'fields' => \Drupal::service('jpf_store.schema')->lottoStatsFields(),
+    'primary key' => [
+      'ball',
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function jpf_stats_uninstall(): void {
+  \Drupal::service('jpf_store.database')->deleteTable(SchemaInterface::LOTTO_STATS_TABLE);
+}
