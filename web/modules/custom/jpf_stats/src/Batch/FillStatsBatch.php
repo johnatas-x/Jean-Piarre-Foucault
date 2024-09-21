@@ -21,50 +21,12 @@ class FillStatsBatch extends BaseBatch {
    *
    * @return array<int<0, max>, array{
    *   array{class-string, 'process'},
-   *   array{\Drupal\jpf_store\Enum\Versions, string, \Drupal\Core\StringTranslation\TranslatableMarkup}
+   *   array{\Drupal\jpf_store\Enum\Versions, string, int, \Drupal\Core\StringTranslation\TranslatableMarkup}
    *   }>
    *   The batch operations.
    */
   public static function operations(Versions $version): array {
-    $operations = [];
-
-    // Classic balls.
-    for ($ball = Balls::BALL_MIN; $ball <= Balls::BALL_MAX; $ball++) {
-      $operations[] = [
-        [self::class, 'process'],
-        [
-          $version,
-          'balls',
-          \Drupal::translation()
-            ->translate('Import stats : ball @chunk / @count',
-              [
-                '@chunk' => $ball,
-                '@count' => Balls::BALL_MAX - Balls::BALL_MIN + 1,
-              ]
-          ),
-        ],
-      ];
-    }
-
-    // Lucky balls.
-    for ($lucky = Balls::LUCKY_MIN; $lucky <= Balls::LUCKY_MAX; $lucky++) {
-      $operations[] = [
-        [self::class, 'process'],
-        [
-          $version,
-          'lucky balls',
-          \Drupal::translation()
-            ->translate('Import stats : lucky ball @chunk / @count',
-              [
-                '@chunk' => $lucky,
-                '@count' => Balls::LUCKY_MIN - Balls::LUCKY_MAX + 1,
-              ]
-          ),
-        ],
-      ];
-    }
-
-    return $operations;
+    return self::subOperations($version, 'balls') + self::subOperations($version, 'lucky balls');
   }
 
   /**
@@ -74,12 +36,14 @@ class FillStatsBatch extends BaseBatch {
    *   The version.
    * @param string $type
    *   Balls type.
+   * @param int $ball
+   *   The ball number.
    * @param string $details
    *   Details to follow command progress.
    * @param array<mixed> $context
    *   The batch context.
    */
-  public static function process(Versions $version, string $type, string $details, array &$context): void {
+  public static function process(Versions $version, string $type, int $ball, string $details, array &$context): void {
     parent::initProcess($details, $context);
 
     // TODO the process.
@@ -90,6 +54,51 @@ class FillStatsBatch extends BaseBatch {
    */
   public static function finished(bool $success, array $results, array $operations, string $success_message): void {
     parent::finished($success, $results, $operations, 'stats generated');
+  }
+
+  /**
+   * Operations maker.
+   *
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The current version.
+   * @param string $type
+   *   The balls type.
+   *
+   * @return array<int<0, max>, array{
+   *   array{class-string, 'process'},
+   *   array{\Drupal\jpf_store\Enum\Versions, string, int, \Drupal\Core\StringTranslation\TranslatableMarkup}
+   *   }>
+   *   The batch operations for the given type.
+   */
+  private static function subOperations(Versions $version, string $type): array {
+    $operations = [];
+
+    $ball_min = $type === 'balls'
+      ? Balls::BALL_MIN
+      : Balls::LUCKY_MIN;
+    $ball_max = $type === 'balls'
+      ? Balls::BALL_MAX
+      : Balls::LUCKY_MAX;
+
+    for ($ball = $ball_min; $ball <= $ball_max; $ball++) {
+      $operations[] = [
+        [self::class, 'process'],
+        [
+          $version,
+          $type,
+          $ball,
+          \Drupal::translation()
+            ->translate('Import stats : ball @chunk / @count',
+              [
+                '@chunk' => $ball,
+                '@count' => $ball_max - $ball_min + 1,
+              ]
+          ),
+        ],
+      ];
+    }
+
+    return $operations;
   }
 
 }
