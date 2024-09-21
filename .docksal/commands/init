@@ -27,4 +27,7 @@ if [ -x "$(command -v fin)" ]; then
 
   # Fill data.
   fin drush fill-lotto-draws-data --all
+
+  # Fill stats.
+  fin drush fill-lotto-stats
 fi

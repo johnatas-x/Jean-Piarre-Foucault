@@ -1,0 +1,5 @@
+services:
+  fill.commands:
+    class: Drupal\jpf_stats\Commands\FillCommands
+    tags:
+      - { name: drush.command }
