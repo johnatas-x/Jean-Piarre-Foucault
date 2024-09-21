@@ -49,7 +49,7 @@ class FillStatsBatch extends BaseBatch {
   public static function process(Versions $version, string $type, int $ball, string $details, array &$context): void {
     parent::initProcess($details, $context);
 
-    // TODO the process.
+    \Drupal::service('jpf_stats.fill')->fillBallStats($version, $type, $ball);
   }
 
   /**
