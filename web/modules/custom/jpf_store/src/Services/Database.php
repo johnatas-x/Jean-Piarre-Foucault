@@ -74,6 +74,8 @@ class Database implements DatabaseInterface {
     }
 
     $query->execute();
+
+    $this->updateDrawsCount($version, count($needed_data));
   }
 
   /**
@@ -100,6 +102,24 @@ class Database implements DatabaseInterface {
     }
 
     $schema->dropTable($table);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function updateDrawsCount(Versions $version, int $new_records): void {
+    $current_records = $this->databaseConnection
+      ->select(SchemaInterface::LOTTO_VERSIONS, 'lv')
+      ->fields('lv', ['draws_count'])
+      ->condition('version', $version->value)
+      ->execute()
+      ?->fetchField();
+
+    $this->databaseConnection
+      ->update(SchemaInterface::LOTTO_VERSIONS)
+      ->fields(['draws_count' => $current_records + $new_records])
+      ->condition('version', $version->value)
+      ->execute();
   }
 
 }
