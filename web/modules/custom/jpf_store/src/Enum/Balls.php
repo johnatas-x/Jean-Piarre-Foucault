@@ -23,6 +23,26 @@ enum Balls: string {
   case Lucky = 'Lucky ball';
 
   /**
+   * Smallest possible number for a ball.
+   */
+  final public const int BALL_MIN = 1;
+
+  /**
+   * Largest possible number for a ball.
+   */
+  final public const int BALL_MAX = 49;
+
+  /**
+   * Smallest possible number for a lucky ball.
+   */
+  final public const int LUCKY_MIN = 1;
+
+  /**
+   * Largest possible number for a lucky ball.
+   */
+  final public const int LUCKY_MAX = 10;
+
+  /**
    * Numeric ball value.
    *
    * @return int
