@@ -7,6 +7,7 @@
 
 declare(strict_types=1);
 
+use Drupal\jpf_store\Enum\Versions;
 use Drupal\jpf_store\Services\SchemaInterface;
 
 /**
@@ -16,17 +17,42 @@ use Drupal\jpf_store\Services\SchemaInterface;
  *   The schema.
  */
 function jpf_store_schema(): array {
-  $schema = [];
-
-  $schema[SchemaInterface::LOTTO_DRAWS_TABLE] = [
-    'description' => 'Table which store all lotto draws',
-    'fields' => \Drupal::service('jpf_store.schema')->lottoDrawsFields(),
-    'primary key' => [
-      'id',
+  return [
+    SchemaInterface::LOTTO_DRAWS_TABLE => [
+      'description' => 'Table which store all lotto draws',
+      'fields' => \Drupal::service('jpf_store.schema')->lottoDrawsFields(),
+      'primary key' => [
+        'id',
+      ],
+    ],
+    SchemaInterface::LOTTO_VERSIONS => [
+      'description' => 'Table which store all lotto version stats',
+      'fields' => \Drupal::service('jpf_store.schema')->versionStatsFields(),
+      'primary key' => [
+        'version',
+      ],
     ],
   ];
+}
 
-  return $schema;
+/**
+ * Implements hook_install().
+ *
+ * @throws \Exception
+ */
+function jpf_store_install(): void {
+  /** @var \Drupal\Core\Database\Connection $connection */
+  $connection = \Drupal::service('database');
+
+  // Init all versions.
+  foreach (Versions::cases() as $version) {
+    $connection->insert(SchemaInterface::LOTTO_VERSIONS)
+      ->fields([
+        'version' => $version->value,
+        'draws_count' => 0,
+      ])
+      ->execute();
+  }
 }
 
 /**

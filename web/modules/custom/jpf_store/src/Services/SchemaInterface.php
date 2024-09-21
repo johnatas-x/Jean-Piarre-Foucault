@@ -15,6 +15,11 @@ interface SchemaInterface {
   final public const string LOTTO_DRAWS_TABLE = 'lotto_draws';
 
   /**
+   * The name of the table which contains all versions information.
+   */
+  final public const string LOTTO_VERSIONS = 'lotto_versions';
+
+  /**
    * The name of the table which contains all balls lotto stats.
    */
   final public const string LOTTO_STATS_BALLS_TABLE = 'lotto_balls_stats';
@@ -47,5 +52,13 @@ interface SchemaInterface {
    *   The fields.
    */
   public function lottoStatsFields(): array;
+
+  /**
+   * Version stats schema fields.
+   *
+   * @return array<string, array<string, bool|int|string>>
+   *   The fields.
+   */
+  public function versionStatsFields(): array;
 
 }

@@ -106,4 +106,25 @@ class Schema implements SchemaInterface {
     ];
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function versionStatsFields(): array {
+    return [
+      'version' => [
+        'description' => 'Version',
+        'type' => 'char',
+        'not null' => TRUE,
+        'length' => 2,
+      ],
+      'draws_count' => [
+        'description' => 'Draws count',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'length' => 5,
+      ],
+    ];
+  }
+
 }
