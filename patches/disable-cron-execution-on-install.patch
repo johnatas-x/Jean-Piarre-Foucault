@@ -1,0 +1,17 @@
+Index: includes/install.core.inc
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/includes/install.core.inc b/includes/install.core.inc
+--- a/includes/install.core.inc	
++++ b/includes/install.core.inc	(date 1727025720539)
+@@ -1885,7 +1885,7 @@
+   // Run cron to populate update status tables (if available) so that users
+   // will be warned if they've installed an out of date Drupal version.
+   // Will also trigger indexing of profile-supplied content or feeds.
+-  \Drupal::service('cron')->run();
++  // \Drupal::service('cron')->run();
+ 
+   if ($install_state['interactive']) {
+     // Load current user and perform final login tasks.

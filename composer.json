@@ -17,6 +17,7 @@
     "require": {
         "ext-zip": "*",
         "composer/installers": "^2.3",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.5",
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-project-message": "^11",
@@ -44,6 +45,7 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
+            "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
@@ -116,6 +118,11 @@
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "Don't execute cron on site install": "patches/disable-cron-execution-on-install.patch"
+            }
         }
     }
 }
