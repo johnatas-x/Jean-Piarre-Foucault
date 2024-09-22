@@ -38,6 +38,17 @@ interface DatabaseInterface {
   public function deleteTable(string $table): void;
 
   /**
+   * Get count of draws for the given version.
+   *
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The version.
+   *
+   * @return int
+   *   Count of draws.
+   */
+  public function getCountRecords(Versions $version): int;
+
+  /**
    * Update draws count in version table.
    *
    * @param \Drupal\jpf_store\Enum\Versions $version

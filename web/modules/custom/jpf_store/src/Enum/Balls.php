@@ -84,4 +84,21 @@ enum Balls: string {
     };
   }
 
+  /**
+   * Get classic balls.
+   *
+   * @return \Drupal\jpf_store\Enum\Balls[]
+   *   Array of balls enum cases.
+   */
+  public static function classicBalls(): array {
+    return [
+      self::One,
+      self::Two,
+      self::Three,
+      self::Four,
+      self::Five,
+      self::Six,
+    ];
+  }
+
 }

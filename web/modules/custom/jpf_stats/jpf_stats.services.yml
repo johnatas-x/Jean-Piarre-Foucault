@@ -1,3 +1,4 @@
 services:
   jpf_stats.fill:
     class: Drupal\jpf_stats\Services\FillStats
+    arguments: ['@database', '@jpf_store.database']

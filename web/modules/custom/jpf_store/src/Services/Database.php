@@ -107,17 +107,26 @@ class Database implements DatabaseInterface {
   /**
    * {@inheritDoc}
    */
-  public function updateDrawsCount(Versions $version, int $new_records): void {
-    $current_records = $this->databaseConnection
+  public function getCountRecords(Versions $version): int {
+    $records = $this->databaseConnection
       ->select(SchemaInterface::LOTTO_VERSIONS, 'lv')
       ->fields('lv', ['draws_count'])
       ->condition('version', $version->value)
       ->execute()
       ?->fetchField();
 
+    return is_numeric($records)
+      ? (int) $records
+      : 0;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function updateDrawsCount(Versions $version, int $new_records): void {
     $this->databaseConnection
       ->update(SchemaInterface::LOTTO_VERSIONS)
-      ->fields(['draws_count' => $current_records + $new_records])
+      ->fields(['draws_count' => $this->getCountRecords($version) + $new_records])
       ->condition('version', $version->value)
       ->execute();
   }

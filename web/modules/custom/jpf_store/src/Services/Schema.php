@@ -107,7 +107,7 @@ class Schema implements SchemaInterface {
         'description' => 'Last',
         'type' => 'char',
         'length' => 10,
-        'not null' => TRUE,
+        'not null' => FALSE,
       ],
     ];
   }
