@@ -4,4 +4,5 @@ description: 'All features for stats.'
 core_version_requirement: ^11
 package: Custom
 dependencies:
+  - drush:drush
   - jpf_import:jpf_import

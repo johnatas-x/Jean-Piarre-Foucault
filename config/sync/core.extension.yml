@@ -26,6 +26,8 @@ module:
   ultimate_cron: 0
   update: 0
   user: 0
+  view_custom_table: 0
+  views: 10
   minimal: 1000
 theme:
   stark: 0

@@ -4,4 +4,5 @@ description: 'All features for data views.'
 core_version_requirement: ^11
 package: Custom
 dependencies:
+  - drupal:view_custom_table
   - jpf_stats:jpf_stats
