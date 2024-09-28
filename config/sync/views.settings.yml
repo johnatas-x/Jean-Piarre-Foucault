@@ -4,17 +4,17 @@ display_extenders: {  }
 sql_signature: false
 ui:
   show:
-    additional_queries: false
+    additional_queries: true
     advanced_column: false
     default_display: false
-    performance_statistics: false
+    performance_statistics: true
     preview_information: true
     sql_query:
-      enabled: false
-      where: above
+      enabled: true
+      where: below
     display_embed: false
   always_live_preview: true
-  exposed_filter_any_label: old_any
+  exposed_filter_any_label: new_any
 field_rewrite_elements:
   div: DIV
   span: SPAN
