@@ -133,6 +133,9 @@
         "patches": {
             "drupal/core": {
                 "Don't execute cron on site install": "patches/disable-cron-execution-on-install.patch"
+            },
+            "drupal/view_custom_table": {
+                "Fix prefix method": "https://www.drupal.org/files/issues/2024-09-28/prefix.patch"
             }
         }
     }

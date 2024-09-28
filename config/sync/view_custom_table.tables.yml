@@ -1,0 +1,12 @@
+lotto_balls_stats:
+  table_name: lotto_balls_stats
+  table_database: default
+  description: 'Statistics of lotto "classic" balls.'
+  column_relations: 'a:0:{}'
+  created_by: '1'
+lotto_lucky_stats:
+  table_name: lotto_lucky_stats
+  table_database: default
+  description: 'Statistics of lotto "lucky" balls.'
+  column_relations: 'a:0:{}'
+  created_by: '1'
