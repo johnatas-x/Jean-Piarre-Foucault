@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\jpf_store\Enum;
+namespace Drupal\jpf_utils\Enum;
 
 use Drupal\jpf_utils\Traits\EnumToArray;
 
