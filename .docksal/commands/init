@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Init project.
+## Init/reinit project.
 ##
 ## Usage: fin init
 
@@ -8,9 +8,8 @@
 set -e
 
 if [ -x "$(command -v fin)" ]; then
-  # Remove & recreate project.
-  fin project rm -f
-  fin project start
+  # Reset project.
+  fin project reset
 
   # Install vendor.
   fin composer install --no-progress --prefer-dist --optimize-autoloader

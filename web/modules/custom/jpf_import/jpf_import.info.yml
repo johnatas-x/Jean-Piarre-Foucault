@@ -3,6 +3,8 @@ type: module
 description: 'All features for importing data.'
 core_version_requirement: ^11
 package: Custom
+required: true
 dependencies:
   - jpf_store:jpf_store
   - jpf_utils:jpf_utils
+  - ultimate_cron:ultimate_cron

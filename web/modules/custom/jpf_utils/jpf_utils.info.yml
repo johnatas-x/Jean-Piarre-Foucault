@@ -3,3 +3,4 @@ type: module
 description: 'Transverse features & helpers for all modules.'
 core_version_requirement: ^11
 package: Custom
+required: true

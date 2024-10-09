@@ -3,6 +3,6 @@ type: module
 description: 'All features for storing data.'
 core_version_requirement: ^11
 package: Custom
+required: true
 dependencies:
-  - drush:drush
   - jpf_utils:jpf_utils
