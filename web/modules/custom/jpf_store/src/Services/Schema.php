@@ -112,7 +112,7 @@ class Schema implements SchemaInterface {
       'best_day' => [
         'description' => 'Day on which this ball is released the most',
         'type' => 'char',
-        'length' => 9,
+        'length' => 64,
         'not null' => FALSE,
       ],
     ];
