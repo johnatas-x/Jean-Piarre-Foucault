@@ -29,7 +29,6 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/view_custom_table": "^2.0",
         "drush/drush": "^13",
-        "mglaman/composer-drupal-lenient": "^1.0",
         "symfony/dotenv": "^7.1"
     },
     "require-dev": {
@@ -55,18 +54,12 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "ergebnis/composer-normalize": true,
-            "mglaman/composer-drupal-lenient": true,
             "phpro/grumphp": true,
             "phpstan/extension-installer": true
         },
         "sort-packages": true
     },
     "extra": {
-        "drupal-lenient": {
-            "allowed-list": [
-                "drupal/view_custom_table"
-            ]
-        },
         "drupal-scaffold": {
             "file-mapping": {
                 "[project-root]/.editorconfig": false,
