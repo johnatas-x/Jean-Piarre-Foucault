@@ -10,6 +10,7 @@ use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
 use Drupal\jpf_store\Services\DatabaseInterface;
 use Drupal\jpf_store\Services\SchemaInterface;
+use Drupal\jpf_utils\Enum\Days;
 
 /**
  * Stats filling methods.
@@ -65,6 +66,7 @@ class FillStats implements FillStatsInterface {
         'count' => $count,
         'percentage' => $count / $total_count * 100,
         'last' => $this->getLast($table, $ball, $version),
+        'best_day' => $this->getBestDay($table, $ball, $version),
       ])
       ->execute();
   }
@@ -109,8 +111,8 @@ class FillStats implements FillStatsInterface {
    *   Count of draws.
    */
   private function getCount(string $table, int $ball, Versions $version): int {
-    $count_query = $this->databaseConnection
-      ->select(SchemaInterface::LOTTO_DRAWS_TABLE, 'lotto')
+    $count_query = $this->jpfDatabase
+      ->selectLotto()
       ->fields('lotto', ['id']);
 
     $this->ballCondition($table, $count_query, $ball);
@@ -140,8 +142,8 @@ class FillStats implements FillStatsInterface {
    *   The last draw or null if this ball has never been drawn.
    */
   private function getLast(string $table, int $ball, Versions $version): ?string {
-    $last_query = $this->databaseConnection
-      ->select(SchemaInterface::LOTTO_DRAWS_TABLE, 'lotto')
+    $last_query = $this->jpfDatabase
+      ->selectLotto()
       ->fields('lotto', ['year', 'month', 'day']);
 
     $this->ballCondition($table, $last_query, $ball);
@@ -156,6 +158,47 @@ class FillStats implements FillStatsInterface {
     return empty($last_result['year']) || empty($last_result['month']) || empty($last_result['day'])
       ? NULL
       : sprintf('%d/%02d/%02d', $last_result['year'], $last_result['month'], $last_result['day']);
+  }
+
+  /**
+   * Get day(s) on which the given ball is released the most for the given version.
+   *
+   * @param string $table
+   *   The ball table.
+   * @param int $ball
+   *   The current ball.
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The current version.
+   *
+   * @return string|null
+   *   The day name. If multiple, days. If all, null.
+   */
+  private function getBestDay(string $table, int $ball, Versions $version): ?string {
+    $query = $this->jpfDatabase
+      ->selectLotto()
+      ->fields('lotto', ['day_of_week'])
+      ->condition('version', $version->value);
+
+    $this->ballCondition($table, $query, $ball);
+
+    $query->addExpression('count(day_of_week)', 'count');
+    $query->groupBy('lotto.day_of_week');
+    $counts = $query->execute()?->fetchAllKeyed();
+
+    if (empty($counts)) {
+      return NULL;
+    }
+
+    $days = array_filter(array_map(
+        static fn ($value) => Days::fromMethod('capitalizeFrenchLabel', $value)?->value,
+        array_keys($counts, max($counts), TRUE)
+    ));
+
+    if (empty($days) || count($days) === count($counts)) {
+      return NULL;
+    }
+
+    return implode(' or ', $days);
   }
 
 }

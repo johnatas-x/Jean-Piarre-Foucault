@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\jpf_store\Services;
 
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Database\Query\SelectInterface;
 use Drupal\jpf_store\Enum\Versions;
 
 /**
@@ -56,6 +57,13 @@ class Database implements DatabaseInterface {
   /**
    * {@inheritDoc}
    */
+  public function selectLotto(): SelectInterface {
+    return $this->databaseConnection->select(SchemaInterface::LOTTO_DRAWS_TABLE, 'lotto');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function importCsvFile(Versions $version): void {
     $data = $this->csvHelper->csvToArray($version->filePath());
     $last_record = $this->getLastRecord();
@@ -82,8 +90,7 @@ class Database implements DatabaseInterface {
    * {@inheritDoc}
    */
   public function getLastRecord(): array|bool|null {
-    return $this->databaseConnection
-      ->select(SchemaInterface::LOTTO_DRAWS_TABLE, 'lotto')
+    return $this->selectLotto()
       ->fields('lotto')
       ->orderBy('id', 'DESC')
       ->range(0, 1)
