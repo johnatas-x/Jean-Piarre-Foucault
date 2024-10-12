@@ -6,8 +6,8 @@ namespace Drupal\jpf_store\Services;
 
 use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\jpf_store\Enum\Balls;
-use Drupal\jpf_utils\Enum\Days;
 use Drupal\jpf_store\Enum\Versions;
+use Drupal\jpf_utils\Enum\Days;
 
 /**
  * Methods for CSV manipulations.
