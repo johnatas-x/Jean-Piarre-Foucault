@@ -36,6 +36,33 @@ function jpf_stats_schema(): array {
  */
 function jpf_stats_uninstall(): void {
   foreach (SchemaInterface::LOTTO_STATS_TABLES as $table_name) {
-    Drupal::service('jpf_store.database')->deleteTable($table_name);
+    if (!\Drupal::database()->schema()->tableExists($table_name)) {
+      return;
+    }
+
+    \Drupal::service('jpf_store.database')->deleteTable($table_name);
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Add new stat column.
+ */
+function jpf_stats_update_11001(): void {
+  $schema = \Drupal::database()->schema();
+
+  foreach (SchemaInterface::LOTTO_STATS_TABLES as $table_name) {
+    if (!$schema->tableExists($table_name)) {
+      continue;
+    }
+
+    foreach (\Drupal::service('jpf_store.schema')->lottoStatsFields() as $column_name => $column_spec) {
+      if ($schema->fieldExists($table_name, $column_name)) {
+        continue;
+      }
+
+      $schema->addField($table_name, $column_name, $column_spec);
+    }
   }
 }
