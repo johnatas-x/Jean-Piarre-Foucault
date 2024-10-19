@@ -15,6 +15,7 @@
         "source": "https://github.com/johnatas-x/Jean-Piarre-Foucault"
     },
     "require": {
+        "ext-pdo": "*",
         "ext-simplexml": "*",
         "ext-tokenizer": "*",
         "ext-xmlwriter": "*",
