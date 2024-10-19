@@ -178,6 +178,19 @@ enum Versions: string {
   }
 
   /**
+   * Number of balls drawn.
+   *
+   * @return int
+   *   The number of balls drawn.
+   */
+  public function drawnBalls(): int {
+    return match ($this) {
+      self::First => 6,
+      default => 5,
+    };
+  }
+
+  /**
    * Number of file version.
    *
    * @return int

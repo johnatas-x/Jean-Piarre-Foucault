@@ -60,14 +60,20 @@ class FillStats implements FillStatsInterface {
 
     $count = $this->getCount($table, $ball, $version);
 
+    $fields = [
+      'count' => $count,
+      'percentage' => $count / $total_count * 100,
+      'last' => $this->getLast($table, $ball, $version),
+      'best_day' => $this->getBestDay($table, $ball, $version),
+    ];
+
+    if ($type === 'balls') {
+      $fields['best_friend'] = $this->getBestFriend($ball, $version);
+    }
+
     $this->databaseConnection->merge($table)
       ->key('ball', $ball)
-      ->fields([
-        'count' => $count,
-        'percentage' => $count / $total_count * 100,
-        'last' => $this->getLast($table, $ball, $version),
-        'best_day' => $this->getBestDay($table, $ball, $version),
-      ])
+      ->fields($fields)
       ->execute();
   }
 
@@ -113,7 +119,7 @@ class FillStats implements FillStatsInterface {
   private function getCount(string $table, int $ball, Versions $version): int {
     $count_query = $this->jpfDatabase
       ->selectLotto()
-      ->fields('lotto', ['id']);
+      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['id']);
 
     $this->ballCondition($table, $count_query, $ball);
 
@@ -144,7 +150,7 @@ class FillStats implements FillStatsInterface {
   private function getLast(string $table, int $ball, Versions $version): ?string {
     $last_query = $this->jpfDatabase
       ->selectLotto()
-      ->fields('lotto', ['year', 'month', 'day']);
+      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['year', 'month', 'day']);
 
     $this->ballCondition($table, $last_query, $ball);
 
@@ -176,7 +182,7 @@ class FillStats implements FillStatsInterface {
   private function getBestDay(string $table, int $ball, Versions $version): ?string {
     $query = $this->jpfDatabase
       ->selectLotto()
-      ->fields('lotto', ['day_of_week'])
+      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['day_of_week'])
       ->condition('version', $version->value);
 
     $this->ballCondition($table, $query, $ball);
@@ -190,7 +196,7 @@ class FillStats implements FillStatsInterface {
     }
 
     $days = array_filter(array_map(
-        static fn ($value) => Days::fromMethod('capitalizeFrenchLabel', $value)?->value,
+        static fn (string $value) => Days::fromMethod('capitalizeFrenchLabel', $value)?->value,
         array_keys($counts, max($counts), TRUE)
     ));
 
@@ -199,6 +205,50 @@ class FillStats implements FillStatsInterface {
     }
 
     return implode(' or ', $days);
+  }
+
+  /**
+   * Get ball(s) that comes out most often with the current ball for the given version.
+   *
+   * @param int $ball
+   *   The current ball.
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The current version.
+   *
+   * @return string|null
+   *   The ball number. If multiple, balls numbers. If all or not, null.
+   */
+  private function getBestFriend(int $ball, Versions $version): ?string {
+    $query = $this->jpfDatabase
+      ->selectLotto()
+      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, Balls::classicBallsColumn())
+      ->condition('version', $version->value);
+
+    $this->ballCondition(SchemaInterface::LOTTO_DRAWS_TABLE, $query, $ball);
+
+    $friends = $query->execute()?->fetchAll(\PDO::FETCH_NUM);
+
+    if (empty($friends)) {
+      return NULL;
+    }
+
+    $counts = array_count_values(
+      array_filter(
+        array_merge(
+          ...$friends
+        )
+      )
+    );
+    unset($counts[$ball]);
+    $best_friends = array_keys($counts, max($counts), TRUE);
+
+    if (count($best_friends) >= $version->drawnBalls()) {
+      return NULL;
+    }
+
+    sort($best_friends);
+
+    return implode(', ', $best_friends);
   }
 
 }

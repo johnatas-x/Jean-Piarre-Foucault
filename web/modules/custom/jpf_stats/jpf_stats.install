@@ -32,6 +32,30 @@ function jpf_stats_schema(): array {
 }
 
 /**
+ * Implements hook_install().
+ */
+function jpf_stats_install(): void {
+  $schema = \Drupal::database()->schema();
+  $table = SchemaInterface::LOTTO_STATS_BALLS_TABLE;
+  $column = 'best_friend';
+
+  if (!$schema->tableExists($table) || $schema->fieldExists($table, $column)) {
+    return;
+  }
+
+  $schema->addField(
+    $table,
+    $column,
+    [
+      'description' => 'Ball(s) that comes out most often with the current ball',
+      'type' => 'char',
+      'length' => 32,
+      'not null' => FALSE,
+    ]
+  );
+}
+
+/**
  * Implements hook_uninstall().
  */
 function jpf_stats_uninstall(): void {
@@ -41,28 +65,5 @@ function jpf_stats_uninstall(): void {
     }
 
     \Drupal::service('jpf_store.database')->deleteTable($table_name);
-  }
-}
-
-/**
- * Implements hook_update_N().
- *
- * Add new stat column.
- */
-function jpf_stats_update_11001(): void {
-  $schema = \Drupal::database()->schema();
-
-  foreach (SchemaInterface::LOTTO_STATS_TABLES as $table_name) {
-    if (!$schema->tableExists($table_name)) {
-      continue;
-    }
-
-    foreach (\Drupal::service('jpf_store.schema')->lottoStatsFields() as $column_name => $column_spec) {
-      if ($schema->fieldExists($table_name, $column_name)) {
-        continue;
-      }
-
-      $schema->addField($table_name, $column_name, $column_spec);
-    }
   }
 }

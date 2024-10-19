@@ -15,6 +15,11 @@ interface SchemaInterface {
   final public const string LOTTO_DRAWS_TABLE = 'lotto_draws';
 
   /**
+   * Alias to use for DB queries.
+   */
+  final public const string LOTTO_TABLE_ALIAS = 'lotto';
+
+  /**
    * The name of the table which contains all versions information.
    */
   final public const string LOTTO_VERSIONS = 'lotto_versions';

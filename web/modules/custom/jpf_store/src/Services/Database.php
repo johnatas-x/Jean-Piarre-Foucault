@@ -58,7 +58,7 @@ class Database implements DatabaseInterface {
    * {@inheritDoc}
    */
   public function selectLotto(): SelectInterface {
-    return $this->databaseConnection->select(SchemaInterface::LOTTO_DRAWS_TABLE, 'lotto');
+    return $this->databaseConnection->select(SchemaInterface::LOTTO_DRAWS_TABLE, SchemaInterface::LOTTO_TABLE_ALIAS);
   }
 
   /**
@@ -91,7 +91,7 @@ class Database implements DatabaseInterface {
    */
   public function getLastRecord(): array|bool|null {
     return $this->selectLotto()
-      ->fields('lotto')
+      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS)
       ->orderBy('id', 'DESC')
       ->range(0, 1)
       ->execute()

@@ -101,4 +101,17 @@ enum Balls: string {
     ];
   }
 
+  /**
+   * Get DB column name for each classic ball.
+   *
+   * @return array<string>
+   *   The column names.
+   */
+  public static function classicBallsColumn(): array {
+    return array_map(
+      static fn (self $ball) => $ball->columnName(),
+      self::classicBalls()
+    );
+  }
+
 }
