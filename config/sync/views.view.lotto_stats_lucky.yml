@@ -390,7 +390,20 @@ display:
           query_tags: {  }
       relationships: {  }
       use_ajax: true
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Stats for the current version ([versions:current_version]) since [versions:start].'
+            format: plain_text
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:

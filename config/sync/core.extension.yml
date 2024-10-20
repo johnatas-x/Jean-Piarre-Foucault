@@ -14,6 +14,7 @@ module:
   jpf_sender: 0
   jpf_stats: 0
   jpf_store: 0
+  jpf_tokens: 0
   jpf_utils: 0
   jpf_views: 0
   mysql: 0
@@ -22,6 +23,7 @@ module:
   path_alias: 0
   system: 0
   text: 0
+  token: 0
   toolbar: 0
   ultimate_cron: 0
   update: 0

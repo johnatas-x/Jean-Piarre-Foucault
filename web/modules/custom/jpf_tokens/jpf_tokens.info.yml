@@ -1,0 +1,8 @@
+name: 'JPF : Tokens'
+type: module
+description: 'Provides custom tokens.'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - token:token
+  - jpf_store:jpf_store
