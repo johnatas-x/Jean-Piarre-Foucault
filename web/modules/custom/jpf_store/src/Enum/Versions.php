@@ -50,7 +50,7 @@ enum Versions: string {
     $current_month = DateTimePlus::createFromFormat(
       'U',
       (string) time()
-    )->format('Ym');
+    )->format('Ymd');
 
     foreach (self::cases() as $version) {
       if ($version->begin() <= $current_month && ($version->end() === '' || $version->end() > $current_month)) {
@@ -85,11 +85,11 @@ enum Versions: string {
    */
   public function begin(): string {
     return match ($this) {
-      self::First => '197605',
-      self::Second => '200810',
-      self::Third => '201703',
-      self::Fourth => '201902',
-      self::Fifth => '201911',
+      self::First => '19760519',
+      self::Second => '20081006',
+      self::Third => '20170306',
+      self::Fourth => '20190227',
+      self::Fifth => '20191106',
     };
   }
 
@@ -101,10 +101,10 @@ enum Versions: string {
    */
   public function end(): string {
     return match ($this) {
-      self::First => '200810',
-      self::Second => '201703',
-      self::Third => '201902',
-      self::Fourth => '201911',
+      self::First => '20081004',
+      self::Second => '20170304',
+      self::Third => '20190225',
+      self::Fourth => '20191102',
       self::Fifth => '',
     };
   }
@@ -197,7 +197,7 @@ enum Versions: string {
    *   The date.
    */
   public function humanReadableBeginDate(): ?string {
-    return DateTimePlus::createFromFormat('Ym', $this->begin())->format('F Y');
+    return DateTimePlus::createFromFormat('Ymd', $this->begin())->format('F d, Y');
   }
 
   /**
