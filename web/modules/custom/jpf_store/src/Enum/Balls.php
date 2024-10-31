@@ -43,6 +43,23 @@ enum Balls: string {
   final public const int LUCKY_MAX = 10;
 
   /**
+   * The material of the balls.
+   */
+  final public const string MATERIAL = 'solid rubber';
+
+  /**
+   * The weight of the balls (value + unit).
+   */
+  final public const int WEIGHT = 26;
+  final public const string WEIGHT_UNIT = 'g';
+
+  /**
+   * The diameter of the balls (value + unit).
+   */
+  final public const int DIAMETER = 5;
+  final public const string DIAMETER_UNIT = 'cm';
+
+  /**
    * Numeric ball value.
    *
    * @return int
