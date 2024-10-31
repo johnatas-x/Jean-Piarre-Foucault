@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_stats\Services;
 
+use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Database\Query\SelectInterface;
 use Drupal\jpf_store\Enum\Balls;
@@ -16,6 +17,11 @@ use Drupal\jpf_utils\Enum\Days;
  * Stats filling methods.
  */
 class FillStats implements FillStatsInterface {
+
+  /**
+   * Minimum number of outputs to calculate frequency.
+   */
+  private const int OUT_MIN = 2;
 
   /**
    * The database connection.
@@ -65,6 +71,7 @@ class FillStats implements FillStatsInterface {
       'percentage' => $count / $total_count * 100,
       'last' => $this->getLast($table, $ball, $version),
       'best_day' => $this->getBestDay($table, $ball, $version),
+      'frequency' => $this->getFrequency($table, $ball, $version),
     ];
 
     if ($type === 'balls') {
@@ -117,14 +124,8 @@ class FillStats implements FillStatsInterface {
    *   Count of draws.
    */
   private function getCount(string $table, int $ball, Versions $version): int {
-    $count_query = $this->jpfDatabase
-      ->selectLotto()
-      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['id']);
-
-    $this->ballCondition($table, $count_query, $ball);
-
+    $count_query = $this->baseSelectQuery($table, $ball, $version, ['id']);
     $count = $count_query
-      ->condition('version', $version->value)
       ->countQuery()
       ->execute()
       ?->fetchField();
@@ -148,14 +149,8 @@ class FillStats implements FillStatsInterface {
    *   The last draw or null if this ball has never been drawn.
    */
   private function getLast(string $table, int $ball, Versions $version): ?string {
-    $last_query = $this->jpfDatabase
-      ->selectLotto()
-      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['year', 'month', 'day']);
-
-    $this->ballCondition($table, $last_query, $ball);
-
+    $last_query = $this->baseSelectQuery($table, $ball, $version, ['year', 'month', 'day']);
     $last_result = $last_query
-      ->condition('version', $version->value)
       ->orderBy('id', 'DESC')
       ->range(0, 1)
       ->execute()
@@ -180,13 +175,7 @@ class FillStats implements FillStatsInterface {
    *   The day name. If multiple, days. If all, null.
    */
   private function getBestDay(string $table, int $ball, Versions $version): ?string {
-    $query = $this->jpfDatabase
-      ->selectLotto()
-      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['day_of_week'])
-      ->condition('version', $version->value);
-
-    $this->ballCondition($table, $query, $ball);
-
+    $query = $this->baseSelectQuery($table, $ball, $version, ['day_of_week']);
     $query->addExpression('count(day_of_week)', 'count');
     $query->groupBy('lotto.day_of_week');
     $counts = $query->execute()?->fetchAllKeyed();
@@ -208,6 +197,63 @@ class FillStats implements FillStatsInterface {
   }
 
   /**
+   * Average number of days between two outings for the given ball and the given version.
+   *
+   * @param string $table
+   *   The ball table.
+   * @param int $ball
+   *   The current ball.
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The current version.
+   *
+   * @return int|null
+   *   The average number of days, null if less than two outings.
+   */
+  private function getFrequency(string $table, int $ball, Versions $version): ?int {
+    $query = $this->baseSelectQuery($table, $ball, $version, ['year', 'month', 'day']);
+    $results = $query->execute()?->fetchAll();
+
+    if (empty($results)) {
+      return NULL;
+    }
+
+    $dates = [];
+
+    foreach ($results as $result) {
+      if (!isset($result->year, $result->month, $result->day)) {
+        continue;
+      }
+
+      $dates[] = implode(
+        '/',
+        [
+          (string) $result->year,
+          sprintf('%02d', (string) $result->month),
+          sprintf('%02d', (string) $result->day),
+        ]
+      );
+    }
+
+    if (count($dates) < self::OUT_MIN) {
+      return NULL;
+    }
+
+    sort($dates);
+
+    $total_days = 0;
+    $count = count($dates) - 1;
+
+    for ($increment = 0; $increment < $count; $increment++) {
+      $date1 = DateTimePlus::createFromFormat('Y/m/d', $dates[$increment]);
+      $date2 = DateTimePlus::createFromFormat('Y/m/d', $dates[$increment + 1]);
+      $interval = $date1->diff($date2);
+      $total_days += $interval->days;
+    }
+
+    return (int) round($total_days / $count);
+  }
+
+  /**
    * Get ball(s) that comes out most often with the current ball for the given version.
    *
    * @param int $ball
@@ -219,13 +265,7 @@ class FillStats implements FillStatsInterface {
    *   The ball number. If multiple, balls numbers. If all or not, null.
    */
   private function getBestFriend(int $ball, Versions $version): ?string {
-    $query = $this->jpfDatabase
-      ->selectLotto()
-      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, Balls::classicBallsColumn())
-      ->condition('version', $version->value);
-
-    $this->ballCondition(SchemaInterface::LOTTO_DRAWS_TABLE, $query, $ball);
-
+    $query = $this->baseSelectQuery(SchemaInterface::LOTTO_DRAWS_TABLE, $ball, $version, Balls::classicBallsColumn());
     $friends = $query->execute()?->fetchAll(\PDO::FETCH_NUM);
 
     if (empty($friends)) {
@@ -249,6 +289,32 @@ class FillStats implements FillStatsInterface {
     sort($best_friends);
 
     return implode(', ', $best_friends);
+  }
+
+  /**
+   * Base of all select queries.
+   *
+   * @param string $table
+   *   The ball table.
+   * @param int $ball
+   *   The current ball.
+   * @param \Drupal\jpf_store\Enum\Versions $version
+   *   The current version.
+   * @param array<string> $fields
+   *   Fields to select.
+   *
+   * @return \Drupal\Core\Database\Query\SelectInterface
+   *   The initialized query.
+   */
+  private function baseSelectQuery(string $table, int $ball, Versions $version, array $fields): SelectInterface {
+    $query = $this->jpfDatabase
+      ->selectLotto()
+      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, $fields)
+      ->condition('version', $version->value);
+
+    $this->ballCondition($table, $query, $ball);
+
+    return $query;
   }
 
 }

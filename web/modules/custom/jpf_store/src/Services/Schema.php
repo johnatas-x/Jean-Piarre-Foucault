@@ -115,6 +115,13 @@ class Schema implements SchemaInterface {
         'length' => 64,
         'not null' => FALSE,
       ],
+      'frequency' => [
+        'description' => 'Average number of days between two outings',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'length' => 3,
+      ],
     ];
   }
 
