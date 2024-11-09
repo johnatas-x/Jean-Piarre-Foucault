@@ -37,22 +37,32 @@ function jpf_stats_schema(): array {
 function jpf_stats_install(): void {
   $schema = \Drupal::database()->schema();
   $table = SchemaInterface::LOTTO_STATS_BALLS_TABLE;
-  $column = 'best_friend';
 
-  if (!$schema->tableExists($table) || $schema->fieldExists($table, $column)) {
+  if (!$schema->tableExists($table)) {
     return;
   }
 
-  $schema->addField(
-    $table,
-    $column,
-    [
-      'description' => 'Ball(s) that comes out most often with the current ball',
-      'type' => 'char',
-      'length' => 32,
-      'not null' => FALSE,
-    ]
-  );
+  $friends_columns = [
+    'best' => 'most',
+    'worst' => 'least',
+  ];
+
+  foreach ($friends_columns as $column => $wording) {
+    if ($schema->fieldExists($table, $column)) {
+      continue;
+    }
+
+    $schema->addField(
+      $table,
+      "{$column}_friend",
+      [
+        'description' => "Ball(s) that comes out $wording often with the current ball",
+        'type' => 'char',
+        'length' => 32,
+        'not null' => FALSE,
+      ]
+    );
+  }
 }
 
 /**

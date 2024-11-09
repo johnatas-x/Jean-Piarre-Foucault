@@ -24,6 +24,12 @@ class FillStats implements FillStatsInterface {
   private const int OUT_MIN = 2;
 
   /**
+   * Friends constants.
+   */
+  private const bool WORST_FRIEND = FALSE;
+  private const bool BEST_FRIEND = TRUE;
+
+  /**
    * The database connection.
    *
    * @var \Drupal\Core\Database\Connection
@@ -75,7 +81,8 @@ class FillStats implements FillStatsInterface {
     ];
 
     if ($type === 'balls') {
-      $fields['best_friend'] = $this->getBestFriend($ball, $version);
+      $fields['best_friend'] = $this->getFriend($ball, $version, self::BEST_FRIEND);
+      $fields['worst_friend'] = $this->getFriend($ball, $version, self::WORST_FRIEND);
     }
 
     $this->databaseConnection->merge($table)
@@ -254,17 +261,19 @@ class FillStats implements FillStatsInterface {
   }
 
   /**
-   * Get ball(s) that comes out most often with the current ball for the given version.
+   * Get ball(s) that comes out most/least often with the current ball for the given version.
    *
    * @param int $ball
    *   The current ball.
    * @param \Drupal\jpf_store\Enum\Versions $version
    *   The current version.
+   * @param bool $type
+   *   Type of friend. True for best, false for worst.
    *
    * @return string|null
    *   The ball number. If multiple, balls numbers. If all or not, null.
    */
-  private function getBestFriend(int $ball, Versions $version): ?string {
+  private function getFriend(int $ball, Versions $version, bool $type): ?string {
     $query = $this->baseSelectQuery(SchemaInterface::LOTTO_DRAWS_TABLE, $ball, $version, Balls::classicBallsColumn());
     $friends = $query->execute()?->fetchAll(\PDO::FETCH_NUM);
 
@@ -280,15 +289,18 @@ class FillStats implements FillStatsInterface {
       )
     );
     unset($counts[$ball]);
-    $best_friends = array_keys($counts, max($counts), TRUE);
+    $filter_value = $type === TRUE
+      ? max($counts)
+      : min($counts);
+    $needed_friends = array_keys($counts, $filter_value, TRUE);
 
-    if (count($best_friends) >= $version->drawnBalls()) {
+    if (count($needed_friends) >= $version->drawnBalls()) {
       return NULL;
     }
 
-    sort($best_friends);
+    sort($needed_friends);
 
-    return implode(', ', $best_friends);
+    return implode(', ', $needed_friends);
   }
 
   /**
