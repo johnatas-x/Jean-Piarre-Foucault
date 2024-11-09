@@ -33,3 +33,6 @@ Run `fin quality` to unleash the *“very hard”* quality check tools. If your 
 
 ## Disclaimer
 This is a **fun project** – no financial advice here. And as for winning, well, *good luck*. 🎰
+
+> [!IMPORTANT]
+>**Jean-Piarre Foucault** is a work in progress, but what’s here is fully functional and already delivers *almost-beautiful* predictions. The journey to perfecting lottery insights is just beginning, and this project will keep evolving – expect continuous updates and improvements throughout 2025. Stay tuned, because the best is yet to come! 🎉
