@@ -1,0 +1,5 @@
+# Ignore all directory (private).
+/jean-pyarre/*
+
+# Don't ignore readme.
+!/jean-pyarre/README.md
