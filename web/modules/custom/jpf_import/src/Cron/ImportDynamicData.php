@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_import\Cron;
 
+use Consolidation\SiteAlias\SiteAliasInterface;
 use Drupal\jpf_import\Api\Sto;
 use Drupal\jpf_store\Enum\Versions;
 use Drupal\ultimate_cron\CronJobInterface;
 use Drush\Drush;
-use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -22,7 +22,7 @@ final class ImportDynamicData {
    * @param \Drupal\ultimate_cron\CronJobInterface $job
    *   The cron job entity.
    *
-   * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+   * @SuppressWarnings("PHPMD.UnusedFormalParameter")
    */
   public static function import(CronJobInterface $job): void {
     $current_version = Versions::currentVersion();
@@ -62,9 +62,16 @@ final class ImportDynamicData {
       unlink($archive_path);
 
       \Drupal::service('jpf_store.database')->importCsvFile($current_version);
-      Drush::drush(Drush::service('site.alias.manager')->getSelf(), 'fill-lotto-stats')->run();
+
+      $site_alias = Drush::service('site.alias.manager')->getSelf();
+
+      if (!$site_alias instanceof SiteAliasInterface) {
+        return;
+      }
+
+      Drush::drush($site_alias, 'fill-lotto-stats')->run();
     }
-    catch (GuzzleException | \Throwable $exception) {
+    catch (\Throwable $exception) {
       \Drupal::logger('jpf_import')->error($exception->getMessage());
     }
   }

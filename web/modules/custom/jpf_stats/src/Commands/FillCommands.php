@@ -31,16 +31,16 @@ class FillCommands extends DrushCommands {
 
     if (!$version instanceof Versions) {
       throw new \RuntimeException(
-        dt('Invalid current version.')
+        t('Invalid current version.')->render()
       );
     }
 
     // Put all needed information into batch array.
     $batch = [
       'operations' => FillStatsBatch::operations($version),
-      'title' => dt('Fill stats in database.'),
-      'init_message' => dt('Initialization.'),
-      'error_message' => dt('An error occurred.'),
+      'title' => t('Fill stats in database.')->render(),
+      'init_message' => t('Initialization.')->render(),
+      'error_message' => t('An error occurred.')->render(),
       'finished' => [
         FillStatsBatch::class,
         'finished',

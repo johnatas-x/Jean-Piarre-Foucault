@@ -43,7 +43,7 @@ function jpf_tokens_token_info(): array {
 /**
  * Implements hook_tokens().
  *
- * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+ * @SuppressWarnings("PHPMD.UnusedFormalParameter")
  */
 function jpf_tokens_tokens(
   string $type,
@@ -62,7 +62,7 @@ function jpf_tokens_tokens(
 
   foreach ($tokens as $name => $original) {
     $replacements[$original] = match($name) {
-      'current_version' => $current_version?->value ?? t('unknown version')->render(),
+      'current_version' => $current_version->value ?? t('unknown version')->render(),
       'start' => $current_version?->humanReadableBeginDate() ?? t('unknown date')->render(),
       default => '',
     };

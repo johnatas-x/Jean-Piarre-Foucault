@@ -43,8 +43,8 @@ class FillCommands extends DrushCommands {
     $batch = [
       'operations' => FillDataBatch::operations($versions),
       'title' => dt('Import data to database.'),
-      'init_message' => dt('Initialization.'),
-      'error_message' => dt("An error occurred."),
+      'init_message' => t('Initialization.')->render(),
+      'error_message' => t("An error occurred.")->render(),
       'finished' => [
         FillDataBatch::class,
         'finished',
@@ -74,13 +74,13 @@ class FillCommands extends DrushCommands {
   private function optionsChecker(array $options): array {
     if (is_string($options['versions']) && $options['all'] === TRUE) {
       throw new \InvalidArgumentException(
-        dt('Do not use "versions" and "all" options together.')
+        t('Do not use "versions" and "all" options together.')->render()
       );
     }
 
     if ($options['versions'] === NULL && $options['all'] === FALSE) {
       throw new \InvalidArgumentException(
-        dt('You must use at least one option between "versions" and "all".')
+        t('You must use at least one option between "versions" and "all".')->render()
       );
     }
 
@@ -97,9 +97,9 @@ class FillCommands extends DrushCommands {
             '@item' => reset($not_allowed_versions),
             '@items' => implode(', ', $not_allowed_versions),
           ]
-        );
+        )->render();
 
-        throw new \InvalidArgumentException(dt($message->render()));
+        throw new \InvalidArgumentException($message);
       }
     }
 
