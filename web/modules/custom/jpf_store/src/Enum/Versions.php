@@ -52,13 +52,11 @@ enum Versions: string {
       (string) time()
     )->format('Ymd');
 
-    foreach (self::cases() as $version) {
-      if ($version->begin() <= $current_month && ($version->end() === '' || $version->end() > $current_month)) {
-        return $version;
-      }
-    }
-
-    return NULL;
+    return array_find(
+      self::cases(),
+      static fn ($version) => $version->begin() <= $current_month &&
+        ($version->end() === '' || $version->end() > $current_month)
+    );
   }
 
   /**
