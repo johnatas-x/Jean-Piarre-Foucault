@@ -163,9 +163,20 @@ class FillStats implements FillStatsInterface {
       ->execute()
       ?->fetchAssoc();
 
-    return empty($last_result['year']) || empty($last_result['month']) || empty($last_result['day'])
-      ? NULL
-      : sprintf('%d/%02d/%02d', $last_result['year'], $last_result['month'], $last_result['day']);
+    if (
+      isset($last_result['year'], $last_result['month'], $last_result['day']) &&
+      is_numeric($last_result['year']) &&
+      is_numeric($last_result['month']) &&
+      is_numeric($last_result['day'])
+    ) {
+      $year = (int) $last_result['year'];
+      $month = (int) $last_result['month'];
+      $day = (int) $last_result['day'];
+
+      return sprintf('%d/%02d/%02d', $year, $month, $day);
+    }
+
+    return NULL;
   }
 
   /**
@@ -227,7 +238,10 @@ class FillStats implements FillStatsInterface {
     $dates = [];
 
     foreach ($results as $result) {
-      if (!isset($result->year, $result->month, $result->day)) {
+      if (
+        !isset($result->year, $result->month, $result->day) ||
+        !is_numeric($result->year) || !is_numeric($result->month) || !is_numeric($result->day)
+      ) {
         continue;
       }
 
@@ -284,11 +298,18 @@ class FillStats implements FillStatsInterface {
     $counts = array_count_values(
       array_filter(
         array_merge(
-          ...$friends
+          ...array_map(static fn ($friend) => is_array($friend)
+            ? $friend
+            : [], $friends)
         )
       )
     );
     unset($counts[$ball]);
+
+    if (empty($counts)) {
+      return NULL;
+    }
+
     $filter_value = $type === TRUE
       ? max($counts)
       : min($counts);
