@@ -127,9 +127,6 @@
             ]
         },
         "patches": {
-            "drupal/charts": {
-                "ArgumentCountError at admin/config/content/charts on D11": "https://git.drupalcode.org/project/charts/-/merge_requests/110.patch"
-            },
             "drupal/core": {
                 "Don't execute cron on site install": "patches/disable-cron-execution-on-install.patch"
             }

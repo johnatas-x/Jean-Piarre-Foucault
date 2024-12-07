@@ -3,7 +3,6 @@ parameters:
   bin_dir: vendor/bin
 grumphp:
   extensions:
-    - GrumphpDrupalCheck\ExtensionLoader
     - GrumphpPhpa\ExtensionLoader
   ignore_unstaged_changes: true
   stop_on_failure: false
@@ -62,20 +61,6 @@ grumphp:
         - 'composer.json'
         - 'composer.lock'
         - '*.php'
-      metadata:
-        blocking: true
-        enabled: false
-        label: null
-        priority: 0
-        task: null
-    drupal_check:
-      drupal_root: ~
-      memory_limit: ~
-      deprecations: true
-      analysis: true
-      style: false
-      php8: true
-      exclude_dir: [ ]
       metadata:
         blocking: true
         enabled: false
