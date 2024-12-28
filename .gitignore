@@ -112,3 +112,8 @@
 
 # Ignore dot env file
 .env
+
+# Ignore docker files and directories
+mariadb-init
+postgres-init
+mutagen.yml.lock
