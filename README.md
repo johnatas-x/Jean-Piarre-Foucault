@@ -28,12 +28,12 @@ Voilà! You now have Jean-Piarre Foucault running locally (by default on 8000 po
 ## Quality Code? You Bet. 🔍
 Run `./scripts/quality.sh` to unleash the *“very hard”* quality check tools. If your code survives this, it's ready for anything.
 
-## Features
+## Features 🖇️
 - **Real FDJ Data** (shhh...) 📊: Yep, we’re grabbing real lotto draw data via an FDJ API call. Let’s keep this one between us.
 - **Enhanced FDJ Stats Views** 📈: Enjoy views that are almost like FDJ’s… but better.
 - **Random Number Predictions** 🎲: Because when it comes to the lottery, randomness is really all you need.
 
-## Useful commands
+## Useful commands 📎
 | Description       | Command                                       |
 |-------------------|-----------------------------------------------|
 | Start project     | `docker compose up --build -d`                |
@@ -41,6 +41,13 @@ Run `./scripts/quality.sh` to unleash the *“very hard”* quality check tools.
 | Init project      | `./scripts/init.sh`                           |
 | Check quality     | `./scripts/quality.sh`                        |
 | Force update data | `make drush crun import_dynamic_data --force` |
+
+## Any other cool stuff? 🍿
+Sure.
+
+On the web container, zsh (with Oh My Zsh) is installed. So you can use it like `docker exec -it jean-piarre-foucault_php zsh`.
+> [!NOTE]
+> For now my .zshrc is loaded with my theme and my aliases, but you will soon be able to configure yours!
 
 ## Disclaimer
 This is a **fun project** – no financial advice here. And as for winning, well, *good luck*. 🎰

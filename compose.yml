@@ -22,6 +22,7 @@ services:
         PHP_TAG: $PHP_TAG
         WODBY_USER_ID: $WODBY_USER_ID
         WODBY_GROUP_ID: $WODBY_GROUP_ID
+        TIMEZONE: $TIMEZONE
     container_name: "${PROJECT_NAME}_php"
     environment:
       PHP_EXTENSIONS_DISABLE: xhprof,spx
@@ -33,12 +34,14 @@ services:
       PHP_XDEBUG_LOG: /tmp/php-xdebug.log
       WODBY_USER_ID: $WODBY_USER_ID
       WODBY_GROUP_ID: $WODBY_GROUP_ID
+      TIMEZONE: $TIMEZONE
     extra_hosts:
     - "host.docker.internal:host-gateway"
     volumes:
     - ./:/var/www/html:cached
     - files:/mnt/files
     - ./.docker/php/php.ini:/usr/local/etc/php/conf.d/local.ini
+    - ./.docker/.zshrc:/root/.zshrc
 
   crond:
     init: true

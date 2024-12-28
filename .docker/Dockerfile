@@ -3,11 +3,21 @@ FROM wodby/drupal-php:${PHP_TAG}
 
 USER root
 
+# Override default UID and GID.
 ARG WODBY_USER_ID
 ARG WODBY_GROUP_ID
 
 RUN groupmod -g $WODBY_GROUP_ID wodby && \
     usermod -u $WODBY_USER_ID -g wodby wodby && \
     chown -R wodby:wodby /var/www/html
+
+# Add zsh & Oh My Zsh and other packages.
+RUN apk add vim zsh zsh-vcs tzdata
+RUN rm -Rf /root/.oh-my-zsh
+RUN yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Set timezone.
+ARG TIMEZONE="Europe/Paris"
+RUN ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 USER wodby
