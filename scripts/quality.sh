@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker exec -it jean-piarre-foucault_php "php ./vendor/bin/grumphp run"
+docker exec -it jean-piarre-foucault_php vendor/bin/grumphp run

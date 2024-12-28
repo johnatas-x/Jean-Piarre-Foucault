@@ -1,4 +1,4 @@
-include docker.mk
+include ./.docker/docker.mk
 
 .PHONY: test
 
