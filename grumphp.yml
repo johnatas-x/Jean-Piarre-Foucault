@@ -320,6 +320,7 @@ grumphp:
         priority: 0
         task: null
     securitychecker_composeraudit:
+      abandoned: null
       format: null
       locked: true
       no_dev: true
@@ -328,14 +329,6 @@ grumphp:
       metadata:
         blocking: true
         enabled: true
-        label: null
-        priority: 0
-        task: null
-    shell:
-      scripts: []
-      metadata:
-        blocking: true
-        enabled: false
         label: null
         priority: 0
         task: null
