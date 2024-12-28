@@ -23,11 +23,7 @@ services:
         WODBY_USER_ID: $WODBY_USER_ID
         WODBY_GROUP_ID: $WODBY_GROUP_ID
     container_name: "${PROJECT_NAME}_php"
-    user: root
-    command: "php-fpm -R"
     environment:
-      PHP_FPM_USER: root
-      PHP_FPM_GROUP: root
       PHP_EXTENSIONS_DISABLE: xhprof,spx
       PHP_MAIL_MIXED_LF_AND_CRLF: 'On'
       MSMTP_HOST: mailpit

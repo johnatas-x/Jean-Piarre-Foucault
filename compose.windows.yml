@@ -1,0 +1,7 @@
+services:
+  php:
+    user: root
+    command: "php-fpm -R"
+    environment:
+      PHP_FPM_USER: root
+      PHP_FPM_GROUP: root
