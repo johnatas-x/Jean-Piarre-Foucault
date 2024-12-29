@@ -127,6 +127,9 @@
             ]
         },
         "patches": {
+            "drupal/charts": {
+                "Issues reported by phpcs": "https://git.drupalcode.org/project/charts/-/merge_requests/117.patch"
+            },
             "drupal/core": {
                 "Don't execute cron on site install": "patches/disable-cron-execution-on-install.patch"
             }

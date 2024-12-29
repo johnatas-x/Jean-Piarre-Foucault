@@ -10,3 +10,4 @@ PROMPT=$'🐧[%D{%H:%M:%S}] %{$purple%}%n@%m%{$reset_color%} in %{$limegreen%}%~
 
 ###################### Aliases ######################
 alias ll="ls -alh"
+alias upcomp="composer update --lock && composer normalize"
