@@ -38,6 +38,7 @@ Run `./scripts/quality.sh` to unleash the *“very hard”* quality check tools.
 |-------------------|-----------------------------------------------|
 | Start project     | `docker compose up --build -d`                |
 | Stop project      | `docker compose down`                         |
+| Update project    | `./scripts/update.sh`                         |
 | Init project      | `./scripts/init.sh`                           |
 | Check quality     | `./scripts/quality.sh`                        |
 | Force update data | `make drush crun import_dynamic_data --force` |
