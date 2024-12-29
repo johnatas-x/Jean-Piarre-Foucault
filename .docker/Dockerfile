@@ -18,7 +18,7 @@ RUN yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/
 
 # Set timezone.
 ARG TIMEZONE="Europe/Paris"
-RUN rm /etc/localtime
+RUN rm /etc/localtime || true
 RUN ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 USER wodby

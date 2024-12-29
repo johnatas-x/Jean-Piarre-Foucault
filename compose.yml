@@ -9,6 +9,8 @@ services:
       MYSQL_USER: $DB_USER
       MYSQL_PASSWORD: $DB_PASSWORD
       MYSQL_TRANSACTION_ISOLATION: READ-COMMITTED
+    ports:
+    - "3306:3306"
     volumes:
     - ./mariadb-init:/docker-entrypoint-initdb.d
     - /path/to/mariadb/data/on/host:/var/lib/mysql
@@ -30,8 +32,10 @@ services:
       MSMTP_HOST: mailpit
       MSMTP_PORT: 1025
       PHP_XDEBUG_MODE: $PHP_XDEBUG_MODE
+      PHP_XDEBUG_START_WITH_REQUEST: $PHP_XDEBUG_START_WITH_REQUEST
       PHP_IDE_CONFIG: $PHP_IDE_CONFIG
       PHP_XDEBUG_LOG: /tmp/php-xdebug.log
+      XDEBUG_CONFIG: $XDEBUG_CONFIG
       WODBY_USER_ID: $WODBY_USER_ID
       WODBY_GROUP_ID: $WODBY_GROUP_ID
       TIMEZONE: $TIMEZONE
