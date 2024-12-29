@@ -46,7 +46,7 @@ class CsvHelper implements CsvHelperInterface {
 
     $combined = [];
 
-    /** @var array<int|string> $headers */
+    /** @var non-empty-list<string> $headers */
     $headers = $data[0];
 
     for ($increment = 1; $increment < $count; $increment++) {

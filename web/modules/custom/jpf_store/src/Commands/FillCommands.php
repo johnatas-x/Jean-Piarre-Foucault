@@ -42,7 +42,7 @@ class FillCommands extends DrushCommands {
     // Put all needed information into batch array.
     $batch = [
       'operations' => FillDataBatch::operations($versions),
-      'title' => dt('Import data to database.'),
+      'title' => t('Import data to database.'),
       'init_message' => t('Initialization.')->render(),
       'error_message' => t("An error occurred.")->render(),
       'finished' => [

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Abort if anything fails
 set -e
@@ -21,6 +21,9 @@ docker exec -it jean-piarre-foucault_php git config --global --add safe.director
 
 # Install vendor.
 docker exec -it jean-piarre-foucault_php composer install --no-progress --prefer-dist --optimize-autoloader
+
+# Fix perm.
+source scripts/fixperm.sh
 
 # Copy settings.php.
 sudo chmod -R 775 "web/sites/default"

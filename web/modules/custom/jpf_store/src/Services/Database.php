@@ -90,12 +90,28 @@ class Database implements DatabaseInterface {
    * {@inheritDoc}
    */
   public function getLastRecord(): array|bool|null {
-    return $this->selectLotto()
+    $record = $this->selectLotto()
       ->fields(SchemaInterface::LOTTO_TABLE_ALIAS)
       ->orderBy('id', 'DESC')
       ->range(0, 1)
       ->execute()
       ?->fetchAssoc();
+
+    if (is_bool($record) || is_null($record)) {
+      return $record;
+    }
+
+    $validatedRecord = [];
+
+    foreach ($record as $key => $value) {
+      if (!is_string($key) || ((!is_string($value)) && !is_null($value))) {
+        throw new \UnexpectedValueException('Bad type.');
+      }
+
+      $validatedRecord[$key] = $value;
+    }
+
+    return $validatedRecord;
   }
 
   /**
