@@ -6,3 +6,6 @@ package: Custom
 required: true
 dependencies:
   - jpf_utils:jpf_utils
+
+'interface translation project': jpf_store
+'interface translation server pattern': modules/custom/%project/translations/%project.%language.po

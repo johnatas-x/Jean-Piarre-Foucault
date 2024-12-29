@@ -1,0 +1,8 @@
+uuid: 94627cc7-0098-4170-a95a-3ab708b9e8a9
+langcode: en
+status: true
+dependencies: {  }
+id: custom_long_day
+label: 'Custom long day'
+locked: false
+pattern: 'F d, Y'

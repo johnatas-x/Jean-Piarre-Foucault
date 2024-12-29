@@ -4,3 +4,6 @@ description: 'Transverse features & helpers for all modules.'
 core_version_requirement: ^11
 package: Custom
 required: true
+
+'interface translation project': jpf_utils
+'interface translation server pattern': modules/custom/%project/translations/%project.%language.po

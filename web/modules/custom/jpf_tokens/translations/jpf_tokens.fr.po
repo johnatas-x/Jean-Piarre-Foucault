@@ -1,0 +1,29 @@
+msgid "Versions tokens"
+msgstr "Jetons de versions"
+
+msgid "Define custom tokens for versions."
+msgstr "Défini des jetons personnalisés pour les versions."
+
+msgid "Current version"
+msgstr "Version courante"
+
+msgid "Current version."
+msgstr "Version courante."
+
+msgid "Start date"
+msgstr "Date de début"
+
+msgid "The first day of the current version."
+msgstr "Le premier jour de la version courante."
+
+msgid "unknown version"
+msgstr "version inconnue"
+
+msgid "unknown date"
+msgstr "date inconnue"
+
+msgid "JPF : Tokens"
+msgstr "JPF : Jetons"
+
+msgid "Provides custom tokens."
+msgstr "Contient les fonctionnalités nécessaires pour les jetons personnalisés."

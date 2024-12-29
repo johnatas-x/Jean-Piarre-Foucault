@@ -5,3 +5,6 @@ core_version_requirement: ^11
 package: Custom
 dependencies:
   - jpf_algo:jpf_algo
+
+'interface translation project': jpf_sender
+'interface translation server pattern': modules/custom/%project/translations/%project.%language.po

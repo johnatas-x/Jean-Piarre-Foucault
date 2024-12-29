@@ -1,0 +1,17 @@
+msgid "JPF : Data stats"
+msgstr "JPF : Statistiques des données"
+
+msgid "All features for stats."
+msgstr "Contient les fonctionnalités nécessaires pour les statistiques."
+
+msgid "Invalid current version."
+msgstr "Version courante invalide."
+
+msgid "Fill stats in database."
+msgstr "Remplissage des statistiques dans la base de données."
+
+msgid "Initialization."
+msgstr "Initialisation."
+
+msgid "An error occurred."
+msgstr "Une erreur est survenue."

@@ -1,0 +1,19 @@
+msgid "JPF : Data store"
+msgstr "JPF : Stockage des données"
+
+msgid "All features for storing data."
+msgstr "Contient les fonctionnalités nécessaires pour stocker les données."
+
+msgid "Import data to database."
+msgstr "Import des données dans la base de données."
+
+msgid "Do not use \"versions\" and \"all\" options together."
+msgstr "Ne pas utiliser les options \"versions\" et \"all\" ensemble."
+
+msgid "You must use at least one option between \"versions\" and \"all\"."
+msgstr "Vous devez utiliser au moins une option entre \"versions\" et \"all\"."
+
+msgid "This version is undefined or not allowed : @item"
+msgid_plural "These versions are undefined or not allowed : @items"
+msgstr[0] "Cette version n'est pas définie ou n'est pas autorisée : @item"
+msgstr[1] "Ces versions ne sont pas définies ou ne sont pas autorisées : @items"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8417b2bfe67274ccf9a71dab0bb3b17e",
+    "content-hash": "55d81dc0fb8751e8bd6e95b758fb4f2a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1743,6 +1743,63 @@
                     "url": "https://paypal.me/saschaeggi"
                 }
             ]
+        },
+        {
+            "name": "drupal/potx",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/potx.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/potx-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "59657c40cb0427edd6644b301441625cc5a57e35"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1720516288",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Gábor Hojtsy",
+                    "homepage": "https://www.drupal.org/user/4166"
+                },
+                {
+                    "name": "herom",
+                    "homepage": "https://www.drupal.org/user/1866898"
+                },
+                {
+                    "name": "penyaskito",
+                    "homepage": "https://www.drupal.org/user/959536"
+                }
+            ],
+            "description": "Translation template extractor",
+            "homepage": "https://www.drupal.org/project/potx",
+            "support": {
+                "source": "https://git.drupalcode.org/project/potx"
+            }
         },
         {
             "name": "drupal/token",

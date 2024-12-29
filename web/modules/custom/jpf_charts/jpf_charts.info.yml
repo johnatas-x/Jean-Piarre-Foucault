@@ -6,3 +6,6 @@ package: Custom
 dependencies:
   - drupal:charts
   - jpf_stats:jpf_stats
+
+'interface translation project': jpf_charts
+'interface translation server pattern': modules/custom/%project/translations/%project.%language.po

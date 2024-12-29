@@ -1,0 +1,5 @@
+msgid "JPF : Sender"
+msgstr "JPF : Envoyeur"
+
+msgid "All features for communication (SMS, WhatsApp, Mail)."
+msgstr "Contient les fonctionnalités nécessaires pour la communication (SMS, WhatsApp, Courriel)."

@@ -7,3 +7,6 @@ dependencies:
   - drupal:view_custom_table
   - drupal:views
   - jpf_stats:jpf_stats
+
+'interface translation project': jpf_views
+'interface translation server pattern': modules/custom/%project/translations/%project.%language.po

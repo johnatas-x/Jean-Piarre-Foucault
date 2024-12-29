@@ -1,0 +1,40 @@
+label: 'Loto statistiques - boules'
+description: 'Statistiques des boules "classiques" du Loto.'
+display:
+  default:
+    display_options:
+      title: 'Loto statistiques - boules'
+      fields:
+        ball:
+          label: Boule
+        count:
+          label: 'Nombre de sorties'
+        percentage:
+          label: '% de sorties'
+        last:
+          label: 'Dernière sortie'
+        best_day:
+          label: 'Meilleur jour'
+        best_friend:
+          label: 'Meilleur(s) ami(s)'
+          empty: Aucun
+        worst_friend:
+          label: 'Pire(s) ami(s)'
+          empty: Aucun
+        frequency:
+          label: 'Fréquence de sortie'
+          suffix: ' jours'
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+      header:
+        area:
+          content:
+            value: 'Statistiques pour la version courante ([versions:current_version]) depuis le [versions:start].'
+            format: plain_text
+  page:
+    display_options:
+      menu:
+        title: 'Loto statistiques - boules'

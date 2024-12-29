@@ -1,0 +1,5 @@
+msgid "JPF : Data views"
+msgstr "JPF : Vues de données"
+
+msgid "All features for data views."
+msgstr "Contient les fonctionnalités nécessaires pour les vues de données."

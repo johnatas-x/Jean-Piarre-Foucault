@@ -28,6 +28,7 @@
         "drupal/core-project-message": "^11",
         "drupal/core-recommended": "^11",
         "drupal/gin": "^3.0@RC",
+        "drupal/potx": "^1.1",
         "drupal/token": "^1.15",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/view_custom_table": "^2.0",

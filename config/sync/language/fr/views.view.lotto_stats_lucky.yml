@@ -1,0 +1,34 @@
+label: 'Loto statistiques - numéro chance'
+description: 'Statistiques des boules "numéro chance" du Loto.'
+display:
+  default:
+    display_options:
+      title: 'Loto statistiques - numéro chance'
+      fields:
+        ball:
+          label: Boule
+        count:
+          label: 'Nombre de sorties'
+        percentage:
+          label: '% de sorties'
+        last:
+          label: 'Dernière sortie'
+        best_day:
+          label: 'Meilleur jour'
+        frequency:
+          label: 'Fréquence de sortie'
+          suffix: ' jours'
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+      header:
+        area:
+          content:
+            value: 'Statistiques pour la version courante ([versions:current_version]) depuis le [versions:start].'
+            format: plain_text
+  page:
+    display_options:
+      menu:
+        title: 'Loto statistiques - numéro chance'

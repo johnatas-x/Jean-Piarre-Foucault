@@ -8,3 +8,6 @@ dependencies:
   - jpf_import:jpf_import
   - jpf_store:jpf_store
   - jpf_utils:jpf_utils
+
+'interface translation project': jpf_stats
+'interface translation server pattern': modules/custom/%project/translations/%project.%language.po

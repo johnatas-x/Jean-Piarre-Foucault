@@ -1,0 +1,5 @@
+msgid "JPF : Utils"
+msgstr "JPF : Utilitaires"
+
+msgid "Transverse features & helpers for all modules."
+msgstr "Contient les fonctionnalités transverses et utiles à tous les modules."

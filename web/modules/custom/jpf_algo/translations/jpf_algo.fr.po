@@ -1,0 +1,8 @@
+msgid "JPF : Algorithm"
+msgstr "JPF : Algorithmie"
+
+msgid "All features for algorithm and deep learning."
+msgstr "Contient les fonctionnalités nécessaires pour l'algorithmie et l'apprentissage."
+
+msgid "Custom"
+msgstr "Personnalisé"

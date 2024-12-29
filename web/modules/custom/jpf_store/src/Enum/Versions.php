@@ -191,11 +191,18 @@ enum Versions: string {
   /**
    * Human-readable date from begin method.
    *
-   * @return string|null
+   * @return string
    *   The date.
    */
-  public function humanReadableBeginDate(): ?string {
-    return DateTimePlus::createFromFormat('Ymd', $this->begin())->format('F d, Y');
+  public function humanReadableBeginDate(): string {
+    return \Drupal::service('date.formatter')
+      ->format(
+        DateTimePlus::createFromFormat(
+          'Ymd',
+          $this->begin()
+        )->getTimestamp(),
+        'custom_long_day'
+      );
   }
 
   /**

@@ -1,0 +1,5 @@
+msgid "JPF : Data charts"
+msgstr "JPF : Graphiques de données"
+
+msgid "All features for data charts."
+msgstr "Contient les fonctionnalités nécessaires pour les graphiques de données."
