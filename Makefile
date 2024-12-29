@@ -1,4 +1,5 @@
 include ./.docker/docker.mk
+include ./.docker/jpf.mk
 
 .PHONY: test
 
