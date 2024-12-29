@@ -8,6 +8,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   field: 0
+  file: 0
   filter: 0
   jpf_algo: 0
   jpf_charts: 0
@@ -18,6 +19,8 @@ module:
   jpf_tokens: 0
   jpf_utils: 0
   jpf_views: 0
+  language: 0
+  locale: 0
   mysql: 0
   node: 0
   page_cache: 0
