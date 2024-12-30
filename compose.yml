@@ -19,7 +19,7 @@ services:
     image: wodby/drupal-php:$PHP_TAG
     build:
       context: .
-      dockerfile: ./.docker/Dockerfile
+      dockerfile: ./.docker/Containerfile
       args:
         PHP_TAG: $PHP_TAG
         WODBY_USER_ID: $WODBY_USER_ID
