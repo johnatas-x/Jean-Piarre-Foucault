@@ -7,20 +7,16 @@ DRUPAL_ROOT ?= /var/www/html/web
 
 ## help	:	Print commands help.
 .PHONY: help
-ifneq (,$(wildcard docker.mk))
-help : docker.mk
-	@sed -n 's/^##//p' $<
-else
-help : Makefile
-	@sed -n 's/^##//p' $<
-endif
+help :
+	@cat .docker/docker.mk | sed -n 's/^##//p' $<
+	@cat .docker/jpf.mk | sed -n 's/^##//p' $<
 
 ## up	:	Start up containers.
 .PHONY: up
 up:
 	@echo "Starting up containers for $(PROJECT_NAME)..."
 	docker compose pull
-	docker compose up -d --remove-orphans
+	docker compose up -d --remove-orphans --build
 
 .PHONY: mutagen
 mutagen:

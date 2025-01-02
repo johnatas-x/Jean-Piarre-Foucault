@@ -12,7 +12,11 @@ RUN groupmod -g $WODBY_GROUP_ID wodby && \
     chown -R wodby:wodby /var/www/html
 
 # Add zsh & Oh My Zsh and other packages.
-RUN apk add vim zsh zsh-vcs tzdata
+RUN apk add \
+    vim \
+    zsh \
+    zsh-vcs \
+    tzdata
 RUN rm -Rf /root/.oh-my-zsh
 RUN yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
