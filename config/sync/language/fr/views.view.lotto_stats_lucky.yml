@@ -15,11 +15,15 @@ display:
           label: 'Dernière sortie'
         best_day:
           label: 'Meilleur jour'
+          empty: Aucun
         frequency:
           label: 'Fréquence de sortie'
           suffix: ' jours'
         custom_last_date:
           label: 'Dernière sortie'
+        custom_best_day:
+          label: 'Meilleur jour'
+          empty: Aucun
       exposed_form:
         options:
           submit_button: Appliquer

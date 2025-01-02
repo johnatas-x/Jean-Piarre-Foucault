@@ -15,12 +15,21 @@ use Drupal\jpf_store\Services\SchemaInterface;
 function jpf_views_views_data_alter(array &$data): void {
   foreach (SchemaInterface::LOTTO_STATS_TABLES as $table_name) {
     $data[$table_name]['custom_last_date'] = [
-      'title' => t('Custom Last date'),
+      'title' => t('Custom last date'),
       'group' => t('Custom Table Views'),
       'field' => [
-        'title' => t('Custom Last date'),
+        'title' => t('Custom last date'),
         'help' => t('Translatable custom last date.'),
         'id' => 'custom_last_date',
+      ],
+    ];
+    $data[$table_name]['custom_best_day'] = [
+      'title' => t('Custom best day'),
+      'group' => t('Custom Table Views'),
+      'field' => [
+        'title' => t('Custom best day'),
+        'help' => t('Translatable custom best day.'),
+        'id' => 'custom_best_day',
       ],
     ];
   }

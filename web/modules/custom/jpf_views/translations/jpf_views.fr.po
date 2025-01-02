@@ -5,9 +5,9 @@ msgid "All features for data views."
 msgstr "Contient les fonctionnalités nécessaires pour les vues de données."
 
 msgid "Unknown"
-msgstr "Inconnue"
+msgstr "Inconnu"
 
-msgid "Custom Last date"
+msgid "Custom last date"
 msgstr "Dernière sortie (champ personnalisé)"
 
 msgid "Custom Table Views"
@@ -15,3 +15,9 @@ msgstr "Vue de table personnalisée"
 
 msgid "Translatable custom last date."
 msgstr "Date de dernière sortie avec format traductible."
+
+msgid "Custom best day"
+msgstr "Meilleur jour (champ personnalisé)"
+
+msgid "Translatable custom best day."
+msgstr "Meilleur jour traductible."

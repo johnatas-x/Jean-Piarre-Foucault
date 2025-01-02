@@ -15,6 +15,7 @@ display:
           label: 'Dernière sortie'
         best_day:
           label: 'Meilleur jour'
+          empty: Aucun
         best_friend:
           label: 'Meilleur(s) ami(s)'
           empty: Aucun
@@ -26,6 +27,9 @@ display:
           suffix: ' jours'
         custom_last_date:
           label: 'Dernière sortie'
+        custom_best_day:
+          label: 'Meilleur jour'
+          empty: Aucun
       exposed_form:
         options:
           submit_button: Appliquer

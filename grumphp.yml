@@ -147,6 +147,7 @@ grumphp:
         - web/core
         - web/modules/contrib
         - web/modules/custom/jpf_import/src/Cron/ImportDynamicData.php
+        - web/modules/custom/jpf_views/src/Plugin/views/field/CustomBestDay.php
         - web/sites
         - web/themes/contrib
       metadata:
