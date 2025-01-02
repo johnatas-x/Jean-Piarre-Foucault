@@ -18,6 +18,8 @@ display:
         frequency:
           label: 'Fréquence de sortie'
           suffix: ' jours'
+        custom_last_date:
+          label: 'Dernière sortie'
       exposed_form:
         options:
           submit_button: Appliquer

@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Contains hooks for jpf_views module.
+ */
+
+declare(strict_types=1);
+
+use Drupal\jpf_store\Services\SchemaInterface;
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function jpf_views_views_data_alter(array &$data): void {
+  foreach (SchemaInterface::LOTTO_STATS_TABLES as $table_name) {
+    $data[$table_name]['custom_last_date'] = [
+      'title' => t('Custom Last date'),
+      'group' => t('Custom Table Views'),
+      'field' => [
+        'title' => t('Custom Last date'),
+        'help' => t('Translatable custom last date.'),
+        'id' => 'custom_last_date',
+      ],
+    ];
+  }
+}

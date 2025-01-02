@@ -3,3 +3,15 @@ msgstr "JPF : Vues de données"
 
 msgid "All features for data views."
 msgstr "Contient les fonctionnalités nécessaires pour les vues de données."
+
+msgid "Unknown"
+msgstr "Inconnue"
+
+msgid "Custom Last date"
+msgstr "Dernière sortie (champ personnalisé)"
+
+msgid "Custom Table Views"
+msgstr "Vue de table personnalisée"
+
+msgid "Translatable custom last date."
+msgstr "Date de dernière sortie avec format traductible."

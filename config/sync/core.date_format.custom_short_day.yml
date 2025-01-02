@@ -1,0 +1,8 @@
+uuid: f2e62476-78f2-4a9d-9eec-9ea7f1c7e809
+langcode: en
+status: true
+dependencies: {  }
+id: custom_short_day
+label: 'Custom : short day'
+locked: false
+pattern: Y/m/d
