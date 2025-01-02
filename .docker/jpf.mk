@@ -2,6 +2,11 @@ include .env
 
 PHP_CONTAINER = "$(PROJECT_NAME)_php"
 
+## zsh	:	Access `php` container via zsh.
+.PHONY: zsh
+zsh:
+	@docker exec -it "$(PHP_CONTAINER)" zsh
+
 ## quality	:	Executes grumphp to check quality.
 .PHONY: quality
 quality:

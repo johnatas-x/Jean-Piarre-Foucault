@@ -46,7 +46,7 @@ Run `make quality` to unleash the *“very hard”* quality check tools. If your
 ## Any other cool stuff? 🍿
 Sure.
 
-On the web container, zsh (with Oh My Zsh) is installed. So you can use it like `docker exec -it jean-piarre-foucault_php zsh`.
+On the web container, zsh (with Oh My Zsh) is installed. So you can use it like `make zsh`.
 > [!NOTE]
 > For now my .zshrc is loaded with my theme and my aliases, but you will soon be able to configure yours!
 
