@@ -15,6 +15,11 @@ use Symfony\Component\HttpFoundation\Response;
 final class ImportDynamicData {
 
   /**
+   * The cron ID.
+   */
+  private const string CRON_ID = 'import_dynamic_data';
+
+  /**
    * Cron callback.
    *
    * @param \Drupal\ultimate_cron\CronJobInterface $job
@@ -65,6 +70,35 @@ final class ImportDynamicData {
     }
     catch (\Throwable $exception) {
       \Drupal::logger('jpf_import')->error($exception->getMessage());
+    }
+  }
+
+  /**
+   * Get last end date of the current cron.
+   *
+   * @return string
+   *   The date with long format.
+   */
+  public static function lastRun(): string {
+    try {
+      $ultimate_cron_entity = \Drupal::entityTypeManager()
+        ->getStorage('ultimate_cron_job')
+        ->load(self::CRON_ID);
+
+      if (!$ultimate_cron_entity instanceof CronJobInterface) {
+        return t('Unknown')->render();
+      }
+
+      $log_entry = $ultimate_cron_entity->loadLatestLogEntry();
+
+      return is_numeric($log_entry->end_time)
+        ? \Drupal::service('date.formatter')->format((int) $log_entry->end_time, 'long')
+        : t('Never')->render();
+    }
+    catch (\Throwable $exception) {
+      \Drupal::logger('jpf_import')->error($exception->getMessage());
+
+      return t('Unknown')->render();
     }
   }
 

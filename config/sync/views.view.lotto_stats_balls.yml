@@ -655,7 +655,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: 'Stats for the current version ([versions:current_version]) since [versions:start].'
+            value: "Stats for the current version ([versions:current_version]) since [versions:start].\r\n\r\nLast update : [versions:last_update]"
             format: plain_text
           tokenize: false
       footer: {  }

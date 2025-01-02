@@ -69,6 +69,7 @@
           \Drupal\field\Entity\FieldStorageConfig,
           \Drupal\file\Entity\File,
           \Drupal\jpf_import\Api\Sto,
+          \Drupal\jpf_import\Cron\ImportDynamicData,
           \Drupal\jpf_stats\Batch\FillStatsBatch,
           \Drupal\jpf_store\Batch\FillDataBatch,
           \Drupal\jpf_store\Enum\Balls,

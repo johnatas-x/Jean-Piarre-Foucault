@@ -32,7 +32,7 @@ display:
       header:
         area:
           content:
-            value: 'Statistiques pour la version courante ([versions:current_version]) depuis le [versions:start].'
+            value: "Statistiques pour la version courante ([versions:current_version]) depuis le [versions:start].\r\n\r\nDernière mise à jour : [versions:last_update]"
             format: plain_text
   page:
     display_options:

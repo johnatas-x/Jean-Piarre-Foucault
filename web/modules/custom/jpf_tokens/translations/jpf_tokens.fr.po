@@ -27,3 +27,9 @@ msgstr "JPF : Jetons"
 
 msgid "Provides custom tokens."
 msgstr "Contient les fonctionnalités nécessaires pour les jetons personnalisés."
+
+msgid "Last update"
+msgstr "Dernière mise à jour"
+
+msgid "Date and time of the last update for the current version."
+msgstr "Date et heure de la dernière mise à jour de la version courante."

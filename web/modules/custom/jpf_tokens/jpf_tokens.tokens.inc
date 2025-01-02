@@ -8,6 +8,7 @@
 declare(strict_types=1);
 
 use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\jpf_import\Cron\ImportDynamicData;
 use Drupal\jpf_store\Enum\Versions;
 
 /**
@@ -30,6 +31,10 @@ function jpf_tokens_token_info(): array {
       'start' => [
         'name' => t('Start date'),
         'description' => t('The first day of the current version.'),
+      ],
+      'last_update' => [
+        'name' => t('Last update'),
+        'description' => t('Date and time of the last update for the current version.'),
       ],
     ],
   ];
@@ -64,6 +69,7 @@ function jpf_tokens_tokens(
     $replacements[$original] = match($name) {
       'current_version' => $current_version->value ?? t('unknown version')->render(),
       'start' => $current_version?->humanReadableBeginDate() ?? t('unknown date')->render(),
+      'last_update' => ImportDynamicData::lastRun(),
       default => '',
     };
   }
