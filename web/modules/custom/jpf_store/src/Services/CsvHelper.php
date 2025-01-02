@@ -33,7 +33,7 @@ class CsvHelper implements CsvHelperInterface {
         continue;
       }
 
-      $data[] = str_getcsv($line, ';');
+      $data[] = str_getcsv(string: $line, separator: ';', escape: '');
     }
 
     fclose($handle);

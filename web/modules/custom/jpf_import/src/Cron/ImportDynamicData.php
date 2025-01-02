@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_import\Cron;
 
-use Consolidation\SiteAlias\SiteAliasInterface;
 use Drupal\jpf_import\Api\Sto;
 use Drupal\jpf_store\Enum\Versions;
 use Drupal\ultimate_cron\CronJobInterface;
-use Drush\Drush;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -63,13 +61,7 @@ final class ImportDynamicData {
 
       \Drupal::service('jpf_store.database')->importCsvFile($current_version);
 
-      $site_alias = Drush::service('site.alias.manager')->getSelf();
-
-      if (!$site_alias instanceof SiteAliasInterface) {
-        return;
-      }
-
-      Drush::drush($site_alias, 'fill-lotto-stats')->run();
+      exec('drush fill-lotto-stats');
     }
     catch (\Throwable $exception) {
       \Drupal::logger('jpf_import')->error($exception->getMessage());

@@ -64,4 +64,4 @@ init:
 	@make drush "site-install 'minimal' --config-dir=../config/sync --account-name='admin' --account-pass='admin' --yes"
 	@make fulldeploy
 	@make drush "fill-lotto-draws-data --all"
-	@make drush fill-lotto-stats
+	@make drush cron
