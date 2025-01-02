@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: custom_long_day
-label: 'Custom long day'
+label: 'Custom : long day'
 locked: false
 pattern: 'F d, Y'
