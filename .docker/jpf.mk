@@ -9,3 +9,8 @@ quality:
 .PHONY: fixperm
 fixperm:
 	sudo chown -R $(WODBY_USER_ID):$(WODBY_GROUP_ID) .
+
+## rebuild	:	Down & rebuild stack.
+.PHONY: rebuild
+rebuild:
+	docker compose down && docker compose up --build -d
