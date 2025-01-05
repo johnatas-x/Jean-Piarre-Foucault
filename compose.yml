@@ -19,7 +19,7 @@ services:
     image: wodby/drupal-php:$PHP_TAG
     build:
       context: .
-      dockerfile: ./.docker/Containerfile
+      dockerfile: ./.docker/php/Containerfile
       args:
         PHP_TAG: $PHP_TAG
         WODBY_USER_ID: $WODBY_USER_ID
@@ -51,9 +51,11 @@ services:
   crond:
     init: true
     image: wodby/drupal-php:$PHP_TAG
+    entrypoint: ["./.docker/crond/custom-entrypoint.sh"]
     container_name: "${PROJECT_NAME}_crond"
     environment:
       CRONTAB: "0 * * * * drush -r /var/www/html/web cron"
+      CRONTAB_USER: www-data
     command: sudo -E crond -f -d 0
     volumes:
     - ./:/var/www/html:cached

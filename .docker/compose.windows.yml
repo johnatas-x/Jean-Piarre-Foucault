@@ -7,7 +7,5 @@ services:
       PHP_FPM_GROUP: root
   crond:
     user: root
-    command: "php-fpm -R"
     environment:
-      PHP_FPM_USER: root
-      PHP_FPM_GROUP: root
+      CRONTAB_USER: root
