@@ -859,7 +859,3 @@ $settings['trusted_host_patterns'] = [
   '^www\.jean-piarre-foucault\.docker\.localhost',
   '^jean-piarre-foucault\.docker\.localhost',
 ];
-
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
-}

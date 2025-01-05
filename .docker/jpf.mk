@@ -16,6 +16,13 @@ quality:
 .PHONY: fixperm
 fixperm:
 	@sudo chown -R $(WODBY_USER_ID):$(WODBY_GROUP_ID) .
+	@find web -type d -exec chmod 755 '{}' \;
+	@find web -type f -exec chmod 644 '{}' \;
+	@find web/sites -type d -name files -exec chmod 775 '{}' \;
+	@find web/sites/*/files -type d -exec chmod 775 '{}' \;
+	@find web/sites/*/files -type f -exec chmod 664 '{}' \;
+	@find web/sites/*/settings* -type f -exec chmod 444 '{}' \;
+	@find web/sites/*/settings* -type f -exec sudo chattr +i '{}' \;
 
 ## rebuild	:	Down & rebuild stack.
 .PHONY: rebuild
