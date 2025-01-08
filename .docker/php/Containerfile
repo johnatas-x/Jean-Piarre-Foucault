@@ -25,4 +25,7 @@ ARG TIMEZONE="Europe/Paris"
 RUN rm /etc/localtime || true
 RUN ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
+# Fix git config.
+RUN git config --global --add safe.directory /var/www/html
+
 USER wodby

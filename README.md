@@ -34,14 +34,14 @@ Run `make quality` to unleash the *“very hard”* quality check tools. If your
 - **Random Number Predictions** 🎲: Because when it comes to the lottery, randomness is really all you need.
 
 ## Useful commands 📎
-| Description       | Command                                          |
-|-------------------|--------------------------------------------------|
-| Start project     | `make up`                                        |
-| Stop project      | `make down`                                      |
-| Update project    | `make update`                                    |
-| Init project      | `make init`                                      |
-| Check quality     | `make quality`                                   |
-| Force update data | `make drush "crun import_dynamic_data --force"`  |
+| Description       | Command                                         |
+|-------------------|-------------------------------------------------|
+| Start project     | `make up`                                       |
+| Stop project      | `make down`                                     |
+| Update project    | `make pup`                                      |
+| Init project      | `make init`                                     |
+| Check quality     | `make quality`                                  |
+| Force update data | `make drush "crun import_dynamic_data --force"` |
 
 ## Any other cool stuff? 🍿
 Sure.

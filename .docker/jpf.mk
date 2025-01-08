@@ -22,19 +22,11 @@ fixperm:
 	@find web/sites/*/files -type d -exec chmod 775 '{}' \;
 	@find web/sites/*/files -type f -exec chmod 664 '{}' \;
 	@find web/sites/*/settings* -type f -exec chmod 444 '{}' \;
-	@find web/sites/*/settings* -type f -exec sudo chattr +i '{}' \;
 
 ## rebuild	:	Down & rebuild stack.
 .PHONY: rebuild
 rebuild:
 	@docker compose down && docker compose up --build -d
-
-## drupset	:	Drupal settings.
-.PHONY: drupset
-drupset:
-	@sudo chmod -R 775 "web/sites/default"
-	@cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
-	@sudo chmod 664 "web/sites/default/settings.php"
 
 ## compinst	:	Composer install.
 .PHONY: compinst
@@ -49,12 +41,12 @@ fulldeploy:
 	@make drush locale-update
 	@make drush cr
 
-## update	:	Update stack.
-.PHONY: update
-update:
+## pup	:	Project update.
+.PHONY: pup
+pup:
 	@make compinst
+	@cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
 	@make fixperm
-	@make drupset
 	@make fulldeploy
 
 ## init	:	Init project.
