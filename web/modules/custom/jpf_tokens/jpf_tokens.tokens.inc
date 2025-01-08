@@ -74,5 +74,7 @@ function jpf_tokens_tokens(
     };
   }
 
+  $bubbleable_metadata->setCacheTags(['custom_tokens']);
+
   return $replacements;
 }

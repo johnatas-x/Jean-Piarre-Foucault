@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_import\Cron;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\jpf_import\Api\Sto;
 use Drupal\jpf_store\Enum\Versions;
 use Drupal\ultimate_cron\CronJobInterface;
@@ -67,6 +68,8 @@ final class ImportDynamicData {
       \Drupal::service('jpf_store.database')->importCsvFile($current_version);
 
       exec('drush fill-lotto-stats');
+
+      Cache::invalidateTags(['custom_tokens']);
     }
     catch (\Throwable $exception) {
       \Drupal::logger('jpf_import')->error($exception->getMessage());
