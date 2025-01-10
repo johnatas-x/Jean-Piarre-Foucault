@@ -17,18 +17,18 @@ class CustomLastDate extends CustomFieldBase {
   /**
    * {@inheritDoc}
    */
-  protected const string DB_FIELD = 'last';
+  protected const array QUERY_DB_FIELDS = ['last'];
 
   /**
    * {@inheritDoc}
    */
   public function render(ResultRow $values): string {
-    return is_string($this->getCurrentValue($values))
+    return is_string($this->getCurrentValue($values, $this->single))
       ? \Drupal::service('date.formatter')
         ->format(
         DateTimePlus::createFromFormat(
           'Y/m/d',
-          $this->getCurrentValue($values)
+          $this->getCurrentValue($values, $this->single)
         )->getTimestamp(),
         'custom_short_day'
       )

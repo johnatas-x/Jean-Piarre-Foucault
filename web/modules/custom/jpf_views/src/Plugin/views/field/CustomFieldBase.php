@@ -15,8 +15,31 @@ abstract class CustomFieldBase extends FieldPluginBase {
 
   /**
    * Field DB name.
+   *
+   * @var string[]
    */
-  protected const string DB_FIELD = '';
+  protected const array QUERY_DB_FIELDS = [];
+
+  /**
+   * DB single field.
+   */
+  protected readonly string $single;
+
+  /**
+   * Constructs a CustomFieldBase object.
+   *
+   * @param array<mixed> $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin ID for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   */
+  public function __construct(array $configuration, string $plugin_id, mixed $plugin_definition) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    [$this->single] = static::QUERY_DB_FIELDS;
+  }
 
   /**
    * {@inheritDoc}
@@ -26,7 +49,9 @@ abstract class CustomFieldBase extends FieldPluginBase {
       return;
     }
 
-    $this->query->addField(NULL, static::DB_FIELD);
+    foreach (static::QUERY_DB_FIELDS as $field) {
+      $this->query->addField(NULL, $field);
+    }
   }
 
   /**
@@ -34,12 +59,14 @@ abstract class CustomFieldBase extends FieldPluginBase {
    *
    * @param \Drupal\views\ResultRow $values
    *   The current values.
+   * @param string $field
+   *   The current field.
    *
    * @return string|null
    *   The current value or null if not a string.
    */
-  protected function getCurrentValue(ResultRow $values): ?string {
-    $current_value = $values->{$this->table . '_' . static::DB_FIELD};
+  protected function getCurrentValue(ResultRow $values, string $field): ?string {
+    $current_value = $values->{$this->table . '_' . $field};
 
     return is_string($current_value)
       ? $current_value

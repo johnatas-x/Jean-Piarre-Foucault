@@ -17,7 +17,7 @@ class CustomBestDay extends CustomFieldBase {
   /**
    * {@inheritDoc}
    */
-  protected const string DB_FIELD = 'best_day';
+  protected const array QUERY_DB_FIELDS = ['best_day'];
 
   /**
    * ID for French language.
@@ -28,7 +28,7 @@ class CustomBestDay extends CustomFieldBase {
    * {@inheritDoc}
    */
   public function render(ResultRow $values): ?string {
-    $current_value = $this->getCurrentValue($values);
+    $current_value = $this->getCurrentValue($values, $this->single);
     $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if (!is_string($current_value) || $current_language !== self::FR_LANG_ID) {
