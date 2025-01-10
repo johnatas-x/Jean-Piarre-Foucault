@@ -32,5 +32,14 @@ function jpf_views_views_data_alter(array &$data): void {
         'id' => 'custom_best_day',
       ],
     ];
+    $data[$table_name]['delta'] = [
+      'title' => t('Delta'),
+      'group' => t('Custom Table Views'),
+      'field' => [
+        'title' => t('Delta'),
+        'help' => t('Delta between last and frequency.'),
+        'id' => 'delta',
+      ],
+    ];
   }
 }

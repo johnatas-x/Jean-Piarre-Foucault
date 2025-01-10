@@ -73,4 +73,23 @@ abstract class CustomFieldBase extends FieldPluginBase {
       : NULL;
   }
 
+  /**
+   * Get current field values.
+   *
+   * @param \Drupal\views\ResultRow $values
+   *   The current values.
+   *
+   * @return array<string, string|null>
+   *   The current values or null if not a string.
+   */
+  protected function getCurrentValues(ResultRow $values): array {
+    return array_combine(
+      static::QUERY_DB_FIELDS,
+      array_map(
+        fn ($field) => $this->getCurrentValue($values, $field),
+        static::QUERY_DB_FIELDS
+      )
+    );
+  }
+
 }

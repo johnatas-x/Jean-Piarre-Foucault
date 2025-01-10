@@ -21,3 +21,9 @@ msgstr "Meilleur jour (champ personnalisé)"
 
 msgid "Translatable custom best day."
 msgstr "Meilleur jour traductible."
+
+msgid "Delta"
+msgstr "Delta"
+
+msgid "Delta between last and frequency."
+msgstr "Delta entre le dernier tirage et la fréquence."
