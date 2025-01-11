@@ -1,4 +1,17 @@
 services:
+  python:
+    image: python:${PYTHON_TAG}-alpine
+    build:
+      context: .
+      dockerfile: ./.docker/python/Containerfile
+      target: builder
+      args:
+        PYTHON_TAG: $PYTHON_TAG
+        PYTHON_PORT: $PYTHON_PORT
+    container_name: "${PROJECT_NAME}_python"
+    environment:
+      FLASK_RUN_PORT: $PYTHON_PORT
+
   mariadb:
     image: wodby/mariadb:$MARIADB_TAG
     container_name: "${PROJECT_NAME}_mariadb"
@@ -62,6 +75,13 @@ services:
 
   nginx:
     image: wodby/nginx:$NGINX_TAG
+    build:
+      context: .
+      dockerfile: ./.docker/nginx/Containerfile
+      args:
+        NGINX_TAG: $NGINX_TAG
+        WODBY_USER_ID: $WODBY_USER_ID
+        WODBY_GROUP_ID: $WODBY_GROUP_ID
     container_name: "${PROJECT_NAME}_nginx"
     depends_on:
     - php
@@ -71,8 +91,10 @@ services:
       NGINX_BACKEND_HOST: php
       NGINX_SERVER_ROOT: /var/www/html/web
       NGINX_VHOST_PRESET: $NGINX_VHOST_PRESET
+      PYTHON_PORT: $PYTHON_PORT
     volumes:
     - ./:/var/www/html:cached
+    - ./.docker/nginx/vhost.conf.tmpl:/etc/gotpl/vhost.conf.tmpl
     labels:
     - "traefik.http.routers.${PROJECT_NAME}_nginx.rule=Host(`${PROJECT_BASE_URL}`)"
 
@@ -109,6 +131,7 @@ services:
     ports:
     - "${PROJECT_PORT}:80"
     - '8080:8080'
+    - "${PYTHON_PORT}:${PYTHON_PORT}"
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
 

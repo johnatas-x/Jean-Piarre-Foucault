@@ -1,0 +1,24 @@
+ARG NGINX_TAG=1.27-5.39.12
+FROM wodby/nginx:${NGINX_TAG}
+
+USER root
+
+# Override default UID and GID.
+ARG WODBY_USER_ID
+ARG WODBY_GROUP_ID
+
+RUN apk add \
+    shadow \
+    tzdata
+
+RUN groupmod -g $WODBY_GROUP_ID wodby && \
+    usermod -u $WODBY_USER_ID -g wodby wodby && \
+    chown -R wodby:wodby /etc/nginx && \
+    chown -R wodby:wodby /usr/share/nginx
+
+# Set timezone.
+ARG TIMEZONE="Europe/Paris"
+RUN rm /etc/localtime || true
+RUN ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
+
+USER wodby

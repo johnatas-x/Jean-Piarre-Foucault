@@ -1,0 +1,55 @@
+include upstream.conf;
+
+server {
+    # ---- Server configuration ----
+    listen 80 default_server{{- if getenv "NGINX_HTTP2" }} http2{{- end }};
+    server_name {{ getenv "NGINX_SERVER_NAME" "default" }};
+
+    {{- if getenv "NGINX_MODSECURITY_ENABLED" }}
+        modsecurity on;
+    modsecurity_rules_file /etc/nginx/modsecurity/main.conf;
+    {{- end }}
+
+    root {{ getenv "NGINX_SERVER_ROOT" "/var/www/html" }};
+
+    {{- if getenv "NGINX_VHOST_PRESET" }}
+    include preset.conf;
+    {{- end }}
+
+    {{- if not (getenv "NGINX_VHOST_NO_DEFAULTS") }}
+    include defaults.conf;
+    {{- end }}
+
+    {{- if getenv "NGINX_SERVER_EXTRA_CONF_FILEPATH" }}
+    include {{ getenv "NGINX_SERVER_EXTRA_CONF_FILEPATH" }};
+    {{- end }}
+
+    # Headers
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    add_header Vary Accept-Encoding;
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+
+    # Securities.
+    location ~ ^/core/(install.php|authorize.php|rebuild.php|assets/scaffold.*|scripts.*)$ {
+        return 404;
+    }
+    location ~ (^/core|^/modules|^/themes).*.(txt|md)$ {
+        return 404;
+    }
+    location ~ ^/core/.*.json$ {
+        return 404;
+    }
+    location ~ (^|/)\. {
+        return 403;
+    }
+    location ~ /vendor/.*\.php$ {
+        deny all;
+        return 404;
+    }
+
+    # Python.
+    location ~ ^/(algo|algo/.+)$ {
+        proxy_pass http://python:{{ getenv "PYTHON_PORT" "5000" }};
+    }
+}

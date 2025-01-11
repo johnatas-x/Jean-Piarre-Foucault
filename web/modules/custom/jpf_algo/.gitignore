@@ -1,5 +1,7 @@
+# Ignore all (private).
 *
 
+# Don't ignore public files.
 !translations/
 !jpf_algo.info.yml
 !README.md
