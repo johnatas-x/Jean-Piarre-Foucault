@@ -49,8 +49,11 @@ abstract class CustomFieldBase extends FieldPluginBase {
       return;
     }
 
+    $this->ensureMyTable();
+    $this->field_alias = $this->query->addField($this->tableAlias, $this->single);
+
     foreach (static::QUERY_DB_FIELDS as $field) {
-      $this->query->addField(NULL, $field);
+      $this->query->addField($this->tableAlias, $field);
     }
   }
 

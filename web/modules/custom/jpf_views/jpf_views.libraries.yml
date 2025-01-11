@@ -1,0 +1,5 @@
+jpf_views:
+  version: 1.x
+  css:
+    theme:
+      assets/css/jpf_views.css: {}

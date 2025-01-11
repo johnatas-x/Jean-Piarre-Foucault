@@ -8,6 +8,7 @@
 declare(strict_types=1);
 
 use Drupal\jpf_store\Services\SchemaInterface;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_views_data_alter().
@@ -42,4 +43,15 @@ function jpf_views_views_data_alter(array &$data): void {
       ],
     ];
   }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function jpf_views_views_pre_render(ViewExecutable $view): void {
+  if (!is_string($view->id()) || !str_starts_with($view->id(), 'lotto_stats')) {
+    return;
+  }
+
+  $view->element['#attached']['library'][] = 'jpf_views/jpf_views';
 }

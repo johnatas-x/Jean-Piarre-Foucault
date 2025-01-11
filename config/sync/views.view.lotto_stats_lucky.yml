@@ -452,6 +452,55 @@ display:
           format_plural_string: !!binary MQNAY291bnQ=
           prefix: ''
           suffix: ' days'
+        delta:
+          id: delta
+          table: lotto_lucky_stats
+          field: delta
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: delta
+          label: Delta
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"cell-value {% if delta > 0 %}positive{% elseif delta < 0 %}negative{% else %}zero{% endif %}\">\r\n  {{ delta }} {{ delta == 1 or delta == -1 ? 'day' : 'days' }}\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
       pager:
         type: none
         options:
@@ -490,7 +539,11 @@ display:
             count: count
             percentage: percentage
             last: last
+            custom_last_date: custom_last_date
             best_day: best_day
+            custom_best_day: custom_best_day
+            frequency: frequency
+            delta: delta
           default: ball
           info:
             ball:
@@ -521,7 +574,35 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            custom_last_date:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             best_day:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            custom_best_day:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            frequency:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            delta:
               sortable: true
               default_sort_order: asc
               align: ''

@@ -18,8 +18,8 @@ class Delta extends CustomFieldBase {
    * {@inheritDoc}
    */
   protected const array QUERY_DB_FIELDS = [
-    'last',
     'frequency',
+    'last',
   ];
 
   /**

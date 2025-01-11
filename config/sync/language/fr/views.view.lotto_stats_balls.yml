@@ -30,6 +30,9 @@ display:
         custom_best_day:
           label: 'Meilleur jour'
           empty: Aucun
+        delta:
+          alter:
+            text: "<div class=\"cell-value {% if delta > 0 %}positive{% elseif delta < 0 %}negative{% else %}zero{% endif %}\">\r\n  {{ delta }} {{ delta == 1 or delta == -1 ? 'jour' : 'jours' }}\r\n</div>"
       exposed_form:
         options:
           submit_button: Appliquer
