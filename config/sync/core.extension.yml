@@ -2,6 +2,7 @@ _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
   admin_toolbar: 0
+  admin_toolbar_tools: 0
   block: 0
   breakpoint: 0
   charts: 0
@@ -21,7 +22,10 @@ module:
   jpf_utils: 0
   jpf_views: 0
   language: 0
+  link: 0
   locale: 0
+  menu_link_content: 0
+  menu_ui: 0
   mysql: 0
   node: 0
   page_cache: 0
