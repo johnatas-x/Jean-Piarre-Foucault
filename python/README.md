@@ -1,7 +1,14 @@
 > [!CAUTION]
-> This directory points to a private Git repo.
+> This directory points to my private Python magic.
 >
 > It contains Deep Learning to aliment `jpf_algo` Drupal's module.
+
+> [!NOTE]
+> My base is public (as example).
+>
+> You can create a version py file and a version html template and make your magic.
+>
+> To begin, you can copy `v5.example.html` to `v5.html` and `v5.example.py` to `v5.py`.
 
 > [!TIP]
 > My code is inspired by two public Git repos seasoned and improved to my taste.

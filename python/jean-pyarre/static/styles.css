@@ -1,0 +1,46 @@
+body {
+  font-family: Ginter,Inter,"Helvetica Neue",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;
+  margin: 40px;
+  background-color: #1b1b1d;
+}
+
+h1 {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 575;
+  letter-spacing: -1.7px;
+  margin-top: 17px;
+}
+
+ul {
+  color: #b9a0eb;
+}
+
+li {
+  margin: 5px 0;
+}
+
+a {
+  color: #d2d3d3;
+  transition: color 0.2s;
+  line-height: 24px;
+}
+
+a:hover {
+  color: #b59aea;
+}
+
+a:visited {
+  color: #d2d3d3;
+}
+
+a:active {
+  color: #b59aea;
+}
+
+.back {
+  color: rgb(158, 159, 160);
+  font-size: 13px;
+  line-height: 26px;
+  text-decoration: none;
+}

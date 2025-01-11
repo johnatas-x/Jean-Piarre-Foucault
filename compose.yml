@@ -1,5 +1,6 @@
 services:
   python:
+    restart: always
     image: python:${PYTHON_TAG}-alpine
     build:
       context: .

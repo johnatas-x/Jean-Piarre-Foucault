@@ -1,5 +1,10 @@
 # Ignore all directory (private).
 /jean-pyarre/*
 
-# Don't ignore readme.
-!/jean-pyarre/README.md
+# Don't ignore public files.
+!/jean-pyarre/static/styles.css
+!/jean-pyarre/templates/algo.html
+!/jean-pyarre/templates/base.html
+!/jean-pyarre/templates/v*.example.html
+!/jean-pyarre/jean-pyarre.py
+!/jean-pyarre/v*.example.py

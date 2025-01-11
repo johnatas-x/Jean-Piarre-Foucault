@@ -30,6 +30,14 @@ server {
     add_header X-XSS-Protection "1; mode=block";
     add_header X-Content-Type-Options "nosniff";
 
+    # Python.
+    location ~ ^/(algo|algo/.+)$ {
+        proxy_pass http://python:{{ getenv "PYTHON_PORT" "5000" }};
+    }
+    location = /static/styles.css {
+        proxy_pass http://python:{{ getenv "PYTHON_PORT" "5000" }};
+    }
+
     # Securities.
     location ~ ^/core/(install.php|authorize.php|rebuild.php|assets/scaffold.*|scripts.*)$ {
         return 404;
@@ -46,10 +54,5 @@ server {
     location ~ /vendor/.*\.php$ {
         deny all;
         return 404;
-    }
-
-    # Python.
-    location ~ ^/(algo|algo/.+)$ {
-        proxy_pass http://python:{{ getenv "PYTHON_PORT" "5000" }};
     }
 }
