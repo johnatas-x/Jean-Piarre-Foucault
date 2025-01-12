@@ -18,10 +18,10 @@ fixperm:
 	@sudo chown -R $(WODBY_USER_ID):$(WODBY_GROUP_ID) .
 	@find web -type d -exec chmod 755 '{}' \;
 	@find web -type f -exec chmod 644 '{}' \;
-	@find web/sites -type d -name files -exec chmod 775 '{}' \;
-	@find web/sites/*/files -type d -exec chmod 775 '{}' \;
-	@find web/sites/*/files -type f -exec chmod 664 '{}' \;
-	@find web/sites/*/settings* -type f -exec chmod 444 '{}' \;
+	@find web/sites -type d -name files -exec chmod 775 '{}' \; || true
+	@find web/sites/*/files -type d -exec chmod 775 '{}' \; || true
+	@find web/sites/*/files -type f -exec chmod 664 '{}' \; || true
+	@find web/sites/*/settings* -type f -exec chmod 444 '{}' \; || true
 
 ## rebuild	:	Down & rebuild stack.
 .PHONY: rebuild
@@ -59,12 +59,15 @@ init:
 	@sudo rm -Rf vendor
 	@sudo rm -Rf web/modules/contrib
 	@sudo rm -Rf web/themes/contrib
+	@sudo rm -Rf web/core
+	@sudo rm -Rf web/sites
 	@docker compose up --build -d
 	@docker exec -it "$(PHP_CONTAINER)" sudo chmod o+w /var/www/html
 	@docker exec -it "$(PHP_CONTAINER)" git config --global --add safe.directory /var/www/html
 	@make compinst
 	@make fixperm
-	@make drupset
+	@mkdir -p "web/sites/default" && cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
+	@make fixperm
 	@make drush "site-install 'minimal' --config-dir=../config/sync --account-name='admin' --account-pass='admin' --yes"
 	@make fulldeploy
 	@make drush "fill-lotto-draws-data --all"
