@@ -1,0 +1,6 @@
+jpf_utils.python:
+  title: 'Python'
+  route_name: jpf_utils.python
+  menu_name: python
+  parent: system.admin
+  weight: -99

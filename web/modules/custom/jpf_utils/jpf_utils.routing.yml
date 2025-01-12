@@ -1,0 +1,4 @@
+jpf_utils.python:
+  path: '/algo'
+  requirements:
+    _permission: 'administer site configuration'

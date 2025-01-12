@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Contains hooks for jpf_utils module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function jpf_utils_toolbar_alter(&$items): void {
+  $items['admin_toolbar_tools']['#attached']['library'][] = 'jpf_utils/toolbar';
+}
