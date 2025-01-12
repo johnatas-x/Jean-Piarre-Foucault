@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Algorithm versions</h1>
+<h1>Available algorithm versions</h1>
 <ul>
   {% for version in versions %}
   <li>
-    <a href="{{ url_for('algo') }}/{{ version }}">{{ version }}</a>
+    <a href="{{ url_for(version + '.index') }}">{{ version }}</a>
   </li>
   {% endfor %}
 </ul>

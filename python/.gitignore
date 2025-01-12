@@ -7,4 +7,4 @@
 !/jean-pyarre/templates/base.html
 !/jean-pyarre/templates/v*.example.html
 !/jean-pyarre/jean-pyarre.py
-!/jean-pyarre/v*.example.py
+!/jean-pyarre/versions/v*.example.py
