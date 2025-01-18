@@ -147,6 +147,7 @@ grumphp:
         - web/core
         - web/modules/contrib
         - web/modules/custom/jpf_import/src/Cron/ImportDynamicData.php
+        - web/modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php
         - web/modules/custom/jpf_views/src/Plugin/views/field/CustomBestDay.php
         - web/sites
         - web/themes/contrib
@@ -353,8 +354,6 @@ grumphp:
     twigcsfixer:
       paths:
         - web/modules/custom
-        - web/profiles/custom
-        - web/themes/custom
       level: 'warning'
       config: ~
       report: 'text'
