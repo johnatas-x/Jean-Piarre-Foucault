@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7052678ccce5ca104df9aa6bb59b1a29",
+    "content-hash": "274f63809c5a4f296f013f11a40a93d7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8832,16 +8832,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.2.4",
+            "version": "2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "11bbf35166ce90f642b71069fc5049a24594a0f3"
+                "reference": "058460835f146ffb0400a53ce808bb54cc15a30d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/11bbf35166ce90f642b71069fc5049a24594a0f3",
-                "reference": "11bbf35166ce90f642b71069fc5049a24594a0f3",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/058460835f146ffb0400a53ce808bb54cc15a30d",
+                "reference": "058460835f146ffb0400a53ce808bb54cc15a30d",
                 "shasum": ""
             },
             "require": {
@@ -8910,7 +8910,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-01-18T16:30:30+00:00"
+            "time": "2025-01-18T19:50:04+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
