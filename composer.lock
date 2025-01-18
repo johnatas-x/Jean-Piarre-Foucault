@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "944879a6d0e954f756321b7d87183805",
+    "content-hash": "7052678ccce5ca104df9aa6bb59b1a29",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8832,16 +8832,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "72fc7faed56460a36f2ed14e6b5d798be158dfb0"
+                "reference": "11bbf35166ce90f642b71069fc5049a24594a0f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/72fc7faed56460a36f2ed14e6b5d798be158dfb0",
-                "reference": "72fc7faed56460a36f2ed14e6b5d798be158dfb0",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/11bbf35166ce90f642b71069fc5049a24594a0f3",
+                "reference": "11bbf35166ce90f642b71069fc5049a24594a0f3",
                 "shasum": ""
             },
             "require": {
@@ -8859,7 +8859,7 @@
                 "phpmd/phpmd": "^2.15",
                 "phpro/grumphp": "^2.10",
                 "phpstan/extension-installer": "^1.4",
-                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan": "^2.1",
                 "phpstan/phpstan-deprecation-rules": "^2.0",
                 "povils/phpmnd": "^3.5",
                 "slevomat/coding-standard": "^8.15",
@@ -8910,7 +8910,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2024-12-28T17:03:30+00:00"
+            "time": "2025-01-18T16:30:30+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
