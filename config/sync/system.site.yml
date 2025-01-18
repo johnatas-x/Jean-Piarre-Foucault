@@ -8,7 +8,7 @@ slogan: 'Jiacques Chirac love it !'
 page:
   403: ''
   404: ''
-  front: /lotto-stats-balls
+  front: /homepage
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

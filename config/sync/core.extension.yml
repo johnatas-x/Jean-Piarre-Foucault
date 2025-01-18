@@ -15,6 +15,7 @@ module:
   filter: 0
   jpf_algo: 0
   jpf_charts: 0
+  jpf_home: 0
   jpf_import: 0
   jpf_sender: 0
   jpf_stats: 0

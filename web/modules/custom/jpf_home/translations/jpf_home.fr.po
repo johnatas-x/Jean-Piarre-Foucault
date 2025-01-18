@@ -1,0 +1,17 @@
+msgid "JPF : Home"
+msgstr ""
+
+msgid "Features for homepage."
+msgstr "Contient les fonctionnalités nécessaires pour la page d'accueil."
+
+msgid "Custom"
+msgstr "Personnalisé"
+
+msgid "Jean-Piarre Foucault"
+msgstr "Jean-Piarre Foucault"
+
+msgid "Work in progress"
+msgstr "Travail en cours"
+
+msgid "Coming soon..."
+msgstr "A venir"

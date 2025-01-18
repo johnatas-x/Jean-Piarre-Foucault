@@ -1,0 +1,7 @@
+jpf_home.homepage:
+  path: '/homepage'
+  defaults:
+    _controller: '\Drupal\jpf_home\Controller\HomepageController::content'
+    _title: 'Jean-Piarre Foucault'
+  requirements:
+    _access: 'TRUE'

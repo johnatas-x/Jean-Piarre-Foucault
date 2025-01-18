@@ -1,0 +1,10 @@
+name: 'JPF : Home'
+type: module
+description: 'Features for homepage.'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - jpf_store:jpf_store
+
+'interface translation project': jpf_home
+'interface translation server pattern': modules/custom/%project/translations/%project.%language.po
