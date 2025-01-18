@@ -5,6 +5,7 @@ core_version_requirement: ^11
 package: Custom
 dependencies:
   - drupal:charts
+  - drupal:charts_chartjs
   - jpf_stats:jpf_stats
 
 'interface translation project': jpf_charts

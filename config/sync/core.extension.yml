@@ -6,6 +6,7 @@ module:
   block: 0
   breakpoint: 0
   charts: 0
+  charts_chartjs: 0
   config_translation: 0
   dblog: 0
   dynamic_page_cache: 0
