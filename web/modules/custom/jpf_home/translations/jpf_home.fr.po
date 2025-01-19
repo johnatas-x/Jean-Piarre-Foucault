@@ -12,3 +12,6 @@ msgstr "Jean-Piarre Foucault"
 
 msgid "Last draw"
 msgstr "Dernier tirage"
+
+msgid "Last prediction"
+msgstr "Dernière prédiction"

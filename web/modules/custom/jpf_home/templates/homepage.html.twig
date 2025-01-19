@@ -9,3 +9,15 @@
   {% endif %}
   </ul>
 {% endif %}
+
+{% if last_predict.balls is not empty %}
+  <h2>{{ 'Last prediction'|trans }}</h2>
+  <ul class="balls">
+    {% for ball in last_predict.balls %}
+      <li class="classic">{{ ball }}</li>
+    {% endfor %}
+    {% if last_predict.lucky is not null %}
+      <li class="lucky">{{ last_predict.lucky }}</li>
+    {% endif %}
+  </ul>
+{% endif %}

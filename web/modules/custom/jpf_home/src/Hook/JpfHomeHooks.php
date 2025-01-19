@@ -24,6 +24,10 @@ class JpfHomeHooks {
             'balls' => [],
             'lucky' => NULL,
           ],
+          'last_predict' => [
+            'balls' => [],
+            'lucky' => NULL,
+          ],
         ],
         'template' => 'homepage',
       ],

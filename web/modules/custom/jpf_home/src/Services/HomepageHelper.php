@@ -56,6 +56,8 @@ class HomepageHelper implements HomepageHelperInterface {
         : NULL;
     }
 
+    sort($last_draw['balls']);
+
     return $last_draw;
   }
 

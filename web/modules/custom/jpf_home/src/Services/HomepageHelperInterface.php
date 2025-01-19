@@ -19,4 +19,14 @@ interface HomepageHelperInterface {
    */
   public function getLastDraw(): array;
 
+  /**
+   * Get last prediction (balls + lucky).
+   *
+   * @return array{
+   *   balls: list<int|null>,
+   *   lucky: int|null
+   * }
+   */
+  public function getLastPredict(): array;
+
 }
