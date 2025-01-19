@@ -61,4 +61,20 @@ class HomepageHelper implements HomepageHelperInterface {
     return $last_draw;
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function getLastPredict(): array {
+    $last_predict = [
+      'balls' => [],
+      'lucky' => NULL,
+    ];
+
+    // TODO get last predict in database.
+
+    sort($last_predict['balls']);
+
+    return $last_predict;
+  }
+
 }
