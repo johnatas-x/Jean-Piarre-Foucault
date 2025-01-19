@@ -45,7 +45,7 @@ fulldeploy:
 .PHONY: pup
 pup:
 	@make compinst
-	@cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
+	@sudo cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
 	@make fixperm
 	@make fulldeploy
 
