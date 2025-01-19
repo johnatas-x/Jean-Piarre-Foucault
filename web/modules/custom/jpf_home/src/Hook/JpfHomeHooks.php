@@ -20,7 +20,10 @@ class JpfHomeHooks {
       'homepage' => [
         'variables' => [
           'title' => NULL,
-          'description' => NULL,
+          'last_draw' => [
+            'balls' => [],
+            'lucky' => NULL,
+          ],
         ],
         'template' => 'homepage',
       ],

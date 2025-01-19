@@ -1,1 +1,11 @@
-<h2>{{ description }}</h2>
+{% if last_draw.balls is not empty %}
+  <h2>{{ 'Last draw'|trans }}</h2>
+  <ul class="balls">
+  {% for ball in last_draw.balls %}
+    <li class="classic">{{ ball }}</li>
+  {% endfor %}
+  {% if last_draw.lucky is not null %}
+    <li class="lucky">{{ last_draw.lucky }}</li>
+  {% endif %}
+  </ul>
+{% endif %}

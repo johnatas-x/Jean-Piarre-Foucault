@@ -1,0 +1,4 @@
+services:
+  jpf_home.helper:
+    class: Drupal\jpf_home\Services\HomepageHelper
+    arguments: ['@jpf_store.database']
