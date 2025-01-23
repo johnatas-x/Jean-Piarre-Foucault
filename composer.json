@@ -33,6 +33,10 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/view_custom_table": "^2.0",
         "drush/drush": "^13",
+        "npm-asset/chart.js": "^4.4",
+        "npm-asset/chartjs-adapter-date-fns": "^3.0",
+        "npm-asset/chartjs-plugin-datalabels": "^2.0",
+        "oomphinc/composer-installers-extender": "^2.0",
         "symfony/dotenv": "^7.1"
     },
     "require-dev": {
@@ -46,6 +50,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "minimum-stability": "dev",
@@ -58,6 +66,7 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "ergebnis/composer-normalize": true,
+            "oomphinc/composer-installers-extender": true,
             "phpro/grumphp": true,
             "phpstan/extension-installer": true
         },
@@ -98,12 +107,26 @@
                 "web-root": "web/"
             }
         },
+        "installer-types": [
+            "npm-asset"
+        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
             ],
             "web/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library",
+                "vendor:npm-asset",
+                "vendor:bower-asset"
+            ],
+            "web/libraries/chart.js": [
+                "npm-asset/chart.js"
+            ],
+            "web/libraries/chartjs-adapter-date-fns": [
+                "npm-asset/chartjs-adapter-date-fns"
+            ],
+            "web/libraries/chartjs-plugin-datalabels": [
+                "npm-asset/chartjs-plugin-datalabels"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -125,6 +148,15 @@
             ],
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
+            ]
+        },
+        "scripts": {
+            "clean-chartjs": "chmod +x scripts/clean-chartjs.sh && ./scripts/clean-chartjs.sh",
+            "post-install-cmd": [
+                "@clean-chartjs"
+            ],
+            "post-update-cmd": [
+                "@clean-chartjs"
             ]
         },
         "patches": {
