@@ -31,7 +31,8 @@ class HomepageController extends ControllerBase {
   /**
    * Page content.
    *
-   * @return array<string, array<string, int|list<int|null>|null>|\Drupal\Core\StringTranslation\TranslatableMarkup|string>
+   * @return array<string, mixed>
+   *   The page content renderer array.
    */
   public function content(): array {
     return [
@@ -39,6 +40,16 @@ class HomepageController extends ControllerBase {
       '#title' => $this->t('Jean-Piarre Foucault'),
       '#last_draw' => $this->homepageHelper->getLastDraw(),
       '#last_predict' => $this->homepageHelper->getLastPredict(),
+      '#attached' => [
+        'library' => [
+          'jpf_home/jpf_home',
+        ],
+      ],
+      '#cache' => [
+        'tags' => [
+          'homepage_data',
+        ],
+      ],
     ];
   }
 

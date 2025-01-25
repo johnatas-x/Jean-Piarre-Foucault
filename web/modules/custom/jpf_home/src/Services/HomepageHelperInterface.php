@@ -15,7 +15,7 @@ interface HomepageHelperInterface {
    * @return array{
    *   balls: list<int|null>,
    *   lucky: int|null
-   * }
+   *   }
    */
   public function getLastDraw(): array;
 
@@ -25,7 +25,7 @@ interface HomepageHelperInterface {
    * @return array{
    *   balls: list<int|null>,
    *   lucky: int|null
-   * }
+   *   }
    */
   public function getLastPredict(): array;
 

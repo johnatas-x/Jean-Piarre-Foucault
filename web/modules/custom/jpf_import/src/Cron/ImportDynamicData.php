@@ -69,7 +69,7 @@ final class ImportDynamicData {
 
       exec('drush fill-lotto-stats');
 
-      Cache::invalidateTags(['custom_tokens']);
+      Cache::invalidateTags(['custom_tokens', 'homepage_data']);
     }
     catch (\Throwable $exception) {
       \Drupal::logger('jpf_import')->error($exception->getMessage());

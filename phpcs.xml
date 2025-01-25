@@ -117,4 +117,12 @@
   <rule ref="PHPCompatibility"/>
   <config name="testVersion" value="8.5"/>
 
+  <!--
+    Compulsory as long as PHP_CS is not compatible PHP 8.4.
+    https://github.com/PHPCSStandards/PHP_CodeSniffer/issues/734
+  -->
+  <rule ref="Internal.Exception">
+    <severity>0</severity>
+  </rule>
+
 </ruleset>

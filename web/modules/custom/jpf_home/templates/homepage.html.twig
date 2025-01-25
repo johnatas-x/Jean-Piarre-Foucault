@@ -1,23 +1,59 @@
+{% macro renderBall(ball, type) %}
+  <li>
+    <svg viewBox="0 0 100 100" aria-label="{{ (type == 'lucky' ? 'Lucky ball ' ~ ball : 'Ball ' ~ ball)|trans }}">
+      {% if type == 'classic' %}
+        {% if not loop.parent.first %}
+          <defs>
+            <radialGradient id="gradient-blue" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+              <stop offset="0%" stop-color="#0096FF" />
+              <stop offset="100%" stop-color="#005BB5" />
+            </radialGradient>
+          </defs>
+        {% endif %}
+        <circle cx="50" cy="50" r="48" class="blue" />
+      {% else %}
+        {% if not loop.parent.first %}
+          <defs>
+            <radialGradient id="gradient-red" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+              <stop offset="0%" stop-color="#FF6B6B" />
+              <stop offset="100%" stop-color="#C90000" />
+            </radialGradient>
+          </defs>
+        {% endif %}
+        <circle cx="50" cy="50" r="48" class="red" />
+      {% endif %}
+      <circle cx="50" cy="50" r="25" fill="white" />
+      <text x="50" y="52" class="number">{{ ball }}</text>
+    </svg>
+  </li>
+{% endmacro %}
+
+{% import _self as macros %}
+
 {% if last_draw.balls is not empty %}
   <h2>{{ 'Last draw'|trans }}</h2>
-  <ul class="balls">
-  {% for ball in last_draw.balls %}
-    <li class="classic">{{ ball }}</li>
-  {% endfor %}
-  {% if last_draw.lucky is not null %}
-    <li class="lucky">{{ last_draw.lucky }}</li>
-  {% endif %}
-  </ul>
+  <div class="balls-container">
+    <ul aria-label="balls">
+      {% for ball in last_draw.balls %}
+        {{ macros.renderBall(ball, 'classic') }}
+      {% endfor %}
+      {% if last_draw.lucky is not null %}
+        {{ macros.renderBall(last_draw.lucky, 'lucky') }}
+      {% endif %}
+    </ul>
+  </div>
 {% endif %}
 
 {% if last_predict.balls is not empty %}
   <h2>{{ 'Last prediction'|trans }}</h2>
-  <ul class="balls">
-    {% for ball in last_predict.balls %}
-      <li class="classic">{{ ball }}</li>
-    {% endfor %}
-    {% if last_predict.lucky is not null %}
-      <li class="lucky">{{ last_predict.lucky }}</li>
-    {% endif %}
-  </ul>
+  <div class="balls-container">
+    <ul aria-label="balls">
+      {% for ball in last_predict.balls %}
+        {{ macros.renderBall(ball, 'classic') }}
+      {% endfor %}
+      {% if last_predict.lucky is not null %}
+        {{ macros.renderBall(last_predict.lucky, 'lucky') }}
+      {% endif %}
+    </ul>
+  </div>
 {% endif %}
