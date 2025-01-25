@@ -107,9 +107,6 @@
                 "web-root": "web/"
             }
         },
-        "installer-types": [
-            "npm-asset"
-        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
@@ -150,6 +147,14 @@
                 "type:drupal-custom-theme"
             ]
         },
+        "installer-types": [
+            "npm-asset"
+        ],
+        "patches": {
+            "drupal/core": {
+                "Don't execute cron on site install": "patches/disable-cron-execution-on-install.patch"
+            }
+        },
         "scripts": {
             "clean-chartjs": "chmod +x scripts/clean-chartjs.sh && ./scripts/clean-chartjs.sh",
             "post-install-cmd": [
@@ -158,11 +163,6 @@
             "post-update-cmd": [
                 "@clean-chartjs"
             ]
-        },
-        "patches": {
-            "drupal/core": {
-                "Don't execute cron on site install": "patches/disable-cron-execution-on-install.patch"
-            }
         }
     }
 }
