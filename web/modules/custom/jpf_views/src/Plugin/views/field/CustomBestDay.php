@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Drupal\jpf_views\Plugin\views\field;
 
 use Drupal\jpf_utils\Enum\Days;
+use Drupal\views\Attribute\ViewsField;
 use Drupal\views\ResultRow;
 
 /**
  * Plugin for translatable custom best day.
- *
- * @ViewsField("custom_best_day")
  */
+#[ViewsField('custom_best_day')]
 class CustomBestDay extends CustomFieldBase {
 
   /**

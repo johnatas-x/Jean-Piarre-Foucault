@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Drupal\jpf_views\Plugin\views\field;
 
 use Drupal\Component\Datetime\DateTimePlus;
+use Drupal\views\Attribute\ViewsField;
 use Drupal\views\ResultRow;
 
 /**
  * Plugin for delta.
- *
- * @ViewsField("delta")
  */
+#[ViewsField('delta')]
 class Delta extends CustomFieldBase {
 
   /**

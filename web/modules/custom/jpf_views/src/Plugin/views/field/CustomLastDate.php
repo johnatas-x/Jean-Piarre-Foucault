@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Drupal\jpf_views\Plugin\views\field;
 
 use Drupal\Component\Datetime\DateTimePlus;
+use Drupal\views\Attribute\ViewsField;
 use Drupal\views\ResultRow;
 
 /**
  * Plugin for translatable custom last date.
- *
- * @ViewsField("custom_last_date")
  */
+#[ViewsField('custom_last_date')]
 class CustomLastDate extends CustomFieldBase {
 
   /**
