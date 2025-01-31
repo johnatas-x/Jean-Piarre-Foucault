@@ -1,4 +1,4 @@
-ARG PHP_TAG=8.4-dev-4.65.4
+ARG PHP_TAG=8.4-dev-4.65.8
 FROM wodby/drupal-php:${PHP_TAG}
 
 USER root

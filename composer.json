@@ -24,9 +24,9 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.5",
         "drupal/charts": "^5.1",
-        "drupal/core-composer-scaffold": "^11",
-        "drupal/core-project-message": "^11",
-        "drupal/core-recommended": "^11",
+        "drupal/core-composer-scaffold": "11.1.1",
+        "drupal/core-project-message": "11.1.1",
+        "drupal/core-recommended": "11.1.1",
         "drupal/gin": "^3.0@RC",
         "drupal/potx": "^1.1",
         "drupal/token": "^1.15",
@@ -40,8 +40,7 @@
         "symfony/dotenv": "^7.1"
     },
     "require-dev": {
-        "johnatas-x/angry-bearded": "2.2.5",
-        "roave/security-advisories": "dev-latest"
+        "johnatas-x/angry-bearded": "2.2.5"
     },
     "conflict": {
         "drupal/drupal": "*"
