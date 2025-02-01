@@ -14,12 +14,14 @@ interface HomepageHelperInterface {
    *
    * @param string $data_type
    *   The data type (draw, prediction).
+   * @param string $property
+   *   The entity ID property.
    *
    * @return array{
    *   balls: list<int|null>,
    *   lucky: int|null
    *   }
    */
-  public function getLastData(string $data_type): array;
+  public function getLastData(string $data_type, string $property = 'id'): array;
 
 }

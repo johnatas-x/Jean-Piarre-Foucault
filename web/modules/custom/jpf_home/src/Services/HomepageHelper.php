@@ -32,7 +32,7 @@ class HomepageHelper implements HomepageHelperInterface {
   /**
    * {@inheritDoc}
    */
-  public function getLastData(string $data_type): array {
+  public function getLastData(string $data_type, string $property = 'id'): array {
     $last_data = [
       'balls' => [],
       'lucky' => NULL,
@@ -41,11 +41,13 @@ class HomepageHelper implements HomepageHelperInterface {
     try {
       $last_record = $this->entityTypeManager
         ->getStorage($data_type)
-        ->load($this->jpfDatabase->getLastRecordId());
+        ->loadByProperties([$property => $this->jpfDatabase->getLastRecordId()]);
 
-      if ($last_record instanceof BallEntityBase) {
-        $last_data['balls'] = $last_record->balls();
-        $last_data['lucky'] = $last_record->lucky();
+      $balls_entity = reset($last_record);
+
+      if ($balls_entity instanceof BallEntityBase) {
+        $last_data['balls'] = $balls_entity->balls();
+        $last_data['lucky'] = $balls_entity->lucky();
       }
     }
     catch (InvalidPluginDefinitionException | PluginNotFoundException $exception) {

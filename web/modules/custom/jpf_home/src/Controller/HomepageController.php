@@ -39,7 +39,7 @@ class HomepageController extends ControllerBase {
       '#theme' => 'homepage',
       '#title' => $this->t('Jean-Piarre Foucault'),
       '#last_draw' => $this->homepageHelper->getLastData('draw'),
-      '#last_predict' => $this->homepageHelper->getLastData('prediction'),
+      '#last_predict' => $this->homepageHelper->getLastData('prediction', 'draw_id'),
       '#attached' => [
         'library' => [
           'jpf_home/jpf_home',
