@@ -16,13 +16,8 @@ class Schema implements SchemaInterface {
    */
   public function lottoDrawsFields(): array {
     $fields = [
-      'id' => self::SERIAL_DEFINITIONS,
-      'version' => [
-        'description' => 'Version',
-        'type' => 'char',
-        'not null' => TRUE,
-        'length' => 2,
-      ],
+      'id' => self::SERIAL_DEFINITION,
+      'version' => self::VERSION_DEFINITION,
       'year' => [
         'description' => 'Year',
         'type' => 'int',
@@ -125,12 +120,7 @@ class Schema implements SchemaInterface {
    */
   public function versionStatsFields(): array {
     return [
-      'version' => [
-        'description' => 'Version',
-        'type' => 'char',
-        'not null' => TRUE,
-        'length' => 2,
-      ],
+      'version' => self::VERSION_DEFINITION,
       'draws_count' => [
         'description' => 'Draws count',
         'type' => 'int',

@@ -45,11 +45,21 @@ interface SchemaInterface {
   /**
    * Serial field definition.
    */
-  final public const array SERIAL_DEFINITIONS = [
+  final public const array SERIAL_DEFINITION = [
     'description' => 'The primary identifier.',
     'type' => 'serial',
     'unsigned' => TRUE,
     'not null' => TRUE,
+  ];
+
+  /**
+   * Version field definition.
+   */
+  final public const array VERSION_DEFINITION = [
+    'description' => 'Version',
+    'type' => 'char',
+    'not null' => TRUE,
+    'length' => 2,
   ];
 
   /**

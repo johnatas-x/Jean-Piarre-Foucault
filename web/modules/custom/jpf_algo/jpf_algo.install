@@ -26,13 +26,14 @@ function jpf_algo_schema(): array {
     LOTTO_PREDICT_TABLE => [
       'description' => 'Table which store lotto predictions',
       'fields' => [
-        'id' => SchemaInterface::SERIAL_DEFINITIONS,
+        'id' => SchemaInterface::SERIAL_DEFINITION,
         'draw_id' => [
           'description' => 'Draw ID',
           'type' => 'int',
           'unsigned' => TRUE,
           'length' => 5,
         ],
+        'version' => SchemaInterface::VERSION_DEFINITION,
       ],
       'primary key' => ['id'],
       'unique keys' => [
