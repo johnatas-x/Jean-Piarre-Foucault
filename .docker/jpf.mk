@@ -72,3 +72,4 @@ init:
 	@make fulldeploy
 	@make drush "fill-lotto-draws-data --all"
 	@make drush cron
+	@make drush cr
