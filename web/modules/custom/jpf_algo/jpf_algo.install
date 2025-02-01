@@ -30,9 +30,6 @@ function jpf_algo_schema(): array {
         'version' => SchemaInterface::VERSION_DEFINITION,
       ],
       'primary key' => ['id'],
-      'unique keys' => [
-        'unique_cols' => ['draw_id'],
-      ],
     ],
   ];
 
