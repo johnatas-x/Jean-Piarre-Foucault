@@ -16,12 +16,7 @@ class Schema implements SchemaInterface {
    */
   public function lottoDrawsFields(): array {
     $fields = [
-      'id' => [
-        'description' => 'The primary identifier.',
-        'type' => 'serial',
-        'unsigned' => TRUE,
-        'not null' => TRUE,
-      ],
+      'id' => self::SERIAL_DEFINITIONS,
       'version' => [
         'description' => 'Version',
         'type' => 'char',

@@ -43,6 +43,16 @@ interface SchemaInterface {
   ];
 
   /**
+   * Serial field definition.
+   */
+  final public const array SERIAL_DEFINITIONS = [
+    'description' => 'The primary identifier.',
+    'type' => 'serial',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  ];
+
+  /**
    * Lotto draws schema fields.
    *
    * @return array<string, array<string, bool|int|string>>

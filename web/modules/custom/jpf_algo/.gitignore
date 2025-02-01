@@ -4,4 +4,5 @@
 # Don't ignore public files.
 !translations/
 !jpf_algo.info.yml
+!jpf_algo.install
 !README.md
