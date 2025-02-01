@@ -31,7 +31,6 @@ function jpf_algo_schema(): array {
           'description' => 'Draw ID',
           'type' => 'int',
           'unsigned' => TRUE,
-          'not null' => TRUE,
           'length' => 5,
         ],
       ],
