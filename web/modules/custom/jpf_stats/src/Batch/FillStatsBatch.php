@@ -63,7 +63,7 @@ class FillStatsBatch extends BaseBatch {
    * {@inheritDoc}
    */
   public static function finished(bool $success, array $results, array $operations, string $success_message): void {
-    parent::finished($success, $results, $operations, 'stats generated');
+    parent::finished($success, $results, $operations, t('stats generated')->render());
   }
 
   /**

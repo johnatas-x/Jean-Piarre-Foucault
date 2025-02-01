@@ -7,6 +7,12 @@ msgstr "Contient les fonctionnalités nécessaires pour stocker les données."
 msgid "Import data to database."
 msgstr "Import des données dans la base de données."
 
+msgid "Initialization."
+msgstr "Initialisation."
+
+msgid "An error occurred."
+msgstr "Une erreur est survenue."
+
 msgid "Do not use \"versions\" and \"all\" options together."
 msgstr "Ne pas utiliser les options \"versions\" et \"all\" ensemble."
 
@@ -17,3 +23,18 @@ msgid "This version is undefined or not allowed : @item"
 msgid_plural "These versions are undefined or not allowed : @items"
 msgstr[0] "Cette version n'est pas définie ou n'est pas autorisée : @item"
 msgstr[1] "Ces versions ne sont pas définies ou ne sont pas autorisées : @items"
+
+msgid "Import data : version @chunk / @count"
+msgstr "Import des données : version @chunk / @count"
+
+msgid "Draw"
+msgstr "Tirage"
+
+msgid "draw"
+msgstr "tirage"
+
+msgid "draws"
+msgstr "tirages"
+
+msgid "Not enough data in the CSV file"
+msgstr "Le fichier CSV ne contient pas assez de données."

@@ -3,3 +3,15 @@ msgstr "JPF : Utilitaires"
 
 msgid "Transverse features & helpers for all modules."
 msgstr "Contient les fonctionnalités transverses et utiles à tous les modules."
+
+msgid "@success @success_message, @error errors."
+msgstr "@success @success_message, @error erreurs."
+
+msgid "An unknown error occurred."
+msgstr "Une erreur inconnue est survenue."
+
+msgid "An error occurred during process of @operation with args : @args"
+msgstr "Une erreur est survenue durant l'opération @operation avec les arguments : @args"
+
+msgid "Version"
+msgstr "Version"

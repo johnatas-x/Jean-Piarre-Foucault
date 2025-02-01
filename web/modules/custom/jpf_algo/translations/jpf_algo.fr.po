@@ -6,3 +6,15 @@ msgstr "Contient les fonctionnalités nécessaires pour l'algorithmie et l'appre
 
 msgid "Custom"
 msgstr "Personnalisé"
+
+msgid "Prediction"
+msgstr "Prédiction"
+
+msgid "prediction"
+msgstr "prédiction"
+
+msgid "predictions"
+msgstr "prédictions"
+
+msgid "Draw ID"
+msgstr "Identifiant du tirage"

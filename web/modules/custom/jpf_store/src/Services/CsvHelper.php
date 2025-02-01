@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\jpf_store\Services;
 
 use Drupal\Component\Datetime\DateTimePlus;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
 use Drupal\jpf_utils\Enum\Days;
@@ -13,6 +14,8 @@ use Drupal\jpf_utils\Enum\Days;
  * Methods for CSV manipulations.
  */
 class CsvHelper implements CsvHelperInterface {
+
+  use StringTranslationTrait;
 
   /**
    * {@inheritDoc}
@@ -41,7 +44,7 @@ class CsvHelper implements CsvHelperInterface {
     $count = count($data);
 
     if ($count < self::MIN_ROWS) {
-      throw new \RuntimeException('Not enough data in the CSV file');
+      throw new \RuntimeException($this->t('Not enough data in the CSV file')->render());
     }
 
     $combined = [];

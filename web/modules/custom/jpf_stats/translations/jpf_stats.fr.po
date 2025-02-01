@@ -15,3 +15,9 @@ msgstr "Initialisation."
 
 msgid "An error occurred."
 msgstr "Une erreur est survenue."
+
+msgid "Import stats : @type @chunk / @count"
+msgstr "Import des statistiques : @type @chunk / @count"
+
+msgid "stats generated"
+msgstr "statistiques générées"

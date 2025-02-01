@@ -46,7 +46,7 @@ final class ImportDynamicData {
       );
 
       if ($response->getStatusCode() !== Response::HTTP_OK) {
-        \Drupal::logger('jpf_import')->error('Cannot download file.');
+        \Drupal::logger('jpf_import')->error(t('Cannot download file.')->render());
 
         return;
       }

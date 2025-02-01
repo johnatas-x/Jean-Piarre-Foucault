@@ -7,9 +7,11 @@ msgstr "Contient les fonctionnalités nécessaires pour l'import des données."
 msgid "Cannot download file."
 msgstr "Impossible de télécharger le fichier."
 
-
 msgid "Unknown"
 msgstr "Inconnu"
 
 msgid "Never"
 msgstr "Jamais"
+
+msgid "Cannot download file."
+msgstr "Impossible de télécharger le fichier."
