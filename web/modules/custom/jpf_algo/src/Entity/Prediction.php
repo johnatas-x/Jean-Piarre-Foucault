@@ -31,7 +31,7 @@ use Drupal\jpf_utils\Entity\BallEntityBase;
   handlers: [
     'storage' => SqlContentEntityStorage::class,
   ],
-  base_table: 'lotto_draws',
+  base_table: 'lotto_prediction',
 )]
 class Prediction extends BallEntityBase {
 }
