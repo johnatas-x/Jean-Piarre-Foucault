@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_home\Services;
 
-use Drupal\jpf_store\Enum\Balls;
-use Drupal\jpf_store\Enum\Versions;
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\jpf_store\Entity\Draw;
 use Drupal\jpf_store\Services\DatabaseInterface;
 
 /**
@@ -14,20 +16,17 @@ use Drupal\jpf_store\Services\DatabaseInterface;
 class HomepageHelper implements HomepageHelperInterface {
 
   /**
-   * JPF database service.
-   *
-   * @var \Drupal\jpf_store\Services\DatabaseInterface
-   */
-  protected DatabaseInterface $jpfDatabase;
-
-  /**
    * The HomepageHelper constructor.
    *
-   * @param \Drupal\jpf_store\Services\DatabaseInterface $jpf_database
+   * @param \Drupal\jpf_store\Services\DatabaseInterface $jpfDatabase
    *   JPF database service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   Entity type manager service.
    */
-  public function __construct(DatabaseInterface $jpf_database) {
-    $this->jpfDatabase = $jpf_database;
+  public function __construct(
+    protected DatabaseInterface $jpfDatabase,
+    protected EntityTypeManagerInterface $entityTypeManager,
+  ) {
   }
 
   /**
@@ -39,24 +38,21 @@ class HomepageHelper implements HomepageHelperInterface {
       'lucky' => NULL,
     ];
 
-    $last_record = $this->jpfDatabase->getLastRecord();
-    $balls_number = Versions::currentVersion()?->drawnBalls();
+    try {
+      $last_record = $this->entityTypeManager
+        ->getStorage('draw')
+        ->load($this->jpfDatabase->getLastRecordId());
 
-    if (!is_array($last_record) || !is_int($balls_number)) {
+      if ($last_record instanceof Draw) {
+        $last_draw['balls'] = $last_record->balls();
+        $last_draw['lucky'] = $last_record->lucky();
+      }
+    }
+    catch (InvalidPluginDefinitionException | PluginNotFoundException $exception) {
+      \Drupal::logger('jpf_home')->error($exception->getMessage());
+
       return $last_draw;
     }
-
-    $last_draw['lucky'] = !empty($last_record[Balls::Lucky->columnName()])
-      ? (int) $last_record[Balls::Lucky->columnName()]
-      : NULL;
-
-    for ($ball_num = 0; $ball_num < $balls_number; $ball_num++) {
-      $last_draw['balls'][] = !empty($last_record[Balls::from(Balls::values()[$ball_num])->columnName()])
-        ? (int) $last_record[Balls::from(Balls::values()[$ball_num])->columnName()]
-        : NULL;
-    }
-
-    sort($last_draw['balls']);
 
     return $last_draw;
   }

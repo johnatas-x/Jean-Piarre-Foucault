@@ -39,6 +39,14 @@ interface DatabaseInterface {
   public function getLastRecord(): array|bool|null;
 
   /**
+   * Get the ID of the last record.
+   *
+   * @return int|null
+   *   The ID, NULL if no record.
+   */
+  public function getLastRecordId(): ?int;
+
+  /**
    * Delete table in DB.
    *
    * @param string $table

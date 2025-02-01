@@ -117,6 +117,22 @@ class Database implements DatabaseInterface {
   /**
    * {@inheritDoc}
    */
+  public function getLastRecordId(): ?int {
+    $record = $this->selectLotto()
+      ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['id'])
+      ->orderBy('id', 'DESC')
+      ->range(0, 1)
+      ->execute()
+      ?->fetchField();
+
+    return is_numeric($record)
+      ? (int) $record
+      : NULL;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
   public function deleteTable(string $table): void {
     $schema = $this->databaseConnection->schema();
 
