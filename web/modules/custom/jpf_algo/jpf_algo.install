@@ -42,14 +42,13 @@ function jpf_algo_schema(): array {
   ];
 
   foreach (Balls::cases() as $ball) {
-    $column_name = "ball_{$ball->numeric()}";
-    $schema[LOTTO_PREDICT_TABLE]['fields'][$column_name] = [
+    $schema[LOTTO_PREDICT_TABLE]['fields'][$ball->columnName()] = [
       'description' => $ball->value,
       'type' => 'int',
       'unsigned' => TRUE,
       'length' => 2,
     ];
-    $schema[LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'][] = $column_name;
+    $schema[LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'][] = $ball->columnName();
   }
 
   $schema[LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'] = array_unique(

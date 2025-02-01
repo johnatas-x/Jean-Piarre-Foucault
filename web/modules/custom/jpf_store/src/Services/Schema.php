@@ -60,7 +60,7 @@ class Schema implements SchemaInterface {
     ];
 
     foreach (Balls::cases() as $ball) {
-      $fields["ball_{$ball->numeric()}"] = [
+      $fields[$ball->columnName()] = [
         'description' => $ball->value,
         'type' => 'int',
         'unsigned' => TRUE,
