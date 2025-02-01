@@ -32,45 +32,29 @@ class HomepageHelper implements HomepageHelperInterface {
   /**
    * {@inheritDoc}
    */
-  public function getLastDraw(): array {
-    $last_draw = [
+  public function getLastData(string $data_type): array {
+    $last_data = [
       'balls' => [],
       'lucky' => NULL,
     ];
 
     try {
       $last_record = $this->entityTypeManager
-        ->getStorage('draw')
+        ->getStorage($data_type)
         ->load($this->jpfDatabase->getLastRecordId());
 
       if ($last_record instanceof Draw) {
-        $last_draw['balls'] = $last_record->balls();
-        $last_draw['lucky'] = $last_record->lucky();
+        $last_data['balls'] = $last_record->balls();
+        $last_data['lucky'] = $last_record->lucky();
       }
     }
     catch (InvalidPluginDefinitionException | PluginNotFoundException $exception) {
       \Drupal::logger('jpf_home')->error($exception->getMessage());
 
-      return $last_draw;
+      return $last_data;
     }
 
-    return $last_draw;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function getLastPredict(): array {
-    $last_predict = [
-      'balls' => [],
-      'lucky' => NULL,
-    ];
-
-    // TODO get last predict in database.
-
-    sort($last_predict['balls']);
-
-    return $last_predict;
+    return $last_data;
   }
 
 }

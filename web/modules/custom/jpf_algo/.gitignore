@@ -2,7 +2,8 @@
 *
 
 # Don't ignore public files.
-!translations/
+!src/Entity/Prediction.php
+!translations/jpf_algo.fr.po
 !jpf_algo.info.yml
 !jpf_algo.install
 !README.md

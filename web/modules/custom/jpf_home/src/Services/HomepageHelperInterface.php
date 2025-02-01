@@ -10,23 +10,16 @@ namespace Drupal\jpf_home\Services;
 interface HomepageHelperInterface {
 
   /**
-   * Get last draw (balls + lucky).
+   * Get last data (balls + lucky).
+   *
+   * @param string $data_type
+   *   The data type (draw, prediction).
    *
    * @return array{
    *   balls: list<int|null>,
    *   lucky: int|null
    *   }
    */
-  public function getLastDraw(): array;
-
-  /**
-   * Get last prediction (balls + lucky).
-   *
-   * @return array{
-   *   balls: list<int|null>,
-   *   lucky: int|null
-   *   }
-   */
-  public function getLastPredict(): array;
+  public function getLastData(string $data_type): array;
 
 }

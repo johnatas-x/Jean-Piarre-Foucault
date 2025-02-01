@@ -38,8 +38,8 @@ class HomepageController extends ControllerBase {
     return [
       '#theme' => 'homepage',
       '#title' => $this->t('Jean-Piarre Foucault'),
-      '#last_draw' => $this->homepageHelper->getLastDraw(),
-      '#last_predict' => $this->homepageHelper->getLastPredict(),
+      '#last_draw' => $this->homepageHelper->getLastData('draw'),
+      '#last_predict' => $this->homepageHelper->getLastData('prediction'),
       '#attached' => [
         'library' => [
           'jpf_home/jpf_home',

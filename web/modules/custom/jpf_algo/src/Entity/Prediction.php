@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\jpf_store\Entity;
+namespace Drupal\jpf_algo\Entity;
 
 use Drupal\Core\Entity\Attribute\ContentEntityType;
 use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
@@ -10,13 +10,13 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\jpf_utils\Entity\BallEntityBase;
 
 /**
- * Draw entity.
+ * Prediction entity.
  */
 #[ContentEntityType(
-  id: 'draw',
-  label: new TranslatableMarkup('Draw'),
-  label_singular: new TranslatableMarkup('draw'),
-  label_plural: new TranslatableMarkup('draws'),
+  id: 'prediction',
+  label: new TranslatableMarkup('Prediction'),
+  label_singular: new TranslatableMarkup('prediction'),
+  label_plural: new TranslatableMarkup('predictions'),
   entity_keys: [
     'id' => 'id',
     'version' => 'version',
@@ -33,5 +33,5 @@ use Drupal\jpf_utils\Entity\BallEntityBase;
   ],
   base_table: 'lotto_draws',
 )]
-class Draw extends BallEntityBase {
+class Prediction extends BallEntityBase {
 }
