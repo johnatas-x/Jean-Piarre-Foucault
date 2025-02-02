@@ -30,44 +30,24 @@
 
 {% import _self as macros %}
 
-{% if next_predict.balls is not empty %}
-  <h2>{{ 'Next prediction'|trans }}</h2>
-  <div class="balls-container">
-    <ul aria-label="balls">
-      {% for ball in next_predict.balls %}
-        {{ macros.renderBall(ball, 'classic') }}
-      {% endfor %}
-      {% if next_predict.lucky is not null %}
-        {{ macros.renderBall(next_predict.lucky, 'lucky') }}
-      {% endif %}
-    </ul>
-  </div>
-{% endif %}
+{% set sections = {
+  next_predict: 'Next prediction',
+  last_draw: 'Last draw',
+  last_predict: 'Last prediction',
+} %}
 
-{% if last_draw.balls is not empty %}
-  <h2>{{ 'Last draw'|trans }}</h2>
-  <div class="balls-container">
-    <ul aria-label="balls">
-      {% for ball in last_draw.balls %}
-        {{ macros.renderBall(ball, 'classic') }}
-      {% endfor %}
-      {% if last_draw.lucky is not null %}
-        {{ macros.renderBall(last_draw.lucky, 'lucky') }}
-      {% endif %}
-    </ul>
-  </div>
-{% endif %}
-
-{% if last_predict.balls is not empty %}
-  <h2>{{ 'Last prediction'|trans }}</h2>
-  <div class="balls-container">
-    <ul aria-label="balls">
-      {% for ball in last_predict.balls %}
-        {{ macros.renderBall(ball, 'classic') }}
-      {% endfor %}
-      {% if last_predict.lucky is not null %}
-        {{ macros.renderBall(last_predict.lucky, 'lucky') }}
-      {% endif %}
-    </ul>
-  </div>
-{% endif %}
+{% for key, title in sections %}
+  {% if attribute(_context, key).balls is not empty %}
+    <h2>{{ title|trans }}</h2>
+    <div class="balls-container">
+      <ul aria-label="balls">
+        {% for ball in attribute(_context, key).balls %}
+          {{ macros.renderBall(ball, 'classic') }}
+        {% endfor %}
+        {% if attribute(_context, key).lucky is not null %}
+          {{ macros.renderBall(attribute(_context, key).lucky, 'lucky') }}
+        {% endif %}
+      </ul>
+    </div>
+  {% endif %}
+{% endfor %}
