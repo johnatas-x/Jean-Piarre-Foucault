@@ -21,3 +21,9 @@ msgstr "Boule chance "
 
 msgid "Ball "
 msgstr "Boule "
+
+msgid "Next prediction"
+msgstr "Prochaine prédiction"
+
+msgid "Error during prediction query."
+msgstr "Erreur durant la requête de prédiction."

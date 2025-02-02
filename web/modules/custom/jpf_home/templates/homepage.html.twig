@@ -30,6 +30,20 @@
 
 {% import _self as macros %}
 
+{% if next_predict.balls is not empty %}
+  <h2>{{ 'Next prediction'|trans }}</h2>
+  <div class="balls-container">
+    <ul aria-label="balls">
+      {% for ball in next_predict.balls %}
+        {{ macros.renderBall(ball, 'classic') }}
+      {% endfor %}
+      {% if next_predict.lucky is not null %}
+        {{ macros.renderBall(next_predict.lucky, 'lucky') }}
+      {% endif %}
+    </ul>
+  </div>
+{% endif %}
+
 {% if last_draw.balls is not empty %}
   <h2>{{ 'Last draw'|trans }}</h2>
   <div class="balls-container">

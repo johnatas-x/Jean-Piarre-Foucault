@@ -24,4 +24,14 @@ interface HomepageHelperInterface {
    */
   public function getLastData(string $data_type, string $property = 'id'): array;
 
+  /**
+   * Get next prediction (balls + lucky).
+   *
+   * @return array{
+   *   balls: list<int|null>,
+   *   lucky: int|null
+   *   }
+   */
+  public function nextPrediction(): array;
+
 }
