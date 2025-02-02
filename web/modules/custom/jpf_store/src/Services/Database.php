@@ -14,44 +14,20 @@ use Drupal\jpf_store\Enum\Versions;
 class Database implements DatabaseInterface {
 
   /**
-   * The CSV Helper methods.
-   *
-   * @var \Drupal\jpf_store\Services\CsvHelperInterface
-   */
-  protected CsvHelperInterface $csvHelper;
-
-  /**
-   * The database connection.
-   *
-   * @var \Drupal\Core\Database\Connection
-   */
-  protected Connection $databaseConnection;
-
-  /**
-   * The custom schema service.
-   *
-   * @var \Drupal\jpf_store\Services\SchemaInterface
-   */
-  protected SchemaInterface $schema;
-
-  /**
    * The Database constructor.
    *
-   * @param \Drupal\jpf_store\Services\CsvHelperInterface $csv_helper
+   * @param \Drupal\jpf_store\Services\CsvHelperInterface $csvHelper
    *   The CSV Helper methods.
-   * @param \Drupal\Core\Database\Connection $database_connection
+   * @param \Drupal\Core\Database\Connection $databaseConnection
    *   The database connection.
    * @param \Drupal\jpf_store\Services\SchemaInterface $schema
    *   The custom schema service.
    */
   public function __construct(
-    CsvHelperInterface $csv_helper,
-    Connection $database_connection,
-    SchemaInterface $schema,
+    protected CsvHelperInterface $csvHelper,
+    protected Connection $databaseConnection,
+    protected SchemaInterface $schema,
   ) {
-    $this->csvHelper = $csv_helper;
-    $this->databaseConnection = $database_connection;
-    $this->schema = $schema;
   }
 
   /**

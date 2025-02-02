@@ -30,30 +30,17 @@ class FillStats implements FillStatsInterface {
   private const bool BEST_FRIEND = TRUE;
 
   /**
-   * The database connection.
-   *
-   * @var \Drupal\Core\Database\Connection
-   */
-  protected Connection $databaseConnection;
-
-  /**
-   * The custom database services.
-   *
-   * @var \Drupal\jpf_store\Services\DatabaseInterface
-   */
-  protected DatabaseInterface $jpfDatabase;
-
-  /**
    * The FillStats constructor.
    *
-   * @param \Drupal\Core\Database\Connection $database_connection
+   * @param \Drupal\Core\Database\Connection $databaseConnection
    *   The database connection.
-   * @param \Drupal\jpf_store\Services\DatabaseInterface $jpf_database
+   * @param \Drupal\jpf_store\Services\DatabaseInterface $jpfDatabase
    *   The custom database services.
    */
-  public function __construct(Connection $database_connection, DatabaseInterface $jpf_database) {
-    $this->databaseConnection = $database_connection;
-    $this->jpfDatabase = $jpf_database;
+  public function __construct(
+    protected Connection $databaseConnection,
+    protected DatabaseInterface $jpfDatabase,
+  ) {
   }
 
   /**
