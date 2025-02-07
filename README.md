@@ -42,6 +42,7 @@ Run `make quality` to unleash the *“very hard”* quality check tools. If your
 | Init project      | `make init`                                     |
 | Check quality     | `make quality`                                  |
 | Force update data | `make drush "crun import_dynamic_data --force"` |
+| Mock predictions | `make drush mockpred both`                      |
 
 ## Any other cool stuff? 🍿
 Sure.

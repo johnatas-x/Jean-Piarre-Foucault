@@ -18,3 +18,18 @@ msgstr "prédictions"
 
 msgid "Draw ID"
 msgstr "Identifiant du tirage"
+
+msgid "Invalid type. Please use one of these allowed types : @types."
+msgstr "Type invalide. Merci d'utiliser un de ces types autorisés : @types."
+
+msgid "Last prediction successfully mocked."
+msgstr "La précédente prédiction a bien été mockée."
+
+msgid "Next prediction successfully mocked."
+msgstr "La prochaine prédiction a bien été mockée."
+
+msgid "Both predictions successfully mocked."
+msgstr "Les deux prédictions ont bien été mockées."
+
+msgid "Invalid current version."
+msgstr "Version courante invalide."

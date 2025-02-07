@@ -7,13 +7,9 @@
 
 declare(strict_types=1);
 
+use Drupal\jpf_algo\Entity\Prediction;
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Services\SchemaInterface;
-
-/**
- * The name of the table which contains all predictions.
- */
-const LOTTO_PREDICT_TABLE = 'lotto_prediction';
 
 /**
  * Implements hook_schema().
@@ -23,7 +19,7 @@ const LOTTO_PREDICT_TABLE = 'lotto_prediction';
  */
 function jpf_algo_schema(): array {
   $schema = [
-    LOTTO_PREDICT_TABLE => [
+    Prediction::LOTTO_PREDICT_TABLE => [
       'description' => 'Table which store lotto predictions',
       'fields' => [
         'id' => SchemaInterface::SERIAL_DEFINITION,
@@ -43,17 +39,17 @@ function jpf_algo_schema(): array {
   ];
 
   foreach (Balls::cases() as $ball) {
-    $schema[LOTTO_PREDICT_TABLE]['fields'][$ball->columnName()] = [
+    $schema[Prediction::LOTTO_PREDICT_TABLE]['fields'][$ball->columnName()] = [
       'description' => $ball->value,
       'type' => 'int',
       'unsigned' => TRUE,
       'length' => 2,
     ];
-    $schema[LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'][] = $ball->columnName();
+    $schema[Prediction::LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'][] = $ball->columnName();
   }
 
-  $schema[LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'] = array_unique(
-    $schema[LOTTO_PREDICT_TABLE]['unique keys']['unique_cols']
+  $schema[Prediction::LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'] = array_unique(
+    $schema[Prediction::LOTTO_PREDICT_TABLE]['unique keys']['unique_cols']
   );
 
   return $schema;
@@ -63,5 +59,5 @@ function jpf_algo_schema(): array {
  * Implements hook_uninstall().
  */
 function jpf_algo_uninstall(): void {
-  \Drupal::service('jpf_store.database')->deleteTable(LOTTO_PREDICT_TABLE);
+  \Drupal::service('jpf_store.database')->deleteTable(Prediction::LOTTO_PREDICT_TABLE);
 }

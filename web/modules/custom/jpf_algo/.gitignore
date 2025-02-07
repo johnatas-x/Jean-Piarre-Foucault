@@ -3,7 +3,9 @@
 
 # Don't ignore public files.
 !src/Entity/Prediction.php
+!src/Commands/MockCommands.php
 !translations/jpf_algo.fr.po
+!drush.services.yml
 !jpf_algo.info.yml
 !jpf_algo.install
 !README.md

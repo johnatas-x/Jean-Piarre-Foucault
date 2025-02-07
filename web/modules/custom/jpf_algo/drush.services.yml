@@ -1,0 +1,6 @@
+services:
+  mock.commands:
+    class: Drupal\jpf_algo\Commands\MockCommands
+    arguments: ['@jpf_store.database', '@database']
+    tags:
+      - { name: drush.command }

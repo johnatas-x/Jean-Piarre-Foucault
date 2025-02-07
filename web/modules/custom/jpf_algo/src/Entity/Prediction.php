@@ -39,6 +39,11 @@ use Drupal\jpf_utils\Entity\BallEntityBase;
 class Prediction extends BallEntityBase {
 
   /**
+   * The name of the table which contains all predictions.
+   */
+  public const string LOTTO_PREDICT_TABLE = 'lotto_prediction';
+
+  /**
    * {@inheritDoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type): array {
