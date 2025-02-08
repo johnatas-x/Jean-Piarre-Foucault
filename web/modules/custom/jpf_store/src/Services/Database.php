@@ -6,6 +6,8 @@ namespace Drupal\jpf_store\Services;
 
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Database\Query\SelectInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\jpf_algo\Entity\Prediction;
 use Drupal\jpf_store\Enum\Versions;
 
 /**
@@ -22,11 +24,14 @@ class Database implements DatabaseInterface {
    *   The database connection.
    * @param \Drupal\jpf_store\Services\SchemaInterface $schema
    *   The custom schema service.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
+   *   The module handler service.
    */
   public function __construct(
     protected CsvHelperInterface $csvHelper,
     protected Connection $databaseConnection,
     protected SchemaInterface $schema,
+    protected ModuleHandlerInterface $moduleHandler,
   ) {
   }
 
@@ -46,6 +51,10 @@ class Database implements DatabaseInterface {
     $needed_data = $this->csvHelper->arrayFilter($data, $version, $last_record);
     sort($needed_data);
 
+    if (count($needed_data) === 0) {
+      return;
+    }
+
     $database_columns = array_keys($this->schema->lottoDrawsFields());
     array_shift($database_columns);
 
@@ -60,6 +69,7 @@ class Database implements DatabaseInterface {
     $query->execute();
 
     $this->updateDrawsCount($version, count($needed_data));
+    $this->archivePrediction($last_record['id'] ?? NULL);
   }
 
   /**
@@ -143,6 +153,20 @@ class Database implements DatabaseInterface {
       ->update(SchemaInterface::LOTTO_VERSIONS)
       ->fields(['draws_count' => $this->getCountRecords($version) + $new_records])
       ->condition('version', $version->value)
+      ->execute();
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function archivePrediction(?string $record_id): void {
+    if ($record_id === NULL || !$this->moduleHandler->moduleExists('jpf_algo')) {
+      return;
+    }
+
+    $this->databaseConnection->update(Prediction::LOTTO_PREDICT_TABLE)
+      ->isNull('draw_id')
+      ->fields(['draw_id' => $record_id])
       ->execute();
   }
 

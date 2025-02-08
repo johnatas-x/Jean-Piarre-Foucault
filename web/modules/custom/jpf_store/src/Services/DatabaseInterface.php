@@ -75,4 +75,12 @@ interface DatabaseInterface {
    */
   public function updateDrawsCount(Versions $version, int $new_records): void;
 
+  /**
+   * Archive prediction with given ID.
+   *
+   * @param string|null $record_id
+   *   The record ID to be linked to the prediction.
+   */
+  public function archivePrediction(?string $record_id): void;
+
 }
