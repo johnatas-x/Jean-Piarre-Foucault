@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_algo\Commands;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\jpf_algo\Entity\Prediction;
@@ -91,6 +92,8 @@ class MockCommands extends DrushCommands {
 
         break;
     }
+
+    Cache::invalidateTags(['homepage_data']);
   }
 
   /**
