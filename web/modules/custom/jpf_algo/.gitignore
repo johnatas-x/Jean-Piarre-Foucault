@@ -2,10 +2,16 @@
 *
 
 # Don't ignore public files.
-!src/Entity/Prediction.php
-!src/Commands/MockCommands.php
-!translations/jpf_algo.fr.po
+!.gitignore
+!README.md
 !drush.services.yml
 !jpf_algo.info.yml
 !jpf_algo.install
-!README.md
+!jpf_algo.services.yml
+!src/
+!src/Commands/
+!src/Commands/MockCommands.php
+!src/Entity/
+!src/Entity/Prediction.php
+!translations/
+!translations/jpf_algo.fr.po
