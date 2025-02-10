@@ -8,7 +8,7 @@
 >
 > You can create a version py file and a version html template and make your magic.
 >
-> To begin, you can copy `v5.example.html` to `v5.html` and `v5.example.py` to `v5.py`.
+> To begin, you can copy `v5.html.example` to `v5.html` and `v5.py.example` to `v5.py`.
 
 > [!TIP]
 > My code is inspired by two public Git repos seasoned and improved to my taste.

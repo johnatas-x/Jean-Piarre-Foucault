@@ -5,6 +5,6 @@
 !/jean-pyarre/static/styles.css
 !/jean-pyarre/templates/algo.html
 !/jean-pyarre/templates/base.html
-!/jean-pyarre/templates/v*.example.html
+!/jean-pyarre/templates/*.example
 !/jean-pyarre/jean-pyarre.py
-!/jean-pyarre/versions/v*.example.py
+!/jean-pyarre/versions/*.example

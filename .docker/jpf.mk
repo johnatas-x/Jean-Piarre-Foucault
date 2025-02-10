@@ -61,8 +61,8 @@ init:
 	@sudo rm -Rf web/themes/contrib
 	@sudo rm -Rf web/core
 	@sudo rm -Rf web/sites
-	@cp "python/jean-pyarre/templates/v5.example.html" "python/jean-pyarre/templates/v5.html"
-	@cp "python/jean-pyarre/versions/v5.example.py" "python/jean-pyarre/versions/v5.py"
+	@cp "python/jean-pyarre/templates/v5.html.example" "python/jean-pyarre/templates/v5.html"
+	@cp "python/jean-pyarre/versions/v5.py.example" "python/jean-pyarre/versions/v5.py"
 	@docker compose up --build -d
 	@docker exec -it "$(PHP_CONTAINER)" sudo chmod o+w /var/www/html
 	@docker exec -it "$(PHP_CONTAINER)" git config --global --add safe.directory /var/www/html

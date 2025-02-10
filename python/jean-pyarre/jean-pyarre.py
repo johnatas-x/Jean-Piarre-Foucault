@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, Blueprint
 from dotenv import load_dotenv
 from pathlib import Path
 import os
@@ -18,7 +18,7 @@ class DBManager:
             "auth_plugin": "mysql_native_password",
         }
 
-    def get_versions(self) -> list[str]:
+    def get_versions(self):
         connection = None
         cursor = None
         try:
@@ -50,30 +50,33 @@ class VersionManager:
 
         return module
 
-    def register_blueprints(self, app: Flask, versions: list[str]):
-        for version in versions:
+    def register_all_blueprints(self, app: Flask):
+        for file in self.versions_dir.glob("*.py"):
+            version = file.stem
             module = self.load_module(version)
-            if module and hasattr(module, "blueprint"):
+            if module and hasattr(module, "blueprint") and isinstance(module.blueprint, Blueprint):
                 module.blueprint.url_prefix = f"/algo/{version}"
                 app.register_blueprint(module.blueprint)
 
 
-# Init Flask app and managers.
+# Init Flask app, managers and register blueprints.
 app = Flask(__name__)
 db_manager = DBManager()
-version_manager = VersionManager(versions_dir=Path("versions"))
+version_manager = VersionManager(versions_dir="versions")
+version_manager.register_all_blueprints(app)
 
-# Intersect DB versions & file versions.
-db_versions = db_manager.get_versions()
-file_versions = [file.stem for file in Path("versions").glob("*.py")]
-available_versions = list(set(db_versions) & set(file_versions))
 
-# Register available blueprints.
-version_manager.register_blueprints(app, available_versions)
+def get_active_versions():
+    db_versions = db_manager.get_versions()
+    return set(db_versions)
 
 
 @app.route("/algo")
 def algo():
+    active_versions = get_active_versions()
+    available_versions = [
+        bp for bp in app.blueprints.keys() if bp.split(".")[-1] in active_versions
+    ]
     return render_template("algo.html", versions=available_versions)
 
 if __name__ == "__main__":
