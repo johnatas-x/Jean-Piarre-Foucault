@@ -17,15 +17,15 @@ jobs:
       matrix:
         include:
           - operating-system: 'ubuntu-latest'
-            php-version: '8.3'
+            php-version: '8.4'
             job-description: 'on Linux'
 
           - operating-system: 'windows-latest'
-            php-version: '8.3'
+            php-version: '8.4'
             job-description: 'on Windows'
 
           - operating-system: 'macos-latest'
-            php-version: '8.3'
+            php-version: '8.4'
             job-description: 'on macOS'
 
     name: Composer with ${{ matrix.php-version }} ${{ matrix.job-description }}
