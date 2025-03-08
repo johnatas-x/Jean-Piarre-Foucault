@@ -27,7 +27,7 @@
         "drupal/core-composer-scaffold": "11.1.4",
         "drupal/core-project-message": "11.1.4",
         "drupal/core-recommended": "11.1.4",
-        "drupal/gin": "^3.0",
+        "drupal/gin": "^4.0",
         "drupal/potx": "^1.1",
         "drupal/token": "^1.15",
         "drupal/ultimate_cron": "^2.0@beta",
