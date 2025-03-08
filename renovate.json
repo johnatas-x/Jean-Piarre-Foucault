@@ -5,6 +5,7 @@
     ":assignee(arg0)",
     ":reviewer(arg0)"
   ],
+  "assignees": ["johnatas-x"],
   "prHourlyLimit": 3,
   "packageRules": [
     {
