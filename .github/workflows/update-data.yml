@@ -1,0 +1,98 @@
+name: Update data for V5
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+
+      - name: Get ZIP file URL from PHP
+        id: get_zip_url
+        run: |
+          URL=$(php -r "
+          require 'web/modules/custom/jpf_import/src/Api/Sto.php';
+          require 'web/modules/custom/jpf_store/src/Enum/Versions.php';
+          echo \Jpf\Import\Api\Sto::buildDownloadUrl(\Jpf\Store\Enum\Versions::Fifth);
+          ")
+          echo "ZIP_URL=$URL" >> $GITHUB_ENV
+
+      - name: Download ZIP file
+        run: wget -O /tmp/loto_201911.zip "$ZIP_URL"
+
+      - name: Extract CSV file
+        run: |
+          unzip -o /tmp/loto_201911.zip -d /tmp/
+          mv /tmp/loto_201911.csv web/modules/custom/jpf_store/assets/doc/v5/loto_201911.csv
+
+      - name: Count lines in old and new CSV
+        id: check_lines
+        run: |
+          CSV_FILE="web/modules/custom/jpf_store/assets/doc/v5/loto_201911.csv"
+          OLD_LINES=$(wc -l < "$CSV_FILE" || echo 0)
+          NEW_LINES=$(wc -l < "/tmp/loto_201911.csv" || echo 0)
+
+          if [ "$NEW_LINES" -gt "$OLD_LINES" ]; then
+            echo "update_needed=true" >> $GITHUB_ENV
+          else
+            echo "update_needed=false" >> $GITHUB_ENV
+          fi
+
+      - name: Check if PR already exists
+        id: check_pr
+        if: env.update_needed == 'true'
+        run: |
+          PR_EXISTS=$(gh pr list --state open --head update-data --json number --jq '.[].number' || echo "")
+          if [[ -n "$PR_EXISTS" ]]; then
+            echo "pr_number=$PR_EXISTS" >> $GITHUB_ENV
+            echo "branch_exists=true" >> $GITHUB_ENV
+          else
+            echo "branch_exists=false" >> $GITHUB_ENV
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create or update update-data branch
+        if: env.update_needed == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [[ "${{ env.branch_exists }}" == "true" ]]; then
+            git checkout update-data
+          else
+            git checkout -b update-data
+          fi
+
+          git add web/modules/custom/jpf_store/assets/doc/v5/loto_201911.csv
+          git commit -m "Update data"
+          git push origin update-data
+
+      - name: Create or update Pull Request
+        if: env.update_needed == 'true'
+        run: |
+          if [[ "${{ env.branch_exists }}" == "true" ]]; then
+            echo "PR already exists, skipping PR creation."
+          else
+            gh pr create \
+              --title "Update data" \
+              --body "Automated update by github actions." \
+              --head update-data \
+              --base main \
+              --assignee johnatas-x
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
