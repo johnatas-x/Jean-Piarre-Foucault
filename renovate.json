@@ -1,8 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":assignee(arg0)",
+    ":reviewer(arg0)"
   ],
+  "prHourlyLimit": 3,
   "packageRules": [
     {
       "groupName": "Drupal core",
@@ -14,6 +17,15 @@
       "groupName": "NPM asset",
       "matchPackageNames": [
         "npm-asset/**"
+      ]
+    },
+    {
+      "groupName": "CI",
+      "matchPackageNames": [
+        "actions/cache",
+        "actions/checkout",
+        "nick-invision/retry",
+        "shivammathur/setup-php"
       ]
     }
   ]
