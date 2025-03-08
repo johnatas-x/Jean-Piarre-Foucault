@@ -126,7 +126,7 @@ services:
     image: wodby/memcached:$MEMCACHED_TAG
 
   traefik:
-    image: traefik:v3.3
+    image: traefik:$TRAEFIK_TAG
     container_name: "${PROJECT_NAME}_traefik"
     command: --api.insecure=true --providers.docker
     ports:

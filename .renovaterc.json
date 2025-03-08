@@ -1,0 +1,9 @@
+{
+  "regexManagers": [
+    {
+      "fileMatch": ["^\\.env\\.example$"],
+      "matchStrings": ["(?<depName>_TAG)=(?<currentValue>[v\\d\\.\\-]+)"],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
