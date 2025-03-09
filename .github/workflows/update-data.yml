@@ -26,6 +26,7 @@ jobs:
           URL=$(php -r "
           require 'web/modules/custom/jpf_import/src/Api/Sto.php';
           require 'web/modules/custom/jpf_store/src/Enum/Versions.php';
+          require 'web/modules/custom/jpf_utils/src/Traits/EnumToArray.php';
           echo \Jpf\Import\Api\Sto::buildDownloadUrl(\Jpf\Store\Enum\Versions::Fifth);
           ")
           echo "ZIP_URL=$URL" >> $GITHUB_ENV
