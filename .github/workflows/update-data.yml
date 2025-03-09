@@ -33,8 +33,9 @@ jobs:
         id: get_zip_url
         run: |
           URL=$(php -r "
+          require 'web/autoload.php';
           require 'web/core/includes/bootstrap.inc';
-          drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+          \Drupal\Core\DrupalKernel::bootEnvironment();
           echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);
           ")
           echo "ZIP_URL=$URL" >> $GITHUB_ENV
