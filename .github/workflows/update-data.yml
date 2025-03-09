@@ -30,8 +30,6 @@ jobs:
         run: |
           URL=$(php -r "
           require 'web/autoload.php';
-          require 'web/core/includes/bootstrap.inc';
-          \Drupal\Core\DrupalKernel::bootEnvironment();
           echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);
           ")
           echo "ZIP_URL=$URL" >> $GITHUB_ENV
