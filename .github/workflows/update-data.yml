@@ -25,15 +25,17 @@ jobs:
           composer install --no-dev --prefer-dist
           composer dump-autoload -o
 
+      - name: Bootstrap Drupal
+        run: |
+          php -r "require 'web/core/includes/bootstrap.inc'; drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);"
+
       - name: Get ZIP file URL from PHP
         id: get_zip_url
         run: |
           URL=$(php -r "
-          require 'vendor/autoload.php';
-          require 'web/modules/custom/jpf_import/src/Api/Sto.php';
-          require 'web/modules/custom/jpf_store/src/Enum/Versions.php';
-          require 'web/modules/custom/jpf_utils/src/Traits/EnumToArray.php';
-          echo \Jpf\Import\Api\Sto::buildDownloadUrl(\Jpf\Store\Enum\Versions::Fifth);
+          require 'web/core/includes/bootstrap.inc';
+          drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+          echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);
           ")
           echo "ZIP_URL=$URL" >> $GITHUB_ENV
 

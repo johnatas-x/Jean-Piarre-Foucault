@@ -58,13 +58,6 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "autoload": {
-        "psr-4": {
-            "Jpf\\Import\\Api\\": "web/modules/custom/jpf_import/src/Api/",
-            "Jpf\\Store\\Enum\\": "web/modules/custom/jpf_store/src/Enum/",
-            "Jpf\\Utils\\Traits\\": "web/modules/custom/jpf_utils/src/Traits/"
-        }
-    },
     "config": {
         "allow-plugins": {
             "composer/installers": true,
