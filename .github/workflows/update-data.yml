@@ -28,17 +28,7 @@ jobs:
       - name: Get ZIP file URL from PHP
         id: get_zip_url
         run: |
-          URL=$(php -r "
-          require 'web/autoload.php';
-          require 'web/core/includes/bootstrap.inc';
-          require 'web/core/includes/common.inc';
-
-          \Drupal\Core\DrupalKernel::bootEnvironment('web');
-          $kernel = new \Drupal\Core\DrupalKernel('prod', new \Symfony\Component\DependencyInjection\ContainerBuilder());
-          $kernel->boot();
-
-          echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);
-          ")
+          URL=$(php -r "require 'web/autoload.php'; require 'web/core/includes/bootstrap.inc'; require 'web/core/includes/common.inc'; \Drupal\Core\DrupalKernel::bootEnvironment('web'); \$kernel = new \Drupal\Core\DrupalKernel('prod', new \Symfony\Component\DependencyInjection\ContainerBuilder()); \$kernel->boot(); echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);")
           echo "ZIP_URL=$URL" >> $GITHUB_ENV
 
       - name: Download ZIP file
