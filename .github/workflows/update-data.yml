@@ -20,10 +20,14 @@ jobs:
         with:
           php-version: '8.4'
 
+      - name: Install dependencies
+        run: composer install --no-dev --prefer-dist
+
       - name: Get ZIP file URL from PHP
         id: get_zip_url
         run: |
           URL=$(php -r "
+          require 'vendor/autoload.php';
           require 'web/modules/custom/jpf_import/src/Api/Sto.php';
           require 'web/modules/custom/jpf_store/src/Enum/Versions.php';
           require 'web/modules/custom/jpf_utils/src/Traits/EnumToArray.php';
