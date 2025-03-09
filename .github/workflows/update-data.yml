@@ -21,7 +21,9 @@ jobs:
           php-version: '8.4'
 
       - name: Install dependencies
-        run: composer install --no-dev --prefer-dist
+        run: |
+          composer install --no-dev --prefer-dist
+          composer dump-autoload -o
 
       - name: Get ZIP file URL from PHP
         id: get_zip_url
