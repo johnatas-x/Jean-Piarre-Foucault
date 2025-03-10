@@ -23,12 +23,16 @@ jobs:
       - name: Install dependencies
         run: |
           composer install --no-dev --prefer-dist
-          composer dump-autoload -o
+
+      - name: Setup Drupal
+        uses: bluehorndigital/setup-drupal@v1
+        with:
+          version: '11.1.4'
 
       - name: Get ZIP file URL from PHP
         id: get_zip_url
         run: |
-          URL=$(php -r "require 'web/autoload.php'; require 'web/core/includes/bootstrap.inc'; require 'web/core/includes/common.inc'; \Drupal\Core\DrupalKernel::bootEnvironment('web'); \$kernel = new \Drupal\Core\DrupalKernel('prod', new \Symfony\Component\DependencyInjection\ContainerBuilder()); \$kernel->boot(); echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);")
+          URL=$(php -r "echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);")
           echo "ZIP_URL=$URL" >> $GITHUB_ENV
 
       - name: Download ZIP file
