@@ -20,18 +20,32 @@ jobs:
         with:
           php-version: '8.4'
 
-      - name: Install dependencies
+      - name: Shutdown Ubuntu MySQL
+        run: sudo service mysql stop
+
+      - name: Set up MariaDB
+        uses: getong/mariadb-action@v1.11
+        with:
+          mariadb version: '11.4.5'
+
+      - name: Setup project
         run: |
-          composer install --no-dev --prefer-dist
+          cp ".env.example" ".env"
+          sudo rm -Rf web/sites
+          composer install --no-progress --prefer-dist --optimize-autoloader
+          mkdir -p "web/sites/default"
+          cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
 
       - name: Setup Drupal
         uses: bluehorndigital/setup-drupal@v1.1.0
         with:
           version: '11.1.4'
 
-      - name: Enable needed modules
+      - name: Install Drupal
         run: |
-          vendor/bin/drush en jpf_import -y
+          vendor/bin/drush site-install 'minimal' --config-dir=../config/sync --account-name='admin' --account-pass='admin' --yes
+          vendor/bin/drush st
+          vendor/bin/drush deploy
           vendor/bin/drush cr
 
       - name: Get ZIP file URL from PHP
