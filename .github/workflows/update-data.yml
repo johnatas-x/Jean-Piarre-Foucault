@@ -30,7 +30,7 @@ jobs:
           version: '11.1.4'
 
       - name: Test Drupal installation
-        run: drush st
+        run: vendor/bin/drush st
 
       - name: Get ZIP file URL from PHP
         id: get_zip_url
