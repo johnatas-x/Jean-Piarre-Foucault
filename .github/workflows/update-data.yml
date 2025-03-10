@@ -39,15 +39,22 @@ jobs:
           mkdir -p "web/sites/default"
           cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
 
-      - name: Test MariaDB connection
-        run: |
-          mysql -h mariadb -u drupal -pdrupal -e "SHOW DATABASES;"
+#       - name: Test MariaDB connection
+#         run: |
+#           mysql -h mariadb -u drupal -pdrupal -e "SHOW DATABASES;"
+
+      - name: Wait for MariaDB to be ready
+        run: sleep 20
 
       - name: Check running containers
         run: docker ps -a
 
       - name: Debug Drush
         run: vendor/bin/drush sql:connect --debug
+
+      - name: Test MariaDB connection (alternative)
+        run: |
+          mysql -h 127.0.0.1 -u drupal -pdrupal -e "SHOW DATABASES;"
 
       - name: Setup Drupal
         run: vendor/bin/drush st
