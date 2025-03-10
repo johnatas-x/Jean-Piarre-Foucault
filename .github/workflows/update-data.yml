@@ -29,6 +29,11 @@ jobs:
         with:
           version: '11.1.4'
 
+      - name: Enable needed modules
+        run: |
+          vendor/bin/drush en jpf_import -y
+          vendor/bin/drush cr
+
       - name: Get ZIP file URL from PHP
         id: get_zip_url
         run: |
