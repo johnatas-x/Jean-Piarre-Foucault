@@ -39,6 +39,16 @@ jobs:
           mkdir -p "web/sites/default"
           cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
 
+      - name: Test MariaDB connection
+        run: |
+          mysql -h mariadb -u drupal -pdrupal -e "SHOW DATABASES;"
+
+      - name: Check running containers
+        run: docker ps -a
+
+      - name: Debug Drush
+        run: vendor/bin/drush sql:connect --debug
+
       - name: Setup Drupal
         run: vendor/bin/drush st
 #         uses: bluehorndigital/setup-drupal@v1.1.0
