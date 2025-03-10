@@ -29,13 +29,10 @@ jobs:
         with:
           version: '11.1.4'
 
-      - name: Test Drupal installation
-        run: vendor/bin/drush st
-
       - name: Get ZIP file URL from PHP
         id: get_zip_url
         run: |
-          URL=$(php -r "echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);")
+          URL=$(vendor/bin/drush php:eval "echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);")
           echo "ZIP_URL=$URL" >> $GITHUB_ENV
 
       - name: Download ZIP file
