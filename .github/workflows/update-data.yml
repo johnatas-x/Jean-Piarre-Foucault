@@ -11,7 +11,7 @@ jobs:
 
     services:
       mariadb:
-        image: mariadb:11.4.5
+        image: mariadb:11.7.2
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: drupal
