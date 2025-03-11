@@ -44,8 +44,8 @@ jobs:
         run: |
           mysql -h 127.0.0.1 -u drupal -pdrupal -e "SHOW DATABASES;"
 
-      - name: Setup Drupal
-        run: vendor/bin/drush st
+      - name: Install project
+        run: vendor/bin/drush site-install 'minimal' --config-dir=../config/sync --account-name='admin' --account-pass='admin' --yes
 #         uses: bluehorndigital/setup-drupal@v1.1.0
 #         with:
 #           version: '11.1.4'
