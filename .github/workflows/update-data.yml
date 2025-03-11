@@ -1,4 +1,4 @@
-name: Update data for V5
+name: Update data for current version
 
 on:
   schedule:
@@ -40,38 +40,40 @@ jobs:
           mkdir -p "web/sites/default"
           cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
 
-      - name: Test MariaDB connection
+      - name: Test project install
         run: |
-          mysql -h 127.0.0.1 -u drupal -pdrupal -e "SHOW DATABASES;"
+          vendor/bin/drush site-install 'minimal' --config-dir=../config/sync --account-name='admin' --account-pass='admin' --yes
+          vendor/bin/drush deploy
+          vendor/bin/drush locale-check
+          vendor/bin/drush locale-update
+          vendor/bin/drush cr
 
-      - name: Install project
-        run: vendor/bin/drush site-install 'minimal' --config-dir=../config/sync --account-name='admin' --account-pass='admin' --yes
-#         uses: bluehorndigital/setup-drupal@v1.1.0
-#         with:
-#           version: '11.1.4'
+      - name: Test data fill
+        run: |
+          vendor/bin/drush fill-lotto-draws-data --all
+          vendor/bin/drush cr
 
       - name: Get ZIP file URL from PHP
         id: get_zip_url
         run: |
-          URL=$(vendor/bin/drush php:eval "echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::Fifth);")
+          URL=$(vendor/bin/drush php:eval "echo \Drupal\jpf_import\Api\Sto::buildDownloadUrl(\Drupal\jpf_store\Enum\Versions::currentVersion());")
           echo "ZIP_URL=$URL" >> $GITHUB_ENV
 
-      - name: Download ZIP file
-        run: wget -O /tmp/loto_201911.zip "$ZIP_URL"
-
-      - name: Extract CSV file
+      - name: Download ZIP & extract CSV file
         run: |
+          wget -O /tmp/loto_201911.zip "$ZIP_URL"
           unzip -o /tmp/loto_201911.zip -d /tmp/
-          mv /tmp/loto_201911.csv web/modules/custom/jpf_store/assets/doc/v5/loto_201911.csv
 
       - name: Count lines in old and new CSV
         id: check_lines
         run: |
-          CSV_FILE="web/modules/custom/jpf_store/assets/doc/v5/loto_201911.csv"
-          OLD_LINES=$(wc -l < "$CSV_FILE" || echo 0)
-          NEW_LINES=$(wc -l < "/tmp/loto_201911.csv" || echo 0)
+          OLD_FILE="web/modules/custom/jpf_store/assets/doc/v5/loto_201911.csv"
+          NEW_FILE="/tmp/loto_201911.csv"
+          OLD_LINES=$(wc -l < "$OLD_FILE" || echo 0)
+          NEW_LINES=$(wc -l < "$NEW_FILE" || echo 0)
 
           if [ "$NEW_LINES" -gt "$OLD_LINES" ]; then
+            mv "$NEW_FILE" "$OLD_FILE"
             echo "update_needed=true" >> $GITHUB_ENV
           else
             echo "update_needed=false" >> $GITHUB_ENV
