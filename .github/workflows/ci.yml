@@ -130,8 +130,8 @@ jobs:
           python-version: '3.13'
           cache: 'pip'
       - run: |
-        pip install -r .docker/python/requirements
-        python python/jean-pyarre/jean-pyarre.py
+          pip install -r .docker/python/requirements
+          python python/jean-pyarre/jean-pyarre.py
 
       - name: PyCharm Python Security Scanner
         uses: tonybaloney/pycharm-security@1.25.1
