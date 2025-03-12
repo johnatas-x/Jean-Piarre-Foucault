@@ -133,6 +133,6 @@ jobs:
           python python/jean-pyarre/jean-pyarre.py
 
       - name: PyCharm Python Security Scanner
-        uses: tonybaloney/pycharm-security@1.25.1
+        uses: tonybaloney/pycharm-security@1.29.0
         with:
           path: python/
