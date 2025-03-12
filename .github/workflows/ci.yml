@@ -128,7 +128,6 @@ jobs:
         uses: actions/setup-python@v5.4.0
         with:
           python-version: '3.13'
-          cache: 'pip'
       - run: |
           pip install -r .docker/python/requirements
           python python/jean-pyarre/jean-pyarre.py
