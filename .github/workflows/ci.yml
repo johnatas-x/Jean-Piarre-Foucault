@@ -45,7 +45,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          extensions: gd
+          extensions: gd, zip
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -74,8 +74,8 @@ jobs:
           command: |
             composer update --optimize-autoloader --no-interaction --no-progress ${{ matrix.composer-flags }}
             composer info -D
-  quality:
-    name: Run GrumPHP scanning
+  php:
+    name: Run quality tools (GrumPHP)
     runs-on: ubuntu-latest
 
     steps:
@@ -118,4 +118,4 @@ jobs:
 
       - name: Run GrumPHP
         run: php ./vendor/bin/grumphp run
-        continue-on-error: true
+        continue-on-error: true # Compulsory as long as PHP_CS is not compatible PHP 8.4.
