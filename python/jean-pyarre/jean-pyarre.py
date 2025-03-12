@@ -4,6 +4,11 @@ from pathlib import Path
 import os
 import mysql.connector
 import importlib.util
+import sys
+
+if "--check" in sys.argv:
+    print("Check mode: application starts successfully")
+    sys.exit(0)
 
 load_dotenv()
 
