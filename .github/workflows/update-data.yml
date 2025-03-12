@@ -11,7 +11,7 @@ jobs:
 
     services:
       mariadb:
-        image: mariadb:11.4.5
+        image: wodby/mariadb:11.4-3.30.5
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: drupal
