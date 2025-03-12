@@ -79,48 +79,12 @@ jobs:
             echo "update_needed=false" >> $GITHUB_ENV
           fi
 
-      - name: Check if PR already exists
-        id: check_pr
+      - name: Push diff
         if: env.update_needed == 'true'
-        run: |
-          PR_EXISTS=$(gh pr list --state open --head update-data --json number --jq '.[].number' || echo "")
-          if [[ -n "$PR_EXISTS" ]]; then
-            echo "pr_number=$PR_EXISTS" >> $GITHUB_ENV
-            echo "branch_exists=true" >> $GITHUB_ENV
-          else
-            echo "branch_exists=false" >> $GITHUB_ENV
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create or update update-data branch
-        if: env.update_needed == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          if [[ "${{ env.branch_exists }}" == "true" ]]; then
-            git checkout update-data
-          else
-            git checkout -b update-data
-          fi
-
-          git add web/modules/custom/jpf_store/assets/doc/v5/loto_201911.csv
-          git commit -m "Update data"
-          git push origin update-data
-
-      - name: Create or update Pull Request
-        if: env.update_needed == 'true'
-        run: |
-          if [[ "${{ env.branch_exists }}" == "true" ]]; then
-            echo "PR already exists, skipping PR creation."
-          else
-            gh pr create \
-              --title "Update data" \
-              --body "Automated update by github actions." \
-              --head update-data \
-              --base main \
-              --assignee johnatas-x
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: EndBug/add-and-commit@v9.1.4
+        with:
+          add: 'web/modules/custom/jpf_store/assets/doc/*'
+          author_name: update-data[bot]
+          author_email: update-data@users.noreply.github.com
+          commit: --signoff
+          message: 'Update data'
