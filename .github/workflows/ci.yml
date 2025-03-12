@@ -124,10 +124,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5.4.0
         with:
           python-version: '3.13'
+
       - run: |
           pip install -r .docker/python/requirements
           python python/jean-pyarre/jean-pyarre.py
