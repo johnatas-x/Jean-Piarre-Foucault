@@ -85,6 +85,7 @@ jobs:
         with:
           add: 'web/modules/custom/jpf_store/assets/doc/*'
           author_name: update-data[bot]
-          author_email: update-data@users.noreply.github.com
+          author_email: 203315439+jpf-update-data@users.noreply.github.com
           commit: --signoff -n
           message: 'Update data'
+          push: 'https://x-access-token:${{ secrets.UPDATE_BOT_TOKEN }}@github.com/johnatas-x/Jean-Piarre-Foucault.git main --set-upstream'
