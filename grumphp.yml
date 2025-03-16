@@ -132,8 +132,7 @@ grumphp:
         priority: 0
         task: null
     jsonlint:
-      ignore_patterns:
-        - qodana.sarif.json
+      ignore_patterns: []
       detect_key_conflicts: false
       metadata:
         blocking: true
