@@ -21,12 +21,15 @@
       ]
     },
     {
-      "groupName": "CI",
+      "groupName": "Workflows",
       "matchPackageNames": [
         "actions/cache",
         "actions/checkout",
+        "actions/setup-python",
+        "EndBug/add-and-commit",
         "nick-invision/retry",
-        "shivammathur/setup-php"
+        "shivammathur/setup-php",
+        "tonybaloney/pycharm-security"
       ]
     }
   ]
