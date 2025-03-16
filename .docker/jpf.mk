@@ -52,6 +52,7 @@ pup:
 ## init	:	Init project.
 .PHONY: init
 init:
+	@bash scripts/setup-ignore.sh
 	@if [ ! -f ".env" ]; then \
 		cp ".env.example" ".env"; \
 	fi
