@@ -1,0 +1,13 @@
+#!/bin/bash
+
+FILES=(
+    "web/modules/custom/jpf_store/assets/doc/v1/loto.csv"
+    "web/modules/custom/jpf_store/assets/doc/v2/nouveau_loto.csv"
+    "web/modules/custom/jpf_store/assets/doc/v3/loto2017.csv"
+    "web/modules/custom/jpf_store/assets/doc/v4/loto_201902.csv"
+    "web/modules/custom/jpf_store/assets/doc/v5/loto_201911.csv"
+)
+
+for FILE in "${FILES[@]}"; do
+    git update-index --no-skip-worktree "$FILE"
+done
