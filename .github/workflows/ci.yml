@@ -39,14 +39,14 @@ jobs:
           git config --global core.eol lf
 
       - name: Setup composer
-        uses: ./.github/actions/composite/composer.yml
+        uses: ./.github/actions/composer
   php:
     name: Run quality tools (GrumPHP)
     runs-on: ubuntu-latest
 
     steps:
       - name: Setup composer
-        uses: ./.github/actions/composite/composer.yml
+        uses: ./.github/actions/composer
 
       - name: Run GrumPHP
         run: php ./vendor/bin/grumphp run

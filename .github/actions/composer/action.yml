@@ -7,7 +7,7 @@ runs:
       uses: actions/checkout@v4
 
     - name: Setup PHP
-      uses: ./.github/actions/composite/php.yml
+      uses: ./.github/actions/php
 
     - name: Get Composer cache directory
       id: composer-cache
