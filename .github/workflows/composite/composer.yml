@@ -1,0 +1,38 @@
+name: Composer composite
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: ./.github/actions/composite/php.yml
+
+    - name: Get Composer cache directory
+      id: composer-cache
+      run: |
+        DIR=$(composer config cache-dir)
+        echo "dir=$DIR" >> $GITHUB_OUTPUT
+      shell: bash
+
+    - name: Cache dependencies
+      uses: actions/cache@v4
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('**/composer.*') }}-${{ matrix.composer-flags }}
+        restore-keys: |
+          composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('**/composer.*') }}-
+          composer-${{ runner.os }}-${{ matrix.php-version }}-
+          composer-${{ runner.os }}-
+          composer-
+
+    - name: Install dependencies
+      uses: nick-invision/retry@v3
+      with:
+        timeout_minutes: 5
+        max_attempts: 5
+        retry_wait_seconds: 30
+        command: |
+          composer update --optimize-autoloader --no-interaction --no-progress ${{ matrix.composer-flags }}
+          composer info -D
