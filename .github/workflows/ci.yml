@@ -77,6 +77,6 @@ jobs:
         run: python python/jean-pyarre/jean-pyarre.py --check
 
       - name: PyCharm Python Security Scanner
-        uses: tonybaloney/pycharm-security@1.29.0
+        uses: johnatas-x/pycharm-security@master
         with:
           path: python/
