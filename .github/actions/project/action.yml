@@ -11,6 +11,7 @@ runs:
         composer install --no-progress --prefer-dist --optimize-autoloader
         mkdir -p "web/sites/default"
         cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
+      shell: bash
 
     - name: Test project install
       run: |
@@ -19,3 +20,4 @@ runs:
         vendor/bin/drush locale-check
         vendor/bin/drush locale-update
         vendor/bin/drush cr
+      shell: bash
