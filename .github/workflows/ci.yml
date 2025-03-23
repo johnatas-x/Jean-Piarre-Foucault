@@ -56,7 +56,6 @@ jobs:
 
       - name: Run GrumPHP
         run: php ./vendor/bin/grumphp run
-        continue-on-error: true # Compulsory as long as PHP_CS is not compatible PHP 8.4.
   python:
     name: Run python + security scanner
     runs-on: ubuntu-latest
