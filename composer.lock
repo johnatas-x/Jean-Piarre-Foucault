@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "308f03c4abfc89905e2c22a33476d95f",
+    "content-hash": "a5d19093d9d2168c4c6a752fbf809842",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8945,25 +8945,25 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.3.0",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "709824b00a700117060cd1fcad967fa4580118d2"
+                "reference": "615dfb271a34163ed0501da7dff7719913c63bf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/709824b00a700117060cd1fcad967fa4580118d2",
-                "reference": "709824b00a700117060cd1fcad967fa4580118d2",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/615dfb271a34163ed0501da7dff7719913c63bf4",
+                "reference": "615dfb271a34163ed0501da7dff7719913c63bf4",
                 "shasum": ""
             },
             "require": {
                 "drupal/coder": "8.3.28",
                 "ergebnis/composer-normalize": "2.45.0",
                 "friendsoftwig/twigcs": "6.5.0",
-                "johnatas-x/grumphp-phpa": "2.12.0",
+                "johnatas-x/grumphp-phpa": "2.12.1",
                 "johnatas-x/grumphp-phpdd": "2.12.0",
-                "johnatas-x/phpcpd": "6.0.4",
+                "johnatas-x/phpcpd": "6.0.5",
                 "maglnet/composer-require-checker": "4.16.1",
                 "mglaman/phpstan-drupal": "2.0.1",
                 "php": ">=8.3",
@@ -8972,7 +8972,7 @@
                 "phpmd/phpmd": "2.15.0",
                 "phpro/grumphp": "2.12.0",
                 "phpstan/extension-installer": "1.4.3",
-                "phpstan/phpstan": "2.1.8",
+                "phpstan/phpstan": "2.1.10",
                 "phpstan/phpstan-deprecation-rules": "2.0.1",
                 "povils/phpmnd": "3.6.0",
                 "slevomat/coding-standard": "8.16.0",
@@ -9023,25 +9023,25 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-03-21T23:19:28+00:00"
+            "time": "2025-03-23T16:34:01+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
-            "version": "2.12.0",
+            "version": "2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/grumphp-phpa.git",
-                "reference": "6ec87f7deb8461edf5de866c9e7cc6a7d66fc335"
+                "reference": "1c826321cab4df93aa3b3a0a6d56ad0aba6b7c35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpa/zipball/6ec87f7deb8461edf5de866c9e7cc6a7d66fc335",
-                "reference": "6ec87f7deb8461edf5de866c9e7cc6a7d66fc335",
+                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpa/zipball/1c826321cab4df93aa3b3a0a6d56ad0aba6b7c35",
+                "reference": "1c826321cab4df93aa3b3a0a6d56ad0aba6b7c35",
                 "shasum": ""
             },
             "require": {
-                "johnatas-x/php-assumptions": "0.9.0",
-                "phpro/grumphp": "2.12.0"
+                "phpro/grumphp": "2.12.0",
+                "rskuipers/php-assumptions": "0.9.1"
             },
             "type": "library",
             "autoload": {
@@ -9065,7 +9065,7 @@
                 "issues": "https://github.com/johnatas-x/grumphp-phpa/issues",
                 "source": "https://github.com/johnatas-x/grumphp-phpa"
             },
-            "time": "2025-03-21T22:32:26+00:00"
+            "time": "2025-03-22T15:49:06+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpdd",
@@ -9108,57 +9108,6 @@
                 "source": "https://github.com/johnatas-x/grumphp-phpdd"
             },
             "time": "2025-03-21T22:35:45+00:00"
-        },
-        {
-            "name": "johnatas-x/php-assumptions",
-            "version": "0.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johnatas-x/php-assumptions.git",
-                "reference": "ae9f2ae766db15777dc79789be17dee43012bced"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/php-assumptions/zipball/ae9f2ae766db15777dc79789be17dee43012bced",
-                "reference": "ae9f2ae766db15777dc79789be17dee43012bced",
-                "shasum": ""
-            },
-            "require": {
-                "league/climate": "^3.1",
-                "nikic/php-parser": "^5.0"
-            },
-            "require-dev": {
-                "phpspec/prophecy": "~1.0",
-                "phpunit/phpunit": "^5.6"
-            },
-            "bin": [
-                "bin/phpa"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PhpAssumptions\\": "src/PhpAssumptions"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rick Kuipers",
-                    "email": "io@rskuipers.com"
-                },
-                {
-                    "name": "Johnatas",
-                    "role": "Fork maintainer"
-                }
-            ],
-            "description": "Static code analysis tool to detect weak assumptions",
-            "support": {
-                "source": "https://github.com/johnatas-x/php-assumptions/tree/0.9.0"
-            },
-            "time": "2025-02-07T13:44:14+00:00"
         },
         {
             "name": "johnatas-x/php-deprecation-detector",
@@ -9227,26 +9176,26 @@
         },
         {
             "name": "johnatas-x/phpcpd",
-            "version": "6.0.4",
+            "version": "6.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/phpcpd.git",
-                "reference": "7bed307c811c7c1a10dd23d1099c835a6786864f"
+                "reference": "b734920ca8c5958c2e54806977cc5fb7a9c47531"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/phpcpd/zipball/7bed307c811c7c1a10dd23d1099c835a6786864f",
-                "reference": "7bed307c811c7c1a10dd23d1099c835a6786864f",
+                "url": "https://api.github.com/repos/johnatas-x/phpcpd/zipball/b734920ca8c5958c2e54806977cc5fb7a9c47531",
+                "reference": "b734920ca8c5958c2e54806977cc5fb7a9c47531",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-mbstring": "*",
                 "php": ">=8.1",
-                "phpunit/php-file-iterator": "^4.0",
-                "phpunit/php-timer": "^6.0",
-                "sebastian/cli-parser": "^2.0",
-                "sebastian/version": "^4.0"
+                "phpunit/php-file-iterator": ">=4.0",
+                "phpunit/php-timer": ">=6.0",
+                "sebastian/cli-parser": ">=2.0",
+                "sebastian/version": ">=4.0"
             },
             "bin": [
                 "phpcpd"
@@ -9281,7 +9230,7 @@
             "homepage": "https://github.com/johnatas-x/phpcpd",
             "support": {
                 "issues": "https://github.com/johnatas-x/phpcpd/issues",
-                "source": "https://github.com/johnatas-x/phpcpd/tree/6.0.4"
+                "source": "https://github.com/johnatas-x/phpcpd/tree/6.0.5"
             },
             "funding": [
                 {
@@ -9289,7 +9238,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-27T12:12:25+00:00"
+            "time": "2025-03-22T11:06:56+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -10922,16 +10871,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.8",
+            "version": "2.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "f9adff3b87c03b12cc7e46a30a524648e497758f"
+                "reference": "051a3b6b9b80df4ba3a7f801a8b53ad7d8f1c15f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f9adff3b87c03b12cc7e46a30a524648e497758f",
-                "reference": "f9adff3b87c03b12cc7e46a30a524648e497758f",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/051a3b6b9b80df4ba3a7f801a8b53ad7d8f1c15f",
+                "reference": "051a3b6b9b80df4ba3a7f801a8b53ad7d8f1c15f",
                 "shasum": ""
             },
             "require": {
@@ -10976,7 +10925,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-09T09:30:48+00:00"
+            "time": "2025-03-23T14:57:55+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -12073,6 +12022,54 @@
                 }
             ],
             "time": "2025-02-21T23:05:15+00:00"
+        },
+        {
+            "name": "rskuipers/php-assumptions",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rskuipers/php-assumptions.git",
+                "reference": "06591c2b7f66969e02b54508a8c7576a759c0e9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rskuipers/php-assumptions/zipball/06591c2b7f66969e02b54508a8c7576a759c0e9d",
+                "reference": "06591c2b7f66969e02b54508a8c7576a759c0e9d",
+                "shasum": ""
+            },
+            "require": {
+                "league/climate": "^3.1",
+                "nikic/php-parser": "^4.0|^5.0"
+            },
+            "require-dev": {
+                "phpspec/prophecy-phpunit": "^2.3",
+                "phpunit/phpunit": "^11.5"
+            },
+            "bin": [
+                "bin/phpa"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpAssumptions\\": "src/PhpAssumptions"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rick Kuipers",
+                    "email": "io@rskuipers.com"
+                }
+            ],
+            "description": "Static code analysis tool to detect weak assumptions",
+            "support": {
+                "issues": "https://github.com/rskuipers/php-assumptions/issues",
+                "source": "https://github.com/rskuipers/php-assumptions/tree/0.9.1"
+            },
+            "time": "2025-03-22T15:15:59+00:00"
         },
         {
             "name": "sebastian/cli-parser",
