@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5d19093d9d2168c4c6a752fbf809842",
+    "content-hash": "33ed98939d86c3c2425d5f9599d18024",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8945,16 +8945,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "615dfb271a34163ed0501da7dff7719913c63bf4"
+                "reference": "b9d47b7d5b52cbad4f24cd08998e040f9bcae8d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/615dfb271a34163ed0501da7dff7719913c63bf4",
-                "reference": "615dfb271a34163ed0501da7dff7719913c63bf4",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/b9d47b7d5b52cbad4f24cd08998e040f9bcae8d0",
+                "reference": "b9d47b7d5b52cbad4f24cd08998e040f9bcae8d0",
                 "shasum": ""
             },
             "require": {
@@ -8972,10 +8972,10 @@
                 "phpmd/phpmd": "2.15.0",
                 "phpro/grumphp": "2.12.0",
                 "phpstan/extension-installer": "1.4.3",
-                "phpstan/phpstan": "2.1.10",
+                "phpstan/phpstan": "2.1.11",
                 "phpstan/phpstan-deprecation-rules": "2.0.1",
                 "povils/phpmnd": "3.6.0",
-                "slevomat/coding-standard": "8.16.0",
+                "slevomat/coding-standard": "8.16.1",
                 "squizlabs/php_codesniffer": "3.12.0",
                 "vincentlanglet/twig-cs-fixer": "3.5.1"
             },
@@ -9023,7 +9023,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-03-23T16:34:01+00:00"
+            "time": "2025-03-25T08:46:51+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -10871,16 +10871,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.10",
+            "version": "2.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "051a3b6b9b80df4ba3a7f801a8b53ad7d8f1c15f"
+                "reference": "8ca5f79a8f63c49b2359065832a654e1ec70ac30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/051a3b6b9b80df4ba3a7f801a8b53ad7d8f1c15f",
-                "reference": "051a3b6b9b80df4ba3a7f801a8b53ad7d8f1c15f",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8ca5f79a8f63c49b2359065832a654e1ec70ac30",
+                "reference": "8ca5f79a8f63c49b2359065832a654e1ec70ac30",
                 "shasum": ""
             },
             "require": {
@@ -10925,7 +10925,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-23T14:57:55+00:00"
+            "time": "2025-03-24T13:45:00+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -12359,16 +12359,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.16.0",
+            "version": "8.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "7748a4282df19daf966fda1d8c60a8aec803c83a"
+                "reference": "490023f23813483b5f75381c4ee07d26d9edced1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/7748a4282df19daf966fda1d8c60a8aec803c83a",
-                "reference": "7748a4282df19daf966fda1d8c60a8aec803c83a",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/490023f23813483b5f75381c4ee07d26d9edced1",
+                "reference": "490023f23813483b5f75381c4ee07d26d9edced1",
                 "shasum": ""
             },
             "require": {
@@ -12408,7 +12408,7 @@
             ],
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.16.0"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.16.1"
             },
             "funding": [
                 {
@@ -12420,7 +12420,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-23T18:12:49+00:00"
+            "time": "2025-03-23T16:33:42+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
