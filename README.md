@@ -16,17 +16,17 @@ Do you *really* believe in randomness? Think again. This project’s secret sauc
 **Jean-Piarre Foucault** was built with these “coincidences” in mind. With our deep learning algorithms working in the background, it’s less about luck and more about *predictive insight*. Python doesn't believe in chance. Neither should you.
 
 ## Installation Guide – Only Three Easy Steps (out of Four) 🚀
-1. **Install Docker** – if you can handle *that*, the rest is cake.
+1. **Install [Docker](https://docs.docker.com/engine/install/) and [Taskfile](https://taskfile.dev/installation)** – if you can handle *that*, the rest is cake.
 2. **Clone the Repo** – like a pro.
    1. *(optional)* Create `.env` from `.env.example` if you don't want default values.
    2. *(optional)* Create `web/sites/default/settings.local.php` from `web/core/assets/scaffold/files/example.settings.local.php`
-3. Run `make init` – and watch as the magic unfolds!
+3. Run `task init` – and watch as the magic unfolds!
 4. Realize there’s a hidden **Step 4**: *Implementing your own prediction algorithm* (sorry, mine’s not included – I’ll make it public once I’m a millionaire 😆).
 
 Voilà! You now have Jean-Piarre Foucault running locally (by default on 8000 port)… minus that small “predict the future” part. 😄
 
 ## Quality Code? You Bet. 🔍
-Run `make quality` to unleash the *“very hard”* quality check tools. If your code survives this, it's ready for anything.
+Run `task quality` to unleash the *“very hard”* quality check tools. If your code survives this, it's ready for anything.
 
 ## Features 🖇️
 - **Real FDJ Data** (shhh...) 📊: Yep, we’re grabbing real lotto draw data via an FDJ API call. Let’s keep this one between us.
@@ -36,18 +36,18 @@ Run `make quality` to unleash the *“very hard”* quality check tools. If your
 ## Useful commands 📎
 | Description       | Command                                         |
 |-------------------|-------------------------------------------------|
-| Start project     | `make up`                                       |
-| Stop project      | `make down`                                     |
-| Update project    | `make pup`                                      |
-| Init project      | `make init`                                     |
-| Check quality     | `make quality`                                  |
-| Force update data | `make drush "crun import_dynamic_data --force"` |
-| Mock predictions | `make drush mockpred both`                      |
+| Start project     | `task up`                                       |
+| Stop project      | `task down`                                     |
+| Update project    | `task pup`                                      |
+| Init project      | `task init`                                     |
+| Check quality     | `task quality`                                  |
+| Force update data | `task drush "crun import_dynamic_data --force"` |
+| Mock predictions  | `task drush mockpred both`                      |
 
 ## Any other cool stuff? 🍿
 Sure.
 
-On the web container, zsh (with Oh My Zsh) is installed. So you can use it like `make zsh`.
+On the web container, zsh (with Oh My Zsh) is installed. So you can use it like `task zsh`.
 > [!NOTE]
 > For now my .zshrc is loaded with my theme and my aliases, but you will soon be able to configure yours!
 
