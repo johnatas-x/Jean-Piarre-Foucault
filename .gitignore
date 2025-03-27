@@ -117,3 +117,6 @@
 mariadb-init
 postgres-init
 mutagen.yml.lock
+
+# Ignore custom zshrc file
+/.docker/.zshrc

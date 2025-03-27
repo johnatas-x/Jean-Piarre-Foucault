@@ -139,16 +139,27 @@ tasks:
       - task: fixperm
       - task: fulldeploy
 
+  init-files:
+    desc: "Init unversioned files"
+    cmds:
+      - |
+        for file in \
+          ".env:.env.example" \
+          ".docker/.zshrc:.docker/.zshrc.dist" \
+          "python/jean-pyarre/templates/v5.html:python/jean-pyarre/templates/v5.html.example" \
+          "python/jean-pyarre/versions/v5.py:python/jean-pyarre/versions/v5.py.example"
+        do
+          IFS=":" read -r target source <<< "$file"
+          [ -f "$target" ] || cp "$source" "$target"
+        done
+
   # --- Project Initialization ---
 
   init:
     desc: "Initialize the project"
-    deps: [prune]
+    deps: [prune, init-files]
     cmds:
-      - if [ ! -f ".env" ]; then cp ".env.example" ".env"; fi
       - sudo rm -Rf vendor web/modules/contrib web/themes/contrib web/core web/sites
-      - cp python/jean-pyarre/templates/v5.html.example python/jean-pyarre/templates/v5.html
-      - cp python/jean-pyarre/versions/v5.py.example python/jean-pyarre/versions/v5.py
       - docker compose up --build -d
       - docker exec -it {{.PHP_CONTAINER}} sudo chmod o+w /var/www/html
       - docker exec -it {{.PHP_CONTAINER}} git config --global --add safe.directory /var/www/html
