@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cec63a6d5e306fc08ffe8c2f0058fa8",
+    "content-hash": "1e3ba069bd4f76ed65c45e4223155af0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8036,16 +8036,16 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.46.0",
+            "version": "2.47.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "6d4dc58cb098507397116c921ad3bd68f44c2849"
+                "reference": "ed24b9f8901f8fbafeca98f662eaca39427f0544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/6d4dc58cb098507397116c921ad3bd68f44c2849",
-                "reference": "6d4dc58cb098507397116c921ad3bd68f44c2849",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/ed24b9f8901f8fbafeca98f662eaca39427f0544",
+                "reference": "ed24b9f8901f8fbafeca98f662eaca39427f0544",
                 "shasum": ""
             },
             "require": {
@@ -8062,7 +8062,7 @@
                 "composer/composer": "^2.8.3",
                 "ergebnis/license": "^2.6.0",
                 "ergebnis/php-cs-fixer-config": "^6.46.0",
-                "ergebnis/phpunit-slow-test-detector": "^2.19.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.19.1",
                 "fakerphp/faker": "^1.24.1",
                 "infection/infection": "~0.26.6",
                 "phpstan/extension-installer": "^1.4.3",
@@ -8115,7 +8115,7 @@
                 "security": "https://github.com/ergebnis/composer-normalize/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/composer-normalize"
             },
-            "time": "2025-04-10T18:54:20+00:00"
+            "time": "2025-04-15T11:09:27+00:00"
         },
         {
             "name": "ergebnis/json",
@@ -8724,27 +8724,27 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.3.8",
+            "version": "2.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "1817cbf094efa235ce69910748fcbf7f4d64cbba"
+                "reference": "179a83c4df0cc0dc839dbb2544da227c0e22e215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/1817cbf094efa235ce69910748fcbf7f4d64cbba",
-                "reference": "1817cbf094efa235ce69910748fcbf7f4d64cbba",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/179a83c4df0cc0dc839dbb2544da227c0e22e215",
+                "reference": "179a83c4df0cc0dc839dbb2544da227c0e22e215",
                 "shasum": ""
             },
             "require": {
                 "drupal/coder": "8.3.28",
-                "ergebnis/composer-normalize": "2.46.0",
+                "ergebnis/composer-normalize": "2.47.0",
                 "friendsoftwig/twigcs": "6.5.0",
                 "johnatas-x/grumphp-phpa": "2.12.1",
                 "johnatas-x/grumphp-phpdd": "2.12.1",
                 "johnatas-x/phpcpd": "6.0.5",
                 "maglnet/composer-require-checker": "4.16.1",
-                "mglaman/phpstan-drupal": "2.0.4",
+                "mglaman/phpstan-drupal": "2.0.5",
                 "php": ">=8.3",
                 "php-parallel-lint/php-parallel-lint": "1.4.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
@@ -8802,7 +8802,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-04-13T07:47:40+00:00"
+            "time": "2025-04-16T08:36:40+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -9665,16 +9665,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "9a31538197bd14bddf6dc71032d0f083d05c91e7"
+                "reference": "c50f146e1dbb331c800ddfed38cdf482e4ea0052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/9a31538197bd14bddf6dc71032d0f083d05c91e7",
-                "reference": "9a31538197bd14bddf6dc71032d0f083d05c91e7",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/c50f146e1dbb331c800ddfed38cdf482e4ea0052",
+                "reference": "c50f146e1dbb331c800ddfed38cdf482e4ea0052",
                 "shasum": ""
             },
             "require": {
@@ -9746,7 +9746,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.0.4"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.0.5"
             },
             "funding": [
                 {
@@ -9762,7 +9762,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-10T15:38:04+00:00"
+            "time": "2025-04-15T16:10:24+00:00"
         },
         {
             "name": "monolog/monolog",
