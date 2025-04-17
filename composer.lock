@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e3ba069bd4f76ed65c45e4223155af0",
+    "content-hash": "37a5fefd1253d9d548fcd4b8be6e0670",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8724,16 +8724,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.3.9",
+            "version": "2.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "179a83c4df0cc0dc839dbb2544da227c0e22e215"
+                "reference": "454b213b06ec128a5da9a83166bc9d2d248013b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/179a83c4df0cc0dc839dbb2544da227c0e22e215",
-                "reference": "179a83c4df0cc0dc839dbb2544da227c0e22e215",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/454b213b06ec128a5da9a83166bc9d2d248013b7",
+                "reference": "454b213b06ec128a5da9a83166bc9d2d248013b7",
                 "shasum": ""
             },
             "require": {
@@ -8751,7 +8751,7 @@
                 "phpmd/phpmd": "2.15.0",
                 "phpro/grumphp": "2.12.0",
                 "phpstan/extension-installer": "1.4.3",
-                "phpstan/phpstan": "2.1.11",
+                "phpstan/phpstan": "2.1.12",
                 "phpstan/phpstan-deprecation-rules": "2.0.1",
                 "povils/phpmnd": "3.6.0",
                 "slevomat/coding-standard": "8.17.0",
@@ -8802,7 +8802,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-04-16T08:36:40+00:00"
+            "time": "2025-04-16T15:01:25+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -10650,16 +10650,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.11",
+            "version": "2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "8ca5f79a8f63c49b2359065832a654e1ec70ac30"
+                "reference": "96dde49e967c0c22812bcfa7bda4ff82c09f3b0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8ca5f79a8f63c49b2359065832a654e1ec70ac30",
-                "reference": "8ca5f79a8f63c49b2359065832a654e1ec70ac30",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/96dde49e967c0c22812bcfa7bda4ff82c09f3b0c",
+                "reference": "96dde49e967c0c22812bcfa7bda4ff82c09f3b0c",
                 "shasum": ""
             },
             "require": {
@@ -10704,7 +10704,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-24T13:45:00+00:00"
+            "time": "2025-04-16T13:19:18+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
