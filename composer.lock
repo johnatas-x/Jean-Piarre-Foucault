@@ -2989,10 +2989,10 @@
         },
         {
             "name": "npm-asset/chart.js",
-            "version": "4.4.8",
+            "version": "4.4.9",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/chart.js/-/chart.js-4.4.8.tgz"
+                "url": "https://registry.npmjs.org/chart.js/-/chart.js-4.4.9.tgz"
             },
             "require": {
                 "npm-asset/kurkle--color": ">=0.3.0,<0.4.0"
