@@ -93,7 +93,7 @@ tasks:
   quality:
     desc: "Run GrumPHP to check quality"
     cmds:
-      - docker exec {{.PHP_CONTAINER}} vendor/bin/grumphp run
+      - docker exec {{.PHP_CONTAINER}} vendor/bin/grumphp run --tasks={{.CLI_ARGS}}
 
   fixperm:
     desc: "Fix file permissions (for Windows)"
