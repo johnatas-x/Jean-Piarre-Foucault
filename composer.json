@@ -27,6 +27,7 @@
         "drupal/core-composer-scaffold": "11.1.6",
         "drupal/core-project-message": "11.1.6",
         "drupal/core-recommended": "11.1.6",
+        "drupal/drush_batch_bar": "dev-main",
         "drupal/gin": "^4.0",
         "drupal/potx": "^1.1",
         "drupal/token": "^1.15",
@@ -54,6 +55,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/johnatas-x/drush_batch_bar"
         }
     ],
     "minimum-stability": "dev",

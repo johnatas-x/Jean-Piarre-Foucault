@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\jpf_store\Commands;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\drush_batch_bar\Commands\DrushBatchCommands;
 use Drupal\jpf_store\Batch\FillDataBatch;
 use Drupal\jpf_store\Enum\Versions;
 use Drush\Commands\DrushCommands;
@@ -25,7 +26,7 @@ class FillCommands extends DrushCommands {
    * @command fill-lotto-draws-data
    *
    * @option versions List of versions to fill, separated with a comma.
-   *   Use 'all' option instead if you want all versions.
+   *   Use the 'all' option instead if you want all versions.
    * @option all Fill all versions.
    *   Don't use this option with the 'versions' option.
    *
@@ -37,29 +38,16 @@ class FillCommands extends DrushCommands {
    *   Fill all files to DB
    */
   public function fill(array $options = ['versions' => NULL, 'all' => FALSE]): void {
-    $versions = $this->optionsChecker($options);
-
-    // Put all needed information into batch array.
-    $batch = [
-      'operations' => FillDataBatch::operations($versions),
-      'title' => t('Import data to database.'),
-      'init_message' => t('Initialization.')->render(),
-      'error_message' => t("An error occurred.")->render(),
-      'finished' => [
+    $batch = new DrushBatchCommands(
+      operations: FillDataBatch::operations($this->optionsChecker($options)),
+      title: 'Import data to database.',
+      finished: [
         FillDataBatch::class,
         'finished',
-      ],
-    ];
+      ]
+    );
 
-    // Get the batch process all ready.
-    batch_set($batch);
-    $batch =& batch_get();
-
-    // Because we are doing this on the back-end, we set progressive to false.
-    $batch['progressive'] = FALSE;
-
-    // Start processing the batch operations.
-    drush_backend_batch_process();
+    $batch->execute();
   }
 
   /**

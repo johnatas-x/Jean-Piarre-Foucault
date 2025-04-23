@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\jpf_stats\Commands;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\drush_batch_bar\Commands\DrushBatchCommands;
 use Drupal\jpf_stats\Batch\FillStatsBatch;
 use Drupal\jpf_store\Enum\Versions;
 use Drush\Commands\DrushCommands;
@@ -35,27 +36,16 @@ class FillCommands extends DrushCommands {
       );
     }
 
-    // Put all needed information into batch array.
-    $batch = [
-      'operations' => FillStatsBatch::operations($version),
-      'title' => t('Fill stats in database.')->render(),
-      'init_message' => t('Initialization.')->render(),
-      'error_message' => t('An error occurred.')->render(),
-      'finished' => [
+    $batch = new DrushBatchCommands(
+      operations: FillStatsBatch::operations($version),
+      title: 'Fill stats in database.',
+      finished: [
         FillStatsBatch::class,
         'finished',
-      ],
-    ];
+      ]
+    );
 
-    // Get the batch process all ready.
-    batch_set($batch);
-    $batch =& batch_get();
-
-    // Because we are doing this on the back-end, we set progressive to false.
-    $batch['progressive'] = FALSE;
-
-    // Start processing the batch operations.
-    drush_backend_batch_process();
+    $batch->execute();
   }
 
 }
