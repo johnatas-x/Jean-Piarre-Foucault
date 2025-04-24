@@ -14,6 +14,11 @@ use Drupal\jpf_store\Enum\Versions;
 class FillStatsBatch extends DrushBatchBar {
 
   /**
+   * The finished success message.
+   */
+  protected const string SUCCESS_MESSAGE = 'stats generated';
+
+  /**
    * Batch operations for fill stats drush command.
    *
    * @param \Drupal\jpf_store\Enum\Versions $version
@@ -57,18 +62,6 @@ class FillStatsBatch extends DrushBatchBar {
       $context['results']['error']++;
       $context['message'] = '[KO] ' . $exception->getMessage();
     }
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public static function finished(
-    bool $success,
-    array $results,
-    array $operations,
-    string $success_message = 'success',
-  ): void {
-    parent::finished($success, $results, $operations, t('stats generated')->render());
   }
 
   /**

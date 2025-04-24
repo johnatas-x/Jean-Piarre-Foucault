@@ -13,6 +13,11 @@ use Drupal\jpf_store\Enum\Versions;
 class FillDataBatch extends DrushBatchBar {
 
   /**
+   * The finished success message.
+   */
+  protected const string SUCCESS_MESSAGE = 'versions imported';
+
+  /**
    * Batch operations for fill data drush command.
    *
    * @param array<string> $versions
@@ -68,18 +73,6 @@ class FillDataBatch extends DrushBatchBar {
       $context['results']['error']++;
       $context['message'] = '[KO] ' . $exception->getMessage();
     }
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public static function finished(
-    bool $success,
-    array $results,
-    array $operations,
-    string $success_message = 'success',
-  ): void {
-    parent::finished($success, $results, $operations, 'versions imported');
   }
 
 }
