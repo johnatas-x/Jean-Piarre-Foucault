@@ -9,6 +9,7 @@ module:
   charts_chartjs: 0
   config_translation: 0
   dblog: 0
+  drush_batch_bar: 0
   dynamic_page_cache: 0
   field: 0
   file: 0
