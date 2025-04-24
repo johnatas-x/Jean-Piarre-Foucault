@@ -8,7 +8,7 @@ runs:
         cp ".env.example" ".env"
         sed -i 's/^DB_HOST=.*/DB_HOST=127.0.0.1/' .env
         sudo rm -Rf web/sites
-        composer install --no-progress --prefer-dist --optimize-autoloader
+        composer install --no-dev --no-progress --prefer-dist --optimize-autoloader
         mkdir -p "web/sites/default"
         cp ".docker/files/settings.php.default" "web/sites/default/settings.php"
       shell: bash
