@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Batch;
 
+use Drupal\drush_batch_bar\Batch\DrushBatchBar;
 use Drupal\jpf_store\Enum\Versions;
-use Drupal\jpf_utils\Batch\BaseBatch;
 
 /**
  * Batch methods for FillCommands.
  */
-class FillDataBatch extends BaseBatch {
+class FillDataBatch extends DrushBatchBar {
 
   /**
    * Batch operations for fill data drush command.
@@ -73,7 +73,12 @@ class FillDataBatch extends BaseBatch {
   /**
    * {@inheritDoc}
    */
-  public static function finished(bool $success, array $results, array $operations, string $success_message): void {
+  public static function finished(
+    bool $success,
+    array $results,
+    array $operations,
+    string $success_message = 'success',
+  ): void {
     parent::finished($success, $results, $operations, 'versions imported');
   }
 

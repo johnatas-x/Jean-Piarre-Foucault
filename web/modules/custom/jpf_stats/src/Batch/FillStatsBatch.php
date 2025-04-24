@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_stats\Batch;
 
+use Drupal\drush_batch_bar\Batch\DrushBatchBar;
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
-use Drupal\jpf_utils\Batch\BaseBatch;
 
 /**
  * Batch methods for FillCommands.
  */
-class FillStatsBatch extends BaseBatch {
+class FillStatsBatch extends DrushBatchBar {
 
   /**
    * Batch operations for fill stats drush command.
@@ -62,7 +62,12 @@ class FillStatsBatch extends BaseBatch {
   /**
    * {@inheritDoc}
    */
-  public static function finished(bool $success, array $results, array $operations, string $success_message): void {
+  public static function finished(
+    bool $success,
+    array $results,
+    array $operations,
+    string $success_message = 'success',
+  ): void {
     parent::finished($success, $results, $operations, t('stats generated')->render());
   }
 
