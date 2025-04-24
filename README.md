@@ -34,15 +34,15 @@ Run `task quality` to unleash the *“very hard”* quality check tools. If your
 - **Random Number Predictions** 🎲: Because when it comes to the lottery, randomness is really all you need.
 
 ## Useful commands 📎
-| Description       | Command                                         |
-|-------------------|-------------------------------------------------|
-| Start project     | `task up`                                       |
-| Stop project      | `task down`                                     |
-| Update project    | `task pup`                                      |
-| Init project      | `task init`                                     |
-| Check quality     | `task quality`                                  |
-| Force update data | `task drush "crun import_dynamic_data --force"` |
-| Mock predictions  | `task drush mockpred both`                      |
+| Description       | Command                                           |
+|-------------------|---------------------------------------------------|
+| Start project     | `task up`                                         |
+| Stop project      | `task down`                                       |
+| Update project    | `task pup`                                        |
+| Init project      | `task init`                                       |
+| Check quality     | `task quality`                                    |
+| Force update data | `task drush -- crun import_dynamic_data --force`  |
+| Mock predictions  | `task drush -- mockpred both`                     |
 
 ## Any other cool stuff? 🍿
 Sure.
