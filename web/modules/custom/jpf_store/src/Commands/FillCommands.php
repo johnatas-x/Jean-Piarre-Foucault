@@ -40,6 +40,7 @@ class FillCommands extends DrushCommands {
   public function fill(array $options = ['versions' => NULL, 'all' => FALSE]): void {
     $batch = new DrushBatchCommands(
       operations: FillDataBatch::operations($this->optionsChecker($options)),
+      drush_io: $this->io(),
       title: 'Import data to database.',
       finished: [
         FillDataBatch::class,

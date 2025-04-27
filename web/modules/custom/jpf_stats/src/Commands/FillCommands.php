@@ -38,6 +38,7 @@ class FillCommands extends DrushCommands {
 
     $batch = new DrushBatchCommands(
       operations: FillStatsBatch::operations($version),
+      drush_io: $this->io(),
       title: 'Fill stats in database.',
       finished: [
         FillStatsBatch::class,
