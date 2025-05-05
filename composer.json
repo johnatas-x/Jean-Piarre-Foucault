@@ -41,7 +41,7 @@
         "symfony/dotenv": "^7.1"
     },
     "require-dev": {
-        "johnatas-x/angry-bearded": "2.3.11",
+        "johnatas-x/angry-bearded": "2.3.13",
         "roave/security-advisories": "dev-latest"
     },
     "conflict": {
