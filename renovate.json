@@ -32,5 +32,30 @@
         "tonybaloney/pycharm-security"
       ]
     }
+  ],
+  "labels": ["dependencies"],
+  "enabledManagers": [
+    "regex",
+    "dockerfile",
+    "github-actions",
+    "pip_requirements"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^\\.env\\.example$"],
+      "matchStrings": [
+        "PHP_TAG=(?<currentValue>[\\w\\.-]+)",
+        "MARIADB_TAG=(?<currentValue>[\\w\\.-]+)",
+        "NGINX_TAG=(?<currentValue>[\\w\\.-]+)",
+        "VARNISH_TAG=(?<currentValue>[\\w\\.-]+)",
+        "MEMCACHED_TAG=(?<currentValue>[\\w\\.-]+)",
+        "PYTHON_TAG=(?<currentValue>[\\w\\.-]+)",
+        "TRAEFIK_TAG=(?<currentValue>[\\w\\.-]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "loose",
+      "depNameTemplate": "{{#match matchString 'PHP_TAG=.*'}}wodby/drupal-php{{/match}}{{#match matchString 'MARIADB_TAG=.*'}}wodby/mariadb{{/match}}{{#match matchString 'NGINX_TAG=.*'}}wodby/nginx{{/match}}{{#match matchString 'VARNISH_TAG=.*'}}wodby/varnish{{/match}}{{#match matchString 'MEMCACHED_TAG=.*'}}wodby/memcached{{/match}}{{#match matchString 'PYTHON_TAG=.*'}}python{{/match}}{{#match matchString 'TRAEFIK_TAG=.*'}}traefik{{/match}}",
+      "extractVersionTemplate": "{{#if (eq matchString 'PYTHON_TAG=.*')}}{{currentValue}}-alpine{{else}}{{currentValue}}{{/if}}"
+    }
   ]
 }
