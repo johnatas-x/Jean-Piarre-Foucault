@@ -31,6 +31,11 @@
         "shivammathur/setup-php",
         "tonybaloney/pycharm-security"
       ]
+    },
+    {
+      "groupName": "Docker images",
+      "matchManagers": ["regex"],
+      "matchDatasources": ["docker"]
     }
   ],
   "labels": ["dependencies"],
@@ -43,19 +48,59 @@
   "regexManagers": [
     {
       "fileMatch": ["^\\.env\\.example$"],
-      "matchStrings": [
-        "PHP_TAG=(?<currentValue>[\\w\\.-]+)",
-        "MARIADB_TAG=(?<currentValue>[\\w\\.-]+)",
-        "NGINX_TAG=(?<currentValue>[\\w\\.-]+)",
-        "VARNISH_TAG=(?<currentValue>[\\w\\.-]+)",
-        "MEMCACHED_TAG=(?<currentValue>[\\w\\.-]+)",
-        "PYTHON_TAG=(?<currentValue>[\\w\\.-]+)",
-        "TRAEFIK_TAG=(?<currentValue>[\\w\\.-]+)"
-      ],
+      "matchStrings": ["PHP_TAG=(?<currentValue>[\\w\\.-]+)"],
       "datasourceTemplate": "docker",
+      "depNameTemplate": "wodby/drupal-php",
       "versioningTemplate": "loose",
-      "depNameTemplate": "{{#match matchString 'PHP_TAG=.*'}}wodby/drupal-php{{/match}}{{#match matchString 'MARIADB_TAG=.*'}}wodby/mariadb{{/match}}{{#match matchString 'NGINX_TAG=.*'}}wodby/nginx{{/match}}{{#match matchString 'VARNISH_TAG=.*'}}wodby/varnish{{/match}}{{#match matchString 'MEMCACHED_TAG=.*'}}wodby/memcached{{/match}}{{#match matchString 'PYTHON_TAG=.*'}}python{{/match}}{{#match matchString 'TRAEFIK_TAG=.*'}}traefik{{/match}}",
-      "extractVersionTemplate": "{{#if (eq matchString 'PYTHON_TAG=.*')}}{{currentValue}}-alpine{{else}}{{currentValue}}{{/if}}"
+      "extractVersionTemplate": "{{{currentValue}}}"
+    },
+    {
+      "fileMatch": ["^\\.env\\.example$"],
+      "matchStrings": ["MARIADB_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "wodby/mariadb",
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "{{{currentValue}}}"
+    },
+    {
+      "fileMatch": ["^\\.env\\.example$"],
+      "matchStrings": ["NGINX_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "wodby/nginx",
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "{{{currentValue}}}"
+    },
+    {
+      "fileMatch": ["^\\.env\\.example$"],
+      "matchStrings": ["VARNISH_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "wodby/varnish",
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "{{{currentValue}}}"
+    },
+    {
+      "fileMatch": ["^\\.env\\.example$"],
+      "matchStrings": ["MEMCACHED_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "wodby/memcached",
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "{{{currentValue}}}"
+    },
+    {
+      "fileMatch": ["^\\.env\\.example$"],
+      "matchStrings": ["PYTHON_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "python",
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "{{{currentValue}}}-alpine"
+    },
+    {
+      "fileMatch": ["^\\.env\\.example$"],
+      "matchStrings": ["TRAEFIK_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "traefik",
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "{{{currentValue}}}"
     }
   ]
 }
