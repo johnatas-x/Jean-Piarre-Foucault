@@ -120,3 +120,6 @@ mutagen.yml.lock
 
 # Ignore custom zshrc file
 /.docker/.zshrc
+
+# Ignore renovate local config.
+config.js

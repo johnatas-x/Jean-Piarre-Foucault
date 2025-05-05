@@ -137,6 +137,9 @@ tasks:
     cmds:
       - sudo cp .docker/files/settings.php.default web/sites/default/settings.php
       - task: fixperm
+      - task: sync-env-tags
+      - task: down
+      - task: up
       - task: fulldeploy
 
   init-files:
@@ -152,6 +155,19 @@ tasks:
           IFS=":" read -r target source <<< "$file"
           [ -f "$target" ] || cp "$source" "$target"
         done
+  sync-env-tags:
+    desc: "Update docker images"
+    cmds:
+      - |
+        grep '_TAG=' .env.example | while IFS= read -r line; do
+          key="${line%%=*}"
+          if grep -q "^$key=" .env; then
+            sed -i "s/^$key=.*/$line/" .env
+          else
+            echo "⚠️  Warning: $key is defined in .env.example but missing in .env"
+          fi
+        done
+    silent: true
 
   # --- Project Initialization ---
 
