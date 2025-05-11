@@ -67,7 +67,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "docker",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
@@ -80,7 +80,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/mariadb",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "docker",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
@@ -93,7 +93,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/nginx",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "docker",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
@@ -106,7 +106,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/varnish",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "docker",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
@@ -119,7 +119,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/memcached",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "docker",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
@@ -132,7 +132,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "python",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "docker",
       "extractVersionTemplate": "{{{currentValue}}}-alpine"
     },
     {
@@ -145,7 +145,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "traefik",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "docker",
       "extractVersionTemplate": "{{{currentValue}}}"
     }
   ]
