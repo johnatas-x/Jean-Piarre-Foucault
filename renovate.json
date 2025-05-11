@@ -9,6 +9,9 @@
     "johnatas-x"
   ],
   "prHourlyLimit": 3,
+  "ignoreDeps": [
+    "gloursdocker/docker"
+  ],
   "packageRules": [
     {
       "groupName": "Drupal core",
