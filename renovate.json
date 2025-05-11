@@ -5,7 +5,9 @@
     ":assignee(arg0)",
     ":reviewer(arg0)"
   ],
-  "assignees": ["johnatas-x"],
+  "assignees": [
+    "johnatas-x"
+  ],
   "prHourlyLimit": 3,
   "packageRules": [
     {
@@ -34,69 +36,110 @@
     },
     {
       "groupName": "Docker images",
-      "matchManagers": ["regex"],
-      "matchDatasources": ["docker"]
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchDatasources": [
+        "docker"
+      ]
     }
   ],
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "enabledManagers": [
-    "regex",
+    "custom.regex",
     "dockerfile",
     "github-actions",
     "pip_requirements"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["^\\.env\\.example$"],
-      "matchStrings": ["PHP_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env\\.example$/"
+      ],
+      "matchStrings": [
+        "PHP_TAG=(?<currentValue>[\\w\\.-]+)"
+      ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
-      "fileMatch": ["^\\.env\\.example$"],
-      "matchStrings": ["MARIADB_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env\\.example$/"
+      ],
+      "matchStrings": [
+        "MARIADB_TAG=(?<currentValue>[\\w\\.-]+)"
+      ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/mariadb",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
-      "fileMatch": ["^\\.env\\.example$"],
-      "matchStrings": ["NGINX_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env\\.example$/"
+      ],
+      "matchStrings": [
+        "NGINX_TAG=(?<currentValue>[\\w\\.-]+)"
+      ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/nginx",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
-      "fileMatch": ["^\\.env\\.example$"],
-      "matchStrings": ["VARNISH_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env\\.example$/"
+      ],
+      "matchStrings": [
+        "VARNISH_TAG=(?<currentValue>[\\w\\.-]+)"
+      ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/varnish",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
-      "fileMatch": ["^\\.env\\.example$"],
-      "matchStrings": ["MEMCACHED_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env\\.example$/"
+      ],
+      "matchStrings": [
+        "MEMCACHED_TAG=(?<currentValue>[\\w\\.-]+)"
+      ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/memcached",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
-      "fileMatch": ["^\\.env\\.example$"],
-      "matchStrings": ["PYTHON_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env\\.example$/"
+      ],
+      "matchStrings": [
+        "PYTHON_TAG=(?<currentValue>[\\w\\.-]+)"
+      ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "python",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{{currentValue}}}-alpine"
     },
     {
-      "fileMatch": ["^\\.env\\.example$"],
-      "matchStrings": ["TRAEFIK_TAG=(?<currentValue>[\\w\\.-]+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env\\.example$/"
+      ],
+      "matchStrings": [
+        "TRAEFIK_TAG=(?<currentValue>[\\w\\.-]+)"
+      ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "traefik",
       "versioningTemplate": "loose",
