@@ -67,7 +67,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
-      "versioningTemplate": "loose",
+      "versioningTemplate": "docker",
       "autoReplaceStringTemplate": "PHP_TAG={{{newValue}}}"
     },
     {
