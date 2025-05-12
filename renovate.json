@@ -45,6 +45,13 @@
       "matchDatasources": [
         "docker"
       ]
+    },
+    {
+      "matchPackageNames": ["wodby/drupal-php"],
+      "matchDatasources": ["docker"],
+      "matchManagers": ["custom.regex"],
+      "allowedVersions": "/.*/",
+      "updateTypes": ["major", "minor", "patch"]
     }
   ],
   "labels": [
@@ -63,11 +70,10 @@
         "/^\\.env\\.example$/"
       ],
       "matchStrings": [
-        "PHP_TAG=(?<currentValue>[\\d]+\\.[\\d]+-[\\d]+\\.[\\d]+)"
+        "PHP_TAG=(?<currentValue>[\\w\\.-]+)"
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
-      "versioning": "regex:^\\d+\\.\\d+-\\d+\\.\\d+$",
       "extractVersionTemplate": "{{{ currentValue }}}",
       "autoReplaceStringTemplate": "PHP_TAG={{{ newValue }}}"
     },
