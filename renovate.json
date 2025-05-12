@@ -69,12 +69,11 @@
         "/^\\.env\\.example$/"
       ],
       "matchStrings": [
-        "PHP_TAG=(?<currentValue>[\\w\\.-]+)"
+        "PHP_TAG=(?<currentValue>.+)"
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
-      "extractVersionTemplate": "{{{ currentValue }}}",
-      "autoReplaceStringTemplate": "PHP_TAG={{{ newValue }}}"
+      "extractVersionTemplate": "{{{currentValue}}}"
     },
     {
       "customType": "regex",
