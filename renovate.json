@@ -63,13 +63,13 @@
         "/^\\.env\\.example$/"
       ],
       "matchStrings": [
-        "PHP_TAG=(?<currentValue>[\\w\\.-]+)"
+        "PHP_TAG=8\\.4-(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
-      "versioningTemplate": "loose",
-      "extractVersionTemplate": "{{currentValue}}",
-      "autoReplaceStringTemplate": "PHP_TAG={{{newValue}}}"
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "8.4-{{currentValue}}",
+      "autoReplaceStringTemplate": "PHP_TAG=8.4-{{{newValue}}}"
     },
     {
       "customType": "regex",
