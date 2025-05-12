@@ -50,7 +50,6 @@
       "matchPackageNames": ["wodby/drupal-php"],
       "matchDatasources": ["docker"],
       "matchManagers": ["custom.regex"],
-      "allowedVersions": "/.*/",
       "updateTypes": ["major", "minor", "patch"]
     }
   ],
