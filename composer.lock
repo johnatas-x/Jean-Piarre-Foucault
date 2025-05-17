@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd3e06da820e2fd75ba8e87ec2be5a1e",
+    "content-hash": "0738c5995fa626594c8e0ad004f3cb87",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8651,16 +8651,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.3.13",
+            "version": "2.3.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "3f9fd8316d862575ed479baff862f25b3dad758e"
+                "reference": "e14b2bfba7761bc0210d73050677c6e97f7151ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/3f9fd8316d862575ed479baff862f25b3dad758e",
-                "reference": "3f9fd8316d862575ed479baff862f25b3dad758e",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/e14b2bfba7761bc0210d73050677c6e97f7151ba",
+                "reference": "e14b2bfba7761bc0210d73050677c6e97f7151ba",
                 "shasum": ""
             },
             "require": {
@@ -8678,12 +8678,12 @@
                 "phpmd/phpmd": "2.15.0",
                 "phpro/grumphp": "2.12.0",
                 "phpstan/extension-installer": "1.4.3",
-                "phpstan/phpstan": "2.1.14",
-                "phpstan/phpstan-deprecation-rules": "2.0.2",
+                "phpstan/phpstan": "2.1.16",
+                "phpstan/phpstan-deprecation-rules": "2.0.3",
                 "povils/phpmnd": "3.6.0",
                 "slevomat/coding-standard": "8.18.0",
-                "squizlabs/php_codesniffer": "3.12.2",
-                "vincentlanglet/twig-cs-fixer": "3.5.1"
+                "squizlabs/php_codesniffer": "3.13.0",
+                "vincentlanglet/twig-cs-fixer": "3.7.0"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
@@ -8729,7 +8729,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-05-03T14:58:38+00:00"
+            "time": "2025-05-17T18:07:58+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -10576,16 +10576,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.14",
+            "version": "2.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "8f2e03099cac24ff3b379864d171c5acbfc6b9a2"
+                "reference": "b8c1cf533cba0c305d91c6ccd23f3dd0566ba5f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8f2e03099cac24ff3b379864d171c5acbfc6b9a2",
-                "reference": "8f2e03099cac24ff3b379864d171c5acbfc6b9a2",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b8c1cf533cba0c305d91c6ccd23f3dd0566ba5f9",
+                "reference": "b8c1cf533cba0c305d91c6ccd23f3dd0566ba5f9",
                 "shasum": ""
             },
             "require": {
@@ -10630,25 +10630,25 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-02T15:32:28+00:00"
+            "time": "2025-05-16T09:40:10+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-deprecation-rules.git",
-                "reference": "9d8e7d4e32711715ad78a1fb6ec368df9af01fdf"
+                "reference": "468e02c9176891cc901143da118f09dc9505fc2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/9d8e7d4e32711715ad78a1fb6ec368df9af01fdf",
-                "reference": "9d8e7d4e32711715ad78a1fb6ec368df9af01fdf",
+                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/468e02c9176891cc901143da118f09dc9505fc2f",
+                "reference": "468e02c9176891cc901143da118f09dc9505fc2f",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpstan": "^2.1.13"
+                "phpstan/phpstan": "^2.1.15"
             },
             "require-dev": {
                 "php-parallel-lint/php-parallel-lint": "^1.2",
@@ -10675,9 +10675,9 @@
             "description": "PHPStan rules for detecting usage of deprecated classes, methods, properties, constants and traits.",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-deprecation-rules/issues",
-                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/2.0.2"
+                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/2.0.3"
             },
-            "time": "2025-04-26T19:59:57+00:00"
+            "time": "2025-05-14T10:56:57+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -12185,16 +12185,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.12.2",
+            "version": "3.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "6d4cf6032d4b718f168c90a96e36c7d0eaacb2aa"
+                "reference": "65ff2489553b83b4597e89c3b8b721487011d186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/6d4cf6032d4b718f168c90a96e36c7d0eaacb2aa",
-                "reference": "6d4cf6032d4b718f168c90a96e36c7d0eaacb2aa",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/65ff2489553b83b4597e89c3b8b721487011d186",
+                "reference": "65ff2489553b83b4597e89c3b8b721487011d186",
                 "shasum": ""
             },
             "require": {
@@ -12265,7 +12265,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-04-13T04:10:18+00:00"
+            "time": "2025-05-11T03:36:00+00:00"
         },
         {
             "name": "symfony/cache",
@@ -12725,16 +12725,16 @@
         },
         {
             "name": "vincentlanglet/twig-cs-fixer",
-            "version": "3.5.1",
+            "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VincentLanglet/Twig-CS-Fixer.git",
-                "reference": "0ab7a8154f7b3a6a42cbe3a467074a47bc32dcf5"
+                "reference": "a71515e8d1b105e85602ecdafd550b0e17b2b48a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VincentLanglet/Twig-CS-Fixer/zipball/0ab7a8154f7b3a6a42cbe3a467074a47bc32dcf5",
-                "reference": "0ab7a8154f7b3a6a42cbe3a467074a47bc32dcf5",
+                "url": "https://api.github.com/repos/VincentLanglet/Twig-CS-Fixer/zipball/a71515e8d1b105e85602ecdafd550b0e17b2b48a",
+                "reference": "a71515e8d1b105e85602ecdafd550b0e17b2b48a",
                 "shasum": ""
             },
             "require": {
@@ -12754,13 +12754,13 @@
                 "dereuromark/composer-prefer-lowest": "^0.1.10",
                 "ergebnis/composer-normalize": "^2.29",
                 "friendsofphp/php-cs-fixer": "^3.13.0",
-                "infection/infection": "^0.26.16 || ^0.27.0",
+                "infection/infection": "^0.26.16 || ^0.29.14",
                 "phpstan/phpstan": "^2.0",
                 "phpstan/phpstan-phpunit": "^2.0",
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "phpstan/phpstan-symfony": "^2.0",
                 "phpstan/phpstan-webmozart-assert": "^2.0",
-                "phpunit/phpunit": "^9.5.26 || ^10.0.9",
+                "phpunit/phpunit": "^9.5.26 || ^11.5.18 || ^12.1.3",
                 "rector/rector": "^2.0.0",
                 "shipmonk/composer-dependency-analyser": "^1.6",
                 "symfony/process": "^5.4 || ^6.4 || ^7.0",
@@ -12790,7 +12790,7 @@
             "homepage": "https://github.com/VincentLanglet/Twig-CS-Fixer",
             "support": {
                 "issues": "https://github.com/VincentLanglet/Twig-CS-Fixer/issues",
-                "source": "https://github.com/VincentLanglet/Twig-CS-Fixer/tree/3.5.1"
+                "source": "https://github.com/VincentLanglet/Twig-CS-Fixer/tree/3.7.0"
             },
             "funding": [
                 {
@@ -12798,7 +12798,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-16T18:36:36+00:00"
+            "time": "2025-05-15T17:19:20+00:00"
         },
         {
             "name": "webflo/drupal-finder",
