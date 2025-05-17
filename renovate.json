@@ -60,7 +60,8 @@
     "custom.regex",
     "dockerfile",
     "github-actions",
-    "pip_requirements"
+    "pip_requirements",
+    "composer"
   ],
   "customManagers": [
     {
