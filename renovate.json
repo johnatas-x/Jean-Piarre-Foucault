@@ -45,10 +45,6 @@
       "matchDatasources": [
         "docker"
       ]
-    },
-    {
-      "matchPackageNames": ["wodby/drupal-php"],
-      "allowedVersions": "^8\\.4-"
     }
   ],
   "labels": [
