@@ -45,10 +45,6 @@
       "matchDatasources": [
         "docker"
       ]
-    },
-    {
-      "matchPackageNames": ["wodby/drupal-php"],
-      "allowedVersions": ">=4.66.0"
     }
   ],
   "labels": [
@@ -71,7 +67,7 @@
         "PHP_TAG=8\\.4-(?<currentValue>[0-9.]+)"
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "wodby/drupal-php",
+      "depNameTemplate": "wodby/drupal-php:8.4",
       "extractVersionTemplate": "{{{ currentValue }}}",
       "versioningTemplate": "semver"
     },
