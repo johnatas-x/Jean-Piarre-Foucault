@@ -73,7 +73,7 @@
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
       "extractVersionTemplate": "{{{ currentValue }}}",
-      "versioningTemplate": "loose"
+      "versioningTemplate": "regex:^8\\.4-(?<version>[0-9]+\\.[0-9]+\\.[0-9]+)$"
     },
     {
       "customType": "regex",
