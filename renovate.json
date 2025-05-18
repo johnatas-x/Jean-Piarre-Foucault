@@ -48,9 +48,7 @@
     },
     {
       "matchPackageNames": ["wodby/drupal-php"],
-      "matchDatasources": ["docker"],
-      "matchManagers": ["custom.regex"],
-      "allowedVersions": "^8\\.4-"
+      "allowedVersions": ">=4.66.0"
     }
   ],
   "labels": [
@@ -70,12 +68,12 @@
         "/^\\.env\\.example$/"
       ],
       "matchStrings": [
-        "PHP_TAG=(?<currentValue>[0-9]+\\.[0-9]+-[0-9.]+)"
+        "PHP_TAG=8\\.4-(?<currentValue>[0-9.]+)"
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
       "extractVersionTemplate": "{{{ currentValue }}}",
-      "versioningTemplate": "loose"
+      "versioningTemplate": "semver"
     },
     {
       "customType": "regex",
