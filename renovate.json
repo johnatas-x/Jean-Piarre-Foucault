@@ -74,7 +74,10 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "wodby/drupal-php",
-      "extractVersionTemplate": "{{{ currentValue }}}"
+      "extractVersionTemplate": "{{{ currentValue }}}",
+      "versioningTemplate": "loose",
+      "updateTypes": ["major", "minor", "patch"],
+      "allowedVersions": "^8\\.4-"
     },
     {
       "customType": "regex",
