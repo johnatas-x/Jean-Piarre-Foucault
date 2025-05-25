@@ -1,7 +1,7 @@
 services:
   python:
     restart: always
-    image: python:${PYTHON_TAG}-alpine
+    image: python:${PYTHON_TAG}
     build:
       context: .
       dockerfile: ./.docker/python/Containerfile
