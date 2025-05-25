@@ -133,9 +133,16 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "python",
-      "versioningTemplate": "docker",
       "lookupNameTemplate": "python",
-      "extractVersionTemplate": "{{{ currentValue }}}-alpine"
+      "versioningTemplate": "loose",
+      "versioning": "loose",
+      "override": {
+        "docker": {
+          "versioning": "loose"
+        }
+      },
+      "extractVersionTemplate": "{{{ currentValue }}}-alpine",
+      "replaceStringTemplate": "{{{ newValueRaw | regexReplace('-alpine$', '') }}}"
     },
     {
       "customType": "regex",
