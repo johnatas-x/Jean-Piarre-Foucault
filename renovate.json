@@ -134,7 +134,8 @@
       "datasourceTemplate": "docker",
       "depNameTemplate": "python",
       "versioningTemplate": "docker",
-      "extractVersionTemplate": "{{{currentValue}}}-alpine"
+      "extractVersionTemplate": "{{{ currentValue }}}",
+      "lookupNameTemplate": "python:{{{ currentValue }}}-alpine"
     },
     {
       "customType": "regex",
