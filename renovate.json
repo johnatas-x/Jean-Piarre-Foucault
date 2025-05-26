@@ -40,7 +40,7 @@
     {
       "groupName": "Docker images",
       "matchManagers": [
-        "custom.regex"
+        "regex"
       ],
       "matchDatasources": [
         "docker"
