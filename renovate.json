@@ -51,7 +51,7 @@
     "dependencies"
   ],
   "enabledManagers": [
-    "custom.regex",
+    "regex",
     "dockerfile",
     "github-actions",
     "pip_requirements",
