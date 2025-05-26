@@ -27,3 +27,6 @@ msgstr "Prochaine prédiction"
 
 msgid "Error during prediction query."
 msgstr "Erreur durant la requête de prédiction."
+
+msgid "No existing prediction."
+msgstr "Aucune prédiction existante."
