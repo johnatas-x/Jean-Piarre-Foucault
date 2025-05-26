@@ -2,7 +2,7 @@ name: Update data for current version
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 4 * * *'
   workflow_dispatch:
 
 jobs:
