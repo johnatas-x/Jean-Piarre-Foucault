@@ -40,12 +40,12 @@
     {
       "groupName": "Docker images",
       "matchManagers": [
-        "regex"
+        "custom.regex"
       ],
       "matchDatasources": [
         "docker"
       ],
-      "updateTypes": [
+      "matchUpdateTypes": [
         "major",
         "minor",
         "patch"
@@ -57,7 +57,7 @@
     "dependencies"
   ],
   "enabledManagers": [
-    "regex",
+    "custom.regex",
     "dockerfile",
     "github-actions",
     "pip_requirements",
