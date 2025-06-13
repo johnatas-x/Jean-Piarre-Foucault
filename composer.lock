@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4e7ebc8206c7833ac7d47a329ce8587",
+    "content-hash": "65c58f99552062bff7d2c47a382bb2e2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8651,16 +8651,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "f780a9b8deb00a387bb1ef8084872f9b12e97254"
+                "reference": "5ac38d9610dbd2763510e00369ee2fb4514bf50f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/f780a9b8deb00a387bb1ef8084872f9b12e97254",
-                "reference": "f780a9b8deb00a387bb1ef8084872f9b12e97254",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/5ac38d9610dbd2763510e00369ee2fb4514bf50f",
+                "reference": "5ac38d9610dbd2763510e00369ee2fb4514bf50f",
                 "shasum": ""
             },
             "require": {
@@ -8681,8 +8681,8 @@
                 "phpstan/phpstan": "2.1.17",
                 "phpstan/phpstan-deprecation-rules": "2.0.3",
                 "povils/phpmnd": "3.6.0",
-                "slevomat/coding-standard": "8.18.1",
-                "squizlabs/php_codesniffer": "3.13.0",
+                "slevomat/coding-standard": "8.19.1",
+                "squizlabs/php_codesniffer": "3.13.1",
                 "vincentlanglet/twig-cs-fixer": "3.7.1"
             },
             "require-dev": {
@@ -8729,7 +8729,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-06-05T12:19:19+00:00"
+            "time": "2025-06-13T07:38:01+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -12120,16 +12120,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.18.1",
+            "version": "8.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "06b18b3f64979ab31d27c37021838439f3ed5919"
+                "reference": "458d665acd49009efebd7e0cb385d71ae9ac3220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/06b18b3f64979ab31d27c37021838439f3ed5919",
-                "reference": "06b18b3f64979ab31d27c37021838439f3ed5919",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/458d665acd49009efebd7e0cb385d71ae9ac3220",
+                "reference": "458d665acd49009efebd7e0cb385d71ae9ac3220",
                 "shasum": ""
             },
             "require": {
@@ -12169,7 +12169,7 @@
             ],
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.18.1"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.19.1"
             },
             "funding": [
                 {
@@ -12181,20 +12181,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-22T14:32:30+00:00"
+            "time": "2025-06-09T17:53:57+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.13.0",
+            "version": "3.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "65ff2489553b83b4597e89c3b8b721487011d186"
+                "reference": "1b71b4dd7e7ef651ac749cea67e513c0c832f4bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/65ff2489553b83b4597e89c3b8b721487011d186",
-                "reference": "65ff2489553b83b4597e89c3b8b721487011d186",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/1b71b4dd7e7ef651ac749cea67e513c0c832f4bd",
+                "reference": "1b71b4dd7e7ef651ac749cea67e513c0c832f4bd",
                 "shasum": ""
             },
             "require": {
@@ -12265,7 +12265,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-05-11T03:36:00+00:00"
+            "time": "2025-06-12T15:04:34+00:00"
         },
         {
             "name": "symfony/cache",
