@@ -70,7 +70,7 @@ jobs:
           python-version: '3.13'
 
       - name: Install dependencies
-        run: pip install -r .docker/python/requirements
+        run: pip install -r .ddev/python/requirements
 
       - name: Check Python app
         run: python python/jean-pyarre/jean-pyarre.py --check
