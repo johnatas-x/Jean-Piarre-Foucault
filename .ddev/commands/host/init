@@ -1,0 +1,21 @@
+#!/bin/bash
+
+## Description: Initialize the project
+## Usage: init
+## Example: "ddev init"
+
+rm -Rf vendor web/modules/contrib web/themes/contrib web/core web/sites
+cp python/jean-pyarre/templates/v5.html.example python/jean-pyarre/templates/v5.html
+cp python/jean-pyarre/versions/v5.py.example python/jean-pyarre/versions/v5.py
+ddev composer install --prefer-dist --optimize-autoloader
+# shellcheck disable=SC2016
+sed -i '/if (file_exists(\$app_root/,/}/ s/^# *//' "$DDEV_APPROOT/web/sites/default/settings.php"
+cp .ddev/files/settings.local.php web/sites/default/settings.local.php
+ddev perm
+ddev drush cset system.site uuid "a2124ba7-ff2f-4092-8e67-2a6ef29657c7" -y
+ddev drush site:install 'minimal' --existing-config --config-dir=sites/default/files/sync --account-name=admin --account-pass=admin -y
+ddev update
+ddev drush fill-lotto-draws-data --all
+ddev drush cron
+ddev drush cr
+ddev launch

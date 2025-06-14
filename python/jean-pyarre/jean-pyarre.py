@@ -1,7 +1,5 @@
 from flask import Flask, render_template, Blueprint
-from dotenv import load_dotenv
 from pathlib import Path
-import os
 import mysql.connector
 import importlib.util
 import sys
@@ -10,16 +8,14 @@ if "--check" in sys.argv:
     print("Check mode: application starts successfully")
     sys.exit(0)
 
-load_dotenv()
-
 
 class DBManager:
     def __init__(self):
         self.connection_params = {
-            "database": os.getenv("DB_NAME"),
-            "user": os.getenv("DB_USER"),
-            "password": os.getenv("DB_PASSWORD"),
-            "host": os.getenv("DB_HOST"),
+            "database": "db",
+            "user": "db",
+            "password": "db",
+            "host": "db",
             "auth_plugin": "mysql_native_password",
         }
 

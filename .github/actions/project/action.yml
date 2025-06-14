@@ -1,5 +1,7 @@
 name: Setup & install project
 
+# TODO: update this file with new ddev config.
+
 runs:
   using: "composite"
   steps:

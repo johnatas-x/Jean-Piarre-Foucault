@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run GrumPHP to check quality
+## Usage: quality
+## Example: ddev quality
+
+vendor/bin/grumphp run --tasks="$1"
