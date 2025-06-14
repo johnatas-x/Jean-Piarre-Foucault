@@ -15,11 +15,11 @@ grumphp:
   process_timeout: 60
   ascii:
     failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
-    succeeded: .docker/files/fdj_ascii.txt
+    succeeded: .ddev/files/fdj_ascii.txt
   git_hook_variables:
     VAGRANT_HOST_DIR: .
     VAGRANT_PROJECT_DIR: /var/www
-    EXEC_GRUMPHP_COMMAND: docker exec jean-piarre-foucault_php
+    EXEC_GRUMPHP_COMMAND: ddev exec
     ENV: {}
   environment:
     files: [ ]

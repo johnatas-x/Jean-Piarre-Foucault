@@ -1,0 +1,20 @@
+name: varnish
+repository: ddev/ddev-varnish
+version: v0.2.6
+install_date: "2025-06-14T16:04:06+02:00"
+project_files:
+    - docker-compose.varnish.yaml
+    - varnish
+    - commands/varnish
+global_files: []
+removal_actions:
+    - |
+      #ddev-nodisplay
+      #ddev-description:Remove docker-compose.varnish_extras.yaml file
+      if [ -f docker-compose.varnish_extras.yaml ]; then
+        if grep -q '#ddev-generated' docker-compose.varnish_extras.yaml; then
+          rm -f docker-compose.varnish_extras.yaml
+        else
+          echo "Unwilling to remove '$DDEV_APPROOT/.ddev/docker-compose.varnish_extras.yaml' because it does not have #ddev-generated in it; you can manually delete it if it is safe to delete."
+        fi
+      fi
