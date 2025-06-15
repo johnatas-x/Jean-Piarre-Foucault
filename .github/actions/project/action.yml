@@ -3,21 +3,27 @@ name: Setup & install project
 runs:
   using: "composite"
   steps:
-    - name: DDEV config + start
+    - name: Install Docker
       run: |
-        ddev config global --instrumentation-opt-in=false
-        ddev start
+        sudo pat-get update
+        sudo apt-get install -y docker.io
+
+    - name: Start DDEV container
+      run: |
+        docker run -d --privileged \
+          -v "${{ github.workspace }}:/mnt/workspace" \
+          -w /mnt/workspace \
+          --name ddevci \
+          ghcr.io/ddev/ddev-gitlab-ci:stable tail -f /dev/null
       shell: bash
 
-    - name: Install dependencies
+    - name: Setup DDEV + install project
       run: |
-        ddev composer install --no-dev --no-progress --prefer-dist --optimize-autoloader
-      shell: bash
-
-    - name: Install site
-      run: |
+        docker exec ddevci ddev config global --instrumentation-opt-in=false
+        docker exec ddevci ddev start
+        docker exec ddevci ddev composer install --no-dev --no-progress --prefer-dist --optimize-autoloader
         sed -i '/if (file_exists(\$app_root/,/}/ s/^# *//' "web/sites/default/settings.php"
         cp .ddev/files/settings.local.php web/sites/default/settings.local.php
-        ddev drush site:install 'minimal' --existing-config --account-name=admin --account-pass=admin -y
-        ddev update
+        docker exec ddevci ddev drush site:install 'minimal' --existing-config --account-name=admin --account-pass=admin -y
+        docker exec ddevci ddev update
       shell: bash
