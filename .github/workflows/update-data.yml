@@ -8,26 +8,14 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-
-    services:
-      mariadb:
-        image: wodby/mariadb:11.4-3.30.5
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: drupal
-          MYSQL_USER: drupal
-          MYSQL_PASSWORD: drupal
-        ports:
-          - 3306:3306
+    container:
+      image: ghcr.io/ddev/ddev-gitlab-ci:stable
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Setup PHP
-        uses: ./.github/actions/php
 
       - name: Setup & install project
         uses: ./.github/actions/project
