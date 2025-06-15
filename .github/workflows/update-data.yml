@@ -15,13 +15,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup & install project
-        uses: ./.github/actions/project
-
-      - name: Test data fill
+      - name: Setup project and test data fill
+        uses: ddev/github-action-setup-ddev@v1.10.1
         run: |
-          vendor/bin/drush fill-lotto-draws-data --all
-          vendor/bin/drush cr
+          ddev composer install --no-dev --no-progress --prefer-dist --optimize-autoloader
+          sed -i '/if (file_exists(\$app_root/,/}/ s/^# *//' "web/sites/default/settings.php"
+          cp .ddev/files/settings.local.php web/sites/default/settings.local.php
+          ddev drush site:install 'minimal' --existing-config --account-name=admin --account-pass=admin -y
+          ddev update
+          ddev drush fill-lotto-draws-data --all
+          ddev drush cr
 
       - name: Get ZIP file URL from PHP
         id: get_zip_url
