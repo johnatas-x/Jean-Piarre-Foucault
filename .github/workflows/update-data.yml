@@ -26,10 +26,10 @@ jobs:
           ddev drush site:install 'minimal' --existing-config --account-name=admin --account-pass=admin -y
           ddev update
 
-        - name: Test data fill
-          run: |
-            ddev drush fill-lotto-draws-data --all
-            ddev drush cr
+      - name: Test data fill
+        run: |
+          ddev drush fill-lotto-draws-data --all
+          ddev drush cr
 
       - name: Get ZIP file URL from PHP
         id: get_zip_url
