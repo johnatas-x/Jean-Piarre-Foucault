@@ -15,15 +15,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup PHP
+        uses: ./.github/actions/php
+
       - name: Setup DDEV
         uses: ddev/github-action-setup-ddev@v1.10.1
-        with:
-          autostart: false
 
       - name: Setup project
         run: |
-          ddev config --php-version 8.4
-          ddev start
           ddev composer install --no-dev --no-progress --prefer-dist --optimize-autoloader
           sed -i '/if (file_exists(\$app_root/,/}/ s/^# *//' "web/sites/default/settings.php"
           cp .ddev/files/settings.local.php web/sites/default/settings.local.php
