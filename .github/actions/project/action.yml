@@ -7,6 +7,7 @@ runs:
       run: |
         sudo pat-get update
         sudo apt-get install -y docker.io
+      shell: bash
 
     - name: Start DDEV container
       run: |
