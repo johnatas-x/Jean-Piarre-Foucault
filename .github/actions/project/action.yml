@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Install Docker
       run: |
-        sudo pat-get update
+        sudo apt-get update
         sudo apt-get install -y docker.io
       shell: bash
 
