@@ -16,3 +16,5 @@ web_environment:
     - DRUSH_ALLOW_XDEBUG=1
 corepack_enable: false
 ddev_version_constraint: '>= 1.24.6'
+messages:
+  ticker_interval: -1
