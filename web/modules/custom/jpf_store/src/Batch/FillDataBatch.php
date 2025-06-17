@@ -31,38 +31,29 @@ class FillDataBatch extends DrushBatchBar {
    */
   public static function operations(array $versions): array {
     $operations = [];
-    $increment = 1;
 
     foreach ($versions as $version) {
       $operations[] = [
         [self::class, 'process'],
         [
           Versions::from($version),
-          \Drupal::translation()
-            ->translate('Import data : version @chunk / @count',
-              ['@chunk' => $increment, '@count' => count($versions)]
-          ),
         ],
       ];
-
-      $increment++;
     }
 
     return $operations;
   }
 
   /**
-   * Import data to database.
+   * Import data to the database.
    *
    * @param \Drupal\jpf_store\Enum\Versions $version
    *   The version.
-   * @param string $details
-   *   Details to follow command progress.
    * @param array<mixed> $context
    *   The batch context.
    */
-  public static function process(Versions $version, string $details, array &$context): void {
-    parent::initProcess($details, $context);
+  public static function process(Versions $version, array &$context): void {
+    parent::initProcess($context);
 
     try {
       \Drupal::service('jpf_store.database')->importCsvFile($version);

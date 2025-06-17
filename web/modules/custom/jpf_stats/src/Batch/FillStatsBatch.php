@@ -38,7 +38,7 @@ class FillStatsBatch extends DrushBatchBar {
   }
 
   /**
-   * Generate stats in database.
+   * Generate stats in the database.
    *
    * @param \Drupal\jpf_store\Enum\Versions $version
    *   The version.
@@ -46,13 +46,11 @@ class FillStatsBatch extends DrushBatchBar {
    *   Balls type.
    * @param int $ball
    *   The ball number.
-   * @param string $details
-   *   Details to follow command progress.
    * @param array<mixed> $context
    *   The batch context.
    */
-  public static function process(Versions $version, string $type, int $ball, string $details, array &$context): void {
-    parent::initProcess($details, $context);
+  public static function process(Versions $version, string $type, int $ball, array &$context): void {
+    parent::initProcess($context);
 
     try {
       \Drupal::service('jpf_stats.fill')->fillBallStats($version, $type, $ball);
@@ -65,7 +63,7 @@ class FillStatsBatch extends DrushBatchBar {
   }
 
   /**
-   * Operations maker.
+   * Operation maker.
    *
    * @param \Drupal\jpf_store\Enum\Versions $version
    *   The current version.
@@ -95,14 +93,6 @@ class FillStatsBatch extends DrushBatchBar {
           $version,
           $type,
           $ball,
-          \Drupal::translation()
-            ->translate('Import stats : @type @chunk / @count',
-              [
-                '@type' => $type,
-                '@chunk' => $ball,
-                '@count' => $ball_max - $ball_min + 1,
-              ]
-          ),
         ],
       ];
     }
