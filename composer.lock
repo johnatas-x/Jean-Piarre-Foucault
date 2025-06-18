@@ -1653,12 +1653,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/drush_batch_bar.git",
-                "reference": "0f858c2f4dcaba9c99b48432a2375caadb948e4a"
+                "reference": "e8ec0d01ff9d23096b1557497b1e94a77ff37326"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/drush_batch_bar/zipball/0f858c2f4dcaba9c99b48432a2375caadb948e4a",
-                "reference": "0f858c2f4dcaba9c99b48432a2375caadb948e4a",
+                "url": "https://api.github.com/repos/johnatas-x/drush_batch_bar/zipball/e8ec0d01ff9d23096b1557497b1e94a77ff37326",
+                "reference": "e8ec0d01ff9d23096b1557497b1e94a77ff37326",
                 "shasum": ""
             },
             "require": {
@@ -1683,7 +1683,7 @@
                 "source": "https://github.com/johnatas-x/drush_batch_bar/tree/main",
                 "issues": "https://github.com/johnatas-x/drush_batch_bar/issues"
             },
-            "time": "2025-06-17T15:45:51+00:00"
+            "time": "2025-06-18T18:44:03+00:00"
         },
         {
             "name": "drupal/gin",
@@ -1753,26 +1753,26 @@
         },
         {
             "name": "drupal/gin_toolbar",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/gin_toolbar.git",
-                "reference": "2.0.0"
+                "reference": "2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/gin_toolbar-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "2befeab2de9f7953b76b1a36c9bfb6a7e3987b11"
+                "url": "https://ftp.drupal.org/files/projects/gin_toolbar-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "b312a2dea5379ea5883d92c2a2e5f0499972a083"
             },
             "require": {
-                "drupal/core": "^9 || ^10 || ^11"
+                "drupal/core": "^10 || ^11 <11.2"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1734698921",
+                    "version": "2.1.0",
+                    "datestamp": "1750245881",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
