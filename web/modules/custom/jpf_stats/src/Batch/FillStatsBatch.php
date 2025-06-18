@@ -26,7 +26,7 @@ class FillStatsBatch extends DrushBatchBar {
    *
    * @return array<int<0, max>, array{
    *   array{class-string, 'process'},
-   *   array{\Drupal\jpf_store\Enum\Versions, string, int, \Drupal\Core\StringTranslation\TranslatableMarkup}
+   *   array{\Drupal\jpf_store\Enum\Versions, string, int}
    *   }>
    *   The batch operations.
    */
@@ -72,7 +72,7 @@ class FillStatsBatch extends DrushBatchBar {
    *
    * @return array<int<0, max>, array{
    *   array{class-string, 'process'},
-   *   array{\Drupal\jpf_store\Enum\Versions, string, int, \Drupal\Core\StringTranslation\TranslatableMarkup}
+   *   array{\Drupal\jpf_store\Enum\Versions, string, int}
    *   }>
    *   The batch operations for the given type.
    */

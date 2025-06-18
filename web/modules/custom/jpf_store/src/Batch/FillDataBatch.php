@@ -25,7 +25,7 @@ class FillDataBatch extends DrushBatchBar {
    *
    * @return array<int<0, max>, array{
    *   array{class-string, 'process'},
-   *   array{\Drupal\jpf_store\Enum\Versions, \Drupal\Core\StringTranslation\TranslatableMarkup}
+   *   array{\Drupal\jpf_store\Enum\Versions}
    *   }>
    *   The batch operations.
    */
