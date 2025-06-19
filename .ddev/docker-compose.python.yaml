@@ -1,7 +1,10 @@
 services:
   python:
-    restart: always
+    container_name: ddev-${DDEV_SITENAME}-python
     image: python:3.13-alpine
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: ${DDEV_APPROOT}
     build:
       context: ..
       dockerfile: ./.ddev/python/Containerfile
@@ -9,6 +12,9 @@ services:
       args:
         PYTHON_TAG: 3.13-alpine
         PYTHON_PORT: 5000
-    container_name: ddev-${DDEV_SITENAME}-python
+    volumes:
+      - ".:/mnt/ddev_config"
     environment:
       FLASK_RUN_PORT: 5000
+    depends_on:
+      - db
