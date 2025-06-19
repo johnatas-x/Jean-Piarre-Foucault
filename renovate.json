@@ -14,7 +14,8 @@
       "groupName": "Drupal core",
       "matchPackageNames": [
         "drupal/core-**"
-      ]
+      ],
+      "rangeStrategy": "update-lockfile"
     },
     {
       "groupName": "NPM asset",
