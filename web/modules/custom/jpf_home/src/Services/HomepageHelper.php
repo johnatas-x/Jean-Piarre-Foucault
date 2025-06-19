@@ -80,15 +80,23 @@ class HomepageHelper implements HomepageHelperInterface {
         );
       }
 
-      $prediction_id = $prediction_query->accessCheck()->notExists('draw_id')->execute();
+      $prediction_ids = $prediction_query->accessCheck()->notExists('draw_id')->execute();
 
-      if (empty($prediction_id) || !is_array($prediction_id)) {
+      if (empty($prediction_ids) || !is_array($prediction_ids)) {
         throw new \RuntimeException(
           t('No existing prediction.')->render()
         );
       }
 
-      $prediction = $entity_storage->load(reset($prediction_id));
+      $prediction_id = reset($prediction_ids);
+
+      if (!is_numeric($prediction_id)) {
+        throw new \RuntimeException(
+          t('Invalid prediction ID.')->render()
+        );
+      }
+
+      $prediction = $entity_storage->load((int) $prediction_id);
 
       if ($prediction instanceof Prediction) {
         $next_predict['balls'] = $prediction->balls();

@@ -4,6 +4,7 @@
 ## Usage: init
 ## Example: "ddev init"
 
+ddev stop
 rm -Rf "$DDEV_APPROOT/vendor" "$DDEV_APPROOT/web/modules/contrib" "$DDEV_APPROOT/web/themes/contrib" "$DDEV_APPROOT/web/core" "$DDEV_APPROOT/web/sites"
 cp "$DDEV_APPROOT/python/jean-pyarre/templates/v5.html.example" "$DDEV_APPROOT/python/jean-pyarre/templates/v5.html"
 cp "$DDEV_APPROOT/python/jean-pyarre/versions/v5.py.example" "$DDEV_APPROOT/python/jean-pyarre/versions/v5.py"

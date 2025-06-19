@@ -24,11 +24,12 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.5",
         "drupal/charts": "^5.1",
-        "drupal/core-composer-scaffold": "11.1.8",
-        "drupal/core-project-message": "11.1.8",
-        "drupal/core-recommended": "11.1.8",
+        "drupal/core-composer-scaffold": "11.2.0",
+        "drupal/core-project-message": "11.2.0",
+        "drupal/core-recommended": "11.2.0",
         "drupal/drush_batch_bar": "dev-main",
-        "drupal/gin": "^4.0",
+        "drupal/gin": "^5.0",
+        "drupal/gin_toolbar": "^3.0",
         "drupal/potx": "^1.1",
         "drupal/token": "^1.15",
         "drupal/ultimate_cron": "^2.0@beta",
@@ -156,11 +157,6 @@
         "installer-types": [
             "npm-asset"
         ],
-        "patches": {
-            "drupal/core": {
-                "Don't execute cron on site install": "patches/core/disable-cron-execution-on-install.patch"
-            }
-        },
         "scripts": {
             "clean-chartjs": "chmod +x scripts/clean-chartjs.sh && ./scripts/clean-chartjs.sh",
             "post-install-cmd": [
