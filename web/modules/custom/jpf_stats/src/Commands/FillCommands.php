@@ -8,6 +8,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\drush_batch_bar\Commands\DrushBatchCommands;
 use Drupal\jpf_stats\Batch\FillStatsBatch;
 use Drupal\jpf_store\Enum\Versions;
+use Drupal\jpf_store\Services\SchemaInterface;
 use Drush\Commands\DrushCommands;
 
 /**
@@ -36,16 +37,18 @@ class FillCommands extends DrushCommands {
       );
     }
 
-    $batch = new DrushBatchCommands(
-      operations: FillStatsBatch::operations($version),
-      title: 'Fill stats in database.',
-      finished: [
-        FillStatsBatch::class,
-        'finished',
-      ]
-    );
+    foreach (array_keys(SchemaInterface::LOTTO_STATS_TABLES) as $type) {
+      $batch = new DrushBatchCommands(
+        operations: FillStatsBatch::operations($version, $type),
+        title: "Fill stats in database for $type.",
+        finished: [
+          FillStatsBatch::class,
+          'finished',
+        ]
+      );
 
-    $batch->execute();
+      $batch->execute();
+    }
   }
 
 }

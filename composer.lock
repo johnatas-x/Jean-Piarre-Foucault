@@ -1657,12 +1657,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/drush_batch_bar.git",
-                "reference": "e8ec0d01ff9d23096b1557497b1e94a77ff37326"
+                "reference": "eaeaf99500fc35d58d42c5fe82eede85d38a7147"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/drush_batch_bar/zipball/e8ec0d01ff9d23096b1557497b1e94a77ff37326",
-                "reference": "e8ec0d01ff9d23096b1557497b1e94a77ff37326",
+                "url": "https://api.github.com/repos/johnatas-x/drush_batch_bar/zipball/eaeaf99500fc35d58d42c5fe82eede85d38a7147",
+                "reference": "eaeaf99500fc35d58d42c5fe82eede85d38a7147",
                 "shasum": ""
             },
             "require": {
@@ -1687,7 +1687,7 @@
                 "source": "https://github.com/johnatas-x/drush_batch_bar/tree/main",
                 "issues": "https://github.com/johnatas-x/drush_batch_bar/issues"
             },
-            "time": "2025-06-18T18:44:03+00:00"
+            "time": "2025-06-22T09:50:25+00:00"
         },
         {
             "name": "drupal/gin",
@@ -10951,12 +10951,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "7dacc91c92dcf3b81a600376d2a2f693eff91e35"
+                "reference": "e3520a4c9a252831ae009f8bf79a8d2a32ba4936"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/7dacc91c92dcf3b81a600376d2a2f693eff91e35",
-                "reference": "7dacc91c92dcf3b81a600376d2a2f693eff91e35",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e3520a4c9a252831ae009f8bf79a8d2a32ba4936",
+                "reference": "e3520a4c9a252831ae009f8bf79a8d2a32ba4936",
                 "shasum": ""
             },
             "conflict": {
@@ -11540,7 +11540,7 @@
                 "processwire/processwire": "<=3.0.229",
                 "propel/propel": ">=2.0.0.0-alpha1,<=2.0.0.0-alpha7",
                 "propel/propel1": ">=1,<=1.7.1",
-                "pterodactyl/panel": "<1.11.8",
+                "pterodactyl/panel": "<=1.11.10",
                 "ptheofan/yii2-statemachine": ">=2.0.0.0-RC1-dev,<=2",
                 "ptrofimov/beanstalk_console": "<1.7.14",
                 "pubnub/pubnub": "<6.1",
@@ -11897,7 +11897,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-18T19:04:39+00:00"
+            "time": "2025-06-19T20:06:27+00:00"
         },
         {
             "name": "rskuipers/php-assumptions",

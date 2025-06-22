@@ -19,22 +19,41 @@ class FillStatsBatch extends DrushBatchBar {
   protected const string SUCCESS_MESSAGE = 'stats generated';
 
   /**
-   * Batch operations for fill stats drush command.
+   * Operation maker.
    *
    * @param \Drupal\jpf_store\Enum\Versions $version
    *   The current version.
+   * @param string $type
+   *   The balls type.
    *
    * @return array<int<0, max>, array{
    *   array{class-string, 'process'},
    *   array{\Drupal\jpf_store\Enum\Versions, string, int}
    *   }>
-   *   The batch operations.
+   *   The batch operations for the given type.
    */
-  public static function operations(Versions $version): array {
-    return array_merge(
-      self::subOperations($version, 'balls'),
-      self::subOperations($version, 'lucky balls')
-    );
+  public static function operations(Versions $version, string $type): array {
+    $operations = [];
+
+    $ball_min = $type === 'balls'
+      ? Balls::BALL_MIN
+      : Balls::LUCKY_MIN;
+    $ball_max = $type === 'balls'
+      ? Balls::BALL_MAX
+      : Balls::LUCKY_MAX;
+
+    for ($ball = $ball_min; $ball <= $ball_max; $ball++) {
+      $operations[] = [
+        [self::class, 'process'],
+        [
+          $version,
+          $type,
+          $ball,
+        ],
+      ];
+    }
+
+    return $operations;
   }
 
   /**
@@ -60,44 +79,6 @@ class FillStatsBatch extends DrushBatchBar {
       $context['results']['error']++;
       $context['message'] = '[KO] ' . $exception->getMessage();
     }
-  }
-
-  /**
-   * Operation maker.
-   *
-   * @param \Drupal\jpf_store\Enum\Versions $version
-   *   The current version.
-   * @param string $type
-   *   The balls type.
-   *
-   * @return array<int<0, max>, array{
-   *   array{class-string, 'process'},
-   *   array{\Drupal\jpf_store\Enum\Versions, string, int}
-   *   }>
-   *   The batch operations for the given type.
-   */
-  private static function subOperations(Versions $version, string $type): array {
-    $operations = [];
-
-    $ball_min = $type === 'balls'
-      ? Balls::BALL_MIN
-      : Balls::LUCKY_MIN;
-    $ball_max = $type === 'balls'
-      ? Balls::BALL_MAX
-      : Balls::LUCKY_MAX;
-
-    for ($ball = $ball_min; $ball <= $ball_max; $ball++) {
-      $operations[] = [
-        [self::class, 'process'],
-        [
-          $version,
-          $type,
-          $ball,
-        ],
-      ];
-    }
-
-    return $operations;
   }
 
 }
