@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 ## Description: Run GrumPHP to check quality
-## Usage: quality
-## Example: ddev quality
+## Usage: quality {tasks}
+## Example: ddev quality (run GrumPHP with all tasks)
+## Example: ddev quality phpcs,phpstan (run GrumPHP only with PHPCS and PhpStan tasks)
 
-vendor/bin/grumphp run --tasks="$1"
+php ./vendor/bin/grumphp run --testsuite=quality --tasks="$1"

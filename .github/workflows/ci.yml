@@ -55,7 +55,7 @@ jobs:
         uses: ./.github/actions/composer
 
       - name: Run GrumPHP
-        run: php ./vendor/bin/grumphp run
+        run: php ./vendor/bin/grumphp run --testsuite=ci
   python:
     name: Run python + security scanner
     runs-on: ubuntu-latest
