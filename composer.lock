@@ -1657,12 +1657,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/drush_batch_bar.git",
-                "reference": "28fb787d6fd6f32aabfd1a1f33598903d6122b4f"
+                "reference": "eadd1df82e8b8bc1b3803e565fe6d985ddef1b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/drush_batch_bar/zipball/28fb787d6fd6f32aabfd1a1f33598903d6122b4f",
-                "reference": "28fb787d6fd6f32aabfd1a1f33598903d6122b4f",
+                "url": "https://api.github.com/repos/johnatas-x/drush_batch_bar/zipball/eadd1df82e8b8bc1b3803e565fe6d985ddef1b58",
+                "reference": "eadd1df82e8b8bc1b3803e565fe6d985ddef1b58",
                 "shasum": ""
             },
             "require": {
@@ -1687,7 +1687,7 @@
                 "source": "https://github.com/johnatas-x/drush_batch_bar/tree/main",
                 "issues": "https://github.com/johnatas-x/drush_batch_bar/issues"
             },
-            "time": "2025-06-28T17:20:39+00:00"
+            "time": "2025-06-29T14:05:49+00:00"
         },
         {
             "name": "drupal/gin",
