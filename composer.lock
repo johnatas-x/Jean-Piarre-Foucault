@@ -1653,28 +1653,28 @@
         },
         {
             "name": "drupal/drush_batch_bar",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drush_batch_bar.git",
-                "reference": "1.0.0-beta1"
+                "reference": "1.0.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drush_batch_bar-1.0.0-beta1.zip",
-                "reference": "1.0.0-beta1",
-                "shasum": "b7921a4cf20abe9d815765714dc424c1a2ef22e4"
+                "url": "https://ftp.drupal.org/files/projects/drush_batch_bar-1.0.0-beta2.zip",
+                "reference": "1.0.0-beta2",
+                "shasum": "3454d987e7b183b48a7de71fd7c4f326c0eaa259"
             },
             "require": {
-                "drupal/core": "^11",
-                "drush/drush": "^13",
+                "drupal/core": "^10.4 || ^11.1",
+                "drush/drush": "^12 || ^13",
                 "php": ">=8.4"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta1",
-                    "datestamp": "1752887170",
+                    "version": "1.0.0-beta2",
+                    "datestamp": "1752933703",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
