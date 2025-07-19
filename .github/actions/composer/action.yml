@@ -33,6 +33,7 @@ runs:
         timeout_minutes: 5
         max_attempts: 5
         retry_wait_seconds: 30
+        shell: bash
         command: |
-          composer install --no-dev --no-progress --optimize-autoloader --no-scripts ${{ matrix.composer-flags }}
+          composer update --optimize-autoloader --no-interaction --no-progress ${{ matrix.composer-flags }}
           composer info -D
