@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_import\Cron;
 
+use Consolidation\SiteProcess\Util\RealtimeOutputHandler;
 use Drupal\Core\Cache\Cache;
 use Drupal\jpf_import\Api\Sto;
 use Drupal\jpf_store\Enum\Versions;
 use Drupal\ultimate_cron\CronJobInterface;
+use Drush\Drush;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -67,7 +69,7 @@ final class ImportDynamicData {
 
       \Drupal::service('jpf_store.database')->importCsvFile($current_version);
 
-      drush_backend_batch_process('fill-lotto-stats');
+      self::drushFls();
 
       Cache::invalidateTags(['custom_tokens', 'homepage_data']);
     }
@@ -103,6 +105,32 @@ final class ImportDynamicData {
 
       return t('Unknown')->render();
     }
+  }
+
+  /**
+   * Run the 'drush fls' command.
+   */
+  private static function drushFls(): void {
+    $process = Drush::drush(
+      Drush::aliasManager()->getSelf(),
+      'fill-lotto-stats',
+      [],
+      Drush::redispatchOptions() + ['strict' => 0]
+    );
+    $process->setTimeout(NULL);
+    $real_time = $process->showRealtime();
+
+    if (!$real_time instanceof RealtimeOutputHandler) {
+      return;
+    }
+
+    $hide_stdout = $real_time->hideStdout();
+
+    if (!$hide_stdout instanceof RealtimeOutputHandler) {
+      return;
+    }
+
+    $process->run($hide_stdout);
   }
 
 }

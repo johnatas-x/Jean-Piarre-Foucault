@@ -23,9 +23,8 @@ jobs:
 
       - name: Setup project
         run: |
-          ddev composer install --no-dev --no-progress --prefer-dist --optimize-autoloader
-          sed -i '/if (file_exists(\$app_root/,/}/ s/^# *//' "web/sites/default/settings.php"
-          cp .ddev/files/settings.local.php web/sites/default/settings.local.php
+          ddev composer install --no-dev --no-progress --optimize-autoloader --no-scripts
+          cp .ddev/files/settings.ddev.php web/sites/default/settings.ddev.php
           ddev drush site:install 'minimal' --existing-config --account-name=admin --account-pass=admin -y
           ddev update
 
