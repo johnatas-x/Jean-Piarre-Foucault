@@ -34,5 +34,5 @@ runs:
         max_attempts: 5
         retry_wait_seconds: 30
         command: |
-          composer update --optimize-autoloader --no-interaction --no-progress ${{ matrix.composer-flags }}
+          composer install --no-dev --no-progress --optimize-autoloader --no-scripts ${{ matrix.composer-flags }}
           composer info -D
