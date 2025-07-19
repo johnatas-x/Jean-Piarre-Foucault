@@ -6,7 +6,7 @@ grumphp:
     - GrumphpPhpa\ExtensionLoader
   ignore_unstaged_changes: true
   stop_on_failure: false
-  hide_circumvention_tip: false
+  hide_circumvention_tip: true
   fixer:
     enabled: true
     fix_by_default: false
@@ -25,42 +25,7 @@ grumphp:
     files: [ ]
     variables: { }
     paths: [ ]
-  testsuites:
-    quality:
-      tasks:
-        - composer
-        - composer_normalize
-        - jsonlint
-        - phpa
-        - phpcpd
-        - phpcs
-        - phplint
-        - phpmd
-        - phpmnd
-        - phpstan
-        - twigcsfixer
-        - xmllint
-        - yamllint
-    ci:
-      tasks:
-        - composer
-        - composer_normalize
-        - jsonlint
-        - phpa
-        - phpcpd
-        - phpcs
-        - phplint
-        - phpmd
-        - phpmnd
-        - phpstan
-        - twigcs
-        - xmllint
-        - yamllint
-    outdated:
-      tasks:
-        - phpversion
-        - securitychecker_composeraudit
-
+  testsuites: []
   tasks:
     composer:
       file: ./composer.json
@@ -107,6 +72,7 @@ grumphp:
         - web/modules/custom/jpf_views/src/Plugin/views/field/CustomBestDay.php
         - web/sites
         - web/themes/contrib
+        - web/.ht.router.php
       metadata:
         blocking: true
         enabled: true
@@ -252,7 +218,9 @@ grumphp:
       configuration: ~
       level: null
       force_patterns: [ ]
-      ignore_patterns: [ ]
+      ignore_patterns:
+        - web/.ht.router.php
+        - web/sites/default/settings.php
       triggered_by:
         - engine
         - inc
@@ -301,21 +269,6 @@ grumphp:
         - modules/contrib
         - profiles/contrib
         - themes/contrib
-      metadata:
-        blocking: true
-        enabled: true
-        label: null
-        priority: 0
-        task: null
-    twigcsfixer:
-      paths:
-        - web/modules/custom
-      level: 'warning'
-      config: ~
-      report: 'text'
-      no-cache: false
-      verbose: false
-      triggered_by: [ 'twig' ]
       metadata:
         blocking: true
         enabled: true

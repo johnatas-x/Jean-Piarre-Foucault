@@ -1,0 +1,28 @@
+purgers:
+  -
+    instance_id: 8493e0732c
+    plugin_id: varnish_zeroconfig_purger
+    order_index: 2
+processors:
+  -
+    plugin_id: drush_purge_invalidate
+    status: true
+  -
+    plugin_id: drush_purge_queue_work
+    status: true
+  -
+    plugin_id: cron
+    status: true
+  -
+    plugin_id: purge_ui_block_processor
+    status: false
+queuers:
+  -
+    plugin_id: drush_purge_queue_add
+    status: true
+  -
+    plugin_id: coretags
+    status: true
+  -
+    plugin_id: purge_ui_block_queuer
+    status: false

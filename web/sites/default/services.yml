@@ -1,0 +1,22 @@
+# Project specific services & parameters (loaded from settings.php).
+services:
+  # Timestamp invalidation service used for invalidation logic.
+  memcache.timestamp.invalidator.tag:
+    class: Drupal\memcache\Invalidator\MemcacheTimestampInvalidator
+    # Remember to use the same bin as the bootstrap container if you are using it!
+    # Adjust tolerance factor as appropriate when not running memcache on localhost.
+    arguments: ['@memcache.factory', 'memcache_tag_timestamps', 0.001]
+
+  # Cache tag checksum backend. Used by memcache and most other cache backends
+  # to deal with cache tag invalidations.
+  cache_tags.invalidator.checksum:
+    class: Drupal\memcache\Cache\TimestampCacheTagsChecksum
+    arguments: ['@memcache.timestamp.invalidator.tag']
+    tags:
+      - { name: cache_tags_invalidator }
+
+parameters:
+  # Toggles the super user access policy. If your website has at least one user
+  # with the Administrator role, it is advised to set this to false. This allows
+  # you to make user 1 a regular user, strengthening the security of your site.
+  security.enable_super_user: false

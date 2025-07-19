@@ -1,32 +1,51 @@
-msgid "JPF : Home"
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/custom/jpf_home/jpf_home.info.yml: n/a
+#  modules/custom/jpf_home/jpf_home.routing.yml: n/a
+#  modules/custom/jpf_home/src/Controller/HomepageController.php: n/a
+#  modules/custom/jpf_home/src/Services/HomepageHelper.php: n/a
+#
+#, fuzzy
+msgid ""
 msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2025-07-19 04:35+0200\n"
+"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: modules/custom/jpf_home/jpf_home.info.yml:0
+msgid "JPF : Home"
+msgstr "JPF : Page d'accueil"
+
+#: modules/custom/jpf_home/jpf_home.info.yml:0
 msgid "Features for homepage."
 msgstr "Contient les fonctionnalités nécessaires pour la page d'accueil."
 
+#: modules/custom/jpf_home/jpf_home.info.yml:0
 msgid "Custom"
 msgstr "Personnalisé"
 
+#: modules/custom/jpf_home/jpf_home.routing.yml:0 modules/custom/jpf_home/src/Controller/HomepageController.php:40
 msgid "Jean-Piarre Foucault"
 msgstr "Jean-Piarre Foucault"
 
-msgid "Last draw"
-msgstr "Dernier tirage"
-
-msgid "Last prediction"
-msgstr "Dernière prédiction"
-
-msgid "Lucky ball "
-msgstr "Boule chance "
-
-msgid "Ball "
-msgstr "Boule "
-
-msgid "Next prediction"
-msgstr "Prochaine prédiction"
-
+#: modules/custom/jpf_home/src/Services/HomepageHelper.php:79
 msgid "Error during prediction query."
 msgstr "Erreur durant la requête de prédiction."
 
+#: modules/custom/jpf_home/src/Services/HomepageHelper.php:87
 msgid "No existing prediction."
 msgstr "Aucune prédiction existante."
+
+#: modules/custom/jpf_home/src/Services/HomepageHelper.php:95
+msgid "Invalid prediction ID."
+msgstr "Identifiant de prédiction invalide."
+

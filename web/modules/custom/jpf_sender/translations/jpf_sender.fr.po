@@ -1,5 +1,31 @@
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from file: modules/custom/jpf_sender/jpf_sender.info.yml: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2025-07-19 04:35+0200\n"
+"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: modules/custom/jpf_sender/jpf_sender.info.yml:0
 msgid "JPF : Sender"
 msgstr "JPF : Envoyeur"
 
+#: modules/custom/jpf_sender/jpf_sender.info.yml:0
 msgid "All features for communication (SMS, WhatsApp, Mail)."
 msgstr "Contient les fonctionnalités nécessaires pour la communication (SMS, WhatsApp, Courriel)."
+
+#: modules/custom/jpf_sender/jpf_sender.info.yml:0
+msgid "Custom"
+msgstr "Personnalisé"
+

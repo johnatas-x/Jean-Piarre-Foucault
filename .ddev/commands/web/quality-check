@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run GrumPHP to check quality on Git diff
+## Usage: quality-check
+## Example: ddev quality-check
+
+git diff --name-only | php ./vendor/bin/grumphp git:pre-commit

@@ -67,7 +67,7 @@ final class ImportDynamicData {
 
       \Drupal::service('jpf_store.database')->importCsvFile($current_version);
 
-      exec('drush fill-lotto-stats');
+      drush_backend_batch_process('fill-lotto-stats');
 
       Cache::invalidateTags(['custom_tokens', 'homepage_data']);
     }

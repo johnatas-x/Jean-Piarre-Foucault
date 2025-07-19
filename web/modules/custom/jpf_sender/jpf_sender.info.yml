@@ -7,4 +7,4 @@ dependencies:
   - jpf_algo:jpf_algo
 
 'interface translation project': jpf_sender
-'interface translation server pattern': modules/custom/%project/translations/%project.%language.po
+'interface translation server pattern': extension://translations/%project.%language.po

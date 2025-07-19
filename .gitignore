@@ -14,8 +14,8 @@
 # a settings.php might be committed to the repository if it reads
 # sensitive information from environment variables or other sources.
 # ------------------------------------------------------------------
-/web/sites/*/settings*.php
-/web/sites/*/services*.yml
+/web/sites/*/settings.*.php
+/web/sites/*/services.*.yml
 
 # Ignore paths that contain user-generated content.
 /web/sites/*/files

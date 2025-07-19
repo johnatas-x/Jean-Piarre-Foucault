@@ -1,0 +1,182 @@
+From a76317ec825f07e858ce90618f3a337146bc8de1 Mon Sep 17 00:00:00 2001
+From: Alexey Murz Korepov <MurzNN@gmail.com>
+Date: Wed, 13 Nov 2024 14:15:51 +0400
+Subject: [PATCH 1/5] Check the `module://` prefix in the translation server
+ path and replace it with the actual module path
+
+---
+ core/modules/locale/locale.compare.inc | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/core/modules/locale/locale.compare.inc b/core/modules/locale/locale.compare.inc
+index d9ae64af89af..6d52e6326f1a 100644
+--- a/core/modules/locale/locale.compare.inc
++++ b/core/modules/locale/locale.compare.inc
+@@ -65,6 +65,21 @@ function locale_translation_build_projects() {
+       }
+     }
+ 
++    // Check for the `module://` prefix in the translation server pattern and
++    // replace it to the current module path.
++    if (
++      isset($data['info']['interface translation server pattern'])
++      && str_starts_with($data['info']['interface translation server pattern'], 'module://')
++      ) {
++      $modulePath = \Drupal::service('module_handler')->getModule($name)->getPath();
++      $data['info']['interface translation server pattern'] =
++        str_replace(
++          'module://',
++          $modulePath . '/',
++          $data['info']['interface translation server pattern']
++        );
++    }
++
+     // For every project store information.
+     $data += [
+       'name' => $name,
+-- 
+GitLab
+
+
+From 457c7507fa866d4848e23dd5372330eb5789826a Mon Sep 17 00:00:00 2001
+From: Alexey Murz Korepov <MurzNN@gmail.com>
+Date: Wed, 13 Nov 2024 14:24:15 +0400
+Subject: [PATCH 2/5] Extend the documentation
+
+---
+ core/modules/locale/locale.api.php | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/core/modules/locale/locale.api.php b/core/modules/locale/locale.api.php
+index d965b6923321..ee8a722af74c 100644
+--- a/core/modules/locale/locale.api.php
++++ b/core/modules/locale/locale.api.php
+@@ -41,6 +41,11 @@
+  * @code
+  * 'interface translation server pattern': public://translations/%project-%version.%language.po
+  * @endcode
++ * And an additional streamwrapper "module://" is available to set the relative
++ * path to the current module:
++ * @code
++ * 'interface translation server pattern': module://translations/%version.%language.po
++ * @endcode
+  *
+  * Multiple custom modules or themes sharing the same po file should have
+  * matching definitions. Such as modules and sub-modules or multiple modules in
+-- 
+GitLab
+
+
+From 251b42d666005ca9706f1f6293a5b938f4a07ebf Mon Sep 17 00:00:00 2001
+From: Liam Morland <liam@openplus.ca>
+Date: Mon, 16 Jun 2025 12:21:09 -0400
+Subject: [PATCH 3/5] Improve addition to the documentation
+
+---
+ core/modules/locale/locale.api.php | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/core/modules/locale/locale.api.php b/core/modules/locale/locale.api.php
+index ee8a722af74c..47b54e82d427 100644
+--- a/core/modules/locale/locale.api.php
++++ b/core/modules/locale/locale.api.php
+@@ -41,8 +41,7 @@
+  * @code
+  * 'interface translation server pattern': public://translations/%project-%version.%language.po
+  * @endcode
+- * And an additional streamwrapper "module://" is available to set the relative
+- * path to the current module:
++ * Streamwrapper "module://" addresses paths relative to the current project.
+  * @code
+  * 'interface translation server pattern': module://translations/%version.%language.po
+  * @endcode
+-- 
+GitLab
+
+
+From e04ad661373c88d534a1d614c6d41092b049617b Mon Sep 17 00:00:00 2001
+From: Liam Morland <liam@openplus.ca>
+Date: Mon, 16 Jun 2025 12:21:29 -0400
+Subject: [PATCH 4/5] Improve documentation for existing relative paths
+
+---
+ core/modules/locale/locale.api.php | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/core/modules/locale/locale.api.php b/core/modules/locale/locale.api.php
+index 47b54e82d427..316c23f75bdd 100644
+--- a/core/modules/locale/locale.api.php
++++ b/core/modules/locale/locale.api.php
+@@ -73,8 +73,8 @@
+  *   the same project name will be listed as one the translation status list.
+  * - "interface translation server pattern": URL of the .po translation files
+  *   used to download the files from. The URL contains tokens which will be
+- *   replaced by appropriate values. The file can be locate both at a local
+- *   relative path, a local absolute path and a remote server location.
++ *   replaced by appropriate values. This value can be a local path relative to
++ *   the Drupal root, a local absolute path, or a remote server location.
+  *
+  * The following tokens are available for the server pattern:
+  * - "%core": Core version. Value example: "8.x".
+-- 
+GitLab
+
+
+From b9405764c6ab16b019b50dbd280c366e75d1efe2 Mon Sep 17 00:00:00 2001
+From: Sylvain VANEL <sylvain.vanel@kleegroup.com>
+Date: Wed, 16 Jul 2025 15:09:35 +0200
+Subject: [PATCH 5/5] Check the `extension://` prefix in the translation server
+ path and replace it with the actual extension path
+
+---
+ core/modules/locale/locale.api.php     |  4 ++--
+ core/modules/locale/locale.compare.inc | 14 +++++++-------
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/core/modules/locale/locale.api.php b/core/modules/locale/locale.api.php
+index 316c23f75bdd..64e445874f9f 100644
+--- a/core/modules/locale/locale.api.php
++++ b/core/modules/locale/locale.api.php
+@@ -41,9 +41,9 @@
+  * @code
+  * 'interface translation server pattern': public://translations/%project-%version.%language.po
+  * @endcode
+- * Streamwrapper "module://" addresses paths relative to the current project.
++ * Streamwrapper "extension://" addresses paths relative to the current project.
+  * @code
+- * 'interface translation server pattern': module://translations/%version.%language.po
++ * 'interface translation server pattern': extension://translations/%version.%language.po
+  * @endcode
+  *
+  * Multiple custom modules or themes sharing the same po file should have
+diff --git a/core/modules/locale/locale.compare.inc b/core/modules/locale/locale.compare.inc
+index 6d52e6326f1a..badaf97c70bc 100644
+--- a/core/modules/locale/locale.compare.inc
++++ b/core/modules/locale/locale.compare.inc
+@@ -65,17 +65,17 @@ function locale_translation_build_projects() {
+       }
+     }
+ 
+-    // Check for the `module://` prefix in the translation server pattern and
+-    // replace it to the current module path.
++    // Check for the `extension://` prefix in the translation server pattern and
++    // replace it to the current extension path.
+     if (
+       isset($data['info']['interface translation server pattern'])
+-      && str_starts_with($data['info']['interface translation server pattern'], 'module://')
+-      ) {
+-      $modulePath = \Drupal::service('module_handler')->getModule($name)->getPath();
++      && str_starts_with($data['info']['interface translation server pattern'], 'extension://')
++    ) {
++      $path = \Drupal::service('extension.path.resolver')->getPath($data['project_type'], $name);
+       $data['info']['interface translation server pattern'] =
+         str_replace(
+-          'module://',
+-          $modulePath . '/',
++          'extension://',
++          $path . '/',
+           $data['info']['interface translation server pattern']
+         );
+     }
+-- 
+GitLab

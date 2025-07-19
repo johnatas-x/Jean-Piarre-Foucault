@@ -1,29 +1,66 @@
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/custom/jpf_views/jpf_views.info.yml: n/a
+#  modules/custom/jpf_views/src/Hook/JpfViewsHooks.php: n/a
+#  modules/custom/jpf_views/src/Plugin/views/field/CustomLastDate.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2025-07-19 04:35+0200\n"
+"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: modules/custom/jpf_views/jpf_views.info.yml:0
 msgid "JPF : Data views"
 msgstr "JPF : Vues de données"
 
+#: modules/custom/jpf_views/jpf_views.info.yml:0
 msgid "All features for data views."
 msgstr "Contient les fonctionnalités nécessaires pour les vues de données."
 
-msgid "Unknown"
-msgstr "Inconnu"
+#: modules/custom/jpf_views/jpf_views.info.yml:0
+msgid "Custom"
+msgstr "Personnalisé"
 
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:23;26
 msgid "Custom last date"
 msgstr "Dernière sortie (champ personnalisé)"
 
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:24;33;42
 msgid "Custom Table Views"
 msgstr "Vue de table personnalisée"
 
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:27
 msgid "Translatable custom last date."
 msgstr "Date de dernière sortie avec format traductible."
 
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:32;35
 msgid "Custom best day"
 msgstr "Meilleur jour (champ personnalisé)"
 
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:36
 msgid "Translatable custom best day."
 msgstr "Meilleur jour traductible."
 
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:41;44
 msgid "Delta"
 msgstr "Delta"
 
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:45
 msgid "Delta between last and frequency."
 msgstr "Delta entre le dernier tirage et la fréquence."
+
+#: modules/custom/jpf_views/src/Plugin/views/field/CustomLastDate.php:35
+msgid "Unknown"
+msgstr "Inconnu"
+

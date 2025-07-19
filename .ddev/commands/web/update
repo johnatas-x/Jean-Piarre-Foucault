@@ -4,7 +4,8 @@
 ## Usage: update
 ## Example: ddev update
 
-composer install --no-progress --prefer-dist --optimize-autoloader
+composer install --no-progress
+sudo cp "$DDEV_APPROOT/.ddev/files/settings.ddev.php" "$DDEV_APPROOT/web/sites/default/settings.ddev.php"
 drush deploy
 drush locale-check
 drush locale-update

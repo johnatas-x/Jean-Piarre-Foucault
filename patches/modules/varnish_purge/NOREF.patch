@@ -1,0 +1,23 @@
+diff --git a/modules/varnish_image_purge/varnish_image_purge.links.menu.yml b/modules/varnish_image_purge/varnish_image_purge.links.menu.yml
+index f58d977..7d70bdb 100644
+--- a/modules/varnish_image_purge/varnish_image_purge.links.menu.yml
++++ b/modules/varnish_image_purge/varnish_image_purge.links.menu.yml
+@@ -1,6 +1,6 @@
+ varnish_image_purge.admin_config:
+   title: Varnish image purge
+-  parent: system.admin_config_development
++  parent: system.performance_settings
+   description: 'Configure Varnish image purge'
+   route_name: varnish_image_purge.configuration
+   weight: 0
+diff --git a/modules/varnish_image_purge/varnish_image_purge.routing.yml b/modules/varnish_image_purge/varnish_image_purge.routing.yml
+index 941eaca..f4a5e6e 100644
+--- a/modules/varnish_image_purge/varnish_image_purge.routing.yml
++++ b/modules/varnish_image_purge/varnish_image_purge.routing.yml
+@@ -1,5 +1,5 @@
+ varnish_image_purge.configuration:
+-  path: '/admin/config/development/varnish_image_purge'
++  path: '/admin/config/development/performance/varnish_image_purge'
+   defaults:
+     _title: 'Varnish image purge'
+     _form: '\Drupal\varnish_image_purge\Form\VarnishImagePurgeConfiguration'

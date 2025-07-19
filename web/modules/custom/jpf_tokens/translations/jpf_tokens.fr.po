@@ -1,35 +1,73 @@
-msgid "Versions tokens"
-msgstr "Jetons de versions"
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/custom/jpf_tokens/jpf_tokens.info.yml: n/a
+#  modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2025-07-19 04:35+0200\n"
+"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Define custom tokens for versions."
-msgstr "Défini des jetons personnalisés pour les versions."
-
-msgid "Current version"
-msgstr "Version courante"
-
-msgid "Current version."
-msgstr "Version courante."
-
-msgid "Start date"
-msgstr "Date de début"
-
-msgid "The first day of the current version."
-msgstr "Le premier jour de la version courante."
-
-msgid "unknown version"
-msgstr "version inconnue"
-
-msgid "unknown date"
-msgstr "date inconnue"
-
+#: modules/custom/jpf_tokens/jpf_tokens.info.yml:0
 msgid "JPF : Tokens"
 msgstr "JPF : Jetons"
 
+#: modules/custom/jpf_tokens/jpf_tokens.info.yml:0
 msgid "Provides custom tokens."
 msgstr "Contient les fonctionnalités nécessaires pour les jetons personnalisés."
 
+#: modules/custom/jpf_tokens/jpf_tokens.info.yml:0
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:24
+msgid "Versions tokens"
+msgstr "Jetons de versions"
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:25
+msgid "Define custom tokens for versions."
+msgstr "Défini des jetons personnalisés pour les versions."
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:32
+msgid "Current version"
+msgstr "Version courante"
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:33
+msgid "Current version."
+msgstr "Version courante."
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:36
+msgid "Start date"
+msgstr "Date de début"
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:37
+msgid "The first day of the current version."
+msgstr "Le premier jour de la version courante."
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:40
 msgid "Last update"
 msgstr "Dernière mise à jour"
 
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:41
 msgid "Date and time of the last update for the current version."
 msgstr "Date et heure de la dernière mise à jour de la version courante."
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:75
+msgid "unknown version"
+msgstr "version inconnue"
+
+#: modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php:76
+msgid "unknown date"
+msgstr "date inconnue"
+

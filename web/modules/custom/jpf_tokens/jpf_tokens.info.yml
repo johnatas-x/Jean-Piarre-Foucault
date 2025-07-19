@@ -8,4 +8,4 @@ dependencies:
   - jpf_store:jpf_store
 
 'interface translation project': jpf_tokens
-'interface translation server pattern': modules/custom/%project/translations/%project.%language.po
+'interface translation server pattern': extension://translations/%project.%language.po

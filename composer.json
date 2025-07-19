@@ -30,9 +30,12 @@
         "drupal/drush_batch_bar": "^1.0@beta",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
+        "drupal/memcache": "^2.7",
         "drupal/potx": "^1.1",
+        "drupal/purge": "^3.6",
         "drupal/token": "^1.15",
         "drupal/ultimate_cron": "^2.0@beta",
+        "drupal/varnish_purge": "^2.3",
         "drupal/view_custom_table": "^2.0",
         "drush/drush": "^13",
         "npm-asset/chart.js": "^4.4",
@@ -43,7 +46,7 @@
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.47",
-        "johnatas-x/angry-bearded": "2.4.2",
+        "johnatas-x/angry-bearded": "^2.5",
         "roave/security-advisories": "dev-latest"
     },
     "conflict": {
@@ -153,6 +156,26 @@
         "installer-types": [
             "npm-asset"
         ],
+        "patches": {
+            "drupal/admin_toolbar": {
+                "#3532010 - D11.2: update.theme_update and update.module_update routes no more exist": "./patches/modules/admin_toolbar/3532010-162.patch"
+            },
+            "drupal/core": {
+                "#3483087 - Allow project-relative path for included translation .po files": "./patches/core/3483087-10167.patch"
+            },
+            "drupal/potx": {
+                "#3338225 - Deprecated function: preg_replace(): Passing null to parameter #3 ($subject) of type array|string": "./patches/modules/potx/3338225-13.patch",
+                "#3444016 - New Drush command for developers for extracting translations of custom module, theme or profile": "https://www.drupal.org/files/issues/2025-07-18/3444016-6.patch"
+            },
+            "drupal/purge": {
+                "#3418683 - Include link to purge config page in admin menu": "./patches/modules/purge/3418683-33.patch",
+                "#3511668 - PHP 8.4 support implicit null deprecated": "./patches/modules/purge/3511668-53.patch"
+            },
+            "drupal/varnish_purge": {
+                "#3519158 - varnish_image_purge sub-module D11 Compatibility error": "./patches/modules/varnish_purge/3519158-18.patch",
+                "CNAM-3 - Moove config link inside performance menu": "./patches/modules/varnish_purge/NOREF.patch"
+            }
+        },
         "scripts": {
             "clean-chartjs": "chmod +x scripts/clean-chartjs.sh && ./scripts/clean-chartjs.sh",
             "post-install-cmd": [

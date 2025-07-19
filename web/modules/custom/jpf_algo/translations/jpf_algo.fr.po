@@ -1,35 +1,70 @@
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/custom/jpf_algo/jpf_algo.info.yml: n/a
+#  modules/custom/jpf_algo/src/Commands/MockCommands.php: n/a
+#  modules/custom/jpf_algo/src/Entity/Prediction.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2025-07-19 04:35+0200\n"
+"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: modules/custom/jpf_algo/jpf_algo.info.yml:0
 msgid "JPF : Algorithm"
 msgstr "JPF : Algorithmie"
 
+#: modules/custom/jpf_algo/jpf_algo.info.yml:0
 msgid "All features for algorithm and deep learning."
 msgstr "Contient les fonctionnalités nécessaires pour l'algorithmie et l'apprentissage."
 
+#: modules/custom/jpf_algo/jpf_algo.info.yml:0
 msgid "Custom"
 msgstr "Personnalisé"
 
-msgid "Prediction"
-msgstr "Prédiction"
-
-msgid "prediction"
-msgstr "prédiction"
-
-msgid "predictions"
-msgstr "prédictions"
-
-msgid "Draw ID"
-msgstr "Identifiant du tirage"
-
+#: modules/custom/jpf_algo/src/Commands/MockCommands.php:68
 msgid "Invalid type. Please use one of these allowed types : @types."
 msgstr "Type invalide. Merci d'utiliser un de ces types autorisés : @types."
 
+#: modules/custom/jpf_algo/src/Commands/MockCommands.php:78
 msgid "Last prediction successfully mocked."
 msgstr "La précédente prédiction a bien été mockée."
 
+#: modules/custom/jpf_algo/src/Commands/MockCommands.php:84
 msgid "Next prediction successfully mocked."
 msgstr "La prochaine prédiction a bien été mockée."
 
+#: modules/custom/jpf_algo/src/Commands/MockCommands.php:91
 msgid "Both predictions successfully mocked."
 msgstr "Les deux prédictions ont bien été mockées."
 
+#: modules/custom/jpf_algo/src/Commands/MockCommands.php:113
 msgid "Invalid current version."
 msgstr "Version courante invalide."
+
+#: modules/custom/jpf_algo/src/Entity/Prediction.php:53
+msgid "Draw ID"
+msgstr "Identifiant du tirage"
+
+#: modules/custom/jpf_algo/src/Entity/Prediction.php:19
+msgid "Prediction"
+msgstr "Prédiction"
+
+#: modules/custom/jpf_algo/src/Entity/Prediction.php:20
+msgid "prediction"
+msgstr "prédiction"
+
+#: modules/custom/jpf_algo/src/Entity/Prediction.php:21
+msgid "predictions"
+msgstr "prédictions"
+

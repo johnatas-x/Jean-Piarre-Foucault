@@ -1,0 +1,24 @@
+From b1d25d9671ae5f65d0f649186b35e911155e0fba Mon Sep 17 00:00:00 2001
+From: Malcolm Young <25325-malcomio@users.noreply.drupalcode.org>
+Date: Thu, 1 Feb 2024 15:58:45 +0000
+Subject: [PATCH] Issue #3418683: Include link to purge config page in admin
+ menu
+
+---
+ modules/purge_ui/purge_ui.links.menu.yml | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 modules/purge_ui/purge_ui.links.menu.yml
+
+diff --git a/modules/purge_ui/purge_ui.links.menu.yml b/modules/purge_ui/purge_ui.links.menu.yml
+new file mode 100644
+index 00000000..3629e4ca
+--- /dev/null
++++ b/modules/purge_ui/purge_ui.links.menu.yml
+@@ -0,0 +1,5 @@
++purge_ui.dashboard:
++  title: 'Purge'
++  route_name: purge_ui.dashboard
++  menu_name: admin
++  parent: system.performance_settings
+-- 
+GitLab

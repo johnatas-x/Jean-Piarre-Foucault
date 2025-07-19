@@ -1,17 +1,45 @@
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/custom/jpf_import/jpf_import.info.yml: n/a
+#  modules/custom/jpf_import/src/Cron/ImportDynamicData.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2025-07-19 04:35+0200\n"
+"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: modules/custom/jpf_import/jpf_import.info.yml:0
 msgid "JPF : Data import"
 msgstr "JPF : Import des données"
 
+#: modules/custom/jpf_import/jpf_import.info.yml:0
 msgid "All features for importing data."
 msgstr "Contient les fonctionnalités nécessaires pour l'import des données."
 
+#: modules/custom/jpf_import/jpf_import.info.yml:0
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:49
 msgid "Cannot download file."
 msgstr "Impossible de télécharger le fichier."
 
+#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:92;104
 msgid "Unknown"
 msgstr "Inconnu"
 
+#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:99
 msgid "Never"
 msgstr "Jamais"
 
-msgid "Cannot download file."
-msgstr "Impossible de télécharger le fichier."

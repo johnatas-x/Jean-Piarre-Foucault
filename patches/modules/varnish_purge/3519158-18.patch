@@ -1,0 +1,99 @@
+From acd1d76cd058638c771ac68174893980d67d4688 Mon Sep 17 00:00:00 2001
+From: Carlos Puello <6823-carma03@users.noreply.drupalcode.org>
+Date: Mon, 14 Apr 2025 20:37:10 +0000
+Subject: [PATCH] 3519158-varnishimagepurge: D11 compatibility
+
+---
+ .../varnish_focal_point_purge.info.yml                       | 2 +-
+ .../src/Form/VarnishImagePurgeConfiguration.php              | 5 ++++-
+ modules/varnish_image_purge/varnish_image_purge.info.yml     | 2 +-
+ modules/varnish_purge_tags/varnish_purge_tags.info.yml       | 2 +-
+ varnish_purger.info.yml                                      | 2 +-
+ 5 files changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/modules/varnish_focal_point_purge/varnish_focal_point_purge.info.yml b/modules/varnish_focal_point_purge/varnish_focal_point_purge.info.yml
+index d8abdf2..4c4d84e 100644
+--- a/modules/varnish_focal_point_purge/varnish_focal_point_purge.info.yml
++++ b/modules/varnish_focal_point_purge/varnish_focal_point_purge.info.yml
+@@ -1,7 +1,7 @@
+ name: Varnish Focal Point Purger
+ type: module
+ description: Purge image styles after a focal point entity needs to be updated
+-core_version_requirement: ^8 || ^9 || ^10 || ^11
++core_version_requirement: ^10.2 || ^11
+ package: "Purge - reverse proxies & CDNs"
+ dependencies:
+   - varnish_purger:varnish_purger
+diff --git a/modules/varnish_image_purge/src/Form/VarnishImagePurgeConfiguration.php b/modules/varnish_image_purge/src/Form/VarnishImagePurgeConfiguration.php
+index 3304009..ef0c5cc 100644
+--- a/modules/varnish_image_purge/src/Form/VarnishImagePurgeConfiguration.php
++++ b/modules/varnish_image_purge/src/Form/VarnishImagePurgeConfiguration.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\varnish_image_purge\Form;
+ 
+ use Drupal\Core\Config\ConfigFactoryInterface;
++use Drupal\Core\Config\TypedConfigManagerInterface;
+ use Drupal\Core\Entity\ContentEntityType;
+ use Drupal\Core\Entity\EntityTypeBundleInfo;
+ use Drupal\Core\Entity\EntityTypeManagerInterface;
+@@ -41,10 +42,11 @@ class VarnishImagePurgeConfiguration extends ConfigFormBase {
+    */
+   public function __construct(
+     ConfigFactoryInterface $config_factory,
++    TypedConfigManagerInterface $typedConfigManager,
+     EntityTypeManagerInterface $entityTypeManager,
+     EntityTypeBundleInfo $entityTypeBundleInfo,
+   ) {
+-    parent::__construct($config_factory);
++    parent::__construct($config_factory, $typedConfigManager);
+     $this->entityTypeManager = $entityTypeManager;
+     $this->entityTypeBundleInfo = $entityTypeBundleInfo;
+   }
+@@ -55,6 +57,7 @@ class VarnishImagePurgeConfiguration extends ConfigFormBase {
+   public static function create(ContainerInterface $container) {
+     return new static(
+       $container->get('config.factory'),
++      $container->get('config.typed'),
+       $container->get('entity_type.manager'),
+       $container->get('entity_type.bundle.info')
+     );
+diff --git a/modules/varnish_image_purge/varnish_image_purge.info.yml b/modules/varnish_image_purge/varnish_image_purge.info.yml
+index 81b4012..89c5d56 100644
+--- a/modules/varnish_image_purge/varnish_image_purge.info.yml
++++ b/modules/varnish_image_purge/varnish_image_purge.info.yml
+@@ -1,7 +1,7 @@
+ name: Varnish Image Purge
+ type: module
+ description: Purge image styles after entity update
+-core_version_requirement: ^8 || ^9 || ^10 || ^11
++core_version_requirement: ^10.2 || ^11
+ package: "Purge - reverse proxies & CDNs"
+ configure: varnish_image_purge.configuration
+ dependencies:
+diff --git a/modules/varnish_purge_tags/varnish_purge_tags.info.yml b/modules/varnish_purge_tags/varnish_purge_tags.info.yml
+index f650bef..98e096a 100644
+--- a/modules/varnish_purge_tags/varnish_purge_tags.info.yml
++++ b/modules/varnish_purge_tags/varnish_purge_tags.info.yml
+@@ -2,6 +2,6 @@ name: Varnish Purger Tags
+ type: module
+ description: 'Cache-Tags response header to support tag-based invalidation.'
+ package: "Purge - reverse proxies & CDNs"
+-core_version_requirement: ^8 || ^9 || ^10 || ^11
++core_version_requirement: ^10.2 || ^11
+ dependencies:
+   - varnish_purger:varnish_purger
+diff --git a/varnish_purger.info.yml b/varnish_purger.info.yml
+index 822975e..02d864b 100644
+--- a/varnish_purger.info.yml
++++ b/varnish_purger.info.yml
+@@ -2,7 +2,7 @@ name: Varnish Purger
+ type: module
+ description: 'Purger for varnish. Purges page caches from varnish. Works together with the purge module.'
+ package: "Purge - reverse proxies & CDNs"
+-core_version_requirement: ^9.1 || ^10 || ^11
++core_version_requirement: ^10.2 || ^11
+ php: 8.0
+ dependencies:
+   - purge:purge
+-- 
+GitLab
