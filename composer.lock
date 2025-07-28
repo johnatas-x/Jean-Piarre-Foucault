@@ -9031,16 +9031,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "2.5.1",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "060e09e10127a4f759965f5396602c7ae749ab22"
+                "reference": "5a0202334d89da2f78faa40acce4bca50d843bf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/060e09e10127a4f759965f5396602c7ae749ab22",
-                "reference": "060e09e10127a4f759965f5396602c7ae749ab22",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/5a0202334d89da2f78faa40acce4bca50d843bf1",
+                "reference": "5a0202334d89da2f78faa40acce4bca50d843bf1",
                 "shasum": ""
             },
             "require": {
@@ -9048,8 +9048,8 @@
                 "ekino/phpstan-banned-code": "v3.0.0",
                 "ergebnis/composer-normalize": "2.47.0",
                 "friendsoftwig/twigcs": "6.5.0",
-                "johnatas-x/grumphp-phpa": "2.13.0",
-                "johnatas-x/grumphp-phpdd": "2.13.0",
+                "johnatas-x/grumphp-phpa": "2.14.0",
+                "johnatas-x/grumphp-phpdd": "2.14.0",
                 "johnatas-x/phpcpd": "6.0.5",
                 "maglnet/composer-require-checker": "4.16.1",
                 "mglaman/phpstan-drupal": "2.0.7",
@@ -9057,12 +9057,12 @@
                 "php-parallel-lint/php-parallel-lint": "1.4.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
                 "phpmd/phpmd": "2.15.0",
-                "phpro/grumphp": "2.13.0",
+                "phpro/grumphp": "2.14.0",
                 "phpstan/extension-installer": "1.4.3",
-                "phpstan/phpstan": "2.1.18",
+                "phpstan/phpstan": "2.1.20",
                 "phpstan/phpstan-deprecation-rules": "2.0.3",
                 "povils/phpmnd": "3.6.0",
-                "slevomat/coding-standard": "8.19.1",
+                "slevomat/coding-standard": "8.20.0",
                 "squizlabs/php_codesniffer": "3.13.2",
                 "vincentlanglet/twig-cs-fixer": "3.8.1"
             },
@@ -9110,24 +9110,24 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-07-18T06:49:06+00:00"
+            "time": "2025-07-28T05:34:58+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
-            "version": "2.13.0",
+            "version": "2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/grumphp-phpa.git",
-                "reference": "d78f16ec0a8d5c44ae7aa77b644f94d994cfc885"
+                "reference": "0ed37ca2184dbcd61e169e6a4e09b874ef0ecf61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpa/zipball/d78f16ec0a8d5c44ae7aa77b644f94d994cfc885",
-                "reference": "d78f16ec0a8d5c44ae7aa77b644f94d994cfc885",
+                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpa/zipball/0ed37ca2184dbcd61e169e6a4e09b874ef0ecf61",
+                "reference": "0ed37ca2184dbcd61e169e6a4e09b874ef0ecf61",
                 "shasum": ""
             },
             "require": {
-                "phpro/grumphp": "2.13.0",
+                "phpro/grumphp": "2.14.0",
                 "rskuipers/php-assumptions": "0.9.1"
             },
             "type": "library",
@@ -9152,25 +9152,25 @@
                 "issues": "https://github.com/johnatas-x/grumphp-phpa/issues",
                 "source": "https://github.com/johnatas-x/grumphp-phpa"
             },
-            "time": "2025-06-05T12:15:38+00:00"
+            "time": "2025-07-26T10:01:18+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpdd",
-            "version": "2.13.0",
+            "version": "2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/grumphp-phpdd.git",
-                "reference": "04d95a694d5c403d49ce4e63008b13bf885954df"
+                "reference": "545bcf891052edebe73b96d624c0398ed5612125"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpdd/zipball/04d95a694d5c403d49ce4e63008b13bf885954df",
-                "reference": "04d95a694d5c403d49ce4e63008b13bf885954df",
+                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpdd/zipball/545bcf891052edebe73b96d624c0398ed5612125",
+                "reference": "545bcf891052edebe73b96d624c0398ed5612125",
                 "shasum": ""
             },
             "require": {
                 "johnatas-x/php-deprecation-detector": "1.2.0",
-                "phpro/grumphp": "2.13.0"
+                "phpro/grumphp": "2.14.0"
             },
             "type": "library",
             "autoload": {
@@ -9194,7 +9194,7 @@
                 "issues": "https://github.com/johnatas-x/grumphp-phpdd/issues",
                 "source": "https://github.com/johnatas-x/grumphp-phpdd"
             },
-            "time": "2025-06-05T12:15:49+00:00"
+            "time": "2025-07-26T10:01:24+00:00"
         },
         {
             "name": "johnatas-x/php-deprecation-detector",
@@ -10749,16 +10749,16 @@
         },
         {
             "name": "phpro/grumphp",
-            "version": "v2.13.0",
+            "version": "v2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/grumphp.git",
-                "reference": "ea281293328f0ae951abfed22a1f0d22bde9cda1"
+                "reference": "cb139d7c3ed1aa1c8acbdc527f11d80a3d5a27a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/grumphp/zipball/ea281293328f0ae951abfed22a1f0d22bde9cda1",
-                "reference": "ea281293328f0ae951abfed22a1f0d22bde9cda1",
+                "url": "https://api.github.com/repos/phpro/grumphp/zipball/cb139d7c3ed1aa1c8acbdc527f11d80a3d5a27a8",
+                "reference": "cb139d7c3ed1aa1c8acbdc527f11d80a3d5a27a8",
                 "shasum": ""
             },
             "require": {
@@ -10861,9 +10861,9 @@
             "description": "A composer plugin that enables source code quality checks.",
             "support": {
                 "issues": "https://github.com/phpro/grumphp/issues",
-                "source": "https://github.com/phpro/grumphp/tree/v2.13.0"
+                "source": "https://github.com/phpro/grumphp/tree/v2.14.0"
             },
-            "time": "2025-06-04T13:45:13+00:00"
+            "time": "2025-07-25T08:35:57+00:00"
         },
         {
             "name": "phpstan/extension-installer",
@@ -10962,16 +10962,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.18",
+            "version": "2.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "ee1f390b7a70cdf74a2b737e554f68afea885db7"
+                "reference": "a9ccfef95210f92ba6feea6e8d1eef42b5605499"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ee1f390b7a70cdf74a2b737e554f68afea885db7",
-                "reference": "ee1f390b7a70cdf74a2b737e554f68afea885db7",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/a9ccfef95210f92ba6feea6e8d1eef42b5605499",
+                "reference": "a9ccfef95210f92ba6feea6e8d1eef42b5605499",
                 "shasum": ""
             },
             "require": {
@@ -11016,7 +11016,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-07-17T17:22:31+00:00"
+            "time": "2025-07-26T20:45:26+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -12533,32 +12533,32 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.19.1",
+            "version": "8.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "458d665acd49009efebd7e0cb385d71ae9ac3220"
+                "reference": "b4f9f02edd4e6a586777f0cabe8d05574323f3eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/458d665acd49009efebd7e0cb385d71ae9ac3220",
-                "reference": "458d665acd49009efebd7e0cb385d71ae9ac3220",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/b4f9f02edd4e6a586777f0cabe8d05574323f3eb",
+                "reference": "b4f9f02edd4e6a586777f0cabe8d05574323f3eb",
                 "shasum": ""
             },
             "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7 || ^1.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7 || ^1.1.2",
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpdoc-parser": "^2.1.0",
-                "squizlabs/php_codesniffer": "^3.13.0"
+                "phpstan/phpdoc-parser": "^2.2.0",
+                "squizlabs/php_codesniffer": "^3.13.2"
             },
             "require-dev": {
-                "phing/phing": "3.0.1",
+                "phing/phing": "3.0.1|3.1.0",
                 "php-parallel-lint/php-parallel-lint": "1.4.0",
-                "phpstan/phpstan": "2.1.17",
+                "phpstan/phpstan": "2.1.19",
                 "phpstan/phpstan-deprecation-rules": "2.0.3",
-                "phpstan/phpstan-phpunit": "2.0.6",
-                "phpstan/phpstan-strict-rules": "2.0.4",
-                "phpunit/phpunit": "9.6.8|10.5.45|11.4.4|11.5.21|12.1.3"
+                "phpstan/phpstan-phpunit": "2.0.7",
+                "phpstan/phpstan-strict-rules": "2.0.6",
+                "phpunit/phpunit": "9.6.8|10.5.48|11.4.4|11.5.27|12.2.7"
             },
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -12582,7 +12582,7 @@
             ],
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.19.1"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.20.0"
             },
             "funding": [
                 {
@@ -12594,7 +12594,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-09T17:53:57+00:00"
+            "time": "2025-07-26T15:35:10+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
