@@ -49,3 +49,23 @@ msgstr "Aucune prédiction existante."
 msgid "Invalid prediction ID."
 msgstr "Identifiant de prédiction invalide."
 
+#: modules/custom/jpf_home/templates/homepage.html.twig:3
+msgid "Lucky ball "
+msgstr "Numéro chance "
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:3
+msgid "Ball "
+msgstr "Boule "
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:34
+msgid "Next prediction"
+msgstr "Prochaine prédiction"
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:35
+msgid "Last draw"
+msgstr "Dernier tirage"
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:36
+msgid "Last prediction"
+msgstr "Dernière prédiction"
+
