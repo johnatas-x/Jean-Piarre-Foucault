@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-07-19 04:35+0200\n"
-"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"POT-Creation-Date: 2025-08-02 10:50+0200\n"
+"PO-Revision-Date: 2025-08-02 10:50+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,9 @@ msgstr "JPF : Envoyeur"
 
 #: modules/custom/jpf_sender/jpf_sender.info.yml:0
 msgid "All features for communication (SMS, WhatsApp, Mail)."
-msgstr "Contient les fonctionnalités nécessaires pour la communication (SMS, WhatsApp, Courriel)."
+msgstr ""
+"Contient les fonctionnalités nécessaires pour la communication (SMS, "
+"WhatsApp, Courriel)."
 
 #: modules/custom/jpf_sender/jpf_sender.info.yml:0
 msgid "Custom"

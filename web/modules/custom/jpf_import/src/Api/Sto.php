@@ -42,7 +42,7 @@ abstract class Sto {
   private const string TYPE = 'documentations';
 
   /**
-   * Parts of their built token !
+   * Parts of their built token!
    */
   private const array TOKEN_PARTS = [
     '1a2b3c4d',

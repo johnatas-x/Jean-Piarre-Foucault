@@ -79,7 +79,7 @@ enum Versions: string {
    * Begin date.
    *
    * @return string
-   *   The first month of the version.
+   *   The first day of the version.
    */
   public function begin(): string {
     return match ($this) {
@@ -95,7 +95,7 @@ enum Versions: string {
    * End date.
    *
    * @return string
-   *   The last month of the version.
+   *   The last day of the version.
    */
   public function end(): string {
     return match ($this) {

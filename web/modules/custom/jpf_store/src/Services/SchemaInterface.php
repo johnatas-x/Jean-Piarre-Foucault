@@ -35,7 +35,7 @@ interface SchemaInterface {
   final public const string LOTTO_STATS_LUCKY_TABLE = 'lotto_lucky_stats';
 
   /**
-   * List of stats tables with description.
+   * List of stat tables with description.
    */
   final public const array LOTTO_STATS_TABLES = [
     'balls' => self::LOTTO_STATS_BALLS_TABLE,

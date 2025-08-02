@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-07-19 04:35+0200\n"
-"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"POT-Creation-Date: 2025-08-02 10:50+0200\n"
+"PO-Revision-Date: 2025-08-02 10:50+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,9 @@ msgstr "JPF : Jetons"
 
 #: modules/custom/jpf_tokens/jpf_tokens.info.yml:0
 msgid "Provides custom tokens."
-msgstr "Contient les fonctionnalités nécessaires pour les jetons personnalisés."
+msgstr ""
+"Contient les fonctionnalités nécessaires pour les jetons "
+"personnalisés."
 
 #: modules/custom/jpf_tokens/jpf_tokens.info.yml:0
 msgid "Custom"

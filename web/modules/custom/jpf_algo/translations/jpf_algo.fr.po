@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-07-19 04:35+0200\n"
-"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"POT-Creation-Date: 2025-08-02 10:50+0200\n"
+"PO-Revision-Date: 2025-08-02 10:50+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,9 @@ msgstr "JPF : Algorithmie"
 
 #: modules/custom/jpf_algo/jpf_algo.info.yml:0
 msgid "All features for algorithm and deep learning."
-msgstr "Contient les fonctionnalités nécessaires pour l'algorithmie et l'apprentissage."
+msgstr ""
+"Contient les fonctionnalités nécessaires pour l'algorithmie et "
+"l'apprentissage."
 
 #: modules/custom/jpf_algo/jpf_algo.info.yml:0
 msgid "Custom"

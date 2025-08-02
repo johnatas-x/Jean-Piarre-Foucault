@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-07-19 04:35+0200\n"
-"PO-Revision-Date: 2025-07-19 04:35+0200\n"
+"POT-Creation-Date: 2025-08-02 10:50+0200\n"
+"PO-Revision-Date: 2025-08-02 10:50+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -31,15 +31,15 @@ msgstr "Contient les fonctionnalités nécessaires pour l'import des données."
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:49
+#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:51
 msgid "Cannot download file."
 msgstr "Impossible de télécharger le fichier."
 
-#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:92;104
+#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:94;106
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:99
+#: modules/custom/jpf_import/src/Cron/ImportDynamicData.php:101
 msgid "Never"
 msgstr "Jamais"
 

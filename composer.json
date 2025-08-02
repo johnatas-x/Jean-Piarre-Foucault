@@ -157,9 +157,6 @@
             "npm-asset"
         ],
         "patches": {
-            "drupal/admin_toolbar": {
-                "#3532010 - D11.2: update.theme_update and update.module_update routes no more exist": "./patches/modules/admin_toolbar/3532010-162.patch"
-            },
             "drupal/core": {
                 "#3483087 - Allow project-relative path for included translation .po files": "./patches/core/3483087-10167.patch"
             },
