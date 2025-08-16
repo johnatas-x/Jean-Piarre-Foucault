@@ -8,6 +8,7 @@ use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\Sql\Query;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\jpf_algo\Entity\Prediction;
 use Drupal\jpf_store\Services\DatabaseInterface;
 use Drupal\jpf_utils\Entity\BallEntityBase;
@@ -24,10 +25,13 @@ class HomepageHelper implements HomepageHelperInterface {
    *   JPF database service.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   Entity type manager service.
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger
+   *   The logger channel factory.
    */
   public function __construct(
     protected DatabaseInterface $jpfDatabase,
     protected EntityTypeManagerInterface $entityTypeManager,
+    protected LoggerChannelFactoryInterface $logger,
   ) {
   }
 
@@ -53,7 +57,7 @@ class HomepageHelper implements HomepageHelperInterface {
       }
     }
     catch (InvalidPluginDefinitionException | PluginNotFoundException $exception) {
-      \Drupal::logger('jpf_home')->error($exception->getMessage());
+      $this->logger->get('jpf_home')->error($exception->getMessage());
 
       return $last_data;
     }
@@ -75,25 +79,19 @@ class HomepageHelper implements HomepageHelperInterface {
       $prediction_query = $entity_storage->getQuery();
 
       if (!$prediction_query instanceof Query) {
-        throw new \RuntimeException(
-          t('Error during prediction query.')->render()
-        );
+        throw new \RuntimeException('Error during prediction query.');
       }
 
       $prediction_ids = $prediction_query->accessCheck()->notExists('draw_id')->execute();
 
       if (empty($prediction_ids) || !is_array($prediction_ids)) {
-        throw new \RuntimeException(
-          t('No existing prediction.')->render()
-        );
+        throw new \RuntimeException('No existing prediction.');
       }
 
       $prediction_id = reset($prediction_ids);
 
       if (!is_numeric($prediction_id)) {
-        throw new \RuntimeException(
-          t('Invalid prediction ID.')->render()
-        );
+        throw new \RuntimeException('Invalid prediction ID.');
       }
 
       $prediction = $entity_storage->load((int) $prediction_id);
@@ -104,7 +102,7 @@ class HomepageHelper implements HomepageHelperInterface {
       }
     }
     catch (InvalidPluginDefinitionException | PluginNotFoundException | \RuntimeException $exception) {
-      \Drupal::logger('jpf_home')->error($exception->getMessage());
+      $this->logger->get('jpf_home')->error($exception->getMessage());
 
       return $next_predict;
     }

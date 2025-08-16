@@ -2,29 +2,33 @@ parameters:
   git_dir: .
   bin_dir: vendor/bin
 grumphp:
-  extensions:
-    - GrumphpPhpa\ExtensionLoader
-  ignore_unstaged_changes: true
-  stop_on_failure: false
-  hide_circumvention_tip: true
-  fixer:
-    enabled: true
-    fix_by_default: false
-  parallel:
-    enabled: false
-  process_timeout: 60
-  ascii:
-    failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
-    succeeded: .ddev/files/fdj_ascii.txt
+  hooks_dir: null
+  hooks_preset: local
   git_hook_variables:
     VAGRANT_HOST_DIR: .
     VAGRANT_PROJECT_DIR: /var/www
     EXEC_GRUMPHP_COMMAND: ddev exec
     ENV: {}
+  stop_on_failure: false
+  ignore_unstaged_changes: true
+  hide_circumvention_tip: true
+  process_timeout: 60
+  additional_info: null
+  ascii:
+    failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
+    succeeded: .ddev/files/fdj_ascii.txt
+  parallel:
+    enabled: true
+    max_workers: 32
+  fixer:
+    enabled: true
+    fix_by_default: false
   environment:
     files: [ ]
     variables: { }
     paths: [ ]
+  extensions:
+    - GrumphpPhpa\ExtensionLoader
   testsuites: []
   tasks:
     composer:

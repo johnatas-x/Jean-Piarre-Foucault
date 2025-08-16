@@ -7,6 +7,7 @@ namespace Drupal\jpf_utils\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
 
@@ -51,12 +52,12 @@ abstract class BallEntityBase extends ContentEntityBase {
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['version'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Version'))
+      ->setLabel(new TranslatableMarkup('Version'))
       ->setRequired(TRUE);
 
     foreach (Balls::cases() as $ball) {
       $fields[$ball->columnName()] = BaseFieldDefinition::create('integer')
-        ->setLabel(t($ball->value))
+        ->setLabel(new TranslatableMarkup($ball->value)) // phpcs:disable Drupal.Semantics.FunctionT.NotLiteralString
         ->setRequired(FALSE);
     }
 

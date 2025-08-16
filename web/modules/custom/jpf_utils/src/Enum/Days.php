@@ -7,7 +7,7 @@ namespace Drupal\jpf_utils\Enum;
 use Drupal\jpf_utils\Traits\EnumToArray;
 
 /**
- * Days mapping.
+ * Days mapping and methods.
  */
 enum Days: string {
 

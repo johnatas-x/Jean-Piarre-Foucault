@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-02 10:50+0200\n"
-"PO-Revision-Date: 2025-08-02 10:50+0200\n"
+"POT-Creation-Date: 2025-08-16 18:09+0200\n"
+"PO-Revision-Date: 2025-08-16 18:09+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -34,25 +34,17 @@ msgstr ""
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: modules/custom/jpf_algo/src/Commands/MockCommands.php:68
-msgid "Invalid type. Please use one of these allowed types : @types."
-msgstr "Type invalide. Merci d'utiliser un de ces types autorisés : @types."
-
-#: modules/custom/jpf_algo/src/Commands/MockCommands.php:78
+#: modules/custom/jpf_algo/src/Commands/MockCommands.php:75
 msgid "Last prediction successfully mocked."
 msgstr "La précédente prédiction a bien été mockée."
 
-#: modules/custom/jpf_algo/src/Commands/MockCommands.php:84
+#: modules/custom/jpf_algo/src/Commands/MockCommands.php:81
 msgid "Next prediction successfully mocked."
 msgstr "La prochaine prédiction a bien été mockée."
 
-#: modules/custom/jpf_algo/src/Commands/MockCommands.php:91
+#: modules/custom/jpf_algo/src/Commands/MockCommands.php:88
 msgid "Both predictions successfully mocked."
 msgstr "Les deux prédictions ont bien été mockées."
-
-#: modules/custom/jpf_algo/src/Commands/MockCommands.php:113
-msgid "Invalid current version."
-msgstr "Version courante invalide."
 
 #: modules/custom/jpf_algo/src/Entity/Prediction.php:53
 msgid "Draw ID"

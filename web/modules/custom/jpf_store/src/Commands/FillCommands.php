@@ -61,15 +61,11 @@ class FillCommands extends DrushCommands {
    */
   private function optionsChecker(array $options): array {
     if (is_string($options['versions']) && $options['all'] === TRUE) {
-      throw new \InvalidArgumentException(
-        t('Do not use "versions" and "all" options together.')->render()
-      );
+      throw new \InvalidArgumentException('Do not use "versions" and "all" options together.');
     }
 
     if ($options['versions'] === NULL && $options['all'] === FALSE) {
-      throw new \InvalidArgumentException(
-        t('You must use at least one option between "versions" and "all".')->render()
-      );
+      throw new \InvalidArgumentException('You must use at least one option between "versions" and "all".');
     }
 
     if (is_string($options['versions'])) {

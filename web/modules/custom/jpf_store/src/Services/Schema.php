@@ -5,7 +5,7 @@ namespace Drupal\jpf_store\Services;
 use Drupal\jpf_store\Enum\Balls;
 
 /**
- * Schema definitions.
+ * Schema definitions for custom store tables.
  *
  * @phpcs:disable SlevomatCodingStandard.Functions.FunctionLength.FunctionLength
  */

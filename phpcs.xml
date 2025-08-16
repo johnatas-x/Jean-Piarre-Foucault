@@ -12,7 +12,7 @@
   <arg name="colors"/>
   <arg name="extensions" value="css,inc,info,install,md,module,php,profile,test,theme,txt,yml"/>
   <arg name="parallel" value="75"/>
-  <arg value="np"/>
+  <arg value="w"/>
 
   <!-- Excludes -->
   <exclude-pattern>*/tests/*</exclude-pattern>
@@ -51,6 +51,7 @@
     <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal.ClassNeitherAbstractNorFinal" />
     <exclude name="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature.RequiredSingleLineSignature" />
     <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
+    <exclude name="SlevomatCodingStandard.Commenting.DisallowCommentAfterCode.DisallowedCommentAfterCode"/>
     <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing.IncorrectLinesCountBetweenDifferentAnnotationsTypes" />
     <exclude name="SlevomatCodingStandard.Commenting.UselessInheritDocComment.UselessInheritDocComment" />
     <exclude name="SlevomatCodingStandard.ControlStructures.DisallowEmpty.DisallowedEmpty" />

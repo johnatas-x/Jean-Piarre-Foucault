@@ -4,4 +4,5 @@ jpf_home.homepage:
     _controller: '\Drupal\jpf_home\Controller\HomepageController::content'
     _title: 'Jean-Piarre Foucault'
   requirements:
+    # The homepage is accessible to everyone.
     _access: 'TRUE'

@@ -6,14 +6,13 @@
 #  modules/custom/jpf_home/jpf_home.info.yml: n/a
 #  modules/custom/jpf_home/jpf_home.routing.yml: n/a
 #  modules/custom/jpf_home/src/Controller/HomepageController.php: n/a
-#  modules/custom/jpf_home/src/Services/HomepageHelper.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-02 10:50+0200\n"
-"PO-Revision-Date: 2025-08-02 10:50+0200\n"
+"POT-Creation-Date: 2025-08-16 18:09+0200\n"
+"PO-Revision-Date: 2025-08-16 18:09+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -36,36 +35,4 @@ msgstr "Personnalisé"
 #: modules/custom/jpf_home/jpf_home.routing.yml:0 modules/custom/jpf_home/src/Controller/HomepageController.php:40
 msgid "Jean-Piarre Foucault"
 msgstr "Jean-Piarre Foucault"
-
-#: modules/custom/jpf_home/src/Services/HomepageHelper.php:79
-msgid "Error during prediction query."
-msgstr "Erreur durant la requête de prédiction."
-
-#: modules/custom/jpf_home/src/Services/HomepageHelper.php:87
-msgid "No existing prediction."
-msgstr "Aucune prédiction existante."
-
-#: modules/custom/jpf_home/src/Services/HomepageHelper.php:95
-msgid "Invalid prediction ID."
-msgstr "Identifiant de prédiction invalide."
-
-#: modules/custom/jpf_home/templates/homepage.html.twig:3
-msgid "Lucky ball "
-msgstr "Numéro chance "
-
-#: modules/custom/jpf_home/templates/homepage.html.twig:3
-msgid "Ball "
-msgstr "Boule "
-
-#: modules/custom/jpf_home/templates/homepage.html.twig:34
-msgid "Next prediction"
-msgstr "Prochaine prédiction"
-
-#: modules/custom/jpf_home/templates/homepage.html.twig:35
-msgid "Last draw"
-msgstr "Dernier tirage"
-
-#: modules/custom/jpf_home/templates/homepage.html.twig:36
-msgid "Last prediction"
-msgstr "Dernière prédiction"
 

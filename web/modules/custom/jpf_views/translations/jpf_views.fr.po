@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-02 10:50+0200\n"
-"PO-Revision-Date: 2025-08-02 10:50+0200\n"
+"POT-Creation-Date: 2025-08-16 18:09+0200\n"
+"PO-Revision-Date: 2025-08-16 18:09+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Delta"
 msgid "Delta between last and frequency."
 msgstr "Delta entre le dernier tirage et la fréquence."
 
-#: modules/custom/jpf_views/src/Plugin/views/field/CustomLastDate.php:68
+#: modules/custom/jpf_views/src/Plugin/views/field/CustomLastDate.php:87
 msgid "Unknown"
 msgstr "Inconnu"
 

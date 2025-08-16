@@ -11,9 +11,6 @@ use Drupal\jpf_store\Services\SchemaInterface;
 
 /**
  * Implements hook_schema().
- *
- * @return array<string, array<string, array<int|string, array<string, bool|int|string>|string>|string>>
- *   The schema.
  */
 function jpf_stats_schema(): array {
   $schema = [];

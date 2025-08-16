@@ -167,7 +167,7 @@ class FillStats implements FillStatsInterface {
   }
 
   /**
-   * Get day(s) on which the given ball is released the most for the given version.
+   * Get day(s) when the given ball is most released for the given version.
    *
    * @param string $table
    *   The ball table.
@@ -202,7 +202,7 @@ class FillStats implements FillStatsInterface {
   }
 
   /**
-   * Average number of days between two outings for the given ball and the given version.
+   * Average days between two outings for the given ball and version.
    *
    * @param string $table
    *   The ball table.
@@ -262,7 +262,7 @@ class FillStats implements FillStatsInterface {
   }
 
   /**
-   * Get ball(s) that comes out most/least often with the current ball for the given version.
+   * Get ball(s) appearing most/least with current ball for given version.
    *
    * @param int $ball
    *   The current ball.

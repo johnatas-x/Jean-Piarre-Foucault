@@ -64,31 +64,28 @@ class MockCommands extends DrushCommands {
    */
   public function mockPrediction(?string $type = NULL): void {
     if (!in_array($type, self::ALLOWED_TYPES, TRUE)) {
-      throw new \InvalidArgumentException(
-        t(
-          'Invalid type. Please use one of these allowed types : @types.',
-          ['@types' => implode(', ', self::ALLOWED_TYPES)]
-        )->render()
-      );
+      $types = implode(', ', self::ALLOWED_TYPES);
+
+      throw new \InvalidArgumentException("Invalid type. Please use one of these allowed types : $types.");
     }
 
     switch ($type) {
       case 'last':
         $this->mock($this->jpfDatabase->getLastRecordId());
-        $this->io()->success(t('Last prediction successfully mocked.')->render());
+        $this->io()->success($this->t('Last prediction successfully mocked.')->render());
 
         break;
 
       case 'next':
         $this->mock();
-        $this->io()->success(t('Next prediction successfully mocked.')->render());
+        $this->io()->success($this->t('Next prediction successfully mocked.')->render());
 
         break;
 
       default:
         $this->mock($this->jpfDatabase->getLastRecordId());
         $this->mock();
-        $this->io()->success(t('Both predictions successfully mocked.')->render());
+        $this->io()->success($this->t('Both predictions successfully mocked.')->render());
 
         break;
     }
@@ -109,9 +106,7 @@ class MockCommands extends DrushCommands {
     $random_balls = [];
 
     if (!$current_version instanceof Versions) {
-      throw new \RuntimeException(
-        t('Invalid current version.')->render()
-      );
+      throw new \RuntimeException('Invalid current version.');
     }
 
     $fields = [

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_stats\Commands;
 
-use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\drush_batch_bar\Commands\DrushBatchCommands;
 use Drupal\jpf_stats\Batch\FillStatsBatch;
 use Drupal\jpf_store\Enum\Versions;
@@ -15,8 +14,6 @@ use Drush\Commands\DrushCommands;
  * Drush commands to fill stats in DB.
  */
 class FillCommands extends DrushCommands {
-
-  use StringTranslationTrait;
 
   /**
    * Fill stats in DB.
@@ -32,9 +29,7 @@ class FillCommands extends DrushCommands {
     $version = Versions::currentVersion();
 
     if (!$version instanceof Versions) {
-      throw new \RuntimeException(
-        t('Invalid current version.')->render()
-      );
+      throw new \RuntimeException('Invalid current version.');
     }
 
     foreach (array_keys(SchemaInterface::LOTTO_STATS_TABLES) as $type) {

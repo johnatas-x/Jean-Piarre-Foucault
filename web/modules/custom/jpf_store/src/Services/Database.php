@@ -11,7 +11,7 @@ use Drupal\jpf_algo\Entity\Prediction;
 use Drupal\jpf_store\Enum\Versions;
 
 /**
- * Database methods.
+ * Database methods for this module.
  */
 class Database implements DatabaseInterface {
 

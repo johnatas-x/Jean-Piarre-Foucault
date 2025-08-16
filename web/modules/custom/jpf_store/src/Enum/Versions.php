@@ -31,7 +31,7 @@ enum Versions: string {
   private const string ARCHIVE_EXTENSION = '.zip';
 
   /**
-   * Define module path to avoid using \Drupal::service('extension.list.module')->getPath('jpf_store').
+   * Define module path to avoid using the 'extension.list.module' service.
    */
   private const string MODULE_PATH = 'modules/custom/jpf_store';
 

@@ -6,14 +6,13 @@
 #  modules/custom/jpf_store/jpf_store.info.yml: n/a
 #  modules/custom/jpf_store/src/Commands/FillCommands.php: n/a
 #  modules/custom/jpf_store/src/Entity/Draw.php: n/a
-#  modules/custom/jpf_store/src/Services/CsvHelper.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-02 10:50+0200\n"
-"PO-Revision-Date: 2025-08-02 10:50+0200\n"
+"POT-Creation-Date: 2025-08-16 18:09+0200\n"
+"PO-Revision-Date: 2025-08-16 18:09+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -33,15 +32,7 @@ msgstr "Contient les fonctionnalités nécessaires pour stocker les données."
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: modules/custom/jpf_store/src/Commands/FillCommands.php:65
-msgid "Do not use \"versions\" and \"all\" options together."
-msgstr "Ne pas utiliser les options \"versions\" et \"all\" ensemble."
-
-#: modules/custom/jpf_store/src/Commands/FillCommands.php:71
-msgid "You must use at least one option between \"versions\" and \"all\"."
-msgstr "Vous devez utiliser au moins une option entre \"versions\" et \"all\"."
-
-#: modules/custom/jpf_store/src/Commands/FillCommands.php:80
+#: modules/custom/jpf_store/src/Commands/FillCommands.php:76
 msgid "This version is undefined or not allowed : @item"
 msgid_plural "These versions are undefined or not allowed : @items"
 msgstr[0] "Cette version n'est pas définie ou n'est pas autorisée : @item"
@@ -58,8 +49,4 @@ msgstr "tirage"
 #: modules/custom/jpf_store/src/Entity/Draw.php:19
 msgid "draws"
 msgstr "tirages"
-
-#: modules/custom/jpf_store/src/Services/CsvHelper.php:47
-msgid "Not enough data in the CSV file"
-msgstr "Le fichier CSV ne contient pas assez de données."
 
