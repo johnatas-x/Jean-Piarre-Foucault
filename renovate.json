@@ -9,6 +9,9 @@
     "johnatas-x"
   ],
   "prHourlyLimit": 3,
+  "postUpdateOptions": [
+    "composerWithAll"
+  ],
   "packageRules": [
     {
       "groupName": "Drupal core",
