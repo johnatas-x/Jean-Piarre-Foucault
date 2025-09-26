@@ -70,6 +70,7 @@ class JpfTokensHooks {
 
     $current_version = Versions::currentVersion();
 
+    /** @var string[] $tokens */
     foreach ($tokens as $name => $original) {
       $replacements[$original] = match($name) {
         'current_version' => $current_version->value ?? t('unknown version')->render(),
