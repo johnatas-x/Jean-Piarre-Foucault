@@ -19,7 +19,7 @@ jobs:
         uses: ./.github/actions/php
 
       - name: Setup DDEV
-        uses: ddev/github-action-setup-ddev@v1.12.0
+        uses: ddev/github-action-setup-ddev@v1.12.1
 
       - name: Setup project
         run: |
