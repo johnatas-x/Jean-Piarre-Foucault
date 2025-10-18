@@ -1,4 +1,4 @@
-ARG PYTHON_TAG=3.13-alpine
+ARG PYTHON_TAG=3.14-alpine
 ARG PYTHON_PORT=5000
 FROM --platform=$BUILDPLATFORM python:${PYTHON_TAG} AS builder
 

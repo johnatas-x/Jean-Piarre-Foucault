@@ -2,6 +2,6 @@ from flask import Blueprint, render_template
 
 blueprint = Blueprint("v5", __name__)
 
-@blueprint.route('/')
+@blueprint.get("/")
 def index():
-    return render_template('v5.html')
+  return render_template("v5.html")
