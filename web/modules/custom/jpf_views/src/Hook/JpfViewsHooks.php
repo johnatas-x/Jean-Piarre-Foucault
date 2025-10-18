@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\jpf_views\Hook;
 
 use Drupal\Core\Hook\Attribute\Hook;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\jpf_store\Services\SchemaInterface;
 use Drupal\views\ViewExecutable;
 
@@ -13,6 +14,8 @@ use Drupal\views\ViewExecutable;
  */
 class JpfViewsHooks {
 
+  use StringTranslationTrait;
+
   /**
    * Implements hook_views_data_alter().
    */
@@ -20,29 +23,29 @@ class JpfViewsHooks {
   public function viewsDataAlter(array &$data): void {
     foreach (SchemaInterface::LOTTO_STATS_TABLES as $table_name) {
       $data[$table_name]['custom_last_date'] = [
-        'title' => t('Custom last date'),
-        'group' => t('Custom Table Views'),
+        'title' => $this->t('Custom last date'),
+        'group' => $this->t('Custom Table Views'),
         'field' => [
-          'title' => t('Custom last date'),
-          'help' => t('Translatable custom last date.'),
+          'title' => $this->t('Custom last date'),
+          'help' => $this->t('Translatable custom last date.'),
           'id' => 'custom_last_date',
         ],
       ];
       $data[$table_name]['custom_best_day'] = [
-        'title' => t('Custom best day'),
-        'group' => t('Custom Table Views'),
+        'title' => $this->t('Custom best day'),
+        'group' => $this->t('Custom Table Views'),
         'field' => [
-          'title' => t('Custom best day'),
-          'help' => t('Translatable custom best day.'),
+          'title' => $this->t('Custom best day'),
+          'help' => $this->t('Translatable custom best day.'),
           'id' => 'custom_best_day',
         ],
       ];
       $data[$table_name]['delta'] = [
-        'title' => t('Delta'),
-        'group' => t('Custom Table Views'),
+        'title' => $this->t('Delta'),
+        'group' => $this->t('Custom Table Views'),
         'field' => [
-          'title' => t('Delta'),
-          'help' => t('Delta between last and frequency.'),
+          'title' => $this->t('Delta'),
+          'help' => $this->t('Delta between last and frequency.'),
           'id' => 'delta',
         ],
       ];

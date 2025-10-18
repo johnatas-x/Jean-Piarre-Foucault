@@ -15,7 +15,7 @@ class JpfHomeHooks {
    * Implements hook_theme().
    */
   #[Hook('theme')]
-  public function theme() : array {
+  public function theme(): array {
     return [
       'homepage' => [
         'variables' => [

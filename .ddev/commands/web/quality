@@ -4,5 +4,6 @@
 ## Usage: quality {tasks}
 ## Example: ddev quality (run GrumPHP with all tasks)
 ## Example: ddev quality phpcs,phpstan (run GrumPHP only with PHPCS and PhpStan tasks)
+## AutocompleteTerms: ["composer","composer_normalize","jsonlint","phpa","phpcpd","phpcs","phplint","phpmd","phpmnd","phpstan","twigcsfixer","xmllint","yamllint"]
 
 php ./vendor/bin/grumphp run --tasks="$1"

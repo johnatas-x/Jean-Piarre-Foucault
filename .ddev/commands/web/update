@@ -6,7 +6,9 @@
 
 composer install --no-progress
 sudo cp "$DDEV_APPROOT/.ddev/files/settings.ddev.php" "$DDEV_APPROOT/web/sites/default/settings.ddev.php"
+if [[ "$1" == "--cim-before-trans" ]]; then
+  drush cr
+  drush cim -y
+fi
+bash "$DDEV_APPROOT/.ddev/commands/web/trans-import"
 drush deploy
-drush locale-check
-drush locale-update
-drush cr

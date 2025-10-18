@@ -14,11 +14,35 @@
   ],
   "packageRules": [
     {
+      "matchPackageNames": [
+        "roave/security-advisories"
+      ],
+      "enabled": false
+    },
+    {
       "groupName": "Drupal core",
       "matchPackageNames": [
         "drupal/core-**"
       ],
-      "rangeStrategy": "update-lockfile"
+      "postUpdateOptions": [
+        "composerWithAll"
+      ]
+    },
+    {
+      "groupName": "Composer",
+      "matchPackageNames": [
+        "composer/composer"
+      ],
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "enabled": true,
+      "commitMessageTopic": "{{depName}}"
     },
     {
       "groupName": "NPM asset",
@@ -45,6 +69,31 @@
   "enabledManagers": [
     "github-actions",
     "pip_requirements",
-    "composer"
+    "composer",
+    "custom.regex"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.ddev/config\\.yaml$/"
+      ],
+      "matchStrings": [
+        "composer_version:\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "composer",
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.ddev/\\.env\\.varnish$/"
+      ],
+      "matchStrings": [
+        "VARNISH_DOCKER_IMAGE=\\s*\"(?<depName>[\\w\\-/\\.]+):(?<currentValue>\\d+\\.\\d+)\""
+      ],
+      "datasourceTemplate": "docker"
+    }
+
   ]
 }

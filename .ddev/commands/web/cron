@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+## Description: Enable or disable cron execution
+## Usage: cron {start|stop}
+## Example: ddev cron stop
+## AutocompleteTerms: ["start","stop"]
+
+source "$DDEV_APPROOT/scripts/custom-outputs.sh"
+
+if [[ "$1" != "start" && "$1" != "stop" ]]; then
+  echo_red "Error: the first argument must be 'start' or 'stop'."
+  exit 0
+fi
+
+sudo supervisorctl "$1" cron

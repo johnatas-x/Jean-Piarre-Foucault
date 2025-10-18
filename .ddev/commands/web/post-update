@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+## Description: Update stack after a core or a module update
+## Usage: post-update
+## Example: ddev post-update
+
+composer install --no-progress
+drush updatedb --no-cache-clear
+drush cr
+drush cex -y

@@ -15,6 +15,7 @@
         "source": "https://github.com/johnatas-x/Jean-Piarre-Foucault"
     },
     "require": {
+        "php": "^8.4",
         "ext-pdo": "*",
         "ext-simplexml": "*",
         "ext-tokenizer": "*",
@@ -27,6 +28,7 @@
         "drupal/core-composer-scaffold": "11.2.5",
         "drupal/core-project-message": "11.2.5",
         "drupal/core-recommended": "11.2.5",
+        "drupal/core-vendor-hardening": "11.2.5",
         "drupal/drush_batch_bar": "^1.0@beta",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
@@ -41,12 +43,10 @@
         "npm-asset/chart.js": "^4.4",
         "npm-asset/chartjs-adapter-date-fns": "^3.0",
         "npm-asset/chartjs-plugin-datalabels": "^2.0",
-        "oomphinc/composer-installers-extender": "^2.0",
-        "symfony/dotenv": "^7.1"
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.47",
-        "johnatas-x/angry-bearded": "^2.5",
+        "johnatas-x/angry-bearded": "^2.7",
         "roave/security-advisories": "dev-latest"
     },
     "conflict": {
@@ -71,18 +71,186 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
+            "drupal/core-vendor-hardening": true,
             "ergebnis/composer-normalize": true,
             "oomphinc/composer-installers-extender": true,
             "phpro/grumphp": true,
             "phpstan/extension-installer": true
         },
+        "discard-changes": true,
+        "preferred-install": "dist",
         "sort-packages": true
     },
     "extra": {
+        "drupal-core-vendor-hardening": {
+            "amphp/byte-stream": [
+                ".github"
+            ],
+            "amphp/cache": [
+                ".github"
+            ],
+            "amphp/dns": [
+                ".github"
+            ],
+            "amphp/parser": [
+                ".github"
+            ],
+            "amphp/pipeline": [
+                ".github"
+            ],
+            "amphp/process": [
+                ".github"
+            ],
+            "amphp/socket": [
+                ".github"
+            ],
+            "amphp/sync": [
+                ".github"
+            ],
+            "chi-teck/drupal-code-generator": [
+                ".github"
+            ],
+            "consolidation/filter-via-dot-access-data": [
+                ".github",
+                ".scenarios.lock",
+                "tests"
+            ],
+            "consolidation/log": [
+                ".github",
+                "tests"
+            ],
+            "consolidation/site-alias": [
+                ".github",
+                "tests"
+            ],
+            "consolidation/site-process": [
+                ".github",
+                "tests"
+            ],
+            "cweagans/composer-patches": [
+                "tests"
+            ],
+            "doctrine/annotations": [
+                "docs"
+            ],
+            "doctrine/collections": [
+                "docs"
+            ],
+            "drupal/admin_toolbar": [
+                "tests",
+                "admin_toolbar_search/tests",
+                "admin_toolbar_tools/tests"
+            ],
+            "drupal/charts": [
+                "tests"
+            ],
+            "drupal/coder": [
+                ".github"
+            ],
+            "drupal/memcache": [
+                "tests"
+            ],
+            "drupal/potx": [
+                "tests"
+            ],
+            "drupal/purge": [
+                "tests"
+            ],
+            "drupal/token": [
+                "tests"
+            ],
+            "drupal/ultimate_cron": [
+                "tests"
+            ],
+            "drupal/varnish_purge": [
+                ".circleci",
+                "tests"
+            ],
+            "drush/drush": [
+                ".ddev",
+                ".github",
+                "docs",
+                "examples"
+            ],
+            "ekino/phpstan-banned-code": [
+                ".github",
+                "tests"
+            ],
+            "friendsoftwig/twigcs": [
+                "doc"
+            ],
+            "gitonomy/gitlib": [
+                ".github",
+                "doc",
+                "tests"
+            ],
+            "grasmash/expander": [
+                ".github",
+                "tests"
+            ],
+            "grasmash/yaml-cli": [
+                ".github",
+                "tests"
+            ],
+            "johnatas-x/angry-bearded": [
+                ".github"
+            ],
+            "johnatas-x/php-deprecation-detector": [
+                "tests"
+            ],
+            "kelunik/certificate": [
+                ".github"
+            ],
+            "mglaman/phpstan-drupal": [
+                ".github"
+            ],
+            "oomphinc/composer-installers-extender": [
+                "tests"
+            ],
+            "pear/archive_tar": [
+                ".github"
+            ],
+            "phootwork/collection": [
+                ".github"
+            ],
+            "phootwork/lang": [
+                ".github"
+            ],
+            "php-tuf/composer-stager": [
+                "docs"
+            ],
+            "phpcompatibility/php-compatibility": [
+                "PHPCompatibility/Docs"
+            ],
+            "phpowermove/docblock": [
+                ".github",
+                "tests"
+            ],
+            "phpro/grumphp": [
+                "doc"
+            ],
+            "psr/http-message": [
+                "docs"
+            ],
+            "rskuipers/php-assumptions": [
+                "tests"
+            ],
+            "seld/cli-prompt": [
+                ".github"
+            ],
+            "slevomat/coding-standard": [
+                "doc"
+            ],
+            "webflo/drupal-finder": [
+                ".github",
+                "tests"
+            ]
+        },
         "drupal-scaffold": {
             "file-mapping": {
                 "[project-root]/.editorconfig": false,
                 "[project-root]/.editorconfig.dist": false,
+                "[project-root]/.gitattributes": false,
                 "[project-root]/phpcs.xml.dist": false,
                 "[project-root]/phpmd.xml.dist": false,
                 "[project-root]/phpstan-drupal.neon.dist": false,
@@ -99,10 +267,12 @@
                 "[web-root]/install.php": false,
                 "[web-root]/modules/README.txt": false,
                 "[web-root]/profiles/README.txt": false,
+                "[web-root]/robots.txt": false,
                 "[web-root]/sites/README.txt": false,
                 "[web-root]/sites/default/README.txt": false,
                 "[web-root]/sites/default/default.services.yml": false,
                 "[web-root]/sites/default/default.settings.php": false,
+                "[web-root]/sites/development.services.yml": false,
                 "[web-root]/sites/example.settings.local.php": false,
                 "[web-root]/sites/example.sites.php": false,
                 "[web-root]/themes/README.txt": false,

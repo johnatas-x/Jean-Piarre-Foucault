@@ -10,7 +10,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\jpf_utils\Entity\BallEntityBase;
 
 /**
- * Draw entity.
+ * Draw entity declaration.
  */
 #[ContentEntityType(
   id: 'draw',
@@ -31,7 +31,8 @@ use Drupal\jpf_utils\Entity\BallEntityBase;
   handlers: [
     'storage' => SqlContentEntityStorage::class,
   ],
-  base_table: 'lotto_draws',
+  base_table: 'lotto_draws'
 )]
 class Draw extends BallEntityBase {
+
 }

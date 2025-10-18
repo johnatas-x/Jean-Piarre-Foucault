@@ -6,6 +6,7 @@ namespace Drupal\jpf_tokens\Hook;
 
 use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\jpf_import\Cron\ImportDynamicData;
 use Drupal\jpf_store\Enum\Versions;
 
@@ -14,6 +15,8 @@ use Drupal\jpf_store\Enum\Versions;
  */
 class JpfTokensHooks {
 
+  use StringTranslationTrait;
+
   /**
    * Implements hook_token_info().
    */
@@ -21,24 +24,24 @@ class JpfTokensHooks {
   public function tokenInfo(): array {
     $types = [
       'versions' => [
-        'name' => t('Versions tokens'),
-        'description' => t('Define custom tokens for versions.'),
+        'name' => $this->t('Versions tokens'),
+        'description' => $this->t('Define custom tokens for versions.'),
       ],
     ];
 
     $tokens = [
       'versions' => [
         'current_version' => [
-          'name' => t('Current version'),
-          'description' => t('Current version.'),
+          'name' => $this->t('Current version'),
+          'description' => $this->t('Current version.'),
         ],
         'start' => [
-          'name' => t('Start date'),
-          'description' => t('The first day of the current version.'),
+          'name' => $this->t('Start date'),
+          'description' => $this->t('The first day of the current version.'),
         ],
         'last_update' => [
-          'name' => t('Last update'),
-          'description' => t('Date and time of the last update for the current version.'),
+          'name' => $this->t('Last update'),
+          'description' => $this->t('Date and time of the last update for the current version.'),
         ],
       ],
     ];
@@ -73,8 +76,8 @@ class JpfTokensHooks {
     /** @var string[] $tokens */
     foreach ($tokens as $name => $original) {
       $replacements[$original] = match($name) {
-        'current_version' => $current_version->value ?? t('unknown version')->render(),
-        'start' => $current_version?->humanReadableBeginDate() ?? t('unknown date')->render(),
+        'current_version' => $current_version->value ?? $this->t('unknown version')->render(),
+        'start' => $current_version?->humanReadableBeginDate() ?? $this->t('unknown date')->render(),
         'last_update' => ImportDynamicData::lastRun(),
         default => '',
       };

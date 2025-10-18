@@ -7,10 +7,10 @@ grumphp:
   git_hook_variables:
     VAGRANT_HOST_DIR: .
     VAGRANT_PROJECT_DIR: /var/www
-    EXEC_GRUMPHP_COMMAND: ddev exec
-    ENV: {}
+    EXEC_GRUMPHP_COMMAND: ddev exec php
+    ENV: { }
   stop_on_failure: false
-  ignore_unstaged_changes: true
+  ignore_unstaged_changes: false
   hide_circumvention_tip: true
   process_timeout: 60
   additional_info: null
@@ -78,7 +78,7 @@ grumphp:
         - web/themes/contrib
         - web/.ht.router.php
       metadata:
-        blocking: true
+        blocking: false
         enabled: true
         label: null
         priority: 0
@@ -144,6 +144,7 @@ grumphp:
         label: null
         priority: 0
         task: null
+      parallel: null
     phplint:
       exclude: [ ]
       jobs: ~
@@ -273,6 +274,21 @@ grumphp:
         - modules/contrib
         - profiles/contrib
         - themes/contrib
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    twigcsfixer:
+      paths:
+        - web/modules/custom
+      level: 'warning'
+      config: ~
+      report: 'text'
+      no-cache: false
+      verbose: false
+      triggered_by: [ 'twig' ]
       metadata:
         blocking: true
         enabled: true

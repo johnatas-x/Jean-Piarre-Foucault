@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+## Description: Import updated translations
+## Usage: trans-import
+## Example: ddev trans-import
+
+drush locale-check
+drush locale-update
+drush cr
