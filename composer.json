@@ -22,7 +22,7 @@
         "ext-xmlwriter": "*",
         "ext-zip": "*",
         "composer/installers": "^2.3",
-        "cweagans/composer-patches": "^1.7",
+        "cweagans/composer-patches": "^2.0",
         "drupal/admin_toolbar": "^3.5",
         "drupal/charts": "^5.1",
         "drupal/core-composer-scaffold": "11.2.5",
