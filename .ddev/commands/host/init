@@ -14,6 +14,15 @@ EXCLUDES_PATH=(
 )
 EXCLUDE_EXPR=""
 
+# Exclude expression args for find command.
+for e in "${EXCLUDES_PATH[@]}"; do
+  if [ -z "$EXCLUDE_EXPR" ]; then
+    EXCLUDE_EXPR="-path \"$e\""
+  else
+    EXCLUDE_EXPR="$EXCLUDE_EXPR -o -path \"$e\""
+  fi
+done
+
 # Stop project if running.
 ddev stop
 # Remove unversioned files if exists.
@@ -25,6 +34,7 @@ cp "$DDEV_APPROOT/python/jean-pyarre/versions/v5.py.example" "$DDEV_APPROOT/pyth
 # Install dependencies.
 ddev composer install
 # Usage of settings.ddev.php.
+chmod -R 777 "$DDEV_APPROOT/web/sites/default"
 cp "$DDEV_APPROOT/.ddev/files/settings.ddev.php" "$DDEV_APPROOT/web/sites/default/settings.ddev.php"
 # Install site.
 ddev drush site:install 'minimal' --existing-config --account-name=admin --account-pass=admin -y

@@ -262,7 +262,6 @@
                 "[web-root]/.csslintrc": false,
                 "[web-root]/.eslintignore": false,
                 "[web-root]/.eslintrc.json": false,
-                "[web-root]/.ht.router.php": false,
                 "[web-root]/INSTALL.txt": false,
                 "[web-root]/README.md": false,
                 "[web-root]/README.txt": false,

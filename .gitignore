@@ -80,10 +80,6 @@
 # locations to the top-level .gitignore file, as shown below.
 # ------------------------------------------------------------------
 /.gitattributes
-/web/.htaccess
-/web/autoload.php
-/web/index.php
-/web/robots.txt
 /web/sites/default/default.services.yml
 /web/sites/default/default.settings.php
 /web/sites/development.services.yml
