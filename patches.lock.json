@@ -1,0 +1,83 @@
+{
+    "_hash": "668aa200771144f3c77794a9611c05e6891c0ad26291a46b3d4b6de9d8802fb5",
+    "patches": {
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "#3483087 - Allow project-relative path for included translation .po files",
+                "url": "./patches/core/3483087-10167.patch",
+                "sha256": "44827da9db6405e8a22db86ed28da546b6a357127d7ee901910ba2ac58e41ad3",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "drupal/potx": [
+            {
+                "package": "drupal/potx",
+                "description": "#3338225 - Deprecated function: preg_replace(): Passing null to parameter #3 ($subject) of type array|string",
+                "url": "./patches/modules/potx/3338225-13.patch",
+                "sha256": "4de7d22d33218610d3f849663068a79bbae29ef4e44c65f5797b6cd4ba761556",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/potx",
+                "description": "#3444016 - New Drush command for developers for extracting translations of custom module, theme or profile",
+                "url": "https://www.drupal.org/files/issues/2025-07-18/3444016-6.patch",
+                "sha256": "6fd76601d09bf1cfc6210d3728cf416b591b61496f25eeb848c454a49eab8516",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "drupal/purge": [
+            {
+                "package": "drupal/purge",
+                "description": "#3418683 - Include link to purge config page in admin menu",
+                "url": "./patches/modules/purge/3418683-33.patch",
+                "sha256": "6fa6f15a4b1af1ca51f7d5e17a7ce3023de596a99209696fa8560408d5c0797d",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/purge",
+                "description": "#3511668 - PHP 8.4 support implicit null deprecated",
+                "url": "./patches/modules/purge/3511668-53.patch",
+                "sha256": "ae426247d5805936741c408d90964d98f5a1628592f1c1f176de4fe595cbda21",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "drupal/varnish_purge": [
+            {
+                "package": "drupal/varnish_purge",
+                "description": "#3519158 - varnish_image_purge sub-module D11 Compatibility error",
+                "url": "./patches/modules/varnish_purge/3519158-18.patch",
+                "sha256": "a7483540e870b1d97a5e7d2e8e561130000ae85a652bbafdab0ecf2192129dcd",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/varnish_purge",
+                "description": "CNAM-3 - Moove config link inside performance menu",
+                "url": "./patches/modules/varnish_purge/NOREF.patch",
+                "sha256": "f4386f59d02b00d9bc81605d30a8d08295a3add7953d1b81ab440a2842e1e8ad",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

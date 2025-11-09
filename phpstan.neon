@@ -10,3 +10,11 @@ parameters:
       - vendor/drush/drush
     paths:
       - web/modules/custom
+    shipmonkDeadCode:
+      detect:
+        deadMethods: true
+        deadConstants: true
+        deadEnumCases: true
+      usageProviders:
+        phpunit:
+          enabled: false

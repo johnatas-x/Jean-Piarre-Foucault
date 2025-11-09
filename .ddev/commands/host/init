@@ -1,16 +1,24 @@
 #!/bin/bash
 
-## Description: Initialize the project
+## Description: Init or re-init project
 ## Usage: init
 ## Example: "ddev init"
 
 WEB_PATH="$DDEV_APPROOT/web"
+EXCLUDES_PATH=(
+  "$WEB_PATH/sites/default"
+  "$WEB_PATH/sites/default/settings.local.php"
+  "$WEB_PATH/sites/default/settings.php"
+  "$WEB_PATH/sites/default/services.yml"
+  "$WEB_PATH/sites/development.services.yml"
+)
+EXCLUDE_EXPR=""
 
 # Stop project if running.
 ddev stop
 # Remove unversioned files if exists.
 rm -Rf "$DDEV_APPROOT/vendor" "$DDEV_APPROOT/web/modules/contrib" "$DDEV_APPROOT/web/themes/contrib" "$DDEV_APPROOT/web/core"
-find "$WEB_PATH/sites" -mindepth 1 ! \( -path "$WEB_PATH/sites/default" -o -path "$WEB_PATH/sites/default/settings.php" -o -path "$WEB_PATH/sites/default/services.yml" \)  -exec rm -rf {} +
+eval "find \"$WEB_PATH/sites\" -mindepth 1 ! \( $EXCLUDE_EXPR \) -exec rm -rf {} +"
 # Copy Python example files.
 cp "$DDEV_APPROOT/python/jean-pyarre/templates/v5.html.example" "$DDEV_APPROOT/python/jean-pyarre/templates/v5.html"
 cp "$DDEV_APPROOT/python/jean-pyarre/versions/v5.py.example" "$DDEV_APPROOT/python/jean-pyarre/versions/v5.py"

@@ -61,6 +61,15 @@
         "shivammathur/setup-php",
         "tonybaloney/pycharm-security"
       ]
+    },
+    {
+      "groupName": "Angry bearded",
+      "matchPackageNames": [
+        "johnatas-x/angry-bearded"
+      ],
+      "postUpdateOptions": [
+        "composerWithAll"
+      ]
     }
   ],
   "labels": [

@@ -77,6 +77,9 @@
             "phpro/grumphp": true,
             "phpstan/extension-installer": true
         },
+        "audit": {
+            "abandoned": "ignore"
+        },
         "discard-changes": true,
         "preferred-install": "dist",
         "sort-packages": true

@@ -63,6 +63,8 @@
           \Drupal\jpf_store\Enum\Versions,
           \Drupal\media\Entity\Media,
           \Drupal\node\Entity\Node,
+          \Drupal\node\Entity\NodeType,
+          \Drupal\path_alias\Entity\PathAlias,
           \Drupal\user\Entity\User,
           \Drush\Drush
         </value>

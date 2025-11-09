@@ -4,7 +4,10 @@
 ## Usage: post-update
 ## Example: ddev post-update
 
+composer patches-relock
 composer install --no-progress
+composer update --lock
+composer normalize
 drush updatedb --no-cache-clear
 drush cr
 drush cex -y

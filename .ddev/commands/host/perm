@@ -10,3 +10,4 @@ find web/sites -type d -name files -exec chmod 775 '{}' \; || true
 find web/sites/*/files -type d -exec chmod 775 '{}' \; || true
 find web/sites/*/files -type f -exec chmod 664 '{}' \; || true
 find web/sites/*/settings* -type f -exec chmod 444 '{}' \; || true
+find web/sites/*/services* -type f -exec chmod 444 '{}' \; || true
