@@ -11,7 +11,7 @@ database:
     version: "11.8"
 use_dns_when_possible: true
 timezone: Europe/Paris
-composer_version: 2.9.1
+composer_version: 2.9.2
 disable_settings_management: true
 web_environment: []
 corepack_enable: false
