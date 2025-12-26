@@ -75,7 +75,7 @@ class JpfTokensHooks {
 
     /** @var string[] $tokens */
     foreach ($tokens as $name => $original) {
-      $replacements[$original] = match($name) {
+      $replacements[$original] = match ($name) {
         'current_version' => $current_version->value ?? $this->t('unknown version')->render(),
         'start' => $current_version?->humanReadableBeginDate() ?? $this->t('unknown date')->render(),
         'last_update' => ImportDynamicData::lastRun(),

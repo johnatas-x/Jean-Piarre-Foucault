@@ -7,9 +7,7 @@ namespace Drupal\jpf_home\Services;
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\Sql\Query;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\jpf_algo\Entity\Prediction;
 use Drupal\jpf_store\Services\DatabaseInterface;
 use Drupal\jpf_utils\Entity\BallEntityBase;
 
@@ -17,6 +15,28 @@ use Drupal\jpf_utils\Entity\BallEntityBase;
  * Helper methods for homepage.
  */
 class HomepageHelper implements HomepageHelperInterface {
+
+  /*
+   * PHPCS is not yet 100% compatible with PHP 8.4, so we are forced to ignore
+   * the "Property hooks" as long as they are not supported.
+   *
+   * phpcs:disable
+   */
+
+  /**
+   * The last record ID (the last draw).
+   *
+   * @var int|null
+   */
+  protected private(set) ?int $lastRecordId {
+    get => $this->lastRecordId ??= $this->jpfDatabase->getLastRecordId();
+  }
+
+  /*
+   * Re-enable PHPCS for the rest of the file.
+   *
+   * phpcs:enable
+   */
 
   /**
    * The HomepageHelper constructor.
@@ -39,75 +59,57 @@ class HomepageHelper implements HomepageHelperInterface {
    * {@inheritDoc}
    */
   public function getLastData(string $data_type, string $property = 'id'): array {
-    $last_data = [
-      'balls' => [],
-      'lucky' => NULL,
-    ];
-
-    try {
-      $last_record = $this->entityTypeManager
-        ->getStorage($data_type)
-        ->loadByProperties([$property => $this->jpfDatabase->getLastRecordId()]);
-
-      $balls_entity = reset($last_record);
-
-      if ($balls_entity instanceof BallEntityBase) {
-        $last_data['balls'] = $balls_entity->balls();
-        $last_data['lucky'] = $balls_entity->lucky();
-      }
-    }
-    catch (InvalidPluginDefinitionException | PluginNotFoundException $exception) {
-      $this->logger->get('jpf_home')->error($exception->getMessage());
-
-      return $last_data;
-    }
-
-    return $last_data;
+    return $this->getData($data_type, $property, $this->lastRecordId);
   }
 
   /**
    * {@inheritDoc}
    */
   public function nextPrediction(): array {
-    $next_predict = [
+    return $this->getData('prediction', 'draw_id', $this->lastRecordId + 1);
+  }
+
+  /**
+   * Get Homepage data.
+   *
+   * @param string $data_type
+   *   The data type.
+   * @param string $property
+   *   The entity property to load.
+   * @param int|null $value
+   *   The entity property value to load.
+   *
+   * @return array{
+   *   balls: list<int|null>,
+   *   lucky: int|null
+   *   }
+   *   Data to display.
+   */
+  private function getData(string $data_type, string $property, ?int $value): array {
+    $data = [
       'balls' => [],
       'lucky' => NULL,
     ];
 
     try {
-      $entity_storage = $this->entityTypeManager->getStorage('prediction');
-      $prediction_query = $entity_storage->getQuery();
+      $entities = $this->entityTypeManager
+        ->getStorage($data_type)
+        ->loadByProperties([$property => $value]);
 
-      if (!$prediction_query instanceof Query) {
-        throw new \RuntimeException('Error during prediction query.');
-      }
+      $entity = reset($entities);
 
-      $prediction_ids = $prediction_query->accessCheck()->notExists('draw_id')->execute();
-
-      if (empty($prediction_ids) || !is_array($prediction_ids)) {
-        throw new \RuntimeException('No existing prediction.');
-      }
-
-      $prediction_id = reset($prediction_ids);
-
-      if (!is_numeric($prediction_id)) {
-        throw new \RuntimeException('Invalid prediction ID.');
-      }
-
-      $prediction = $entity_storage->load((int) $prediction_id);
-
-      if ($prediction instanceof Prediction) {
-        $next_predict['balls'] = $prediction->balls();
-        $next_predict['lucky'] = $prediction->lucky();
+      if ($entity instanceof BallEntityBase) {
+        $data['balls'] = $entity->balls();
+        $data['lucky'] = $entity->lucky();
       }
     }
-    catch (InvalidPluginDefinitionException | PluginNotFoundException | \RuntimeException $exception) {
+    catch (InvalidPluginDefinitionException | PluginNotFoundException $exception) {
       $this->logger->get('jpf_home')->error($exception->getMessage());
 
-      return $next_predict;
+      return $data;
     }
 
-    return $next_predict;
+    return $data;
   }
 
 }

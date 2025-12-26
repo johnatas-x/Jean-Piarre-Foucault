@@ -3,5 +3,40 @@
 {% block title %}Algorithm v5{% endblock %}
 
 {% block content %}
-<h1>Dumbledore was here</h1>
+<h1>Lotto v5 – Prediction Engine</h1>
+
+<section>
+  <form method="post" action="{{ url_for('v5.predict') }}">
+    <button type="submit">Predict next draw</button>
+  </form>
+</section>
+
+<hr>
+
+<section>
+  <h2>Last recorded prediction</h2>
+
+  {% if last_prediction %}
+  <p>
+    <strong>Prediction ID:</strong> {{ last_prediction.id }}<br>
+    <strong>Predicted draw ID:</strong> {{ last_prediction.draw_id }}<br>
+    <strong>Version:</strong> {{ last_prediction.version }}
+  </p>
+
+  <p>
+    <strong>Balls:</strong>
+    {{ last_prediction.ball_1 }},
+    {{ last_prediction.ball_2 }},
+    {{ last_prediction.ball_3 }},
+    {{ last_prediction.ball_4 }},
+    {{ last_prediction.ball_5 }}
+  </p>
+
+  <p>
+    <strong>Lucky ball:</strong> {{ last_prediction.ball_0 }}
+  </p>
+  {% else %}
+  <p>No prediction recorded yet for version v5.</p>
+  {% endif %}
+</section>
 {% endblock %}

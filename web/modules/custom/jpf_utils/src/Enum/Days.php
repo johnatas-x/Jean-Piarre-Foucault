@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_utils\Enum;
 
-use Drupal\jpf_utils\Traits\EnumToArray;
+use Drupal\jpf_utils\Traits\EnumToArrayTrait;
 
 /**
  * Days mapping and methods.
  */
 enum Days: string {
 
-  use EnumToArray;
+  use EnumToArrayTrait;
 
   case Monday = 'Monday';
   case Tuesday = 'Tuesday';

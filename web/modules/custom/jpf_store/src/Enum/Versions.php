@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Drupal\jpf_store\Enum;
 
 use Drupal\Component\Datetime\DateTimePlus;
-use Drupal\jpf_utils\Traits\EnumToArray;
+use Drupal\jpf_utils\Traits\EnumToArrayTrait;
 
 /**
  * Existing versions of lotto files.
  */
 enum Versions: string {
 
-  use EnumToArray;
+  use EnumToArrayTrait;
 
   case First = 'v1';
   case Second = 'v2';

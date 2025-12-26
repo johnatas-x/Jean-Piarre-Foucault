@@ -1,7 +1,169 @@
-from flask import Blueprint, render_template
+from contextlib import closing
+from flask import Blueprint, render_template, redirect, url_for
+import mysql.connector
+from typing import Dict, Any, Optional, List
 
 blueprint = Blueprint("v5", __name__)
 
+
+# --- Database access --------------------------------------------------------
+
+
+def get_connection() -> mysql.connector.MySQLConnection:
+    return mysql.connector.connect(
+        database="db",
+        user="db",
+        password="db",
+        host="db",
+        auth_plugin="mysql_native_password",
+    )
+
+
+# --- Data helpers -----------------------------------------------------------
+
+
+def get_last_v5_draw_id(conn: mysql.connector.MySQLConnection) -> int:
+    with closing(conn.cursor()) as cursor:
+        cursor.execute(
+            "SELECT MAX(id) FROM lotto_draws WHERE version = %s",
+            ("v5",),
+        )
+        row = cursor.fetchone()
+        return int(row[0]) if row and row[0] is not None else 0
+
+
+def get_ball_stats(conn: mysql.connector.MySQLConnection) -> Dict[int, float]:
+    stats: Dict[int, float] = {}
+    with closing(conn.cursor()) as cursor:
+        cursor.execute("SELECT ball, percentage FROM lotto_balls_stats")
+        for ball, pct in cursor.fetchall():
+            stats[int(ball)] = float(pct)
+    return stats
+
+
+def get_lucky_stats(conn: mysql.connector.MySQLConnection) -> Dict[int, float]:
+    stats: Dict[int, float] = {}
+    with closing(conn.cursor()) as cursor:
+        cursor.execute("SELECT ball, percentage FROM lotto_lucky_stats")
+        for ball, pct in cursor.fetchall():
+            stats[int(ball)] = float(pct)
+    return stats
+
+
+def get_last_prediction(
+    conn: mysql.connector.MySQLConnection,
+) -> Optional[Dict[str, Any]]:
+    with closing(conn.cursor(dictionary=True)) as cursor:
+        cursor.execute(
+            """
+            SELECT
+              id,
+              draw_id,
+              version,
+              ball_1,
+              ball_2,
+              ball_3,
+              ball_4,
+              ball_5,
+              ball_0
+            FROM lotto_prediction
+            WHERE version = %s
+            ORDER BY id DESC
+            LIMIT 1
+            """,
+            ("v5",),
+        )
+        return cursor.fetchone()
+
+
+# --- Prediction logic (level 1) -------------------------------------------------------
+
+
+def compute_prediction(conn: mysql.connector.MySQLConnection) -> Dict[str, Any]:
+
+    last_draw_id = get_last_v5_draw_id(conn)
+    next_draw_id = last_draw_id + 1
+
+    balls_stats = get_ball_stats(conn)
+    lucky_stats = get_lucky_stats(conn)
+
+    # Score function for regular balls
+    def ball_score(b: int) -> float:
+        return balls_stats.get(b, 0.0)
+
+    ordered_balls = sorted(range(1, 50), key=ball_score, reverse=True)
+    selected_balls = sorted(ordered_balls[:5])
+
+    # Score function for lucky balls
+    def lucky_score(b: int) -> float:
+        return lucky_stats.get(b, 0.0)
+
+    ordered_lucky = sorted(range(1, 11), key=lucky_score, reverse=True)
+    lucky_ball = ordered_lucky[0]
+
+    return {
+        "draw_id": next_draw_id,
+        "version": "v5",
+        "ball_1": selected_balls[0],
+        "ball_2": selected_balls[1],
+        "ball_3": selected_balls[2],
+        "ball_4": selected_balls[3],
+        "ball_5": selected_balls[4],
+        "ball_0": lucky_ball,
+    }
+
+
+def save_prediction(
+    conn: mysql.connector.MySQLConnection,
+    prediction: Dict[str, Any],
+) -> None:
+    with closing(conn.cursor()) as cursor:
+        cursor.execute(
+            """
+            INSERT INTO lotto_prediction
+              (draw_id, version, ball_1, ball_2, ball_3, ball_4, ball_5, ball_0)
+            VALUES
+              (%s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (
+                prediction["draw_id"],
+                prediction["version"],
+                prediction["ball_1"],
+                prediction["ball_2"],
+                prediction["ball_3"],
+                prediction["ball_4"],
+                prediction["ball_5"],
+                prediction["ball_0"],
+            ),
+        )
+        conn.commit()
+
+
+# --- Routes -----------------------------------------------------------------
+
+
 @blueprint.get("/")
 def index():
-  return render_template("v5.html")
+    last_prediction: Optional[Dict[str, Any]] = None
+
+    try:
+        conn = get_connection()
+        with closing(conn):
+            last_prediction = get_last_prediction(conn)
+    except mysql.connector.Error as exc:
+        print(f"[v5] Database error in index(): {exc}")
+
+    return render_template("v5.html", last_prediction=last_prediction)
+
+
+@blueprint.post("/predict")
+def predict():
+    try:
+        conn = get_connection()
+        with closing(conn):
+            prediction = compute_prediction(conn)
+            save_prediction(conn, prediction)
+    except mysql.connector.Error as exc:
+        print(f"[v5] Database error in predict(): {exc}")
+
+    return redirect(url_for("v5.index"))

@@ -46,7 +46,7 @@
         "oomphinc/composer-installers-extender": "^2.0"
     },
     "require-dev": {
-        "johnatas-x/angry-bearded": "^3.0",
+        "johnatas-x/angry-bearded": "3.1.0-rc4",
         "roave/security-advisories": "dev-latest"
     },
     "conflict": {
@@ -78,9 +78,14 @@
             "phpstan/extension-installer": true
         },
         "audit": {
-            "abandoned": "ignore"
+            "ignore-abandoned": {
+                "doctrine/annotations": "Should be removed with Drupal 11.3.0 (see issue #3550917)."
+            }
         },
         "discard-changes": true,
+        "platform": {
+            "php": "8.4"
+        },
         "preferred-install": "dist",
         "sort-packages": true
     },

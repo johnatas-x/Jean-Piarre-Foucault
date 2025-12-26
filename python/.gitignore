@@ -1,10 +1,3 @@
-# Ignore all directory (private).
-/jean-pyarre/*
-
-# Don't ignore public files.
-!/jean-pyarre/static/styles.css
-!/jean-pyarre/templates/algo.html
-!/jean-pyarre/templates/base.html
-!/jean-pyarre/templates/*.example
-!/jean-pyarre/jean-pyarre.py
-!/jean-pyarre/versions/*.example
+# Ignore private algo until I'm rich.
+/jean-pyarre/templates/v5.html
+/jean-pyarre/versions/v5.py

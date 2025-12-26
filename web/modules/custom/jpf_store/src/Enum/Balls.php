@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Enum;
 
-use Drupal\jpf_utils\Traits\EnumToArray;
+use Drupal\jpf_utils\Traits\EnumToArrayTrait;
 
 /**
  * Available balls.
  */
 enum Balls: string {
 
-  use EnumToArray;
+  use EnumToArrayTrait;
 
   case One = 'Ball one';
   case Two = 'Ball two';

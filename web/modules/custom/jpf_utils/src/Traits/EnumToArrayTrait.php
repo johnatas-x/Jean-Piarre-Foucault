@@ -7,7 +7,7 @@ namespace Drupal\jpf_utils\Traits;
 /**
  * Trait for array methods on current Enum.
  */
-trait EnumToArray {
+trait EnumToArrayTrait {
 
   /**
    * Returns an array with all Enum's names.
