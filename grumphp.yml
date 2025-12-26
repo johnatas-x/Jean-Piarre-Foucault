@@ -182,7 +182,7 @@ grumphp:
         - theme
       metadata:
         blocking: true
-        enabled: true
+        enabled: false # Current dev version failed until pdepend not fully compatible with PHP 8.4.
         label: null
         priority: 0
         task: null
