@@ -169,7 +169,8 @@ grumphp:
         - /^web\/modules\/custom\/(.*)/
         - /^web\/profiles\/custom\/(.*)/
         - /^web\/themes\/custom\/(.*)/
-      exclude: [ ]
+      exclude:
+        - web/modules/custom/jpf_home/src/Services/HomepageHelper.php
       report_format: text
       ruleset:
         - phpmd.xml
@@ -182,7 +183,7 @@ grumphp:
         - theme
       metadata:
         blocking: true
-        enabled: false # Current dev version failed until pdepend not fully compatible with PHP 8.4.
+        enabled: true
         label: null
         priority: 0
         task: null
