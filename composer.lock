@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f081d168b1f424f2347e046f042ecb2",
+    "content-hash": "c3f45406b4dde8f71ef54329c508c0dd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9115,6 +9115,53 @@
             "time": "2025-09-06T11:37:35+00:00"
         },
         {
+            "name": "evenement/evenement",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/evenement.git",
+                "reference": "0a16b0d71ab13284339abb99d9d2bd813640efbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/evenement/zipball/0a16b0d71ab13284339abb99d9d2bd813640efbc",
+                "reference": "0a16b0d71ab13284339abb99d9d2bd813640efbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9 || ^6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Evenement\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                }
+            ],
+            "description": "Événement is a very simple event dispatching library for PHP",
+            "keywords": [
+                "event-dispatcher",
+                "event-emitter"
+            ],
+            "support": {
+                "issues": "https://github.com/igorw/evenement/issues",
+                "source": "https://github.com/igorw/evenement/tree/v3.0.2"
+            },
+            "time": "2023-08-08T05:53:35+00:00"
+        },
+        {
             "name": "fidry/cpu-core-counter",
             "version": "1.3.0",
             "source": {
@@ -9303,16 +9350,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "3.1.0-rc4",
+            "version": "3.1.0-rc5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "a112c8e1547aee7ea8f7c5e9381e29776b8baa01"
+                "reference": "1d721b45ce2b16c77984b28aa37eb584d6e978c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/a112c8e1547aee7ea8f7c5e9381e29776b8baa01",
-                "reference": "a112c8e1547aee7ea8f7c5e9381e29776b8baa01",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/1d721b45ce2b16c77984b28aa37eb584d6e978c7",
+                "reference": "1d721b45ce2b16c77984b28aa37eb584d6e978c7",
                 "shasum": ""
             },
             "require": {
@@ -9323,12 +9370,12 @@
                 "johnatas-x/grumphp-phpa": "2.18.0",
                 "johnatas-x/grumphp-phpdd": "2.18.0",
                 "johnatas-x/phpcpd": "6.0.5",
-                "maglnet/composer-require-checker": "4.19.0",
+                "maglnet/composer-require-checker": "4.20.0",
                 "mglaman/phpstan-drupal": "2.0.10",
                 "php": ">=8.4",
                 "php-parallel-lint/php-parallel-lint": "1.4.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
-                "phpmd/phpmd": "3.x-dev#07ac9e2be6b434581335397debbddc8821b22f02",
+                "phpmd/phpmd": "3.x-dev#1bc8a751cf5694f10d7aafa17a4308c0f33c558b",
                 "phpro/grumphp": "2.18.0",
                 "phpstan/extension-installer": "1.4.3",
                 "phpstan/phpstan": "2.1.33",
@@ -9383,7 +9430,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2025-12-26T09:34:02+00:00"
+            "time": "2026-01-09T23:36:22+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -10099,25 +10146,25 @@
         },
         {
             "name": "maglnet/composer-require-checker",
-            "version": "4.19.0",
+            "version": "4.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maglnet/ComposerRequireChecker.git",
-                "reference": "ac5c3593fac690c9a186c0d9b1b753fc18d04854"
+                "reference": "c62d517ef5ac2d347dd9b3d02c1cc16c0f1091e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maglnet/ComposerRequireChecker/zipball/ac5c3593fac690c9a186c0d9b1b753fc18d04854",
-                "reference": "ac5c3593fac690c9a186c0d9b1b753fc18d04854",
+                "url": "https://api.github.com/repos/maglnet/ComposerRequireChecker/zipball/c62d517ef5ac2d347dd9b3d02c1cc16c0f1091e2",
+                "reference": "c62d517ef5ac2d347dd9b3d02c1cc16c0f1091e2",
                 "shasum": ""
             },
             "require": {
                 "azjezz/psl": "^4.2.0",
                 "composer-runtime-api": "^2.0.0",
                 "ext-phar": "*",
-                "nikic/php-parser": "^5.4.0",
+                "nikic/php-parser": "^5.7.0",
                 "php": "~8.3.0 || ~8.4.0 || ~8.5.0",
-                "symfony/console": "^7.2.1",
+                "symfony/console": "^7.4.1",
                 "webmozart/glob": "^4.7.0"
             },
             "conflict": {
@@ -10126,15 +10173,15 @@
             "require-dev": {
                 "doctrine/coding-standard": "^14.0.0",
                 "ext-zend-opcache": "*",
-                "phing/phing": "^3.0.1",
-                "php-standard-library/phpstan-extension": "^2.0",
+                "phing/phing": "^3.1.1",
+                "php-standard-library/phpstan-extension": "^2.0.2",
                 "php-standard-library/psalm-plugin": "^2.3",
-                "phpstan/phpstan": "^2.1.19",
-                "phpunit/phpunit": "^11.5.27",
+                "phpstan/phpstan": "^2.1.33",
+                "phpunit/phpunit": "^12.5.4",
                 "psalm/plugin-phpunit": "^0.19.5",
-                "roave/infection-static-analysis-plugin": "^1.38.0",
+                "roave/infection-static-analysis-plugin": "^1.42.0",
                 "spatie/temporary-directory": "^2.3.0",
-                "vimeo/psalm": "^6.13.0"
+                "vimeo/psalm": "^6.14.3"
             },
             "bin": [
                 "bin/composer-require-checker"
@@ -10179,9 +10226,9 @@
             ],
             "support": {
                 "issues": "https://github.com/maglnet/ComposerRequireChecker/issues",
-                "source": "https://github.com/maglnet/ComposerRequireChecker/tree/4.19.0"
+                "source": "https://github.com/maglnet/ComposerRequireChecker/tree/4.20.0"
             },
-            "time": "2025-11-29T21:18:59+00:00"
+            "time": "2025-12-29T11:34:42+00:00"
         },
         {
             "name": "marc-mabe/php-enum",
@@ -10544,19 +10591,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pdepend/pdepend.git",
-                "reference": "63dcf3fd07c332268a82a964da60b94f09d55506"
+                "reference": "9f22e169d1707a4e546077665eb7e9e9aef17e22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/63dcf3fd07c332268a82a964da60b94f09d55506",
-                "reference": "63dcf3fd07c332268a82a964da60b94f09d55506",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/9f22e169d1707a4e546077665eb7e9e9aef17e22",
+                "reference": "9f22e169d1707a4e546077665eb7e9e9aef17e22",
                 "shasum": ""
             },
             "require": {
-                "ext-sockets": "*",
                 "fidry/cpu-core-counter": "^1.1",
                 "php": ">=8.1",
                 "php-64bit": "*",
+                "react/child-process": "^0.6.7",
                 "symfony/config": "^5.4 || ^6.0 || ^7.0 || ^8.0",
                 "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0 || ^8.0",
                 "symfony/filesystem": "^5.4 || ^6.0 || ^7.0 || ^8.0",
@@ -10571,6 +10618,9 @@
                 "phpstan/phpstan": "~2.1.32",
                 "phpunit/phpunit": "^10.5.20,<10.5.32 || ^11.0.0",
                 "squizlabs/php_codesniffer": "^3.8.0"
+            },
+            "suggest": {
+                "ext-sockets": "Recommended on Windows for multiprocessing support"
             },
             "bin": [
                 "bin/pdepend"
@@ -10607,7 +10657,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-23T03:36:07+00:00"
+            "time": "2026-01-07T09:19:40+00:00"
         },
         {
             "name": "php-parallel-lint/php-console-color",
@@ -10777,12 +10827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibility.git",
-                "reference": "019728861084036df44f58b31d2daa533d323a78"
+                "reference": "eed6b91eab37a1ae6d093d5e75b45f8a08d18457"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/019728861084036df44f58b31d2daa533d323a78",
-                "reference": "019728861084036df44f58b31d2daa533d323a78",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/eed6b91eab37a1ae6d093d5e75b45f8a08d18457",
+                "reference": "eed6b91eab37a1ae6d093d5e75b45f8a08d18457",
                 "shasum": ""
             },
             "require": {
@@ -10860,7 +10910,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-12-19T00:36:18+00:00"
+            "time": "2025-12-27T22:29:25+00:00"
         },
         {
             "name": "phpcsstandards/phpcsutils",
@@ -10961,18 +11011,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmd/phpmd.git",
-                "reference": "07ac9e2be6b434581335397debbddc8821b22f02"
+                "reference": "1bc8a751cf5694f10d7aafa17a4308c0f33c558b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/07ac9e2be6b434581335397debbddc8821b22f02",
-                "reference": "07ac9e2be6b434581335397debbddc8821b22f02",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/1bc8a751cf5694f10d7aafa17a4308c0f33c558b",
+                "reference": "1bc8a751cf5694f10d7aafa17a4308c0f33c558b",
                 "shasum": ""
             },
             "require": {
                 "composer/xdebug-handler": "^3.0",
                 "ext-xml": "*",
-                "pdepend/pdepend": "3.x-dev#a348a12d483e221f8e0e027953f3b5437d700f41",
+                "pdepend/pdepend": "3.x-dev#df5f2bfe5e392877bdcd6e894eefdc7e0df65f69",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -11040,7 +11090,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-21T20:41:49+00:00"
+            "time": "2026-01-06T20:18:28+00:00"
         },
         {
             "name": "phpro/grumphp",
@@ -11579,6 +11629,231 @@
                 "source": "https://github.com/php-fig/cache/tree/3.0.0"
             },
             "time": "2021-02-03T23:26:27+00:00"
+        },
+        {
+            "name": "react/child-process",
+            "version": "v0.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/child-process.git",
+                "reference": "970f0e71945556422ee4570ccbabaedc3cf04ad3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/child-process/zipball/970f0e71945556422ee4570ccbabaedc3cf04ad3",
+                "reference": "970f0e71945556422ee4570ccbabaedc3cf04ad3",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+                "php": ">=5.3.0",
+                "react/event-loop": "^1.2",
+                "react/stream": "^1.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6 || ^5.7 || ^4.8.36",
+                "react/socket": "^1.16",
+                "sebastian/environment": "^5.0 || ^3.0 || ^2.0 || ^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\ChildProcess\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@clue.engineering",
+                    "homepage": "https://clue.engineering/"
+                },
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "reactphp@ceesjankiewiet.nl",
+                    "homepage": "https://wyrihaximus.net/"
+                },
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com",
+                    "homepage": "https://sorgalla.com/"
+                },
+                {
+                    "name": "Chris Boden",
+                    "email": "cboden@gmail.com",
+                    "homepage": "https://cboden.dev/"
+                }
+            ],
+            "description": "Event-driven library for executing child processes with ReactPHP.",
+            "keywords": [
+                "event-driven",
+                "process",
+                "reactphp"
+            ],
+            "support": {
+                "issues": "https://github.com/reactphp/child-process/issues",
+                "source": "https://github.com/reactphp/child-process/tree/v0.6.7"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2025-12-23T15:25:20+00:00"
+        },
+        {
+            "name": "react/event-loop",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/event-loop.git",
+                "reference": "ba276bda6083df7e0050fd9b33f66ad7a4ac747a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/ba276bda6083df7e0050fd9b33f66ad7a4ac747a",
+                "reference": "ba276bda6083df7e0050fd9b33f66ad7a4ac747a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6 || ^5.7 || ^4.8.36"
+            },
+            "suggest": {
+                "ext-pcntl": "For signal handling support when using the StreamSelectLoop"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\EventLoop\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@clue.engineering",
+                    "homepage": "https://clue.engineering/"
+                },
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "reactphp@ceesjankiewiet.nl",
+                    "homepage": "https://wyrihaximus.net/"
+                },
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com",
+                    "homepage": "https://sorgalla.com/"
+                },
+                {
+                    "name": "Chris Boden",
+                    "email": "cboden@gmail.com",
+                    "homepage": "https://cboden.dev/"
+                }
+            ],
+            "description": "ReactPHP's core reactor event loop that libraries can use for evented I/O.",
+            "keywords": [
+                "asynchronous",
+                "event-loop"
+            ],
+            "support": {
+                "issues": "https://github.com/reactphp/event-loop/issues",
+                "source": "https://github.com/reactphp/event-loop/tree/v1.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2025-11-17T20:46:25+00:00"
+        },
+        {
+            "name": "react/stream",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/stream.git",
+                "reference": "1e5b0acb8fe55143b5b426817155190eb6f5b18d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/stream/zipball/1e5b0acb8fe55143b5b426817155190eb6f5b18d",
+                "reference": "1e5b0acb8fe55143b5b426817155190eb6f5b18d",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+                "php": ">=5.3.8",
+                "react/event-loop": "^1.2"
+            },
+            "require-dev": {
+                "clue/stream-filter": "~1.2",
+                "phpunit/phpunit": "^9.6 || ^5.7 || ^4.8.36"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Stream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@clue.engineering",
+                    "homepage": "https://clue.engineering/"
+                },
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "reactphp@ceesjankiewiet.nl",
+                    "homepage": "https://wyrihaximus.net/"
+                },
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com",
+                    "homepage": "https://sorgalla.com/"
+                },
+                {
+                    "name": "Chris Boden",
+                    "email": "cboden@gmail.com",
+                    "homepage": "https://cboden.dev/"
+                }
+            ],
+            "description": "Event-driven readable and writable streams for non-blocking I/O in ReactPHP",
+            "keywords": [
+                "event-driven",
+                "io",
+                "non-blocking",
+                "pipe",
+                "reactphp",
+                "readable",
+                "stream",
+                "writable"
+            ],
+            "support": {
+                "issues": "https://github.com/reactphp/stream/issues",
+                "source": "https://github.com/reactphp/stream/tree/v1.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-06-11T12:45:25+00:00"
         },
         {
             "name": "roave/security-advisories",
