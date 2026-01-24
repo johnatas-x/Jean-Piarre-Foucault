@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59e00da1a480046924e408e3c6db9bdb",
+    "content-hash": "352fd7c8d1f24f58db548d01f73e4ad1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9116,16 +9116,16 @@
         },
         {
             "name": "friendsoftwig/twigcs",
-            "version": "v6.6.0",
+            "version": "v6.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/friendsoftwig/twigcs.git",
-                "reference": "e9d169005d059e1949d4a828e9512c49845de19a"
+                "reference": "cebf24a0c5826ad2f6b1a56a89ea4c9648f795da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/friendsoftwig/twigcs/zipball/e9d169005d059e1949d4a828e9512c49845de19a",
-                "reference": "e9d169005d059e1949d4a828e9512c49845de19a",
+                "url": "https://api.github.com/repos/friendsoftwig/twigcs/zipball/cebf24a0c5826ad2f6b1a56a89ea4c9648f795da",
+                "reference": "cebf24a0c5826ad2f6b1a56a89ea4c9648f795da",
                 "shasum": ""
             },
             "require": {
@@ -9165,9 +9165,9 @@
             "description": "Checkstyle automation for Twig",
             "support": {
                 "issues": "https://github.com/friendsoftwig/twigcs/issues",
-                "source": "https://github.com/friendsoftwig/twigcs/tree/v6.6.0"
+                "source": "https://github.com/friendsoftwig/twigcs/tree/v6.6.1"
             },
-            "time": "2025-12-11T21:14:59+00:00"
+            "time": "2026-01-23T11:42:09+00:00"
         },
         {
             "name": "gitonomy/gitlib",
@@ -9242,23 +9242,23 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "3.1.1",
+            "version": "3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "295a3b7b29763f1aa77b8e278ca5a12447a4f7c4"
+                "reference": "5946c72d9054fdee088ab195df3faee9a51e7d99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/295a3b7b29763f1aa77b8e278ca5a12447a4f7c4",
-                "reference": "295a3b7b29763f1aa77b8e278ca5a12447a4f7c4",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/5946c72d9054fdee088ab195df3faee9a51e7d99",
+                "reference": "5946c72d9054fdee088ab195df3faee9a51e7d99",
                 "shasum": ""
             },
             "require": {
                 "drupal/coder": "9.0.0-beta1",
                 "ekino/phpstan-banned-code": "3.0.0",
                 "ergebnis/composer-normalize": "2.48.2",
-                "friendsoftwig/twigcs": "6.6.0",
+                "friendsoftwig/twigcs": "6.6.1",
                 "johnatas-x/grumphp-phpa": "2.18.0",
                 "johnatas-x/grumphp-phpdd": "2.18.0",
                 "johnatas-x/phpcpd": "6.0.5",
@@ -9270,13 +9270,13 @@
                 "phpmd/phpmd": "2.15.0",
                 "phpro/grumphp": "2.18.0",
                 "phpstan/extension-installer": "1.4.3",
-                "phpstan/phpstan": "2.1.35",
+                "phpstan/phpstan": "2.1.37",
                 "phpstan/phpstan-deprecation-rules": "2.0.3",
                 "povils/phpmnd": "3.6.0",
                 "shipmonk/dead-code-detector": "0.14.1",
                 "slevomat/coding-standard": "8.26.0",
                 "squizlabs/php_codesniffer": "4.0.1",
-                "vincentlanglet/twig-cs-fixer": "3.12.0"
+                "vincentlanglet/twig-cs-fixer": "3.13.0"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
@@ -9322,7 +9322,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2026-01-21T06:30:11+00:00"
+            "time": "2026-01-24T08:43:04+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -11186,11 +11186,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.35",
+            "version": "2.1.37",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/72f843c7f59d3aac0b7510f5e70913a9b72a8e88",
-                "reference": "72f843c7f59d3aac0b7510f5e70913a9b72a8e88",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/28cd424c5ea984128c95cfa7ea658808e8954e49",
+                "reference": "28cd424c5ea984128c95cfa7ea658808e8954e49",
                 "shasum": ""
             },
             "require": {
@@ -11235,7 +11235,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-20T17:33:48+00:00"
+            "time": "2026-01-24T08:21:55+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -13536,16 +13536,16 @@
         },
         {
             "name": "vincentlanglet/twig-cs-fixer",
-            "version": "3.12.0",
+            "version": "3.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VincentLanglet/Twig-CS-Fixer.git",
-                "reference": "4efdb0ec7f2d30a34f85fb1f887f4584a742d3ba"
+                "reference": "511e002e1e18203d26b173763ade29cbfd297750"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VincentLanglet/Twig-CS-Fixer/zipball/4efdb0ec7f2d30a34f85fb1f887f4584a742d3ba",
-                "reference": "4efdb0ec7f2d30a34f85fb1f887f4584a742d3ba",
+                "url": "https://api.github.com/repos/VincentLanglet/Twig-CS-Fixer/zipball/511e002e1e18203d26b173763ade29cbfd297750",
+                "reference": "511e002e1e18203d26b173763ade29cbfd297750",
                 "shasum": ""
             },
             "require": {
@@ -13600,7 +13600,7 @@
             "homepage": "https://github.com/VincentLanglet/Twig-CS-Fixer",
             "support": {
                 "issues": "https://github.com/VincentLanglet/Twig-CS-Fixer/issues",
-                "source": "https://github.com/VincentLanglet/Twig-CS-Fixer/tree/3.12.0"
+                "source": "https://github.com/VincentLanglet/Twig-CS-Fixer/tree/3.13.0"
             },
             "funding": [
                 {
@@ -13608,7 +13608,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-25T20:29:37+00:00"
+            "time": "2026-01-24T00:18:59+00:00"
         },
         {
             "name": "webflo/drupal-finder",
