@@ -18,3 +18,7 @@ parameters:
     usageProviders:
       phpunit:
         enabled: false
+  banned_code:
+    non_ignorable: false
+  ignoreErrors:
+    - rawMessage: 'Should not use node with type "Expr_Empty", please change the code.'
