@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc4aa1b2f4ae9195497ff2358cc1cd41",
+    "content-hash": "0793b4ab95a6c54332fadc06c287d728",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9243,16 +9243,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "3.2.4",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "c79fdf4d2c771bcdc3e94512c711ddf276c76b6e"
+                "reference": "ed33d852c7746d4573c60c9870c5ac86d645a0d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/c79fdf4d2c771bcdc3e94512c711ddf276c76b6e",
-                "reference": "c79fdf4d2c771bcdc3e94512c711ddf276c76b6e",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/ed33d852c7746d4573c60c9870c5ac86d645a0d0",
+                "reference": "ed33d852c7746d4573c60c9870c5ac86d645a0d0",
                 "shasum": ""
             },
             "require": {
@@ -9273,6 +9273,7 @@
                 "phpstan/extension-installer": "1.4.3",
                 "phpstan/phpstan": "2.1.40",
                 "phpstan/phpstan-deprecation-rules": "2.0.4",
+                "phpstan/phpstan-strict-rules": "^2.0",
                 "povils/phpmnd": "3.6.1",
                 "shipmonk/dead-code-detector": "0.15.1",
                 "slevomat/coding-standard": "8.28.0",
@@ -9323,7 +9324,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2026-03-13T15:35:34+00:00"
+            "time": "2026-03-16T08:15:59+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -11287,6 +11288,57 @@
                 "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/2.0.4"
             },
             "time": "2026-02-09T13:21:14+00:00"
+        },
+        {
+            "name": "phpstan/phpstan-strict-rules",
+            "version": "2.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan-strict-rules.git",
+                "reference": "1aba28b697c1e3b6bbec8a1725f8b11b6d3e5a5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan-strict-rules/zipball/1aba28b697c1e3b6bbec8a1725f8b11b6d3e5a5f",
+                "reference": "1aba28b697c1e3b6bbec8a1725f8b11b6d3e5a5f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "phpstan/phpstan": "^2.1.39"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "rules.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Extra strict and opinionated rules for PHPStan",
+            "keywords": [
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/phpstan/phpstan-strict-rules/issues",
+                "source": "https://github.com/phpstan/phpstan-strict-rules/tree/2.0.10"
+            },
+            "time": "2026-02-11T14:17:32+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
