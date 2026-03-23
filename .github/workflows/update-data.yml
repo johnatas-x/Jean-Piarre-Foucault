@@ -61,7 +61,7 @@ jobs:
 
       - name: Push diff
         if: env.update_needed == 'true'
-        uses: EndBug/add-and-commit@v9.1.4
+        uses: EndBug/add-and-commit@v10.0.0
         with:
           add: 'web/modules/custom/jpf_store/assets/doc/*'
           author_name: update-data[bot]
