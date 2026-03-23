@@ -46,7 +46,7 @@
         "oomphinc/composer-installers-extender": "^2.0"
     },
     "require-dev": {
-        "johnatas-x/angry-bearded": "3.2.4",
+        "johnatas-x/angry-bearded": "3.3.2",
         "roave/security-advisories": "dev-latest"
     },
     "conflict": {
