@@ -12,7 +12,20 @@
   "postUpdateOptions": [
     "composerWithAll"
   ],
+  "ignoreDeps": [
+    "drupal/coder"
+  ],
   "packageRules": [
+    {
+      "matchPackageNames": [
+        "phpunit/phpunit"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
+      "enabled": false
+    },
     {
       "groupName": "Drupal core",
       "matchPackageNames": [
@@ -97,6 +110,5 @@
       ],
       "datasourceTemplate": "docker"
     }
-
   ]
 }
