@@ -44,7 +44,7 @@ class FillStats implements FillStatsInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function fillBallStats(Versions $version, string $type, int $ball): void {
     $total_count = $this->jpfDatabase->getCountRecords($version);
@@ -255,7 +255,7 @@ class FillStats implements FillStatsInterface {
       $date1 = DateTimePlus::createFromFormat('Y/m/d', $dates[$increment]);
       $date2 = DateTimePlus::createFromFormat('Y/m/d', $dates[$increment + 1]);
       $interval = $date1->diff($date2);
-      $total_days += $interval->days;
+      $total_days += (int) $interval->days;
     }
 
     return (int) round($total_days / $count);
@@ -283,15 +283,16 @@ class FillStats implements FillStatsInterface {
     }
 
     $counts = array_count_values(
-      array_filter(
+      array_values(array_filter(
         array_merge(
           ...array_map(static fn ($friend) => is_array($friend)
             ? $friend
             : [], $friends)
-        )
-      )
+        ),
+        static fn (mixed $val): bool => is_string($val) && $val !== ''
+      ))
     );
-    unset($counts[$ball]);
+    unset($counts[(string) $ball]);
 
     if (empty($counts)) {
       return NULL;

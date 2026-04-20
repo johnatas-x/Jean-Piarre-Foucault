@@ -12,7 +12,7 @@ grumphp:
   stop_on_failure: false
   ignore_unstaged_changes: false
   hide_circumvention_tip: true
-  process_timeout: 60
+  process_timeout: 360 # High value for PHPUnit.
   additional_info: null
   ascii:
     failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
@@ -71,9 +71,16 @@ grumphp:
       exclude:
         - web/core
         - web/modules/contrib
-        - web/modules/custom/jpf_import/src/Cron/ImportDynamicData.php
-        - web/modules/custom/jpf_tokens/src/Hook/JpfTokensHooks.php
-        - web/modules/custom/jpf_views/src/Plugin/views/field/CustomBestDay.php
+        - web/modules/custom/jpf_algo/tests
+        - web/modules/custom/jpf_charts/tests
+        - web/modules/custom/jpf_home/tests
+        - web/modules/custom/jpf_import/tests
+        - web/modules/custom/jpf_sender/tests
+        - web/modules/custom/jpf_stats/tests
+        - web/modules/custom/jpf_store/tests
+        - web/modules/custom/jpf_tokens/tests
+        - web/modules/custom/jpf_utils/tests
+        - web/modules/custom/jpf_views/tests
         - web/sites
         - web/themes/contrib
         - web/.ht.router.php
@@ -86,12 +93,11 @@ grumphp:
     phpcpd:
       directory:
         - web/modules/custom
-        - web/profiles/custom
-        - web/themes/custom
       exclude:
         - "web/modules/custom/*/src/Form"
         - "web/modules/custom/*/src/Plugin"
         - "web/modules/custom/*/src/Entity"
+        - "web/modules/custom/*/tests"
       fuzzy: false
       min_lines: 5
       min_tokens: 70
@@ -121,10 +127,9 @@ grumphp:
       report_width: ~
       whitelist_patterns:
         - web/modules/custom
-        - web/profiles/custom
-        - web/themes/custom
       encoding: ~
-      ignore_patterns: [ ]
+      ignore_patterns:
+        - '#^web/modules/custom/[^/]+/tests(/|$)#'
       sniffs: [ ]
       triggered_by:
         - inc
@@ -150,6 +155,7 @@ grumphp:
       jobs: ~
       short_open_tag: false
       ignore_patterns:
+        - "#tests/(.*)#"
         - "#vendor/(.*)#"
       triggered_by:
         - inc
@@ -167,8 +173,6 @@ grumphp:
     phpmd:
       whitelist_patterns:
         - /^web\/modules\/custom\/(.*)/
-        - /^web\/profiles\/custom\/(.*)/
-        - /^web\/themes\/custom\/(.*)/
       exclude:
         - web/modules/custom/jpf_home/src/Services/HomepageHelper.php
       report_format: text
@@ -193,11 +197,11 @@ grumphp:
       exclude:
         - core
         - modules/contrib
-        - profiles/contrib
         - sites
         - themes/contrib
       exclude_name: [ ]
-      exclude_path: [ ]
+      exclude_path:
+        - "#tests/(.*)#"
       extensions: [ ]
       hint: false
       ignore_funcs: [ ]
@@ -236,7 +240,7 @@ grumphp:
         - profile
         - theme
       memory_limit: "-1"
-      use_grumphp_paths: true
+      use_grumphp_paths: false
       metadata:
         blocking: true
         enabled: true
@@ -245,8 +249,8 @@ grumphp:
         task: null
     phpunit:
       config_file: ~
-      testsuite: ~
-      group: [ ]
+      testsuite: 'unit,kernel,build'
+      group: ['Custom']
       exclude_group: [ ]
       always_execute: false
       order: null
@@ -290,7 +294,6 @@ grumphp:
       exclude:
         - core
         - modules/contrib
-        - profiles/contrib
         - themes/contrib
       metadata:
         blocking: true
@@ -330,8 +333,6 @@ grumphp:
       whitelist_patterns:
         - /^config\/(.*)/
         - /^web\/modules\/custom\/(.*)/
-        - /^web\/profiles\/custom\/(.*)/
-        - /^web\/themes\/custom\/(.*)/
       ignore_patterns: [ ]
       object_support: false
       exception_on_invalid_type: false

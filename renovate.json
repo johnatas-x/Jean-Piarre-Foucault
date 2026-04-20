@@ -14,12 +14,6 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": [
-        "roave/security-advisories"
-      ],
-      "enabled": false
-    },
-    {
       "groupName": "Drupal core",
       "matchPackageNames": [
         "drupal/core-**"

@@ -56,17 +56,17 @@ class HomepageHelper implements HomepageHelperInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function getLastData(string $data_type, string $property = 'id'): array {
     return $this->getData($data_type, $property, $this->lastRecordId);
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function nextPrediction(): array {
-    return $this->getData('prediction', 'draw_id', $this->lastRecordId + 1);
+    return $this->getData('prediction', 'draw_id', (int) ($this->lastRecordId) + 1);
   }
 
   /**

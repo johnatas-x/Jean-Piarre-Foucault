@@ -15,7 +15,7 @@ use Drupal\views\ResultRow;
 class CustomBestDay extends CustomFieldBase {
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   protected const array QUERY_DB_FIELDS = ['best_day'];
 
@@ -25,14 +25,14 @@ class CustomBestDay extends CustomFieldBase {
   private const string FR_LANG_ID = 'fr';
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
-  public function render(ResultRow $values): ?string {
+  public function render(ResultRow $values): string {
     $current_value = $this->getCurrentValue($values, $this->single);
     $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if (!is_string($current_value) || $current_language !== self::FR_LANG_ID) {
-      return $current_value;
+      return $current_value ?? '';
     }
 
     $fr_days = [];

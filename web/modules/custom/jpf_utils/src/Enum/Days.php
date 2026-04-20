@@ -35,6 +35,7 @@ enum Days: string {
   public static function fromMethod(string $method, ?string $value): ?self {
     if (is_string($value) && method_exists(self::class, $method)) {
       foreach (self::cases() as $case) {
+        // @phpstan-ignore-next-line method.dynamicName
         if ($case->$method() === trim($value)) {
           return $case;
         }

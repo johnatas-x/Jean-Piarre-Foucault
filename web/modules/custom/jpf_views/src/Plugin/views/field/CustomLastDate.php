@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class CustomLastDate extends CustomFieldBase {
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   protected const array QUERY_DB_FIELDS = ['last'];
 
@@ -43,7 +43,7 @@ class CustomLastDate extends CustomFieldBase {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function render(ResultRow $values): string {
     return is_string($this->getCurrentValue($values, $this->single))
@@ -59,7 +59,7 @@ class CustomLastDate extends CustomFieldBase {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    *
    * @phpstan-param array<mixed> $configuration
    */

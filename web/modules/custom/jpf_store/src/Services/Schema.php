@@ -12,7 +12,7 @@ use Drupal\jpf_store\Enum\Balls;
 class Schema implements SchemaInterface {
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function lottoDrawsFields(): array {
     $fields = [
@@ -67,7 +67,7 @@ class Schema implements SchemaInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function lottoStatsFields(): array {
     return [
@@ -116,7 +116,7 @@ class Schema implements SchemaInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function versionStatsFields(): array {
     return [

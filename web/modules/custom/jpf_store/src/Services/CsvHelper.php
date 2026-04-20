@@ -15,7 +15,7 @@ use Drupal\jpf_utils\Enum\Days;
 class CsvHelper implements CsvHelperInterface {
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function csvToArray(string $file_path): array {
     $data = [];
@@ -57,7 +57,7 @@ class CsvHelper implements CsvHelperInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function arrayFilter(array $csv_data, Versions $version, array|bool|null $last_record): array {
     $data_to_insert = [];

@@ -44,7 +44,7 @@ class Prediction extends BallEntityBase {
   public const string LOTTO_PREDICT_TABLE = 'lotto_prediction';
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type): array {
     $fields = parent::baseFieldDefinitions($entity_type);

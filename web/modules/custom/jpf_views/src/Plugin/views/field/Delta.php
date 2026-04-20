@@ -15,7 +15,7 @@ use Drupal\views\ResultRow;
 class Delta extends CustomFieldBase {
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   protected const array QUERY_DB_FIELDS = [
     'frequency',
@@ -23,13 +23,13 @@ class Delta extends CustomFieldBase {
   ];
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
-  public function render(ResultRow $values): ?string {
+  public function render(ResultRow $values): string {
     $current_values = $this->getCurrentValues($values);
 
     if (!is_string($current_values['last'])) {
-      return NULL;
+      return '';
     }
 
     $last = DateTimePlus::createFromFormat('Y/m/d', $current_values['last']);
@@ -40,7 +40,7 @@ class Delta extends CustomFieldBase {
 
     $diff = $last->diff($today)->days;
 
-    return (string) ($diff - (int) $current_values['frequency']);
+    return (string) ((int) $diff - (int) $current_values['frequency']);
   }
 
 }

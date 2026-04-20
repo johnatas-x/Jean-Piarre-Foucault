@@ -27,16 +27,19 @@ parameters:
         - **/src/Hook/*.php
         - **/src/Form/*.php
 
-    # new static() is a best practice in Drupal (especially for ContainerInjectionInterface::create methods in a non-final class), so we cannot fix that.
     -
-      rawMessage: 'Unsafe usage of new static().'
+      rawMessages:
+        # new static() is a best practice in Drupal (especially for ContainerInjectionInterface::create methods in a non-final class), so we cannot fix that.
+        - 'Unsafe usage of new static().'
+        # Ignore common errors for now.
+        - '\Drupal calls should be avoided in classes, use dependency injection instead'
+        - 'Plugin definitions cannot be altered.'
+        - 'Missing cache backend declaration for performance.'
+        - 'Plugin manager has cache backend specified but does not declare cache tags.'
 
-    # Ignore common errors for now.
+    # Ignore regex common errors.
     -
       messages:
-        - '#Drupal calls should be avoided in classes, use dependency injection instead#'
-        - '#^Plugin definitions cannot be altered.#'
-        - '#^Missing cache backend declaration for performance.#'
         - '#cache tag might be unclear and does not contain the cache key in it.#'
         - '#^Class .* extends @internal class#'
 

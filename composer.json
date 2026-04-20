@@ -46,8 +46,10 @@
         "oomphinc/composer-installers-extender": "^2.0"
     },
     "require-dev": {
-        "johnatas-x/angry-bearded": "3.2.4",
-        "roave/security-advisories": "dev-latest"
+        "drupal/coder": "9.0.0-beta1 as 8.3.31",
+        "drupal/core-dev": "11.3.7",
+        "johnatas-x/angry-bearded": "3.5.0",
+        "phpunit/phpunit": "~11.5.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -64,6 +66,12 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "App\\PHPStan\\": "phpstan/",
+            "Scripts\\": "scripts/"
+        }
+    },
     "config": {
         "allow-plugins": {
             "composer/installers": true,
@@ -74,12 +82,15 @@
             "drupal/core-vendor-hardening": true,
             "ergebnis/composer-normalize": true,
             "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true,
             "phpro/grumphp": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
         },
         "audit": {
             "ignore-abandoned": {
-                "doctrine/annotations": "Should be removed with Drupal 11.3.0 (see issue #3550917)."
+                "azjezz/psl": "Required by maglnet/composer-require-checker; needs symfony/console 8.0 to be replaced (likely Drupal 12...)",
+                "pear/console_getopt": "https://www.drupal.org/project/drupal/issues/3571185"
             }
         },
         "discard-changes": true,
@@ -333,27 +344,13 @@
         "installer-types": [
             "npm-asset"
         ],
-        "patches": {
-            "drupal/core": {
-                "#3483087 - Allow project-relative path for included translation .po files": "./patches/core/3483087-10167.patch"
-            },
-            "drupal/potx": {
-                "#3338225 - Deprecated function: preg_replace(): Passing null to parameter #3 ($subject) of type array|string": "./patches/modules/potx/3338225-13.patch",
-                "#3444016 - New Drush command for developers for extracting translations of custom module, theme or profile": "https://www.drupal.org/files/issues/2025-07-18/3444016-6.patch"
-            },
-            "drupal/purge": {
-                "#3418683 - Include link to purge config page in admin menu": "./patches/modules/purge/3418683-33.patch",
-                "#3511668 - PHP 8.4 support implicit null deprecated": "./patches/modules/purge/3511668-53.patch"
-            },
-            "drupal/varnish_purge": {
-                "#3519158 - varnish_image_purge sub-module D11 Compatibility error": "./patches/modules/varnish_purge/3519158-18.patch",
-                "CNAM-3 - Moove config link inside performance menu": "./patches/modules/varnish_purge/NOREF.patch"
-            }
-        },
         "scripts": {
             "clean-chartjs": "chmod +x scripts/clean-chartjs.sh && ./scripts/clean-chartjs.sh",
             "post-install-cmd": [
                 "@clean-chartjs"
+            ],
+            "post-package-install": [
+                "Scripts\\ComposerScripts::postPackageInstall"
             ],
             "post-update-cmd": [
                 "@clean-chartjs"

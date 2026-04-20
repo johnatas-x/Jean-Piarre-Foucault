@@ -5,7 +5,7 @@
 ## Example: ddev update
 
 composer install --no-progress
-sudo cp "$DDEV_APPROOT/.ddev/files/settings.ddev.php" "$DDEV_APPROOT/web/sites/default/settings.ddev.php"
+composer patches-repatch
 if [[ "$1" == "--cim-before-trans" ]]; then
   drush cr
   drush cim -y

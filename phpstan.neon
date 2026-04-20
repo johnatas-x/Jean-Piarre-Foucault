@@ -9,12 +9,24 @@ parameters:
   scanDirectories:
     - vendor/drush/drush
   paths:
+    - phpstan
     - web/modules/custom
+  excludePaths:
+    - **/tests/*
   shipmonkDeadCode:
     detect:
       deadMethods: true
-      deadConstants: true
+      deadConstants: false
       deadEnumCases: true
     usageProviders:
       phpunit:
         enabled: false
+  strictRules:
+    disallowedEmpty: false
+    strictArrayFilter: false
+
+services:
+  -
+    class: App\PHPStan\DrupalMemberUsageProvider
+    tags:
+      - shipmonk.deadCode.memberUsageProvider

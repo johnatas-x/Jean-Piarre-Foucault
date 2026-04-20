@@ -48,4 +48,4 @@ ddev drush cron
 # Clear caches.
 ddev drush cr
 # Launch project.
-ddev launch
+ddev launch || true

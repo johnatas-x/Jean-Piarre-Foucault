@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         bootstrap="web/core/tests/bootstrap.php"
+         colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutChangesToGlobalState="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
+         cacheResult="false"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.4/phpunit.xsd"
+         cacheDirectory=".phpunit.cache">
+  <php>
+    <ini name="error_reporting" value="32767" />
+    <ini name="memory_limit" value="-1" />
+    <env name="SIMPLETEST_BASE_URL" value="http://jean-piarre-foucault.ddev.site" force="true" />
+    <env name="SIMPLETEST_DB" value="mysql://db:db@db/db" />
+    <env name="BROWSERTEST_OUTPUT_BASE_URL" value="/var/www/html/web/sites/simpletest/browser_output"/>
+    <env name="MINK_DRIVER_CLASS" value=""/>
+    <env name="MINK_DRIVER_ARGS" value=""/>
+    <env name="MINK_DRIVER_ARGS_WEBDRIVER" value=""/>
+  </php>
+  <extensions>
+    <bootstrap class="Drupal\TestTools\Extension\HtmlLogging\HtmlOutputLogger">
+      <parameter name="outputDirectory" value="web/sites/simpletest/browser_output" />
+      <parameter name="verbose" value="true" />
+    </bootstrap>
+    <bootstrap class="Drupal\TestTools\Extension\Dump\DebugDump">
+      <parameter name="colors" value="true"/>
+      <parameter name="printCaller" value="true"/>
+    </bootstrap>
+  </extensions>
+  <testsuites>
+    <testsuite name="unit-component">
+      <directory>web/core/tests/Drupal/Tests/Component</directory>
+    </testsuite>
+    <testsuite name="unit">
+      <directory>web/modules/custom/**/tests/src/Unit</directory>
+    </testsuite>
+    <testsuite name="kernel">
+      <directory>web/modules/custom/**/tests/src/Kernel</directory>
+    </testsuite>
+    <testsuite name="functional">
+      <directory>web/modules/custom/**/tests/src/Functional</directory>
+    </testsuite>
+    <testsuite name="functional-javascript">
+      <directory>web/modules/custom/**/tests/src/FunctionalJavascript</directory>
+    </testsuite>
+    <testsuite name="build">
+      <directory>web/modules/custom/**/tests/src/Build</directory>
+    </testsuite>
+  </testsuites>
+  <!--
+    Coverage source configuration.
+    Exclusions rationale:
+    - tests/: Test files should not be counted in coverage
+    - *HelpHooks.php: Only display help text on admin pages, no testable logic
+    - *Interface.php: Interfaces contain no executable code
+    - *Controller.php: Covered by Functional tests, not Unit
+    - *.deploy.php: Deploy hooks with no business logic, covered by Kernel tests
+    - */Plugin/*: Plugins use parent:: or static calls (View::load, Paragraph::load)
+      that cannot be mocked in Unit tests. They have "Testable" Unit tests that
+      validate business logic, and are covered by Kernel tests for real execution.
+  -->
+  <source ignoreSuppressionOfDeprecations="true">
+    <include>
+      <directory>web/modules/custom</directory>
+    </include>
+    <exclude>
+      <directory>web/modules/custom/*/tests</directory>
+      <directory suffix="Interface.php">web/modules/custom</directory>
+      <directory suffix="Controller.php">web/modules/custom</directory>
+      <directory suffix=".deploy.php">web/modules/custom</directory>
+      <!-- Plugins excluded: parent::/static calls untestable in Unit, see comment above -->
+      <directory>web/modules/custom/*/src/Plugin</directory>
+    </exclude>
+  </source>
+</phpunit>

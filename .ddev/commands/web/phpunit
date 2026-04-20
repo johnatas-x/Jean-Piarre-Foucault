@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+## Description: Execute PHPUnit
+## Usage: phpunit {arguments}
+## Example: ddev phpunit --no-progress
+
+cd "$DDEV_APPROOT" || exit
+
+mkdir -p "$DDEV_APPROOT/web/sites/simpletest/browser_output"
+sudo chmod -R +w "$DDEV_APPROOT/web/sites/simpletest/browser_output"
+
+if [[ "$*" == *"--coverage"* ]]; then
+  export XDEBUG_MODE=off
+  export PCOV_ENABLED=1
+fi
+
+./vendor/bin/phpunit "$@"

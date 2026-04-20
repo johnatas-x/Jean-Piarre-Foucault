@@ -36,14 +36,14 @@ class Database implements DatabaseInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function selectLotto(): SelectInterface {
     return $this->databaseConnection->select(SchemaInterface::LOTTO_DRAWS_TABLE, SchemaInterface::LOTTO_TABLE_ALIAS);
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function importCsvFile(Versions $version): void {
     $data = $this->csvHelper->csvToArray($version->filePath());
@@ -73,7 +73,7 @@ class Database implements DatabaseInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function getLastRecord(): array|bool|null {
     $record = $this->selectLotto()
@@ -101,7 +101,7 @@ class Database implements DatabaseInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function getLastRecordId(): ?int {
     $record = $this->selectLotto()
@@ -117,7 +117,7 @@ class Database implements DatabaseInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function deleteTable(string $table): void {
     $schema = $this->databaseConnection->schema();
@@ -130,7 +130,7 @@ class Database implements DatabaseInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function getCountRecords(Versions $version): int {
     $records = $this->databaseConnection
@@ -146,7 +146,7 @@ class Database implements DatabaseInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function updateDrawsCount(Versions $version, int $new_records): void {
     $this->databaseConnection
@@ -157,7 +157,7 @@ class Database implements DatabaseInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function archivePrediction(?string $record_id): void {
     if ($record_id === NULL || !$this->moduleHandler->moduleExists('jpf_algo')) {

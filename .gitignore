@@ -15,6 +15,7 @@
 # sensitive information from environment variables or other sources.
 # ------------------------------------------------------------------
 /web/sites/*/settings.*.php
+!/web/sites/default/settings.ddev.php
 /web/sites/*/services.*.yml
 
 # Ignore paths that contain user-generated content.
@@ -105,17 +106,6 @@
 
 # Ignore twig cs cache
 .twig-cs-fixer.cache
-
-# Ignore dot env file
-.env
-
-# Ignore docker files and directories
-mariadb-init
-postgres-init
-mutagen.yml.lock
-
-# Ignore custom zshrc file
-/.docker/.zshrc
 
 # Ignore renovate local config.
 config.js

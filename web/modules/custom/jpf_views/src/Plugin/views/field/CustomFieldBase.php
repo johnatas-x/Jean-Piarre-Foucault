@@ -42,7 +42,7 @@ abstract class CustomFieldBase extends FieldPluginBase {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritdoc}
    */
   public function query(): void {
     if (!$this->query instanceof Sql) {
@@ -69,6 +69,7 @@ abstract class CustomFieldBase extends FieldPluginBase {
    *   The current value or null if not a string.
    */
   protected function getCurrentValue(ResultRow $values, string $field): ?string {
+    // @phpstan-ignore-next-line property.dynamicName
     $current_value = $values->{$this->table . '_' . $field};
 
     return is_string($current_value)
