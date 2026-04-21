@@ -33,9 +33,6 @@ cp "$DDEV_APPROOT/python/jean-pyarre/templates/v5.html.example" "$DDEV_APPROOT/p
 cp "$DDEV_APPROOT/python/jean-pyarre/versions/v5.py.example" "$DDEV_APPROOT/python/jean-pyarre/versions/v5.py"
 # Install dependencies.
 ddev composer install
-# Usage of settings.ddev.php.
-chmod -R 777 "$DDEV_APPROOT/web/sites/default"
-cp "$DDEV_APPROOT/.ddev/files/settings.ddev.php" "$DDEV_APPROOT/web/sites/default/settings.ddev.php"
 # Install site.
 ddev drush site:install 'minimal' --existing-config --account-name=admin --account-pass=admin -y
 # Set permissions.
