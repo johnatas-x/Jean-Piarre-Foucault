@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bb6a7280adda0d7792b9fefd1496dc7",
+    "content-hash": "5cfa243de556015c280a71d5bc494614",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -10100,16 +10100,16 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "e551545cd44f1ce114cb3840c7608ee17cb77a10"
+                "reference": "29c30dc87307cd6dc9060155b3562f42d337ba77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/e551545cd44f1ce114cb3840c7608ee17cb77a10",
-                "reference": "e551545cd44f1ce114cb3840c7608ee17cb77a10",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/29c30dc87307cd6dc9060155b3562f42d337ba77",
+                "reference": "29c30dc87307cd6dc9060155b3562f42d337ba77",
                 "shasum": ""
             },
             "require": {
@@ -10121,14 +10121,14 @@
                 "johnatas-x/grumphp-phpdd": "2.20.0",
                 "johnatas-x/phpcpd": "6.0.5",
                 "maglnet/composer-require-checker": "4.20.0",
-                "mglaman/phpstan-drupal": "2.0.13",
+                "mglaman/phpstan-drupal": "2.0.14",
                 "php": ">=8.4",
                 "php-parallel-lint/php-parallel-lint": "1.4.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
                 "phpmd/phpmd": "2.15.0",
                 "phpro/grumphp": "2.20.0",
                 "phpstan/extension-installer": "1.4.3",
-                "phpstan/phpstan": "2.1.50",
+                "phpstan/phpstan": "2.1.51",
                 "phpstan/phpstan-deprecation-rules": "2.0.4",
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "povils/phpmnd": "3.6.1",
@@ -10181,7 +10181,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2026-04-19T22:35:58+00:00"
+            "time": "2026-04-23T20:21:35+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -11176,16 +11176,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "2.0.13",
+            "version": "2.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "1b7b2831c26efb813ec380ea2101dc464eabf1a4"
+                "reference": "a2ef88b139ec502afe753c18de865aa2526e42a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/1b7b2831c26efb813ec380ea2101dc464eabf1a4",
-                "reference": "1b7b2831c26efb813ec380ea2101dc464eabf1a4",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/a2ef88b139ec502afe753c18de865aa2526e42a8",
+                "reference": "a2ef88b139ec502afe753c18de865aa2526e42a8",
                 "shasum": ""
             },
             "require": {
@@ -11257,7 +11257,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.0.13"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.0.14"
             },
             "funding": [
                 {
@@ -11273,7 +11273,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-07T19:34:17+00:00"
+            "time": "2026-04-22T21:09:23+00:00"
         },
         {
             "name": "micheh/phpcs-gitlab",
@@ -13473,11 +13473,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.50",
+            "version": "2.1.51",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d452086fb4cf648c6b2d8cf3b639351f79e4f3e2",
-                "reference": "d452086fb4cf648c6b2d8cf3b639351f79e4f3e2",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/dc3b523c45e714c70de2ac5113b958223b55dc59",
+                "reference": "dc3b523c45e714c70de2ac5113b958223b55dc59",
                 "shasum": ""
             },
             "require": {
@@ -13522,7 +13522,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-17T13:10:32+00:00"
+            "time": "2026-04-21T18:22:01+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
