@@ -48,7 +48,7 @@
     "require-dev": {
         "drupal/coder": "9.0.0-beta1 as 8.3.31",
         "drupal/core-dev": "11.3.8",
-        "johnatas-x/angry-bearded": "3.5.0",
+        "johnatas-x/angry-bearded": "3.5.1",
         "phpunit/phpunit": "~11.5.0"
     },
     "conflict": {
