@@ -39,7 +39,7 @@ class FillCommands extends DrushCommands {
         finished: [
           FillStatsBatch::class,
           'finished',
-        ]
+        ],
       );
 
       $batch->execute();

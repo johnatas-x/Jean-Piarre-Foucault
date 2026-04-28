@@ -91,8 +91,8 @@ abstract class CustomFieldBase extends FieldPluginBase {
       static::QUERY_DB_FIELDS,
       array_map(
         fn ($field) => $this->getCurrentValue($values, $field),
-        static::QUERY_DB_FIELDS
-      )
+        static::QUERY_DB_FIELDS,
+      ),
     );
   }
 

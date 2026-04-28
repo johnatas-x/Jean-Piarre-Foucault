@@ -40,8 +40,7 @@ class FillStats implements FillStatsInterface {
   public function __construct(
     protected Connection $databaseConnection,
     protected DatabaseInterface $jpfDatabase,
-  ) {
-  }
+  ) {}
 
   /**
    * {@inheritdoc}
@@ -61,7 +60,7 @@ class FillStats implements FillStatsInterface {
 
     $fields = [
       'count' => $count,
-      'percentage' => $count / $total_count * 100,
+      'percentage' => ($count / $total_count) * 100,
       'last' => $this->getLast($table, $ball, $version),
       'best_day' => $this->getBestDay($table, $ball, $version),
       'frequency' => $this->getFrequency($table, $ball, $version),
@@ -72,7 +71,8 @@ class FillStats implements FillStatsInterface {
       $fields['worst_friend'] = $this->getFriend($ball, $version, self::WORST_FRIEND);
     }
 
-    $this->databaseConnection->merge($table)
+    $this->databaseConnection
+      ->merge($table)
       ->key('ball', $ball)
       ->fields($fields)
       ->execute();
@@ -151,10 +151,10 @@ class FillStats implements FillStatsInterface {
       ?->fetchAssoc();
 
     if (
-      isset($last_result['year'], $last_result['month'], $last_result['day']) &&
-      is_numeric($last_result['year']) &&
-      is_numeric($last_result['month']) &&
-      is_numeric($last_result['day'])
+      isset($last_result['year'], $last_result['month'], $last_result['day'])
+      && is_numeric($last_result['year'])
+      && is_numeric($last_result['month'])
+      && is_numeric($last_result['day'])
     ) {
       $year = (int) $last_result['year'];
       $month = (int) $last_result['month'];
@@ -190,8 +190,8 @@ class FillStats implements FillStatsInterface {
     }
 
     $days = array_filter(array_map(
-        static fn (string $value) => Days::fromMethod('capitalizeFrenchLabel', $value)?->value,
-        array_keys($counts, max($counts), TRUE)
+      static fn (string $value) => Days::fromMethod('capitalizeFrenchLabel', $value)?->value,
+      array_keys($counts, max($counts), TRUE),
     ));
 
     if (empty($days) || count($days) === count($counts)) {
@@ -214,6 +214,7 @@ class FillStats implements FillStatsInterface {
    * @return int|null
    *   The average number of days, null if less than two outings.
    */
+  // phpcs:ignore SlevomatCodingStandard.Functions.FunctionLength.FunctionLength
   private function getFrequency(string $table, int $ball, Versions $version): ?int {
     $query = $this->baseSelectQuery($table, $ball, $version, ['year', 'month', 'day']);
     $results = $query->execute()?->fetchAll();
@@ -226,8 +227,10 @@ class FillStats implements FillStatsInterface {
 
     foreach ($results as $result) {
       if (
-        !isset($result->year, $result->month, $result->day) ||
-        !is_numeric($result->year) || !is_numeric($result->month) || !is_numeric($result->day)
+        !isset($result->year, $result->month, $result->day)
+        || !is_numeric($result->year)
+        || !is_numeric($result->month)
+        || !is_numeric($result->day)
       ) {
         continue;
       }
@@ -238,7 +241,7 @@ class FillStats implements FillStatsInterface {
           (string) $result->year,
           sprintf('%02d', (string) $result->month),
           sprintf('%02d', (string) $result->day),
-        ]
+        ],
       );
     }
 
@@ -285,12 +288,14 @@ class FillStats implements FillStatsInterface {
     $counts = array_count_values(
       array_values(array_filter(
         array_merge(
-          ...array_map(static fn ($friend) => is_array($friend)
-            ? $friend
-            : [], $friends)
+          ...array_map(static fn ($friend) => (
+            is_array($friend)
+              ? $friend
+              : []
+          ), $friends),
         ),
-        static fn (mixed $val): bool => is_string($val) && $val !== ''
-      ))
+        static fn (mixed $val): bool => is_string($val) && $val !== '',
+      )),
     );
     unset($counts[(string) $ball]);
 

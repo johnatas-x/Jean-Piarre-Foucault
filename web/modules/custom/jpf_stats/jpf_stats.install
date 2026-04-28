@@ -57,7 +57,7 @@ function jpf_stats_install(): void {
         'type' => 'char',
         'length' => 32,
         'not null' => FALSE,
-      ]
+      ],
     );
   }
 }

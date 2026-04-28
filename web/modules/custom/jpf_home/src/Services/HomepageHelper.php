@@ -52,8 +52,7 @@ class HomepageHelper implements HomepageHelperInterface {
     protected DatabaseInterface $jpfDatabase,
     protected EntityTypeManagerInterface $entityTypeManager,
     protected LoggerChannelFactoryInterface $logger,
-  ) {
-  }
+  ) {}
 
   /**
    * {@inheritdoc}
@@ -66,7 +65,7 @@ class HomepageHelper implements HomepageHelperInterface {
    * {@inheritdoc}
    */
   public function nextPrediction(): array {
-    return $this->getData('prediction', 'draw_id', (int) ($this->lastRecordId) + 1);
+    return $this->getData('prediction', 'draw_id', (int) $this->lastRecordId + 1);
   }
 
   /**
@@ -103,7 +102,7 @@ class HomepageHelper implements HomepageHelperInterface {
         $data['lucky'] = $entity->lucky();
       }
     }
-    catch (InvalidPluginDefinitionException | PluginNotFoundException $exception) {
+    catch (InvalidPluginDefinitionException|PluginNotFoundException $exception) {
       $this->logger->get('jpf_home')->error($exception->getMessage());
 
       return $data;

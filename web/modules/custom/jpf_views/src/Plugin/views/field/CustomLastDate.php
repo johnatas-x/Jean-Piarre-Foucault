@@ -49,12 +49,12 @@ class CustomLastDate extends CustomFieldBase {
     return is_string($this->getCurrentValue($values, $this->single))
       ? $this->dateFormatter
         ->format(
-        DateTimePlus::createFromFormat(
-          'Y/m/d',
-          $this->getCurrentValue($values, $this->single)
-        )->getTimestamp(),
-        'custom_short_day'
-      )
+          DateTimePlus::createFromFormat(
+            'Y/m/d',
+            $this->getCurrentValue($values, $this->single),
+          )->getTimestamp(),
+          'custom_short_day',
+        )
       : $this->t('Unknown')->render();
   }
 
@@ -73,7 +73,7 @@ class CustomLastDate extends CustomFieldBase {
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('date.formatter')
+      $container->get('date.formatter'),
     );
   }
 

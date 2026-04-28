@@ -82,7 +82,7 @@ class CsvHelper implements CsvHelperInterface {
           : 1,
         'day_of_week' => Days::fromMethod(
           $version->dayMethod(),
-          $row['jour_de_tirage']
+          $row['jour_de_tirage'],
         )?->capitalizeFrenchLabel(),
       ];
 
@@ -91,7 +91,7 @@ class CsvHelper implements CsvHelperInterface {
           continue;
         }
 
-        $data_to_insert[$timestamp][$ball->columnName()] = !(empty($row[$ball->csvName()]))
+        $data_to_insert[$timestamp][$ball->columnName()] = !empty($row[$ball->csvName()])
           ? (int) $row[$ball->csvName()]
           : NULL;
       }

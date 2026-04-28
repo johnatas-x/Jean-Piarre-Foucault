@@ -127,7 +127,7 @@ enum Balls: string {
   public static function classicBallsColumn(): array {
     return array_map(
       static fn (self $ball) => $ball->columnName(),
-      self::classicBalls()
+      self::classicBalls(),
     );
   }
 

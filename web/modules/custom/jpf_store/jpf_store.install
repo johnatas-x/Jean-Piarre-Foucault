@@ -42,7 +42,8 @@ function jpf_store_install(): void {
 
   // Init all versions.
   foreach (Versions::cases() as $version) {
-    $connection->insert(SchemaInterface::LOTTO_VERSIONS)
+    $connection
+      ->insert(SchemaInterface::LOTTO_VERSIONS)
       ->fields([
         'version' => $version->value,
         'draws_count' => 0,

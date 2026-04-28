@@ -35,7 +35,7 @@ class Delta extends CustomFieldBase {
     $last = DateTimePlus::createFromFormat('Y/m/d', $current_values['last']);
     $today = DateTimePlus::createFromFormat(
       'U',
-      (string) time()
+      (string) time(),
     );
 
     $diff = $last->diff($today)->days;

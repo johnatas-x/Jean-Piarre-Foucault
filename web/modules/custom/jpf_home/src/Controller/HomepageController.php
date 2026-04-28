@@ -25,8 +25,7 @@ class HomepageController extends ControllerBase {
   public function __construct(
     #[Autowire(service: 'jpf_home.helper')]
     protected HomepageHelperInterface $homepageHelper,
-  ) {
-  }
+  ) {}
 
   /**
    * Page content.
