@@ -19,7 +19,7 @@ abstract class Sto {
   /**
    * API URL.
    */
-  private const string URL = "https://www.sto.api.fdj.fr";
+  private const string URL = 'https://www.sto.api.fdj.fr';
 
   /**
    * API user identification.
@@ -71,7 +71,7 @@ abstract class Sto {
         self::VERSION,
         self::TYPE,
         self::buildToken($version),
-      ]
+      ],
     );
   }
 

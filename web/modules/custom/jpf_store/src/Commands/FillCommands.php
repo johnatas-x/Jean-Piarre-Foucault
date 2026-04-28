@@ -44,7 +44,7 @@ class FillCommands extends DrushCommands {
       finished: [
         FillDataBatch::class,
         'finished',
-      ]
+      ],
     );
 
     $batch->execute();
@@ -80,7 +80,7 @@ class FillCommands extends DrushCommands {
           [
             '@item' => reset($not_allowed_versions),
             '@items' => implode(', ', $not_allowed_versions),
-          ]
+          ],
         )->render();
 
         throw new \InvalidArgumentException($message);

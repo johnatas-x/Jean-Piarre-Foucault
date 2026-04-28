@@ -30,7 +30,10 @@
   <rule ref="vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
 
   <!-- Generic PHP Sniff. -->
-  <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
+  <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+    <exclude name="Squiz.WhiteSpace.OperatorSpacing.NoSpaceAfter" />
+    <exclude name="Squiz.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
+  </rule>
   <rule ref="Squiz.PHP.CommentedOutCode" />
   <rule ref="Squiz.PHP.Eval" />
   <rule ref="Squiz.Arrays.ArrayDeclaration.NoKeySpecified">
@@ -45,6 +48,8 @@
     <exclude name="SlevomatCodingStandard.Attributes.AttributesOrder" />
     <exclude name="SlevomatCodingStandard.Classes.DisallowConstructorPropertyPromotion.DisallowedConstructorPropertyPromotion" />
     <exclude name="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants.DisallowedLateStaticBindingForConstant" />
+    <exclude name="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces.MultipleEmptyLinesAfterOpeningBrace" />
+    <exclude name="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces.MultipleEmptyLinesBeforeClosingBrace" />
     <exclude name="SlevomatCodingStandard.Classes.ForbiddenPublicProperty.ForbiddenPublicProperty" />
     <exclude name="SlevomatCodingStandard.Classes.ParentCallSpacing.IncorrectLinesCountBeforeControlStructure" />
     <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal.ClassNeitherAbstractNorFinal" />
@@ -66,6 +71,7 @@
     <exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName.NoMatchBetweenTypeNameAndFileName" />
     <exclude name="SlevomatCodingStandard.Functions.DisallowArrowFunction.DisallowedArrowFunction" />
     <exclude name="SlevomatCodingStandard.Functions.DisallowNamedArguments.DisallowedNamedArgument" />
+    <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInCall.DisallowedTrailingComma" />
     <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration.DisallowedTrailingComma" />
     <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall.MissingTrailingComma" />
     <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse.MissingTrailingComma" />
@@ -83,6 +89,7 @@
     <exclude name="SlevomatCodingStandard.PHP.DisallowReference.DisallowedAssigningByReference" />
     <exclude name="SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference" />
     <exclude name="SlevomatCodingStandard.PHP.RequireExplicitAssertion.RequiredExplicitAssertion" />
+    <exclude name="SlevomatCodingStandard.PHP.UselessParentheses.UselessParentheses" />
     <exclude name="SlevomatCodingStandard.TypeHints.ClassConstantTypeHint.UselessVarAnnotation" />
     <exclude name="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax.DisallowedArrayTypeHintSyntax" />
     <exclude name="SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint" />

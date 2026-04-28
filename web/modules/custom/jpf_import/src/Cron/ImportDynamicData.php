@@ -44,7 +44,7 @@ final class ImportDynamicData {
         Sto::buildDownloadUrl($current_version),
         [
           'sink' => $archive_path,
-        ]
+        ],
       );
 
       if ($response->getStatusCode() !== Response::HTTP_OK) {
@@ -59,7 +59,7 @@ final class ImportDynamicData {
       if ($zip->open($archive_path, \ZipArchive::CREATE) === TRUE) {
         $zip->extractTo(
           $current_version->versionPath(),
-          [$current_version->filename() . Versions::FILE_EXTENSION]
+          [$current_version->filename() . Versions::FILE_EXTENSION],
         );
         $zip->close();
       }
@@ -115,7 +115,7 @@ final class ImportDynamicData {
       Drush::aliasManager()->getSelf(),
       'fill-lotto-stats',
       [],
-      Drush::redispatchOptions() + ['strict' => 0]
+      Drush::redispatchOptions() + ['strict' => 0],
     );
     $process->setTimeout(NULL);
     $real_time = $process->showRealtime();

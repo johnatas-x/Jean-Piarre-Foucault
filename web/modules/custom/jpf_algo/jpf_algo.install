@@ -46,7 +46,7 @@ function jpf_algo_schema(): array {
   }
 
   $schema[Prediction::LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'] = array_unique(
-    $schema[Prediction::LOTTO_PREDICT_TABLE]['unique keys']['unique_cols']
+    $schema[Prediction::LOTTO_PREDICT_TABLE]['unique keys']['unique_cols'],
   );
 
   return $schema;

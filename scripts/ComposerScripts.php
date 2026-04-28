@@ -83,7 +83,7 @@ class ComposerScripts {
 
     file_put_contents(
       $composerJsonPath,
-      json_encode($composerJson, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n"
+      json_encode($composerJson, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n",
     );
 
     $event->getIO()->write("<info>Updated vendor hardening for $packageName</info>");

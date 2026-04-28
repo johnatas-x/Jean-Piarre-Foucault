@@ -49,13 +49,15 @@ enum Versions: string {
   public static function currentVersion(): ?self {
     $current_month = DateTimePlus::createFromFormat(
       'U',
-      (string) time()
+      (string) time(),
     )->format('Ymd');
 
     return array_find(
       self::cases(),
-      static fn ($version) => $version->begin() <= $current_month &&
-        ($version->end() === '' || $version->end() > $current_month)
+      static fn ($version) => (
+        $version->begin() <= $current_month
+        && ($version->end() === '' || $version->end() > $current_month)
+      ),
     );
   }
 
@@ -199,9 +201,9 @@ enum Versions: string {
       ->format(
         DateTimePlus::createFromFormat(
           'Ymd',
-          $this->begin()
+          $this->begin(),
         )->getTimestamp(),
-        'custom_long_day'
+        'custom_long_day',
       );
   }
 

@@ -32,8 +32,7 @@ class Database implements DatabaseInterface {
     protected Connection $databaseConnection,
     protected SchemaInterface $schema,
     protected ModuleHandlerInterface $moduleHandler,
-  ) {
-  }
+  ) {}
 
   /**
    * {@inheritdoc}
@@ -76,7 +75,8 @@ class Database implements DatabaseInterface {
    * {@inheritdoc}
    */
   public function getLastRecord(): array|bool|null {
-    $record = $this->selectLotto()
+    $record = $this
+      ->selectLotto()
       ->fields(SchemaInterface::LOTTO_TABLE_ALIAS)
       ->orderBy('id', 'DESC')
       ->range(0, 1)
@@ -90,7 +90,7 @@ class Database implements DatabaseInterface {
     $validatedRecord = [];
 
     foreach ($record as $key => $value) {
-      if (!is_string($key) || ((!is_string($value)) && !is_null($value))) {
+      if (!is_string($key) || !is_string($value) && !is_null($value)) {
         throw new \UnexpectedValueException('Bad type.');
       }
 
@@ -104,7 +104,8 @@ class Database implements DatabaseInterface {
    * {@inheritdoc}
    */
   public function getLastRecordId(): ?int {
-    $record = $this->selectLotto()
+    $record = $this
+      ->selectLotto()
       ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['id'])
       ->orderBy('id', 'DESC')
       ->range(0, 1)
@@ -164,7 +165,8 @@ class Database implements DatabaseInterface {
       return;
     }
 
-    $this->databaseConnection->update(Prediction::LOTTO_PREDICT_TABLE)
+    $this->databaseConnection
+      ->update(Prediction::LOTTO_PREDICT_TABLE)
       ->isNull('draw_id')
       ->fields(['draw_id' => $record_id])
       ->execute();

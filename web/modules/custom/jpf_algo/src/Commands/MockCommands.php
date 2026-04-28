@@ -128,7 +128,8 @@ class MockCommands extends DrushCommands {
       $fields[$ball->columnName()] = $random_value;
     }
 
-    $this->databaseConnection->insert(Prediction::LOTTO_PREDICT_TABLE)
+    $this->databaseConnection
+      ->insert(Prediction::LOTTO_PREDICT_TABLE)
       ->fields($fields)
       ->execute();
   }
