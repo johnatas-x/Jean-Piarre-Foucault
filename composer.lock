@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b26d5e89bcb122d281d654e89e2384a",
+    "content-hash": "60e9be11eaa9e3263a1b5f12bd54d350",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5886,7 +5886,7 @@
         },
         {
             "name": "symfony/polyfill-php81",
-            "version": "v1.36.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php81.git",
@@ -5942,7 +5942,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.36.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -8325,6 +8325,62 @@
             "time": "2026-02-10T14:33:43+00:00"
         },
         {
+            "name": "carthage-software/mago",
+            "version": "1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/carthage-software/mago.git",
+                "reference": "ff885e99abe97222bb8b84dc346b59bddbe3a307"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/carthage-software/mago/zipball/ff885e99abe97222bb8b84dc346b59bddbe3a307",
+                "reference": "ff885e99abe97222bb8b84dc346b59bddbe3a307",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.1 || ~8.2 || ~8.3 || ~8.4 || ~8.5 || ~8.6"
+            },
+            "suggest": {
+                "ext-curl": "To show binary download progress"
+            },
+            "bin": [
+                "composer/bin/mago"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "composer/functions.php",
+                    "composer/internal.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT OR Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Saif Eddin Gmati",
+                    "email": "azjezz@carthage.software"
+                }
+            ],
+            "description": "Mago is a toolchain for PHP that aims to provide a set of tools to help developers write better code.",
+            "keywords": [
+                "dev"
+            ],
+            "support": {
+                "issues": "https://github.com/carthage-software/mago/issues",
+                "source": "https://github.com/carthage-software/mago/tree/1.24.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/azjezz",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-04-22T07:00:59+00:00"
+        },
+        {
             "name": "colinodell/psr-testlogger",
             "version": "v1.3.1",
             "source": {
@@ -9291,16 +9347,16 @@
         },
         {
             "name": "drupal/coder",
-            "version": "9.0.0-beta1",
+            "version": "9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pfrenssen/coder.git",
-                "reference": "233fbd8de0ae5eb08ca24a1334bc65f8c3ac35fe"
+                "reference": "9fcf1a15e81256774699173fbbdd262163af35bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/233fbd8de0ae5eb08ca24a1334bc65f8c3ac35fe",
-                "reference": "233fbd8de0ae5eb08ca24a1334bc65f8c3ac35fe",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/9fcf1a15e81256774699173fbbdd262163af35bb",
+                "reference": "9fcf1a15e81256774699173fbbdd262163af35bb",
                 "shasum": ""
             },
             "require": {
@@ -9338,7 +9394,7 @@
                 "issues": "https://www.drupal.org/project/issues/coder",
                 "source": "https://www.drupal.org/project/coder"
             },
-            "time": "2025-12-07T18:07:20+00:00"
+            "time": "2026-03-13T17:11:34+00:00"
         },
         {
             "name": "drupal/core-dev",
@@ -10100,23 +10156,24 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "3.5.2",
+            "version": "3.7.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "63843e09c8ff688c1f9402ce480fc75b612a45a7"
+                "reference": "616a75c6cdd739490ae183309a7b3c58db3f0c5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/63843e09c8ff688c1f9402ce480fc75b612a45a7",
-                "reference": "63843e09c8ff688c1f9402ce480fc75b612a45a7",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/616a75c6cdd739490ae183309a7b3c58db3f0c5d",
+                "reference": "616a75c6cdd739490ae183309a7b3c58db3f0c5d",
                 "shasum": ""
             },
             "require": {
-                "drupal/coder": "9.0.0-beta1",
+                "drupal/coder": "9.0.0",
                 "ekino/phpstan-banned-code": "3.2.0",
                 "ergebnis/composer-normalize": "2.51.0",
                 "friendsoftwig/twigcs": "6.6.1",
+                "johnatas-x/grumphp-mago": "2.20.0",
                 "johnatas-x/grumphp-phpa": "2.20.0",
                 "johnatas-x/grumphp-phpdd": "2.20.0",
                 "johnatas-x/phpcpd": "6.0.5",
@@ -10128,7 +10185,7 @@
                 "phpmd/phpmd": "2.15.0",
                 "phpro/grumphp": "2.20.0",
                 "phpstan/extension-installer": "1.4.3",
-                "phpstan/phpstan": "2.1.51",
+                "phpstan/phpstan": "2.1.53",
                 "phpstan/phpstan-deprecation-rules": "2.0.4",
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "povils/phpmnd": "3.6.1",
@@ -10150,6 +10207,7 @@
                 },
                 "drupal-scaffold": {
                     "file-mapping": {
+                        "[project-root]/mago.toml.dist": "mago.toml.dist",
                         "[project-root]/phpcs.xml.dist": "phpcs.xml.dist",
                         "[project-root]/phpmd.xml.dist": "phpmd.xml.dist",
                         "[project-root]/grumphp.yml.dist": {
@@ -10181,7 +10239,49 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2026-04-25T13:50:45+00:00"
+            "time": "2026-04-29T09:19:44+00:00"
+        },
+        {
+            "name": "johnatas-x/grumphp-mago",
+            "version": "2.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnatas-x/grumphp-mago.git",
+                "reference": "503c17e6750d41702a039db1a43bc1c9c91eea20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnatas-x/grumphp-mago/zipball/503c17e6750d41702a039db1a43bc1c9c91eea20",
+                "reference": "503c17e6750d41702a039db1a43bc1c9c91eea20",
+                "shasum": ""
+            },
+            "require": {
+                "carthage-software/mago": "1.24.0",
+                "phpro/grumphp": "2.20.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrumphpMago\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Johnatas",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Execute Mago in a GrumPHP task.",
+            "homepage": "https://github.com/johnatas-x/grumphp-mago",
+            "support": {
+                "issues": "https://github.com/johnatas-x/grumphp-mago/issues",
+                "source": "https://github.com/johnatas-x/grumphp-mago"
+            },
+            "time": "2026-04-29T08:46:52+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -10533,16 +10633,16 @@
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v2.0.12",
+            "version": "v2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "a6abb4e54f6fcd3138120b9ad497f0bd146f9919"
+                "reference": "b566ee0dd251f3c4078bed003a7ce015f5ea6dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/a6abb4e54f6fcd3138120b9ad497f0bd146f9919",
-                "reference": "a6abb4e54f6fcd3138120b9ad497f0bd146f9919",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/b566ee0dd251f3c4078bed003a7ce015f5ea6dce",
+                "reference": "b566ee0dd251f3c4078bed003a7ce015f5ea6dce",
                 "shasum": ""
             },
             "require": {
@@ -10590,7 +10690,7 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2026-04-14T13:33:34+00:00"
+            "time": "2026-04-16T14:03:50+00:00"
         },
         {
             "name": "league/climate",
@@ -13473,11 +13573,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.51",
+            "version": "2.1.53",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/dc3b523c45e714c70de2ac5113b958223b55dc59",
-                "reference": "dc3b523c45e714c70de2ac5113b958223b55dc59",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ef67586798c003274797b288a68b221e4270dca7",
+                "reference": "ef67586798c003274797b288a68b221e4270dca7",
                 "shasum": ""
             },
             "require": {
@@ -13522,7 +13622,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-21T18:22:01+00:00"
+            "time": "2026-04-28T16:09:00+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -16767,7 +16867,7 @@
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.36.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
@@ -16823,7 +16923,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/v1.36.0"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -16847,7 +16947,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.36.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -16907,7 +17007,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.36.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -17349,7 +17449,7 @@
     "aliases": [
         {
             "package": "drupal/coder",
-            "version": "9.0.0.0-beta1",
+            "version": "9.0.0.0",
             "alias": "8.3.31",
             "alias_normalized": "8.3.31.0"
         }
