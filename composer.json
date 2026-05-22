@@ -1,7 +1,6 @@
 {
     "name": "johnatas-x/jean-piarre-foucault",
-    "description": "Jean-Piarre Foucault, Docksal stack.",
-    "license": "proprietary",
+    "description": "Jean-Piarre Foucault, DDEV stack.",
     "type": "project",
     "authors": [
         {
