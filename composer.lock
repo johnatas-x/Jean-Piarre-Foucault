@@ -2214,17 +2214,17 @@
         },
         {
             "name": "drupal/view_custom_table",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/view_custom_table.git",
-                "reference": "2.0.8"
+                "reference": "2.0.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/view_custom_table-2.0.8.zip",
-                "reference": "2.0.8",
-                "shasum": "43059f38c550ff0e33ffb946fe260fb3e891dd76"
+                "url": "https://ftp.drupal.org/files/projects/view_custom_table-2.0.9.zip",
+                "reference": "2.0.9",
+                "shasum": "ee9167e1fabc1b0dd497ea6ab9838e5812afde37"
             },
             "require": {
                 "drupal/core": "^10.1 || ^11"
@@ -2232,8 +2232,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.8",
-                    "datestamp": "1728487228",
+                    "version": "2.0.9",
+                    "datestamp": "1781815248",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
