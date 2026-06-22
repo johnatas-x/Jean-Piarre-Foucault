@@ -1174,26 +1174,33 @@
         },
         {
             "name": "drupal/charts",
-            "version": "5.2.0",
+            "version": "5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/charts.git",
-                "reference": "5.2.0"
+                "reference": "5.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/charts-5.2.0.zip",
-                "reference": "5.2.0",
-                "shasum": "6c51d85039407a6e68733f8068c3af86d97f460e"
+                "url": "https://ftp.drupal.org/files/projects/charts-5.2.1.zip",
+                "reference": "5.2.1",
+                "shasum": "b9dcd21ff9102dc12d9fdb81a43b2529fd869557"
             },
             "require": {
-                "drupal/core": "^10.3 || ^11"
+                "drupal/core": "^10.3 || ^11 || ^12"
+            },
+            "require-dev": {
+                "drupal/charts_api_example": "*",
+                "drupal/charts_billboard": "*",
+                "drupal/charts_chartjs": "*",
+                "drupal/charts_google": "*",
+                "drupal/charts_highcharts": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.2.0",
-                    "datestamp": "1775594157",
+                    "version": "5.2.1",
+                    "datestamp": "1782128047",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
