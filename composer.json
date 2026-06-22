@@ -24,10 +24,10 @@
         "cweagans/composer-patches": "^2.0",
         "drupal/admin_toolbar": "^3.5",
         "drupal/charts": "^5.1",
-        "drupal/core-composer-scaffold": "11.3.11",
-        "drupal/core-project-message": "11.3.11",
-        "drupal/core-recommended": "11.3.11",
-        "drupal/core-vendor-hardening": "11.3.11",
+        "drupal/core-composer-scaffold": "11.3.12",
+        "drupal/core-project-message": "11.3.12",
+        "drupal/core-recommended": "11.3.12",
+        "drupal/core-vendor-hardening": "11.3.12",
         "drupal/drush_batch_bar": "^1.0@beta",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
@@ -46,7 +46,7 @@
     },
     "require-dev": {
         "drupal/coder": "9.0.0 as 8.3.31",
-        "drupal/core-dev": "11.3.11",
+        "drupal/core-dev": "11.3.12",
         "johnatas-x/angry-bearded": "3.7.0-rc1",
         "phpunit/phpunit": "~11.5.0"
     },
