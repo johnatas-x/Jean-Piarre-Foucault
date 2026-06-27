@@ -28,8 +28,8 @@ grumphp:
     variables: { }
     paths: [ ]
   extensions:
-    - GrumphpMago\ExtensionLoader
     - GrumphpPhpa\ExtensionLoader
+    - GrumphpPhpMd3\ExtensionLoader
   testsuites: []
   tasks:
     composer:
@@ -67,15 +67,7 @@ grumphp:
         label: null
         priority: 0
         task: null
-    mago:
-      formatter: true
-      formatter_options: ['--check']
-      linter: false
-      linter_options: ['--staged']
-      analyzer: false
-      analyzer_options: ['--staged']
-      guard: false
-      guard_options: []
+    mago_format:
       metadata:
         blocking: true
         enabled: true
@@ -206,7 +198,7 @@ grumphp:
         enabled: true
         label: null
         priority: 0
-        task: null
+        task: phpmd3
     phpmnd:
       directory: web
       whitelist_patterns: [ ]

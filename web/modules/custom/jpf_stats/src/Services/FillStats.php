@@ -119,8 +119,7 @@ class FillStats implements FillStatsInterface {
    */
   private function getCount(string $table, int $ball, Versions $version): int {
     $count_query = $this->baseSelectQuery($table, $ball, $version, ['id']);
-    $count = $count_query
-      ->countQuery()
+    $count = $count_query->countQuery()
       ->execute()
       ?->fetchField();
 
@@ -144,8 +143,7 @@ class FillStats implements FillStatsInterface {
    */
   private function getLast(string $table, int $ball, Versions $version): ?string {
     $last_query = $this->baseSelectQuery($table, $ball, $version, ['year', 'month', 'day']);
-    $last_result = $last_query
-      ->orderBy('id', 'DESC')
+    $last_result = $last_query->orderBy('id', 'DESC')
       ->range(0, 1)
       ->execute()
       ?->fetchAssoc();
@@ -294,10 +292,9 @@ class FillStats implements FillStatsInterface {
               : []
           ), $friends),
         ),
-        static fn (mixed $val): bool => is_string($val) && $val !== '',
+        static fn (mixed $val): bool => is_string($val) && $val !== '' && $val !== (string) $ball,
       )),
     );
-    unset($counts[(string) $ball]);
 
     if (empty($counts)) {
       return NULL;

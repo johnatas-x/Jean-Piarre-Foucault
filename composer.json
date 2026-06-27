@@ -45,9 +45,9 @@
         "oomphinc/composer-installers-extender": "^2.0"
     },
     "require-dev": {
-        "drupal/coder": "9.0.0 as 8.3.31",
+        "drupal/coder": "9.0.1 as 8.3.31",
         "drupal/core-dev": "11.3.13",
-        "johnatas-x/angry-bearded": "3.7.3",
+        "johnatas-x/angry-bearded": "3.8.2",
         "phpunit/phpunit": "~11.5.0"
     },
     "conflict": {
@@ -89,6 +89,7 @@
         "audit": {
             "ignore-abandoned": {
                 "azjezz/psl": "Required by maglnet/composer-require-checker; needs symfony/console 8.0 to be replaced (likely Drupal 12...)",
+                "oomphinc/composer-installers-extender": "Needed for Drupal npm libraries and no replacement package available",
                 "pear/console_getopt": "https://www.drupal.org/project/drupal/issues/3571185"
             }
         },
@@ -124,6 +125,9 @@
             ],
             "amphp/sync": [
                 ".github"
+            ],
+            "carthage-software/mago": [
+                "tests"
             ],
             "chi-teck/drupal-code-generator": [
                 ".github"

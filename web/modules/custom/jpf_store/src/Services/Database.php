@@ -75,8 +75,7 @@ class Database implements DatabaseInterface {
    * {@inheritdoc}
    */
   public function getLastRecord(): array|bool|null {
-    $record = $this
-      ->selectLotto()
+    $record = $this->selectLotto()
       ->fields(SchemaInterface::LOTTO_TABLE_ALIAS)
       ->orderBy('id', 'DESC')
       ->range(0, 1)
@@ -104,8 +103,7 @@ class Database implements DatabaseInterface {
    * {@inheritdoc}
    */
   public function getLastRecordId(): ?int {
-    $record = $this
-      ->selectLotto()
+    $record = $this->selectLotto()
       ->fields(SchemaInterface::LOTTO_TABLE_ALIAS, ['id'])
       ->orderBy('id', 'DESC')
       ->range(0, 1)
