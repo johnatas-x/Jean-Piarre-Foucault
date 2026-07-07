@@ -11,7 +11,7 @@ database:
     version: "11.8"
 use_dns_when_possible: true
 timezone: Europe/Paris
-composer_version: 2.10.1
+composer_version: 2.10.2
 disable_settings_management: true
 webimage_extra_packages: [php8.4-pcov]
 web_environment: []
