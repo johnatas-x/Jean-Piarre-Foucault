@@ -12,7 +12,7 @@ use Drupal\jpf_utils\Enum\Days;
 /**
  * Methods for CSV manipulations.
  */
-class CsvHelper implements CsvHelperInterface {
+readonly class CsvHelper implements CsvHelperInterface {
 
   /**
    * {@inheritdoc}

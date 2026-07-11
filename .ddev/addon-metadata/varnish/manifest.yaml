@@ -1,7 +1,7 @@
 name: varnish
 repository: ddev/ddev-varnish
-version: v0.2.6
-install_date: "2025-06-14T16:04:06+02:00"
+version: v1.1.0
+install_date: "2026-07-11T17:04:03+02:00"
 project_files:
     - docker-compose.varnish.yaml
     - varnish
@@ -9,7 +9,6 @@ project_files:
 global_files: []
 removal_actions:
     - |
-      #ddev-nodisplay
       #ddev-description:Remove docker-compose.varnish_extras.yaml file
       if [ -f docker-compose.varnish_extras.yaml ]; then
         if grep -q '#ddev-generated' docker-compose.varnish_extras.yaml; then

@@ -15,6 +15,15 @@
 
   <rule ref="rulesets/codesize.xml" />
 
+  <rule ref="rulesets/codesize.xml">
+    <exclude name="CyclomaticComplexity"/>
+  </rule>
+  <rule ref="rulesets/codesize.xml/CyclomaticComplexity">
+    <properties>
+      <property name="reportLevel" value="11" />
+    </properties>
+  </rule>
+
   <rule ref="rulesets/cleancode.xml">
     <exclude name="StaticAccess"/>
     <exclude name="MissingImport" />

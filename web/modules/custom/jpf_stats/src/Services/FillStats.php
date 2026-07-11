@@ -7,6 +7,7 @@ namespace Drupal\jpf_stats\Services;
 use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Database\Query\SelectInterface;
+use Drupal\Core\Database\Statement\FetchAs;
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
 use Drupal\jpf_store\Services\DatabaseInterface;
@@ -16,7 +17,7 @@ use Drupal\jpf_utils\Enum\Days;
 /**
  * Stats filling methods.
  */
-class FillStats implements FillStatsInterface {
+readonly class FillStats implements FillStatsInterface {
 
   /**
    * Minimum number of outputs to calculate frequency.
@@ -277,7 +278,7 @@ class FillStats implements FillStatsInterface {
    */
   private function getFriend(int $ball, Versions $version, bool $type): ?string {
     $query = $this->baseSelectQuery(SchemaInterface::LOTTO_DRAWS_TABLE, $ball, $version, Balls::classicBallsColumn());
-    $friends = $query->execute()?->fetchAll(\PDO::FETCH_NUM);
+    $friends = $query->execute()?->fetchAll(FetchAs::List);
 
     if (empty($friends)) {
       return NULL;

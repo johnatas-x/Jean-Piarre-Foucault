@@ -16,6 +16,7 @@ services:
       - { name: cache_tags_invalidator }
 
 parameters:
+  password.algorithm: argon2id
   # Toggles the super user access policy. If your website has at least one user
   # with the Administrator role, it is advised to set this to false. This allows
   # you to make user 1 a regular user, strengthening the security of your site.

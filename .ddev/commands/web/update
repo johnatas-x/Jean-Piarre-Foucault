@@ -6,9 +6,5 @@
 
 composer install --no-progress
 composer patches-repatch
-if [[ "$1" == "--cim-before-trans" ]]; then
-  drush cr
-  drush cim -y
-fi
-bash "$DDEV_APPROOT/.ddev/commands/web/trans-import"
 drush deploy
+bash "$DDEV_APPROOT/.ddev/commands/web/trans-import"

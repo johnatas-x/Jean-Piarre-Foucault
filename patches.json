@@ -5,7 +5,8 @@
     },
     "drupal/potx": {
       "#3338225 - Deprecated function: preg_replace(): Passing null to parameter #3 ($subject) of type array|string": "./patches/modules/potx/3338225-13.patch",
-      "#3444016 - New Drush command for developers for extracting translations of custom module, theme or profile": "https://www.drupal.org/files/issues/2025-07-18/3444016-6.patch"
+      "#3444016 - New Drush command for developers for extracting translations of custom module, theme or profile": "https://www.drupal.org/files/issues/2025-07-18/3444016-6.patch",
+      "#3528177 - Potx doesn't recognize t filters and dots in variables as of twig 3.21": "https://www.drupal.org/files/issues/2025-07-03/3528177-twig_3_21.patch"
     },
     "drupal/purge": {
       "#3418683 - Include link to purge config page in admin menu": "./patches/modules/purge/3418683-33.patch",

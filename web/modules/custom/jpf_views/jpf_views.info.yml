@@ -1,7 +1,7 @@
 name: 'JPF : Data views'
 type: module
 description: 'All features for data views.'
-core_version_requirement: ^11
+core_version_requirement: ^11.1
 package: Custom
 dependencies:
   - drupal:view_custom_table

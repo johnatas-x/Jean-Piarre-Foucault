@@ -1,7 +1,7 @@
 name: 'JPF : Home'
 type: module
 description: 'Features for homepage.'
-core_version_requirement: ^11
+core_version_requirement: ^11.4
 package: Custom
 dependencies:
   - jpf_store:jpf_store

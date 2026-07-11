@@ -4,6 +4,7 @@
 ## Usage: trans-import
 ## Example: ddev trans-import
 
+drush php-eval "\Drupal::keyValue('locale.translation_status')->deleteAll();"
 drush locale-check
 drush locale-update
 drush cr

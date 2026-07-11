@@ -1,12 +1,12 @@
 {
-    "_hash": "a6a23bd11e101a479ff8f8c1259e2d5b8776abdac2bed9b751b050777a475736",
+    "_hash": "56ff465e993a2290cbb84eb4808c2206345963be7e20c963392e584e988f2c10",
     "patches": {
         "drupal/core": [
             {
                 "package": "drupal/core",
                 "description": "#3483087 - Allow project-relative path for included translation .po files",
                 "url": "./patches/core/3483087-10167.patch",
-                "sha256": "44827da9db6405e8a22db86ed28da546b6a357127d7ee901910ba2ac58e41ad3",
+                "sha256": "8a8971058bebefdfc4bf2a3f670b176faec698b5bdb1456026c7f665d4836fa9",
                 "depth": 2,
                 "extra": {
                     "provenance": "patches-file:patches.json"
@@ -29,6 +29,16 @@
                 "description": "#3444016 - New Drush command for developers for extracting translations of custom module, theme or profile",
                 "url": "https://www.drupal.org/files/issues/2025-07-18/3444016-6.patch",
                 "sha256": "6fd76601d09bf1cfc6210d3728cf416b591b61496f25eeb848c454a49eab8516",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:patches.json"
+                }
+            },
+            {
+                "package": "drupal/potx",
+                "description": "#3528177 - Potx doesn't recognize t filters and dots in variables as of twig 3.21",
+                "url": "https://www.drupal.org/files/issues/2025-07-03/3528177-twig_3_21.patch",
+                "sha256": "38e93600248c0964cdfcc08ee771f5db0f287857ebb199a52f7074c767fd5f25",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:patches.json"

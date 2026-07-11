@@ -8,6 +8,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\jpf_home\Services\HomepageHelperInterface;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\Routing\Attribute\Route;
 
 /**
  * Controller for site homepage.
@@ -33,6 +34,12 @@ class HomepageController extends ControllerBase {
    * @return array<string, mixed>
    *   The page content renderer array.
    */
+  #[Route(
+    path: '/homepage',
+    name: 'jpf_home.homepage',
+    requirements: ['_access' => 'TRUE'],
+    defaults: ['_title' => 'Jean-Piarre Foucault'],
+  )]
   public function content(): array {
     return [
       '#theme' => 'homepage',

@@ -9,7 +9,7 @@ use Drupal\jpf_store\Enum\Balls;
  *
  * @phpcs:disable SlevomatCodingStandard.Functions.FunctionLength.FunctionLength
  */
-class Schema implements SchemaInterface {
+readonly class Schema implements SchemaInterface {
 
   /**
    * {@inheritdoc}

@@ -13,7 +13,7 @@ use Drupal\jpf_store\Enum\Versions;
 /**
  * Database methods for this module.
  */
-class Database implements DatabaseInterface {
+readonly class Database implements DatabaseInterface {
 
   /**
    * The Database constructor.
