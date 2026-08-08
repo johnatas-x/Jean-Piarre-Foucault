@@ -14,5 +14,13 @@
 !src/Drush/Commands/MockPredictionCommand.php
 !src/Entity/
 !src/Entity/Prediction.php
+!tests/
+!tests/src
+!tests/src/Build
+!tests/src/Build/JpfAlgoBuildTest.php
+!tests/src/Kernel
+!tests/src/Kernel/JpfAlgoInstallKernelTest.php
+!tests/src/Unit
+!tests/src/Unit/MockPredictionCommandTest.php
 !translations/
 !translations/jpf_algo.fr.po

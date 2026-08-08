@@ -109,3 +109,7 @@
 
 # Ignore renovate local config.
 config.js
+
+# Ignore PHPUnit cache & coverage
+.phpunit.cache
+coverage-html/

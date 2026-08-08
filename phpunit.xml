@@ -76,6 +76,8 @@
       <directory suffix=".deploy.php">web/modules/custom</directory>
       <!-- Plugins excluded: parent::/static calls untestable in Unit, see comment above -->
       <directory>web/modules/custom/*/src/Plugin</directory>
+      <!-- Entities excluded: parent::baseFieldDefinitions() requires full Drupal container, covered by Kernel tests -->
+      <directory>web/modules/custom/*/src/Entity</directory>
     </exclude>
   </source>
 </phpunit>
