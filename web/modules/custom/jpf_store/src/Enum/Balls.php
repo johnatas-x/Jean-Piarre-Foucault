@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Enum;
 
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\jpf_utils\Traits\EnumToArrayTrait;
 
 /**
@@ -58,6 +59,25 @@ enum Balls: string {
    */
   final public const int DIAMETER = 5;
   final public const string DIAMETER_UNIT = 'cm';
+
+  /**
+   * Translatable label.
+   *
+   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+   *   The label.
+   */
+  public function label(): TranslatableMarkup {
+    return match ($this) {
+      self::One => new TranslatableMarkup('Ball one'),
+      self::Two => new TranslatableMarkup('Ball two'),
+      self::Three => new TranslatableMarkup('Ball three'),
+      self::Four => new TranslatableMarkup('Ball four'),
+      self::Five => new TranslatableMarkup('Ball five'),
+      self::Six => new TranslatableMarkup('Ball six'),
+      self::Complementary => new TranslatableMarkup('Complementary ball'),
+      self::Lucky => new TranslatableMarkup('Lucky ball'),
+    };
+  }
 
   /**
    * Numeric ball value.

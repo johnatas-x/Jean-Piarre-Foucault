@@ -8,6 +8,7 @@ use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\Utility\Error;
 use Drupal\jpf_store\Services\Database;
 use Drupal\jpf_store\Services\DatabaseInterface;
 use Drupal\jpf_utils\Entity\BallEntityBase;
@@ -106,7 +107,7 @@ class HomepageHelper implements HomepageHelperInterface {
       }
     }
     catch (InvalidPluginDefinitionException|PluginNotFoundException $exception) {
-      $this->logger->get('jpf_home')->error($exception->getMessage());
+      Error::logException($this->logger->get('jpf_home'), $exception);
 
       return $data;
     }

@@ -1,6 +1,6 @@
 {% macro renderBall(ball, type) %}
   <li>
-    <svg viewBox="0 0 100 100" aria-label="{{ (type == 'lucky' ? 'Lucky ball ' ~ ball : 'Ball ' ~ ball)|t }}">
+    <svg viewBox="0 0 100 100" aria-label="{{ type == 'lucky' ? 'Lucky ball @ball'|t({'@ball': ball}) : 'Ball @ball'|t({'@ball': ball}) }}">
       {% if type == 'classic' %}
         {% if not loop.parent.first %}
           <defs>
@@ -31,14 +31,14 @@
 {% import _self as macros %}
 
 {% set sections = {
-  next_predict: 'Next prediction',
-  last_draw: 'Last draw',
-  last_predict: 'Last prediction',
+  next_predict: 'Next prediction'|t,
+  last_draw: 'Last draw'|t,
+  last_predict: 'Last prediction'|t,
 } %}
 
 {% for key, title in sections %}
   {% if attribute(_context, key).balls is not empty %}
-    <h2>{{ title|t }}</h2>
+    <h2>{{ title }}</h2>
     <div class="balls-container">
       <ul aria-label="balls">
         {% for ball in attribute(_context, key).balls %}

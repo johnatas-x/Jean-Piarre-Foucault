@@ -6,6 +6,7 @@ namespace Drupal\jpf_import\Cron;
 
 use Consolidation\SiteProcess\Util\RealtimeOutputHandler;
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Utility\Error;
 use Drupal\jpf_import\Api\Sto;
 use Drupal\jpf_store\Enum\Versions;
 use Drupal\jpf_store\Services\Database;
@@ -49,7 +50,7 @@ final class ImportDynamicData {
       );
 
       if ($response->getStatusCode() !== Response::HTTP_OK) {
-        \Drupal::logger('jpf_import')->error(t('Cannot download file.')->render());
+        \Drupal::logger('jpf_import')->error('Cannot download file.');
 
         return;
       }
@@ -75,7 +76,7 @@ final class ImportDynamicData {
       Cache::invalidateTags(['custom_tokens', 'homepage_data']);
     }
     catch (\Throwable $exception) {
-      \Drupal::logger('jpf_import')->error($exception->getMessage());
+      Error::logException(\Drupal::logger('jpf_import'), $exception);
     }
   }
 
@@ -102,7 +103,7 @@ final class ImportDynamicData {
         : t('Never')->render();
     }
     catch (\Throwable $exception) {
-      \Drupal::logger('jpf_import')->error($exception->getMessage());
+      Error::logException(\Drupal::logger('jpf_import'), $exception);
 
       return t('Unknown')->render();
     }

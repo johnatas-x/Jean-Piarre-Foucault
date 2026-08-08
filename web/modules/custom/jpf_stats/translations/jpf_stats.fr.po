@@ -2,14 +2,16 @@
 #
 # French translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from file: modules/custom/jpf_stats/jpf_stats.info.yml: n/a
+# Generated from files:
+#  modules/custom/jpf_stats/jpf_stats.info.yml: n/a
+#  modules/custom/jpf_stats/src/Drush/Commands/FillStatsCommand.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-16 18:09+0200\n"
-"PO-Revision-Date: 2025-08-16 18:09+0200\n"
+"POT-Creation-Date: 2026-08-08 18:35+0200\n"
+"PO-Revision-Date: 2026-08-08 18:35+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -28,4 +30,8 @@ msgstr "Contient les fonctionnalités nécessaires pour les statistiques."
 #: modules/custom/jpf_stats/jpf_stats.info.yml:0
 msgid "Custom"
 msgstr "Personnalisé"
+
+#: modules/custom/jpf_stats/src/Drush/Commands/FillStatsCommand.php:61
+msgid "Invalid current version."
+msgstr "Version courante invalide."
 

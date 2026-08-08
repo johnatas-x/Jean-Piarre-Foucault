@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-16 18:09+0200\n"
-"PO-Revision-Date: 2025-08-16 18:09+0200\n"
+"POT-Creation-Date: 2026-08-08 18:35+0200\n"
+"PO-Revision-Date: 2026-08-08 18:35+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -32,35 +32,35 @@ msgstr "Contient les fonctionnalités nécessaires pour les vues de données."
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:23;26
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:26;29
 msgid "Custom last date"
 msgstr "Dernière sortie (champ personnalisé)"
 
-#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:24;33;42
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:27;36;45
 msgid "Custom Table Views"
 msgstr "Vue de table personnalisée"
 
-#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:27
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:30
 msgid "Translatable custom last date."
 msgstr "Date de dernière sortie avec format traductible."
 
-#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:32;35
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:35;38
 msgid "Custom best day"
 msgstr "Meilleur jour (champ personnalisé)"
 
-#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:36
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:39
 msgid "Translatable custom best day."
 msgstr "Meilleur jour traductible."
 
-#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:41;44
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:44;47
 msgid "Delta"
 msgstr "Delta"
 
-#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:45
+#: modules/custom/jpf_views/src/Hook/JpfViewsHooks.php:48
 msgid "Delta between last and frequency."
 msgstr "Delta entre le dernier tirage et la fréquence."
 
-#: modules/custom/jpf_views/src/Plugin/views/field/CustomLastDate.php:87
+#: modules/custom/jpf_views/src/Plugin/views/field/CustomLastDate.php:58
 msgid "Unknown"
 msgstr "Inconnu"
 

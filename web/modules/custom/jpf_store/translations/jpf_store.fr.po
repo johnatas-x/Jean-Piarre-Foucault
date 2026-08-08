@@ -4,15 +4,16 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  modules/custom/jpf_store/jpf_store.info.yml: n/a
-#  modules/custom/jpf_store/src/Commands/FillCommands.php: n/a
+#  modules/custom/jpf_store/src/Drush/Commands/FillDataCommand.php: n/a
 #  modules/custom/jpf_store/src/Entity/Draw.php: n/a
+#  modules/custom/jpf_store/src/Enum/Balls.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-16 18:09+0200\n"
-"PO-Revision-Date: 2025-08-16 18:09+0200\n"
+"POT-Creation-Date: 2026-08-08 18:35+0200\n"
+"PO-Revision-Date: 2026-08-08 18:35+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -32,11 +33,21 @@ msgstr "Contient les fonctionnalités nécessaires pour stocker les données."
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: modules/custom/jpf_store/src/Commands/FillCommands.php:76
-msgid "This version is undefined or not allowed : @item"
-msgid_plural "These versions are undefined or not allowed : @items"
-msgstr[0] "Cette version n'est pas définie ou n'est pas autorisée : @item"
-msgstr[1] "Ces versions ne sont pas définies ou ne sont pas autorisées : @items"
+#: modules/custom/jpf_store/src/Drush/Commands/FillDataCommand.php:121
+msgid "This version is undefined or not allowed: @items"
+msgstr "Cette version est indéfinie ou non autorisée : @items"
+
+#: modules/custom/jpf_store/src/Drush/Commands/FillDataCommand.php:128
+msgid "These versions are undefined or not allowed: @items"
+msgstr "Ces versions sont indéfinies ou non autorisées : @items"
+
+#: modules/custom/jpf_store/src/Drush/Commands/FillDataCommand.php:101
+msgid "Do not use \"versions\" and \"all\" options together."
+msgstr "N'utilisez pas les options \"versions\" et \"all\" ensemble."
+
+#: modules/custom/jpf_store/src/Drush/Commands/FillDataCommand.php:107
+msgid "You must use at least one option between \"versions\" and \"all\"."
+msgstr "Vous devez utiliser au moins une option parmi \"versions\" et \"all\"."
 
 #: modules/custom/jpf_store/src/Entity/Draw.php:17
 msgid "Draw"
@@ -49,4 +60,36 @@ msgstr "tirage"
 #: modules/custom/jpf_store/src/Entity/Draw.php:19
 msgid "draws"
 msgstr "tirages"
+
+#: modules/custom/jpf_store/src/Enum/Balls.php:71
+msgid "Ball one"
+msgstr "Première boule"
+
+#: modules/custom/jpf_store/src/Enum/Balls.php:72
+msgid "Ball two"
+msgstr "Deuxième boule"
+
+#: modules/custom/jpf_store/src/Enum/Balls.php:73
+msgid "Ball three"
+msgstr "Troisième boule"
+
+#: modules/custom/jpf_store/src/Enum/Balls.php:74
+msgid "Ball four"
+msgstr "Quatrième boule"
+
+#: modules/custom/jpf_store/src/Enum/Balls.php:75
+msgid "Ball five"
+msgstr "Cinquième boule"
+
+#: modules/custom/jpf_store/src/Enum/Balls.php:76
+msgid "Ball six"
+msgstr "Sixième boule"
+
+#: modules/custom/jpf_store/src/Enum/Balls.php:77
+msgid "Complementary ball"
+msgstr "Boule complémentaire"
+
+#: modules/custom/jpf_store/src/Enum/Balls.php:78
+msgid "Lucky ball"
+msgstr "Boule chance"
 

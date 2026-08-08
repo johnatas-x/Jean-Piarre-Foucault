@@ -4,15 +4,15 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  modules/custom/jpf_home/jpf_home.info.yml: n/a
-#  modules/custom/jpf_home/jpf_home.routing.yml: n/a
 #  modules/custom/jpf_home/src/Controller/HomepageController.php: n/a
+#  modules/custom/jpf_home/templates/homepage.html.twig: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-16 18:09+0200\n"
-"PO-Revision-Date: 2025-08-16 18:09+0200\n"
+"POT-Creation-Date: 2026-08-08 18:35+0200\n"
+"PO-Revision-Date: 2026-08-08 18:35+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,27 @@ msgstr "Contient les fonctionnalités nécessaires pour la page d'accueil."
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: modules/custom/jpf_home/jpf_home.routing.yml:0 modules/custom/jpf_home/src/Controller/HomepageController.php:40
+#: modules/custom/jpf_home/src/Controller/HomepageController.php:47
 msgid "Jean-Piarre Foucault"
 msgstr "Jean-Piarre Foucault"
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:3
+msgid "Lucky ball @ball"
+msgstr "Boule chance @ball"
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:3
+msgid "Ball @ball"
+msgstr "Boule @ball"
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:34
+msgid "Next prediction"
+msgstr "Prochaine prédiction"
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:35
+msgid "Last draw"
+msgstr "Dernier tirage"
+
+#: modules/custom/jpf_home/templates/homepage.html.twig:36
+msgid "Last prediction"
+msgstr "Dernière prédiction"
 

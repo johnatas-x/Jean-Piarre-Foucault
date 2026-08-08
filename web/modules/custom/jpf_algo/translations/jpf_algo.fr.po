@@ -4,15 +4,15 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  modules/custom/jpf_algo/jpf_algo.info.yml: n/a
-#  modules/custom/jpf_algo/src/Commands/MockCommands.php: n/a
+#  modules/custom/jpf_algo/src/Drush/Commands/MockPredictionCommand.php: n/a
 #  modules/custom/jpf_algo/src/Entity/Prediction.php: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2025-08-16 18:09+0200\n"
-"PO-Revision-Date: 2025-08-16 18:09+0200\n"
+"POT-Creation-Date: 2026-08-08 18:35+0200\n"
+"PO-Revision-Date: 2026-08-08 18:35+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -34,17 +34,17 @@ msgstr ""
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: modules/custom/jpf_algo/src/Commands/MockCommands.php:75
-msgid "Last prediction successfully mocked."
-msgstr "La précédente prédiction a bien été mockée."
+#: modules/custom/jpf_algo/src/Drush/Commands/MockPredictionCommand.php:85
+msgid "Invalid type. Please use one of these allowed types: @types."
+msgstr "Type invalide. Veuillez utiliser l'un des types autorisés : @types."
 
-#: modules/custom/jpf_algo/src/Commands/MockCommands.php:81
-msgid "Next prediction successfully mocked."
-msgstr "La prochaine prédiction a bien été mockée."
+#: modules/custom/jpf_algo/src/Drush/Commands/MockPredictionCommand.php:105
+msgid "@type prediction(s) successfully mocked."
+msgstr "@type prédiction(s) simulée(s) avec succès."
 
-#: modules/custom/jpf_algo/src/Commands/MockCommands.php:88
-msgid "Both predictions successfully mocked."
-msgstr "Les deux prédictions ont bien été mockées."
+#: modules/custom/jpf_algo/src/Drush/Commands/MockPredictionCommand.php:124
+msgid "Invalid current version."
+msgstr "Version courante invalide."
 
 #: modules/custom/jpf_algo/src/Entity/Prediction.php:53
 msgid "Draw ID"

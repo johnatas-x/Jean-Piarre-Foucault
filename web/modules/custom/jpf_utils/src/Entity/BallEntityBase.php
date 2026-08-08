@@ -57,7 +57,7 @@ abstract class BallEntityBase extends ContentEntityBase {
 
     foreach (Balls::cases() as $ball) {
       $fields[$ball->columnName()] = BaseFieldDefinition::create('integer')
-        ->setLabel(new TranslatableMarkup($ball->value)) // phpcs:disable Drupal.Semantics.FunctionT.NotLiteralString
+        ->setLabel($ball->label())
         ->setRequired(FALSE);
     }
 

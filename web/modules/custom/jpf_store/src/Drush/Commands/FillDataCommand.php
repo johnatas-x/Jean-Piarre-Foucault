@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Drupal\jpf_store\Drush\Commands;
 
-use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\drush_batch_bar\Commands\DrushBatchCommands;
 use Drupal\jpf_store\Batch\FillDataBatch;
 use Drupal\jpf_store\Enum\Versions;
@@ -27,7 +26,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class FillDataCommand extends Command {
 
   use AutowireTrait;
-  use StringTranslationTrait;
 
   /**
    * The command name.
@@ -65,7 +63,7 @@ final class FillDataCommand extends Command {
    * {@inheritdoc}
    */
   public function execute(InputInterface $input, OutputInterface $output): int {
-    $operations = $this->optionsChecker($input->getOption('loto-versions'), $input->getOption('all'));
+    $operations = $this->optionsChecker($input->getOption('loto-versions'), $input->getOption('all'), $output);
 
     if ($operations === NULL) {
       return Command::FAILURE;
@@ -92,11 +90,13 @@ final class FillDataCommand extends Command {
    *   List of versions to fill, separated with a comma.
    * @param mixed $all
    *   Fill all versions if TRUE.
+   * @param \Symfony\Component\Console\Output\OutputInterface $output
+   *   The output interface.
    *
    * @return array<string>|null
    *   The options to fill, NULL if error.
    */
-  private function optionsChecker(mixed $versions, mixed $all): ?array {
+  private function optionsChecker(mixed $versions, mixed $all, OutputInterface $output): ?array {
     if (is_string($versions) && $all === TRUE) {
       $this->logger->error('Do not use "versions" and "all" options together.');
 
@@ -114,17 +114,19 @@ final class FillDataCommand extends Command {
       $not_allowed_versions = array_diff($versions_array, Versions::values());
 
       if (!empty($not_allowed_versions)) {
-        $message = $this->formatPlural(
-          count($not_allowed_versions),
-          'This version is undefined or not allowed : @item',
-          'These versions are undefined or not allowed : @items',
-          [
-            '@item' => reset($not_allowed_versions),
-            '@items' => implode(', ', $not_allowed_versions),
-          ],
-        )->render();
+        $items = implode(', ', $not_allowed_versions);
 
-        $this->logger->error($message);
+        if (count($not_allowed_versions) === 1) {
+          /** @var string $msg */
+          $msg = dt('This version is undefined or not allowed: @items', ['@items' => $items]);
+          $output->writeln($msg);
+
+          return NULL;
+        }
+
+        /** @var string $msg */
+        $msg = dt('These versions are undefined or not allowed: @items', ['@items' => $items]);
+        $output->writeln($msg);
 
         return NULL;
       }

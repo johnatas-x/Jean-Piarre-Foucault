@@ -51,6 +51,7 @@
           \Drupal\Core\Access\AccessResult,
           \Drupal\Core\Annotation\Action,
           \Drupal\Core\Cache\Cache,
+          \Drupal\Core\Utility\Error,
           \Drupal\Core\Datetime\DrupalDateTime,
           \Drupal\Core\Link,
           \Drupal\Core\Render\Element,

@@ -6,7 +6,6 @@ namespace Drupal\jpf_algo\Drush\Commands;
 
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Database\Connection;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\jpf_algo\Entity\Prediction;
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
@@ -34,7 +33,6 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 final class MockPredictionCommand extends Command {
 
   use AutowireTrait;
-  use StringTranslationTrait;
 
   /**
    * The command name.
@@ -83,8 +81,12 @@ final class MockPredictionCommand extends Command {
     $type = $input->getArgument('type');
 
     if (!in_array($type, self::ALLOWED_TYPES, TRUE)) {
-      $types = implode(', ', self::ALLOWED_TYPES);
-      $this->logger->error("Invalid type. Please use one of these allowed types : $types.");
+      /** @var string $msg */
+      $msg = dt('Invalid type. Please use one of these allowed types: @types.', ['@types' => implode(
+        ', ',
+        self::ALLOWED_TYPES,
+      )]);
+      $output->writeln($msg);
 
       return Command::FAILURE;
     }
@@ -99,7 +101,9 @@ final class MockPredictionCommand extends Command {
       return Command::FAILURE;
     }
 
-    $this->logger->notice($this->t('@type prediction(s) successfully mocked.', ['@type' => ucfirst($type)])->render());
+    /** @var string $msg */
+    $msg = dt('@type prediction(s) successfully mocked.', ['@type' => ucfirst($type)]);
+    $output->writeln($msg);
     Cache::invalidateTags(['homepage_data']);
 
     return Command::SUCCESS;
