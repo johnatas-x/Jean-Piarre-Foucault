@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Generate PHPUnit coverage for Unit tests with HTML format.
+## Usage: html-coverage
+## Example: "ddev html-coverage"
+
+ddev phpunit --testsuite=unit --group=Custom --coverage-html=web/coverage-html
+
+echo "=> Coverage dashboard: $DDEV_PRIMARY_URL/coverage-html/index.html"

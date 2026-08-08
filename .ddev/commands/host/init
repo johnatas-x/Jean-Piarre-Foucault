@@ -9,6 +9,7 @@ EXCLUDES_PATH=(
   "$WEB_PATH/sites/default"
   "$WEB_PATH/sites/default/settings.local.php"
   "$WEB_PATH/sites/default/settings.php"
+  "$WEB_PATH/sites/default/settings.ddev.php"
   "$WEB_PATH/sites/default/services.yml"
   "$WEB_PATH/sites/development.services.yml"
 )
