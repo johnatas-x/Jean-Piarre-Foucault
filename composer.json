@@ -24,10 +24,10 @@
         "cweagans/composer-patches": "^2.0",
         "drupal/admin_toolbar": "^3.5",
         "drupal/charts": "^5.1",
-        "drupal/core-composer-scaffold": "11.4.4",
-        "drupal/core-project-message": "11.4.4",
-        "drupal/core-recommended": "11.4.4",
-        "drupal/core-vendor-hardening": "11.4.4",
+        "drupal/core-composer-scaffold": "~11.4.0",
+        "drupal/core-project-message": "~11.4.0",
+        "drupal/core-recommended": "~11.4.0",
+        "drupal/core-vendor-hardening": "~11.4.0",
         "drupal/drush_batch_bar": "^1.0@beta",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
@@ -39,15 +39,15 @@
         "drupal/varnish_purge": "^2.3",
         "drupal/view_custom_table": "^2.0",
         "drush/drush": "^13",
+        "mnsami/composer-custom-directory-installer": "^2.1",
         "npm-asset/chart.js": "^4.4",
         "npm-asset/chartjs-adapter-date-fns": "^3.0",
-        "npm-asset/chartjs-plugin-datalabels": "^2.0",
-        "oomphinc/composer-installers-extender": "^2.0"
+        "npm-asset/chartjs-plugin-datalabels": "^2.0"
     },
     "require-dev": {
         "drupal/coder": "9.0.1 as 8.3.31",
         "drupal/core-dev": "11.4.4",
-        "johnatas-x/angry-bearded": "3.8.4",
+        "johnatas-x/angry-bearded": "3.10.2",
         "phpunit/phpunit": "~11.5.0"
     },
     "conflict": {
@@ -80,7 +80,7 @@
             "drupal/core-project-message": true,
             "drupal/core-vendor-hardening": true,
             "ergebnis/composer-normalize": true,
-            "oomphinc/composer-installers-extender": true,
+            "mnsami/composer-custom-directory-installer": true,
             "php-http/discovery": true,
             "phpro/grumphp": true,
             "phpstan/extension-installer": true,
@@ -90,7 +90,6 @@
         "audit": {
             "ignore-abandoned": {
                 "azjezz/psl": "Required by maglnet/composer-require-checker; needs symfony/console 8.0 to be replaced (likely Drupal 12...)",
-                "oomphinc/composer-installers-extender": "Needed for Drupal npm libraries and no replacement package available",
                 "pear/console_getopt": "https://www.drupal.org/project/drupal/issues/3571185"
             }
         },

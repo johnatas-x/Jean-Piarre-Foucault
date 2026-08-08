@@ -1,5 +1,5 @@
 {
-    "_hash": "56ff465e993a2290cbb84eb4808c2206345963be7e20c963392e584e988f2c10",
+    "_hash": "1041a76670e1cddeec6bc858d15b617235eacbbac555ce9750be4b267cea45be",
     "patches": {
         "drupal/core": [
             {
@@ -51,16 +51,6 @@
                 "description": "#3418683 - Include link to purge config page in admin menu",
                 "url": "./patches/modules/purge/3418683-33.patch",
                 "sha256": "6fa6f15a4b1af1ca51f7d5e17a7ce3023de596a99209696fa8560408d5c0797d",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:patches.json"
-                }
-            },
-            {
-                "package": "drupal/purge",
-                "description": "#3511668 - PHP 8.4 support implicit null deprecated",
-                "url": "./patches/modules/purge/3511668-53.patch",
-                "sha256": "ae426247d5805936741c408d90964d98f5a1628592f1c1f176de4fe595cbda21",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:patches.json"

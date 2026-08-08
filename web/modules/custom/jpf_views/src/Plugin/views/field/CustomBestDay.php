@@ -42,9 +42,7 @@ class CustomBestDay extends CustomFieldBase {
       $fr_days[] = Days::from($day)->capitalizeFrenchLabel();
     }
 
-    array_filter($fr_days);
-
-    return implode(' ou ', $fr_days);
+    return implode(' ou ', array_filter($fr_days));
   }
 
 }

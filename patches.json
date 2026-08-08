@@ -9,8 +9,7 @@
       "#3528177 - Potx doesn't recognize t filters and dots in variables as of twig 3.21": "https://www.drupal.org/files/issues/2025-07-03/3528177-twig_3_21.patch"
     },
     "drupal/purge": {
-      "#3418683 - Include link to purge config page in admin menu": "./patches/modules/purge/3418683-33.patch",
-      "#3511668 - PHP 8.4 support implicit null deprecated": "./patches/modules/purge/3511668-53.patch"
+      "#3418683 - Include link to purge config page in admin menu": "./patches/modules/purge/3418683-33.patch"
     },
     "drupal/varnish_purge": {
       "#3519158 - varnish_image_purge sub-module D11 Compatibility error": "./patches/modules/varnish_purge/3519158-18.patch",
