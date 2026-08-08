@@ -139,4 +139,9 @@
   <rule ref="PHPCompatibility"/>
   <config name="testVersion" value="8.5"/>
 
+  <!-- Custom exclusions for Drush Commands. -->
+  <rule ref="SlevomatCodingStandard.Classes.ClassStructure.IncorrectGroupOrder">
+    <exclude-pattern>*/src/Drush/Commands/*Command.php</exclude-pattern>
+  </rule>
+
 </ruleset>

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\jpf_stats\Batch;
 
 use Drupal\drush_batch_bar\Batch\DrushBatchBar;
+use Drupal\jpf_stats\Services\FillStats;
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
 
@@ -72,7 +73,7 @@ class FillStatsBatch extends DrushBatchBar {
     parent::initProcess($context);
 
     try {
-      \Drupal::service('jpf_stats.fill')->fillBallStats($version, $type, $ball);
+      \Drupal::service(FillStats::class)->fillBallStats($version, $type, $ball);
       $context['results']['success']++;
     }
     catch (\Throwable $exception) {

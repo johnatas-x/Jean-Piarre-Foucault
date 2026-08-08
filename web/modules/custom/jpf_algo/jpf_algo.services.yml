@@ -1,0 +1,2 @@
+parameters:
+  jpf_algo.skip_procedural_hook_scan: true

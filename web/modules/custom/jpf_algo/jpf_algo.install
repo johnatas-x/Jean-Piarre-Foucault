@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 use Drupal\jpf_algo\Entity\Prediction;
 use Drupal\jpf_store\Enum\Balls;
+use Drupal\jpf_store\Services\Database;
 use Drupal\jpf_store\Services\SchemaInterface;
 
 /**
@@ -56,5 +57,5 @@ function jpf_algo_schema(): array {
  * Implements hook_uninstall().
  */
 function jpf_algo_uninstall(): void {
-  \Drupal::service('jpf_store.database')->deleteTable(Prediction::LOTTO_PREDICT_TABLE);
+  \Drupal::service(Database::class)->deleteTable(Prediction::LOTTO_PREDICT_TABLE);
 }

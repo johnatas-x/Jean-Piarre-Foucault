@@ -8,6 +8,8 @@
 declare(strict_types=1);
 
 use Drupal\jpf_store\Enum\Versions;
+use Drupal\jpf_store\Services\Database;
+use Drupal\jpf_store\Services\Schema;
 use Drupal\jpf_store\Services\SchemaInterface;
 
 /**
@@ -17,14 +19,14 @@ function jpf_store_schema(): array {
   return [
     SchemaInterface::LOTTO_DRAWS_TABLE => [
       'description' => 'Table which store all lotto draws',
-      'fields' => \Drupal::service('jpf_store.schema')->lottoDrawsFields(),
+      'fields' => \Drupal::service(Schema::class)->lottoDrawsFields(),
       'primary key' => [
         'id',
       ],
     ],
     SchemaInterface::LOTTO_VERSIONS => [
       'description' => 'Table which store all lotto version stats',
-      'fields' => \Drupal::service('jpf_store.schema')->versionStatsFields(),
+      'fields' => \Drupal::service(Schema::class)->versionStatsFields(),
       'primary key' => [
         'version',
       ],
@@ -55,5 +57,5 @@ function jpf_store_install(): void {
  * Implements hook_uninstall().
  */
 function jpf_store_uninstall(): void {
-  \Drupal::service('jpf_store.database')->deleteTable(SchemaInterface::LOTTO_DRAWS_TABLE);
+  \Drupal::service(Database::class)->deleteTable(SchemaInterface::LOTTO_DRAWS_TABLE);
 }

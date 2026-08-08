@@ -1,0 +1,2 @@
+parameters:
+  jpf_charts.skip_procedural_hook_scan: true

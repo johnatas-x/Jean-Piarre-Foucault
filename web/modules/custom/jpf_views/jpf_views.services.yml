@@ -1,0 +1,2 @@
+parameters:
+  jpf_views.skip_procedural_hook_scan: true

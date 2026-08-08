@@ -6,6 +6,7 @@ namespace Drupal\jpf_store\Batch;
 
 use Drupal\drush_batch_bar\Batch\DrushBatchBar;
 use Drupal\jpf_store\Enum\Versions;
+use Drupal\jpf_store\Services\Database;
 
 /**
  * Batch methods for FillCommands.
@@ -56,7 +57,7 @@ class FillDataBatch extends DrushBatchBar {
     parent::initProcess($context);
 
     try {
-      \Drupal::service('jpf_store.database')->importCsvFile($version);
+      \Drupal::service(Database::class)->importCsvFile($version);
       $context['results']['success']++;
       $context['message'] = '[OK] ' . $version->filename();
     }

@@ -8,6 +8,7 @@ use Consolidation\SiteProcess\Util\RealtimeOutputHandler;
 use Drupal\Core\Cache\Cache;
 use Drupal\jpf_import\Api\Sto;
 use Drupal\jpf_store\Enum\Versions;
+use Drupal\jpf_store\Services\Database;
 use Drupal\ultimate_cron\CronJobInterface;
 use Drush\Drush;
 use Symfony\Component\HttpFoundation\Response;
@@ -67,7 +68,7 @@ final class ImportDynamicData {
       // Delete archive.
       unlink($archive_path);
 
-      \Drupal::service('jpf_store.database')->importCsvFile($current_version);
+      \Drupal::service(Database::class)->importCsvFile($current_version);
 
       self::drushFls();
 

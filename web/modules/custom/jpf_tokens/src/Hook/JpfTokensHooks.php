@@ -13,7 +13,7 @@ use Drupal\jpf_store\Enum\Versions;
 /**
  * Hook implementations for jpf_tokens.
  */
-class JpfTokensHooks {
+final class JpfTokensHooks {
 
   use StringTranslationTrait;
 

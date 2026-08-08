@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+use Drupal\jpf_store\Services\Database;
+use Drupal\jpf_store\Services\Schema;
 use Drupal\jpf_store\Services\SchemaInterface;
 
 /**
@@ -18,7 +20,7 @@ function jpf_stats_schema(): array {
   foreach (SchemaInterface::LOTTO_STATS_TABLES as $description => $table_name) {
     $schema[$table_name] = [
       'description' => "Table which store all lotto $description stats for last version",
-      'fields' => \Drupal::service('jpf_store.schema')->lottoStatsFields(),
+      'fields' => \Drupal::service(Schema::class)->lottoStatsFields(),
       'primary key' => [
         'ball',
       ],
@@ -71,6 +73,6 @@ function jpf_stats_uninstall(): void {
       return;
     }
 
-    \Drupal::service('jpf_store.database')->deleteTable($table_name);
+    \Drupal::service(Database::class)->deleteTable($table_name);
   }
 }

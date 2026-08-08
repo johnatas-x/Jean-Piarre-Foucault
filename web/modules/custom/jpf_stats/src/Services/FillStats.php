@@ -10,9 +10,11 @@ use Drupal\Core\Database\Query\SelectInterface;
 use Drupal\Core\Database\Statement\FetchAs;
 use Drupal\jpf_store\Enum\Balls;
 use Drupal\jpf_store\Enum\Versions;
+use Drupal\jpf_store\Services\Database;
 use Drupal\jpf_store\Services\DatabaseInterface;
 use Drupal\jpf_store\Services\SchemaInterface;
 use Drupal\jpf_utils\Enum\Days;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 /**
  * Stats filling methods.
@@ -39,8 +41,9 @@ readonly class FillStats implements FillStatsInterface {
    *   The custom database services.
    */
   public function __construct(
-    protected Connection $databaseConnection,
-    protected DatabaseInterface $jpfDatabase,
+    private Connection $databaseConnection,
+    #[Autowire(service: Database::class)]
+    private DatabaseInterface $jpfDatabase,
   ) {}
 
   /**

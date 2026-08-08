@@ -12,7 +12,7 @@ use Drupal\views\ViewExecutable;
 /**
  * Hook implementations for jpf_views.
  */
-class JpfViewsHooks {
+final class JpfViewsHooks {
 
   use StringTranslationTrait;
 

@@ -11,7 +11,7 @@ use Drupal\jpf_utils\LoginHelper;
 /**
  * Hook implementations for jpf_utils.
  */
-class JpfUtilsHooks {
+final readonly class JpfUtilsHooks {
 
   /**
    * Implements hook_toolbar_alter().

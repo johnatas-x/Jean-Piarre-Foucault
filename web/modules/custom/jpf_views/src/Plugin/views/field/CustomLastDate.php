@@ -37,7 +37,7 @@ class CustomLastDate extends CustomFieldBase {
     array $configuration,
     string $plugin_id,
     mixed $plugin_definition,
-    protected DateFormatterInterface $dateFormatter,
+    protected readonly DateFormatterInterface $dateFormatter,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }

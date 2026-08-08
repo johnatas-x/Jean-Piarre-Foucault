@@ -9,7 +9,7 @@ use Drupal\Core\Hook\Attribute\Hook;
 /**
  * Hook implementations for jpf_home.
  */
-readonly class JpfHomeHooks {
+final readonly class JpfHomeHooks {
 
   /**
    * Implements hook_theme().

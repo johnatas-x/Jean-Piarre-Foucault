@@ -6,6 +6,7 @@ namespace Drupal\jpf_home\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\AutowireTrait;
+use Drupal\jpf_home\Services\HomepageHelper;
 use Drupal\jpf_home\Services\HomepageHelperInterface;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Routing\Attribute\Route;
@@ -24,8 +25,8 @@ class HomepageController extends ControllerBase {
    *   The homepage helper service.
    */
   public function __construct(
-    #[Autowire(service: 'jpf_home.helper')]
-    protected HomepageHelperInterface $homepageHelper,
+    #[Autowire(service: HomepageHelper::class)]
+    private readonly HomepageHelperInterface $homepageHelper,
   ) {}
 
   /**

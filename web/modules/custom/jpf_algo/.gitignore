@@ -9,8 +9,9 @@
 !jpf_algo.install
 !jpf_algo.services.yml
 !src/
-!src/Commands/
-!src/Commands/MockCommands.php
+!src/Drush/
+!src/Drush/Commands/
+!src/Drush/Commands/MockPredictionCommand.php
 !src/Entity/
 !src/Entity/Prediction.php
 !translations/

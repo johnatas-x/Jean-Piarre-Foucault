@@ -1,4 +1,7 @@
+parameters:
+  jpf_home.skip_procedural_hook_scan: true
 services:
-  jpf_home.helper:
-    class: Drupal\jpf_home\Services\HomepageHelper
-    arguments: ['@jpf_store.database', '@entity_type.manager', '@logger.factory']
+  _defaults:
+    autoconfigure: true
+    autowire: true
+  Drupal\jpf_home\Services\HomepageHelper: ~

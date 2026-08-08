@@ -1,0 +1,2 @@
+parameters:
+  jpf_import.skip_procedural_hook_scan: true

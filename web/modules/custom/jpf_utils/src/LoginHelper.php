@@ -10,7 +10,7 @@ use Drupal\Core\Url;
 /**
  * Helper static methods for login.
  */
-class LoginHelper {
+readonly class LoginHelper {
 
   /**
    * After login callback.

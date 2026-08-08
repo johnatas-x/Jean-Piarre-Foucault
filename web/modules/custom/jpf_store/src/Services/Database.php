@@ -9,6 +9,7 @@ use Drupal\Core\Database\Query\SelectInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\jpf_algo\Entity\Prediction;
 use Drupal\jpf_store\Enum\Versions;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 /**
  * Database methods for this module.
@@ -28,10 +29,12 @@ readonly class Database implements DatabaseInterface {
    *   The module handler service.
    */
   public function __construct(
-    protected CsvHelperInterface $csvHelper,
-    protected Connection $databaseConnection,
-    protected SchemaInterface $schema,
-    protected ModuleHandlerInterface $moduleHandler,
+    #[Autowire(service: CsvHelper::class)]
+    private CsvHelperInterface $csvHelper,
+    private Connection $databaseConnection,
+    #[Autowire(service: Schema::class)]
+    private SchemaInterface $schema,
+    private ModuleHandlerInterface $moduleHandler,
   ) {}
 
   /**

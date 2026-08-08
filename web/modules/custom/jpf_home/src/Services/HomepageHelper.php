@@ -8,8 +8,10 @@ use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\jpf_store\Services\Database;
 use Drupal\jpf_store\Services\DatabaseInterface;
 use Drupal\jpf_utils\Entity\BallEntityBase;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 /**
  * Helper methods for homepage.
@@ -49,9 +51,10 @@ class HomepageHelper implements HomepageHelperInterface {
    *   The logger channel factory.
    */
   public function __construct(
-    protected DatabaseInterface $jpfDatabase,
-    protected EntityTypeManagerInterface $entityTypeManager,
-    protected LoggerChannelFactoryInterface $logger,
+    #[Autowire(service: Database::class)]
+    private readonly DatabaseInterface $jpfDatabase,
+    private readonly EntityTypeManagerInterface $entityTypeManager,
+    private readonly LoggerChannelFactoryInterface $logger,
   ) {}
 
   /**
