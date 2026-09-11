@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a19d83cceb8f8ca2ae7f624b87e0174",
+    "content-hash": "dee71e9aa383d5804b67d473149dc350",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8847,16 +8847,16 @@
         },
         {
             "name": "carthage-software/mago",
-            "version": "1.47.5",
+            "version": "1.48.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/carthage-software/mago.git",
-                "reference": "3d6c87dccaa74b4048b90e208abe7f2832114f2e"
+                "reference": "a86492ee82e490461b79371f0562432904b6f2a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carthage-software/mago/zipball/3d6c87dccaa74b4048b90e208abe7f2832114f2e",
-                "reference": "3d6c87dccaa74b4048b90e208abe7f2832114f2e",
+                "url": "https://api.github.com/repos/carthage-software/mago/zipball/a86492ee82e490461b79371f0562432904b6f2a2",
+                "reference": "a86492ee82e490461b79371f0562432904b6f2a2",
                 "shasum": ""
             },
             "require": {
@@ -8898,7 +8898,7 @@
             ],
             "support": {
                 "issues": "https://github.com/carthage-software/mago/issues",
-                "source": "https://github.com/carthage-software/mago/tree/1.47.5"
+                "source": "https://github.com/carthage-software/mago/tree/1.48.0"
             },
             "funding": [
                 {
@@ -8906,7 +8906,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-02T16:54:06+00:00"
+            "time": "2026-09-10T04:18:20+00:00"
         },
         {
             "name": "colinodell/psr-testlogger",
@@ -10044,20 +10044,21 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.52.0",
+            "version": "2.53.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "988f83f5e51a42cdd2337e5fcd935432f8dfa33c"
+                "reference": "f6592a43065f558322d2f1418f68a7bb8f009ed1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/988f83f5e51a42cdd2337e5fcd935432f8dfa33c",
-                "reference": "988f83f5e51a42cdd2337e5fcd935432f8dfa33c",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/f6592a43065f558322d2f1418f68a7bb8f009ed1",
+                "reference": "f6592a43065f558322d2f1418f68a7bb8f009ed1",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2.0.0",
+                "composer-runtime-api": "^2.0.0",
                 "ergebnis/json": "^1.4.0",
                 "ergebnis/json-normalizer": "^4.9.0",
                 "ergebnis/json-printer": "^3.7.0",
@@ -10067,27 +10068,27 @@
                 "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
             },
             "require-dev": {
-                "composer/composer": "^2.9.8",
+                "composer/composer": "^2.10.3",
                 "ergebnis/license": "^2.7.0",
-                "ergebnis/php-cs-fixer-config": "^6.62.1",
+                "ergebnis/php-cs-fixer-config": "^6.63.2",
                 "ergebnis/phpstan-rules": "^2.13.1",
                 "ergebnis/phpunit-slow-test-detector": "^2.24.0",
-                "ergebnis/rector-rules": "^1.18.1",
+                "ergebnis/rector-rules": "^1.18.3",
                 "fakerphp/faker": "^1.24.1",
                 "phpstan/extension-installer": "^1.4.3",
-                "phpstan/phpstan": "^2.1.54",
-                "phpstan/phpstan-deprecation-rules": "^2.0.4",
-                "phpstan/phpstan-phpunit": "^2.0.16",
-                "phpstan/phpstan-strict-rules": "^2.0.11",
+                "phpstan/phpstan": "^2.1.55",
+                "phpstan/phpstan-deprecation-rules": "^2.0.5",
+                "phpstan/phpstan-phpunit": "^2.0.18",
+                "phpstan/phpstan-strict-rules": "^2.0.12",
                 "phpunit/phpunit": "^9.6.33",
-                "rector/rector": "^2.4.3",
+                "rector/rector": "^2.6.6",
                 "symfony/filesystem": "^5.4.41"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Ergebnis\\Composer\\Normalize\\NormalizePlugin",
                 "branch-alias": {
-                    "dev-main": "2.52-dev"
+                    "dev-main": "2.53-dev"
                 },
                 "plugin-optional": true,
                 "composer-normalize": {
@@ -10124,7 +10125,7 @@
                 "security": "https://github.com/ergebnis/composer-normalize/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/composer-normalize"
             },
-            "time": "2026-05-15T15:39:24+00:00"
+            "time": "2026-09-09T20:41:58+00:00"
         },
         {
             "name": "ergebnis/json",
@@ -10788,30 +10789,30 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "3.10.6",
+            "version": "3.10.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "2da1c735af34e999edc7af41f3e0201ff61a44cb"
+                "reference": "97afbeaa410ab907429eda559b965b81197cdbd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/2da1c735af34e999edc7af41f3e0201ff61a44cb",
-                "reference": "2da1c735af34e999edc7af41f3e0201ff61a44cb",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/97afbeaa410ab907429eda559b965b81197cdbd6",
+                "reference": "97afbeaa410ab907429eda559b965b81197cdbd6",
                 "shasum": ""
             },
             "require": {
-                "carthage-software/mago": "1.47.5",
+                "carthage-software/mago": "1.48.0",
                 "drupal/coder": "9.0.1",
                 "ekino/phpstan-banned-code": "3.2.0",
-                "ergebnis/composer-normalize": "2.52.0",
+                "ergebnis/composer-normalize": "2.53.0",
                 "friendsoftwig/twigcs": "6.6.1",
                 "johnatas-x/grumphp-phpa": "2.23.0",
                 "johnatas-x/grumphp-phpdd": "2.23.0",
                 "johnatas-x/grumphp-phpmd3": "2.23.0",
                 "johnatas-x/phpcpd": "6.0.5",
                 "maglnet/composer-require-checker": "4.20.0",
-                "mglaman/phpstan-drupal": "2.1.2",
+                "mglaman/phpstan-drupal": "2.2.0",
                 "php": ">=8.4",
                 "php-parallel-lint/php-parallel-lint": "1.4.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
@@ -10821,10 +10822,10 @@
                 "phpstan/phpstan-deprecation-rules": "2.0.5",
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "povils/phpmnd": "3.6.1",
-                "shipmonk/dead-code-detector": "1.4.0",
+                "shipmonk/dead-code-detector": "1.4.1",
                 "slevomat/coding-standard": "8.31.1",
                 "squizlabs/php_codesniffer": "4.0.4",
-                "vincentlanglet/twig-cs-fixer": "4.1.0"
+                "vincentlanglet/twig-cs-fixer": "4.1.1"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
@@ -10868,7 +10869,7 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2026-09-04T07:25:41+00:00"
+            "time": "2026-09-10T15:15:40+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
@@ -11748,16 +11749,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "2.1.2",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "6b4fd0485597d34903efd6a66a6516b659461d2c"
+                "reference": "d5b72bea7b8c8b2c21599b890af030f335a97395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/6b4fd0485597d34903efd6a66a6516b659461d2c",
-                "reference": "6b4fd0485597d34903efd6a66a6516b659461d2c",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/d5b72bea7b8c8b2c21599b890af030f335a97395",
+                "reference": "d5b72bea7b8c8b2c21599b890af030f335a97395",
                 "shasum": ""
             },
             "require": {
@@ -11829,7 +11830,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.1.2"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.2.0"
             },
             "funding": [
                 {
@@ -11845,7 +11846,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-13T15:38:26+00:00"
+            "time": "2026-09-09T14:50:40+00:00"
         },
         {
             "name": "micheh/phpcs-gitlab",
@@ -12678,12 +12679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pdepend/pdepend.git",
-                "reference": "694c96539213fd390d151a519126b18fd5cc57c5"
+                "reference": "0c8242a88ed4906aabe08b682e5b47fdd3612b06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/694c96539213fd390d151a519126b18fd5cc57c5",
-                "reference": "694c96539213fd390d151a519126b18fd5cc57c5",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/0c8242a88ed4906aabe08b682e5b47fdd3612b06",
+                "reference": "0c8242a88ed4906aabe08b682e5b47fdd3612b06",
                 "shasum": ""
             },
             "require": {
@@ -12702,7 +12703,7 @@
                 "easy-doc/easy-doc": "^1.2.3",
                 "friendsofphp/php-cs-fixer": "^3.57",
                 "gregwar/rst": "^1.0.6",
-                "phpstan/phpstan": "~2.1.32",
+                "phpstan/phpstan": "~2.2",
                 "phpunit/phpunit": "^10.5.20,<10.5.32 || ^11.0.0",
                 "squizlabs/php_codesniffer": "^3.8.0"
             },
@@ -12745,7 +12746,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-02T08:21:05+00:00"
+            "time": "2026-09-07T20:59:47+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -13640,12 +13641,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmd/phpmd.git",
-                "reference": "020ebd954b8343638b566815aec5044a2fff3441"
+                "reference": "f51730d323b66b713a6bc5b579a3c38a44beae53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/020ebd954b8343638b566815aec5044a2fff3441",
-                "reference": "020ebd954b8343638b566815aec5044a2fff3441",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/f51730d323b66b713a6bc5b579a3c38a44beae53",
+                "reference": "f51730d323b66b713a6bc5b579a3c38a44beae53",
                 "shasum": ""
             },
             "require": {
@@ -13721,7 +13722,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-23T08:00:22+00:00"
+            "time": "2026-09-08T07:37:55+00:00"
         },
         {
             "name": "phpro/grumphp",
@@ -16482,16 +16483,16 @@
         },
         {
             "name": "shipmonk/dead-code-detector",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shipmonk-rnd/dead-code-detector.git",
-                "reference": "05054d486526ef35c7f7c5148545a5f922cfea42"
+                "reference": "92b56812a002559a56746d444c4cbc2b86080f87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/05054d486526ef35c7f7c5148545a5f922cfea42",
-                "reference": "05054d486526ef35c7f7c5148545a5f922cfea42",
+                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/92b56812a002559a56746d444c4cbc2b86080f87",
+                "reference": "92b56812a002559a56746d444c4cbc2b86080f87",
                 "shasum": ""
             },
             "require": {
@@ -16565,9 +16566,9 @@
             ],
             "support": {
                 "issues": "https://github.com/shipmonk-rnd/dead-code-detector/issues",
-                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/1.4.0"
+                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/1.4.1"
             },
-            "time": "2026-08-28T10:48:53+00:00"
+            "time": "2026-08-28T12:40:17+00:00"
         },
         {
             "name": "sirbrillig/phpcs-variable-analysis",
@@ -17856,16 +17857,16 @@
         },
         {
             "name": "vincentlanglet/twig-cs-fixer",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VincentLanglet/Twig-CS-Fixer.git",
-                "reference": "73f6474720fce9a6709e7b6cdd26574efe36d09b"
+                "reference": "53c1234b6e5d87ac2beaf686774bba013697f9c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VincentLanglet/Twig-CS-Fixer/zipball/73f6474720fce9a6709e7b6cdd26574efe36d09b",
-                "reference": "73f6474720fce9a6709e7b6cdd26574efe36d09b",
+                "url": "https://api.github.com/repos/VincentLanglet/Twig-CS-Fixer/zipball/53c1234b6e5d87ac2beaf686774bba013697f9c5",
+                "reference": "53c1234b6e5d87ac2beaf686774bba013697f9c5",
                 "shasum": ""
             },
             "require": {
@@ -17921,7 +17922,7 @@
             "homepage": "https://github.com/VincentLanglet/Twig-CS-Fixer",
             "support": {
                 "issues": "https://github.com/VincentLanglet/Twig-CS-Fixer/issues",
-                "source": "https://github.com/VincentLanglet/Twig-CS-Fixer/tree/4.1.0"
+                "source": "https://github.com/VincentLanglet/Twig-CS-Fixer/tree/4.1.1"
             },
             "funding": [
                 {
@@ -17929,7 +17930,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-30T16:07:04+00:00"
+            "time": "2026-09-08T21:26:25+00:00"
         },
         {
             "name": "webflo/drupal-finder",
