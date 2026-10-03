@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6752bc7b6549c86a640152bb2321e3a",
+    "content-hash": "2bf4e2405148190c44dc2ac8df30cc6b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8850,16 +8850,16 @@
         },
         {
             "name": "carthage-software/mago",
-            "version": "1.50.0",
+            "version": "1.51.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/carthage-software/mago.git",
-                "reference": "74c48ba74d708f38259c6325a4f12ff443fb19bf"
+                "reference": "5415d6900d330a5a6a70728aaa7f9c52c7672495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carthage-software/mago/zipball/74c48ba74d708f38259c6325a4f12ff443fb19bf",
-                "reference": "74c48ba74d708f38259c6325a4f12ff443fb19bf",
+                "url": "https://api.github.com/repos/carthage-software/mago/zipball/5415d6900d330a5a6a70728aaa7f9c52c7672495",
+                "reference": "5415d6900d330a5a6a70728aaa7f9c52c7672495",
                 "shasum": ""
             },
             "require": {
@@ -8901,7 +8901,7 @@
             ],
             "support": {
                 "issues": "https://github.com/carthage-software/mago/issues",
-                "source": "https://github.com/carthage-software/mago/tree/1.50.0"
+                "source": "https://github.com/carthage-software/mago/tree/1.51.2"
             },
             "funding": [
                 {
@@ -8909,7 +8909,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-21T11:41:07+00:00"
+            "time": "2026-10-03T09:05:17+00:00"
         },
         {
             "name": "colinodell/psr-testlogger",
@@ -10796,34 +10796,34 @@
         },
         {
             "name": "johnatas-x/angry-bearded",
-            "version": "3.11.0",
+            "version": "3.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/angry-bearded.git",
-                "reference": "2e50961dd84cae32142134a5f345891d0e950d27"
+                "reference": "eb248e4a005b3e028167cffa5a1d188ebdea87c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/2e50961dd84cae32142134a5f345891d0e950d27",
-                "reference": "2e50961dd84cae32142134a5f345891d0e950d27",
+                "url": "https://api.github.com/repos/johnatas-x/angry-bearded/zipball/eb248e4a005b3e028167cffa5a1d188ebdea87c6",
+                "reference": "eb248e4a005b3e028167cffa5a1d188ebdea87c6",
                 "shasum": ""
             },
             "require": {
-                "carthage-software/mago": "1.50.0",
+                "carthage-software/mago": "1.51.2",
                 "drupal/coder": "9.0.1",
                 "ekino/phpstan-banned-code": "3.2.0",
                 "ergebnis/composer-normalize": "2.54.0",
                 "friendsoftwig/twigcs": "6.6.1",
-                "johnatas-x/grumphp-phpa": "2.24.0",
-                "johnatas-x/grumphp-phpdd": "2.24.0",
-                "johnatas-x/grumphp-phpmd3": "2.24.0",
+                "johnatas-x/grumphp-phpa": "2.25.0",
+                "johnatas-x/grumphp-phpdd": "2.25.0",
+                "johnatas-x/grumphp-phpmd3": "2.25.0",
                 "johnatas-x/phpcpd": "6.0.5",
                 "maglnet/composer-require-checker": "4.20.0",
                 "mglaman/phpstan-drupal": "2.2.2",
                 "php": ">=8.4",
                 "php-parallel-lint/php-parallel-lint": "1.4.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
-                "phpro/grumphp": "2.24.0",
+                "phpro/grumphp": "2.25.0",
                 "phpstan/extension-installer": "1.4.3",
                 "phpstan/phpstan": "2.2.16",
                 "phpstan/phpstan-deprecation-rules": "2.0.5",
@@ -10876,24 +10876,24 @@
                 "issues": "https://github.com/johnatas-x/angry-bearded/issues",
                 "source": "https://github.com/johnatas-x/angry-bearded"
             },
-            "time": "2026-09-26T09:30:49+00:00"
+            "time": "2026-10-03T15:28:15+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpa",
-            "version": "2.24.0",
+            "version": "2.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/grumphp-phpa.git",
-                "reference": "24b37b152b0fde1fe57453deac8f6c0420265919"
+                "reference": "2193f55edb8466c24feb9b41744b9fca35431e8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpa/zipball/24b37b152b0fde1fe57453deac8f6c0420265919",
-                "reference": "24b37b152b0fde1fe57453deac8f6c0420265919",
+                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpa/zipball/2193f55edb8466c24feb9b41744b9fca35431e8a",
+                "reference": "2193f55edb8466c24feb9b41744b9fca35431e8a",
                 "shasum": ""
             },
             "require": {
-                "phpro/grumphp": "2.24.0",
+                "phpro/grumphp": "2.25.0",
                 "rskuipers/php-assumptions": "0.9.1"
             },
             "type": "library",
@@ -10915,25 +10915,25 @@
                 "issues": "https://github.com/johnatas-x/grumphp-phpa/issues",
                 "source": "https://github.com/johnatas-x/grumphp-phpa"
             },
-            "time": "2026-09-26T06:48:51+00:00"
+            "time": "2026-10-03T15:21:03+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpdd",
-            "version": "2.24.0",
+            "version": "2.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/grumphp-phpdd.git",
-                "reference": "35f05bdd4ce50fdeb05c636092da12bd3f9897b0"
+                "reference": "d3257d437a022f46308ca33525add9ced67fb04c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpdd/zipball/35f05bdd4ce50fdeb05c636092da12bd3f9897b0",
-                "reference": "35f05bdd4ce50fdeb05c636092da12bd3f9897b0",
+                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpdd/zipball/d3257d437a022f46308ca33525add9ced67fb04c",
+                "reference": "d3257d437a022f46308ca33525add9ced67fb04c",
                 "shasum": ""
             },
             "require": {
                 "johnatas-x/php-deprecation-detector": "1.3.0",
-                "phpro/grumphp": "2.24.0"
+                "phpro/grumphp": "2.25.0"
             },
             "type": "library",
             "autoload": {
@@ -10954,25 +10954,25 @@
                 "issues": "https://github.com/johnatas-x/grumphp-phpdd/issues",
                 "source": "https://github.com/johnatas-x/grumphp-phpdd"
             },
-            "time": "2026-09-26T06:48:47+00:00"
+            "time": "2026-10-03T15:21:07+00:00"
         },
         {
             "name": "johnatas-x/grumphp-phpmd3",
-            "version": "2.24.0",
+            "version": "2.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnatas-x/grumphp-phpmd3.git",
-                "reference": "2fd991c168d6a88f376eff4743689dcb293aa11d"
+                "reference": "098cdf0bde04b7270333d04f32de56971da50841"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpmd3/zipball/2fd991c168d6a88f376eff4743689dcb293aa11d",
-                "reference": "2fd991c168d6a88f376eff4743689dcb293aa11d",
+                "url": "https://api.github.com/repos/johnatas-x/grumphp-phpmd3/zipball/098cdf0bde04b7270333d04f32de56971da50841",
+                "reference": "098cdf0bde04b7270333d04f32de56971da50841",
                 "shasum": ""
             },
             "require": {
-                "phpmd/phpmd": "3.x-dev#1351e0bb4e2b85fcfe3c61c35317b13df0d61eeb",
-                "phpro/grumphp": "2.24.0"
+                "phpmd/phpmd": "3.x-dev#68ffb31a82f4d87483e5259cedcc691f39bc223b",
+                "phpro/grumphp": "2.25.0"
             },
             "type": "library",
             "autoload": {
@@ -10993,7 +10993,7 @@
                 "issues": "https://github.com/johnatas-x/grumphp-phpmd3/issues",
                 "source": "https://github.com/johnatas-x/grumphp-phpmd3"
             },
-            "time": "2026-09-26T06:51:46+00:00"
+            "time": "2026-10-03T15:24:26+00:00"
         },
         {
             "name": "johnatas-x/php-deprecation-detector",
@@ -12686,12 +12686,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pdepend/pdepend.git",
-                "reference": "10eaf720b5061f4dd9513f4b513710799804fae6"
+                "reference": "6c646f1653426ff60de768d76026cc683f78e603"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/10eaf720b5061f4dd9513f4b513710799804fae6",
-                "reference": "10eaf720b5061f4dd9513f4b513710799804fae6",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/6c646f1653426ff60de768d76026cc683f78e603",
+                "reference": "6c646f1653426ff60de768d76026cc683f78e603",
                 "shasum": ""
             },
             "require": {
@@ -12753,7 +12753,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-25T16:37:08+00:00"
+            "time": "2026-10-02T19:15:41+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -13648,18 +13648,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmd/phpmd.git",
-                "reference": "c8187fe2f6900415f9cec7f19339c24ff16bc14f"
+                "reference": "68ffb31a82f4d87483e5259cedcc691f39bc223b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/c8187fe2f6900415f9cec7f19339c24ff16bc14f",
-                "reference": "c8187fe2f6900415f9cec7f19339c24ff16bc14f",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/68ffb31a82f4d87483e5259cedcc691f39bc223b",
+                "reference": "68ffb31a82f4d87483e5259cedcc691f39bc223b",
                 "shasum": ""
             },
             "require": {
                 "composer/xdebug-handler": "^3.0",
                 "ext-xml": "*",
-                "pdepend/pdepend": "3.x-dev#2cdfa2dab627b79c8ee74146821bb65307a5bd30",
+                "fidry/cpu-core-counter": "^1.2",
+                "pdepend/pdepend": "^3.0.0",
                 "php": "^8.1",
                 "symfony/console": "^6.4|^7.0|^8.0",
                 "symfony/yaml": "^5.4.31 || ^6.0 || ^7.0 || ^8.0"
@@ -13672,10 +13673,14 @@
                 "friendsofphp/php-cs-fixer": "^3.57",
                 "gregwar/rst": "^1.0",
                 "mikey179/vfsstream": "^1.6.8",
-                "phpstan/phpstan": "~2.1.56",
+                "phpstan/phpstan": "~2.2.15",
                 "phpunit/phpunit": "^10.5.62|^11.5.50",
                 "squizlabs/php_codesniffer": "^3.8.0"
             },
+            "suggest": {
+                "ext-pcntl": "Needed to apply the rules in parallel"
+            },
+            "default-branch": true,
             "bin": [
                 "bin/phpmd"
             ],
@@ -13729,20 +13734,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-24T12:44:58+00:00"
+            "time": "2026-10-02T10:43:04+00:00"
         },
         {
             "name": "phpro/grumphp",
-            "version": "v2.24.0",
+            "version": "v2.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/grumphp.git",
-                "reference": "8abcadb4eb39a2c0124b9a220de12f8cf268e4c4"
+                "reference": "8af668884c838382e5114404204e62385ce3cdba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/grumphp/zipball/8abcadb4eb39a2c0124b9a220de12f8cf268e4c4",
-                "reference": "8abcadb4eb39a2c0124b9a220de12f8cf268e4c4",
+                "url": "https://api.github.com/repos/phpro/grumphp/zipball/8af668884c838382e5114404204e62385ce3cdba",
+                "reference": "8af668884c838382e5114404204e62385ce3cdba",
                 "shasum": ""
             },
             "require": {
@@ -13848,9 +13853,9 @@
             "description": "A composer plugin that enables source code quality checks.",
             "support": {
                 "issues": "https://github.com/phpro/grumphp/issues",
-                "source": "https://github.com/phpro/grumphp/tree/v2.24.0"
+                "source": "https://github.com/phpro/grumphp/tree/v2.25.0"
             },
-            "time": "2026-09-25T08:41:10+00:00"
+            "time": "2026-10-03T08:58:23+00:00"
         },
         {
             "name": "phpspec/prophecy",
