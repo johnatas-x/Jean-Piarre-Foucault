@@ -3494,10 +3494,10 @@
         },
         {
             "name": "npm-asset/chart.js",
-            "version": "4.5.1",
+            "version": "4.6.1",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/chart.js/-/chart.js-4.5.1.tgz"
+                "url": "https://registry.npmjs.org/chart.js/-/chart.js-4.6.1.tgz"
             },
             "require": {
                 "npm-asset/kurkle--color": ">=0.3.0,<0.4.0"
