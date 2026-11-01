@@ -12,7 +12,7 @@ database:
 webimage_extra_packages: [php8.4-pcov]
 use_dns_when_possible: true
 timezone: Europe/Paris
-composer_version: 2.11.0
+composer_version: 2.11.1
 disable_settings_management: true
 web_environment: []
 nodejs_version: "26"
