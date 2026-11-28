@@ -3533,13 +3533,14 @@
         },
         {
             "name": "npm-asset/chart.js",
-            "version": "4.6.1",
+            "version": "4.6.2",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/chart.js/-/chart.js-4.6.1.tgz"
+                "url": "https://registry.npmjs.org/chart.js/-/chart.js-4.6.2.tgz",
+                "shasum": "f18912826f0b49ca558a5999eedcf0a49640aefe"
             },
             "require": {
-                "npm-asset/kurkle--color": ">=0.3.0,<0.4.0"
+                "npm-asset/kurkle--color": ">=0.6.6,<0.7.0"
             },
             "type": "npm-asset",
             "license": [
@@ -3572,10 +3573,11 @@
         },
         {
             "name": "npm-asset/kurkle--color",
-            "version": "0.3.4",
+            "version": "0.6.6",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/@kurkle/color/-/color-0.3.4.tgz"
+                "url": "https://registry.npmjs.org/@kurkle/color/-/color-0.6.6.tgz",
+                "shasum": "34e3a0871371987dc00196e8fe883b0e37681faa"
             },
             "type": "npm-asset",
             "license": [
